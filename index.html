@@ -1,106 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HKBU Mental Health Studies | Year 1 Hub</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Student Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="hero">
-    <div class="container">
-      <h1>HKBU Mental Health Studies</h1>
-      <p class="tagline">First-Year Student Orientation & Resource Hub</p>
-    </div>
-  </header>
+    <!-- 1. NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#evidence">What We Know</a>
+        <a href="#story">Human Story</a>
+        <a href="#method">Method + AI</a>
+        <a href="#help">Help + Access</a>
+    </nav>
 
-  <main class="container">
-    <!-- Introduction Section -->
-    <section class="intro-section" aria-labelledby="intro-heading">
-      <h2 id="intro-heading">Welcome, Year 1 Students!</h2>
-      <p>
-        Welcome to Hong Kong Baptist University! As a first-year student diving into mental health studies, you are embarking on a journey to understand human behavior, psychological well-being, and community health interventions.
-      </p>
-      <p>
-        This portal serves as an introductory guide to help you map out your academic focus and navigate the core concepts you will explore throughout your studies.
-      </p>
+    <main>
+        <!-- 2. LANDING PAGE -->
+        <section id="home">
+            <h1>Welcome, Year 1 Students!</h1>
+            <p>Your journey to understanding mental health starts here. This is a safe, evidence-based space to explore how we communicate about mental health.</p>
+        </section>
+
+        <!-- 3. EVIDENCE (Knowledge Graph) -->
+        <section id="evidence">
+            <h2>Mental Health Knowledge Graph</h2>
+            <p><em>Explore how key disciplines interact within the study of mental health at HKBU:</em></p>
+            
+            <div class="knowledge-graph">
+                <article class="graph-node">
+                    <h3><a href="#node-1">1. Biological & Neuroscientific Foundations</a></h3>
+                    <p>Research shows that genetics and neurotransmitters play a significant role in mental health conditions. (Evidence: Biological studies). However, biology is not destiny—environmental factors and lived experiences also shape mental health. This data cannot diagnose an individual student's experience.</p>
+                </article>
+
+                <article class="graph-node">
+                    <h3><a href="#node-2">2. Psychological Theories & Therapies</a></h3>
+                    <p>Therapies like Cognitive Behavioral Therapy (CBT) are widely used to help people manage anxiety and stress. (Evidence: Clinical psychology literature). However, therapy is not a one-size-fits-all solution; its effectiveness depends on the individual's context and access to care.</p>
+                </article>
+
+                <article class="graph-node">
+                    <h3><a href="#node-3">3. Social & Cultural Factors</a></h3>
+                    <p>In Hong Kong, societal stigma and family dynamics can delay help-seeking behaviors among youth. (Evidence: HK Mental Morbidity Survey). This pattern does not mean every student faces the same barriers, and it cannot predict how a specific individual will act.</p>
+                </article>
+
+                <article class="graph-node">
+                    <h3><a href="#node-4">4. Research Methods & Ethics</a></h3>
+                    <p>Responsible research requires ethical standards, informed consent, and transparent methods. (Evidence: Course readings on data ethics). The choice of method (quantitative vs. qualitative) shapes what we can find. A survey cannot capture the full complexity of a person's story.</p>
+                </article>
+
+                <article class="graph-node">
+                    <h3><a href="#node-5">5. Campus & Community Wellbeing</a></h3>
+                    <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 4. HUMAN STORY -->
+        <section id="story">
+            <h2>Human Story</h2>
+            <p><strong><em>Fictional Composite:</em></strong> "Alex stared at the clock. It was 2:00 AM. The deadline was tomorrow. Alex's chest felt tight, and the words on the screen blurred. It wasn't just stress; it was a weight that made everything feel impossible."</p>
+            <p><em>This story is a fictional composite based on public evidence. It does not represent a real person.</em></p>
+        </section>
+
+        <!-- 5. METHOD + AI -->
+        <section id="method">
+            <h2>Method + AI</h2>
+            <p>We used WorkBuddy AI to design a safe annotation framework for our data. We rejected diagnosis language and forced yes/no labels.</p>
+            <p><a href="ai-log.md">View our AI-Use Log here</a></p>
+        </section>
+
+        <!-- 6. HELP + ACCESS -->
+        <section id="help">
+            <h2>Help + Access</h2>
+            <p>If you or someone you know needs support, here are verified resources:</p>
+            <ul>
+                <li><a href="https://www.hkbu.edu.hk/">HKBU Counselling and Person Enrichment</a></li>
+                <li><a href="https://www.shallwetalk.hk/">Shall We Talk (HK Government)</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- 7. KNOWLEDGE GRAPH DESTINATION SECTIONS (Bottom of page) -->
+    <section id="node-1">
+        <h2>1. Biological & Neuroscientific Foundations</h2>
+        <p>Detailed information about brain function, neurotransmitters, genetics, and physiological responses goes here.</p>
+        <p><a href="#">Back to top</a></p>
     </section>
 
-    <!-- Knowledge Graph Section -->
-    <section class="graph-section" aria-labelledby="graph-heading">
-      <h2 id="graph-heading">Mental Health Knowledge Graph</h2>
-      <p class="section-desc">
-        Explore how key disciplines interact within the study of mental health at HKBU:
-      </p>
-
-      <div class="knowledge-graph">
-        <!-- Node 1 -->
-        <article class="graph-node">
-<h3><a href="#node-1">1. Biological & Neuroscientific Foundations</a></h3>
-          <p>Examines brain function, neurotransmitters, genetics, and physiological responses that influence mental health states.</p>
-        </article>
-
-        <!-- Node 2 -->
-        <article class="graph-node">
-<h3><a href="#node-2">2. Psychological Theories & Therapies</a></h3>
-          <p>Covers cognitive-behavioral principles, developmental psychology, emotional regulation, and therapeutic methodologies.</p>
-        </article>
-
-        <!-- Node 3 -->
-        <article class="graph-node">
-<h3><a href="#node-3">3. Social & Cultural Factors</a></h3>        
-          <p>Investigates environmental influences, societal stigma, family dynamics, and cultural contexts relevant to Hong Kong and globally.</p>
-        </article>
-
-        <!-- Node 4 -->
-        <article class="graph-node">
-<h3><a href="#node-4">4. Research Methods & Ethics</a></h3>          <p>Focuses on quantitative and qualitative research design, statistical analysis, and ethical standards in psychological studies.</p>
-        </article>
-
-        <!-- Node 5 -->
-        <article class="graph-node">
-<h3><a href="#node-5">5. Campus & Community Wellbeing</a></h3>
-          <p>Connects academic theory to practice through community engagement, wellness workshops, and campus support networks.</p>
-        </article>
-      </div>
+    <section id="node-2">
+        <h2>2. Psychological Theories & Therapies</h2>
+        <p>Detailed information about cognitive-behavioral principles, developmental psychology, emotional regulation, and therapeutic methodologies goes here.</p>
+        <p><a href="#">Back to top</a></p>
     </section>
-  </main>
-<!-- Destination sections for the Knowledge Graph -->
-<section id="node-1">
-    <h2>1. Biological & Neuroscientific Foundations</h2>
-    <p>Detailed information about brain function, neurotransmitters, and genetics goes here.</p>
-    <p><a href="#">Back to top</a></p>
-</section>
 
-<section id="node-2">
-    <h2>2. Psychological Theories & Therapies</h2>
-    <p>Detailed information about cognitive-behavioral principles and therapeutic methodologies goes here.</p>
-    <p><a href="#">Back to top</a></p>
-</section>
+    <section id="node-3">
+        <h2>3. Social & Cultural Factors</h2>
+        <p>Detailed information about environmental influences, societal stigma, family dynamics, and cultural contexts relevant to Hong Kong and globally goes here.</p>
+        <p><a href="#">Back to top</a></p>
+    </section>
 
-<section id="node-3">
-    <h2>3. Social & Cultural Factors</h2>
-    <p>Detailed information about environmental influences, societal stigma, and family dynamics goes here.</p>
-    <p><a href="#">Back to top</a></p>
-</section>
+    <section id="node-4">
+        <h2>4. Research Methods & Ethics</h2>
+        <p>Detailed information about quantitative and qualitative research design, statistical analysis, and ethical standards in psychological studies goes here.</p>
+        <p><a href="#">Back to top</a></p>
+    </section>
 
-<section id="node-4">
-    <h2>4. Research Methods & Ethics</h2>
-    <p>Detailed information about quantitative and qualitative research design goes here.</p>
-    <p><a href="#">Back to top</a></p>
-</section>
+    <section id="node-5">
+        <h2>5. Campus & Community Wellbeing</h2>
+        <p>Detailed information about connecting academic theory to practice through community engagement, wellness programs, and mental health initiatives goes here.</p>
+        <p><a href="#">Back to top</a></p>
+    </section>
 
-<section id="node-5">
-    <h2>5. Campus & Community Wellbeing</h2>
-    <p>Detailed information about connecting academic theory to practice goes here.</p>
-    <p><a href="#">Back to top</a></p>
-</section>
-  <footer>
-    <div class="container">
-      <p>&copy; HKBU Mental Health Studies Student Hub | Designed for First-Year Students</p>
-    </div>
-  </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; HKBU Mental Health Studies Student Hub</p>
+        </div>
+    </footer>
 
 </body>
 </html>
