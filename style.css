@@ -229,3 +229,55 @@ footer {
 
 </body>
 </html>
+/* Data Visualization Styles */
+.visualization-section {
+    margin-top: 40px;
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.chart-bar-container {
+    width: 100%;
+    background-color: #e0e0e0; /* Gray background track */
+    border-radius: 5px;
+    margin: 20px 0 10px 0;
+    height: 40px;
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    background-color: #e67e22; /* Accessible orange */
+    color: white;
+    text-align: right;
+    padding-right: 15px;
+    line-height: 40px; /* Vertically centers the text */
+    font-weight: bold;
+    border-radius: 5px;
+    transition: width 1s ease-in-out;
+}
+
+.chart-label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.caption {
+    font-size: 0.9em;
+    color: #555;
+    border-left: 3px solid #3498db; /* Blue accent line */
+    padding-left: 15px;
+    margin-top: 20px;
+    line-height: 1.6;
+    background: #fff;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.caption p {
+    margin: 5px 0;
+}
