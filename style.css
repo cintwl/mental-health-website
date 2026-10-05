@@ -6,7 +6,7 @@
     --olive: #4B4E2A;      /* Olive Grove (accents) */
     --text: #3A3532;       /* Deep warm brown for readability */
     --bg: var(--ivory);
-    --card: #FDFBF7;       /* Off-white, not pure white */
+    --card: #FDFBF7;       /* Off-white, not pure white */f
     --border: #e0dcd5;
 }
 
@@ -214,14 +214,22 @@ section {
 /* Line Chart Animation */
 .line-chart-container { width: 100%; margin: 20px 0; background: var(--bg); padding: 20px; border-radius: 8px; }
 .line-chart { width: 100%; height: auto; }
+.line-chart circle {
+    animation: pulsePoint 1.5s infinite alternate;
+}
+@keyframes pulsePoint {
+    0% { opacity: 0.6; transform: scale(0.9); transform-origin: center; }
+    100% { opacity: 1; transform: scale(1.2); transform-origin: center; }
+}
 .animated-line {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: drawLine 3s ease-out forwards;
+    animation: drawAndErase 5s ease-in-out infinite;
 }
-@keyframes drawLine {
+@keyframes drawAndErase {
     0% { stroke-dashoffset: 1000; }
-    100% { stroke-dashoffset: 0; }
+    50% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: -1000; }
 }
 
 .caption {
