@@ -34,21 +34,14 @@
                 <a href="#help" class="btn-secondary">Find a next step</a>
             </div>
         </section>
-            <hr class="section-divider">
 
-        <!-- 2. EVIDENCE (Knowledge Graph, Charts) -->
+        <hr class="section-divider">
+
+        <!-- 2. EVIDENCE (Knowledge Graph with Tabs) -->
         <section id="evidence">
             <h2>What We Know</h2>
             <p><em>Explore how key disciplines interact within the study of mental health at HKBU:</em></p>
             
-            <div class="tabs-container">
-                <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
-                <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
-                <button class="tab-button" onclick="openTab('tab-3', this)">Social</button>
-                <button class="tab-button" onclick="openTab('tab-4', this)">Research</button>
-                <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
-            </div>
-
             <div class="tabs-container">
                 <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
                 <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
@@ -79,7 +72,7 @@
                     <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
                 </div>
             </div>
-            </div>
+
             <!-- CHARTS SECTION -->
             <div class="chart-grid">
                 <!-- Bar Chart -->
@@ -127,11 +120,9 @@
                         <line x1="0" y1="100" x2="500" y2="100" stroke="#F1EBDC" stroke-width="1" />
                         <line x1="0" y1="50" x2="500" y2="50" stroke="#F1EBDC" stroke-width="1" />
                         
-                        <!-- The Ascending Line with Animation -->
                         <polyline class="animated-line" points="0,180 100,160 200,130 300,90 400,50 500,20" 
                                   fill="none" stroke="var(--umber)" stroke-width="4" stroke-linecap="round" />
                         
-                        <!-- Data Points -->
                         <circle cx="0" cy="180" r="6" fill="var(--umber)" />
                         <circle cx="100" cy="160" r="6" fill="var(--umber)" />
                         <circle cx="200" cy="130" r="6" fill="var(--umber)" />
@@ -147,49 +138,38 @@
                 </div>
             </div>
         </section>
-            <hr class="section-divider">
+
+        <hr class="section-divider">
 
         <!-- 3. HUMAN STORY (Interactive) -->
         <section id="story">
             <h2>Human Story</h2>
             
             <div class="story-container">
-                155            <h2>Human Story</h2>
-156        <div class="story-container">
-157            <!-- Pull Quote -->
-158            <div class="pull-quote">
-159                "I can't explain all of it yet. I just know the ordinary things have started to feel heavier."
-160            </div>
-161
-162            <!-- Interactive Image with Hotspots -->
-163            <div class="story-image-wrapper">
+                <!-- Pull Quote -->
+                <div class="pull-quote">
+                    "I can't explain all of it yet. I just know the ordinary things have started to feel heavier."
+                </div>
+
                 <!-- Interactive Image with Hotspots -->
                 <div class="story-image-wrapper">
                     <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
                     
-                    <!-- Hotspot 1 -->
                     <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')">
-                        <span class="pulse-ring"></span>
-                        1
+                        <span class="pulse-ring"></span> 1
                     </button>
-                    <!-- Hotspot 2 -->
                     <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')">
-                        <span class="pulse-ring"></span>
-                        2
+                        <span class="pulse-ring"></span> 2
                     </button>
-                    <!-- Hotspot 3 -->
                     <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')">
-                        <span class="pulse-ring"></span>
-                        3
+                        <span class="pulse-ring"></span> 3
                     </button>
                 </div>
 
-                <!-- Pop-up Text for Hotspots -->
                 <div id="popup-1" class="hotspot-popup">The phone is face down. The person is choosing to pause and disconnect.</div>
                 <div id="popup-2" class="hotspot-popup">A cold cup of tea. It has been there for hours, untouched.</div>
                 <div id="popup-3" class="hotspot-popup">The notebook is open, but the page is blank. A symbol of waiting for clarity.</div>
 
-                <!-- The 5 Scenes -->
                 <div class="scenes-container">
                     <div class="scene active" id="scene-1">
                         <h3>1. The Room</h3>
@@ -213,7 +193,6 @@
                     </div>
                 </div>
 
-                <!-- Audio Player -->
                 <div class="audio-player">
                     <h4>Ada's Inner Voice</h4>
                     <p><em>Optional: Listen to Ada's reflection. A transcript is available below.</em></p>
@@ -227,14 +206,12 @@
                     </details>
                 </div>
 
-                <!-- Navigation Buttons -->
                 <div class="story-controls">
                     <button onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
                     <button onclick="changeScene(1)">Next →</button>
                 </div>
 
-                <!-- Visual Timeline -->
                 <div class="story-timeline">
                     <span class="timeline-step active" onclick="jumpToScene(1)">1. Room</span>
                     <span class="timeline-step" onclick="jumpToScene(2)">2. Street</span>
@@ -244,7 +221,8 @@
                 </div>
             </div>
         </section>
-            <hr class="section-divider">
+
+        <hr class="section-divider">
 
         <!-- 4. METHOD + AI -->
         <section id="method">
@@ -252,8 +230,9 @@
             <p>We used WorkBuddy AI to design a safe annotation framework for our data. We rejected diagnosis language and forced yes/no labels.</p>
             <p><a href="ai-log.md">View our AI-Use Log here</a></p>
         </section>
-        
-    <hr class="section-divider">
+
+        <hr class="section-divider">
+
         <!-- 5. HELP + ACCESS -->
         <section id="help">
             <h2>Help + Access</h2>
@@ -263,7 +242,6 @@
                 <li><a href="https://www.shallwetalk.hk/">Shall We Talk (HK Government)</a></li>
             </ul>
 
-            <!-- Self-Care Check -->
             <div class="self-care-check">
                 <h3>Daily Self-Care Check</h3>
                 <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
@@ -274,7 +252,6 @@
                 <label><input type="checkbox"> I asked for help if I needed it.</label>
             </div>
 
-            <!-- Safety Note -->
             <div class="safety-note">
                 <h3>If you may be in immediate danger</h3>
                 <p>If you or someone else is at immediate risk, contact local emergency services (999 in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
@@ -282,20 +259,13 @@
         </section>
     </main>
 
-    <!-- KNOWLEDGE GRAPH DESTINATION SECTIONS -->
-    <section id="node-1"><h2>1. Biological & Neuroscientific Foundations</h2><p>Detailed information about brain function, neurotransmitters, genetics, and physiological responses goes here.</p><p><a href="#">Back to top</a></p></section>
-    <section id="node-2"><h2>2. Psychological Theories & Therapies</h2><p>Detailed information about cognitive-behavioral principles, developmental psychology, emotional regulation, and therapeutic methodologies goes here.</p><p><a href="#">Back to top</a></p></section>
-    <section id="node-3"><h2>3. Social & Cultural Factors</h2><p>Detailed information about environmental influences, societal stigma, family dynamics, and cultural contexts relevant to Hong Kong and globally goes here.</p><p><a href="#">Back to top</a></p></section>
-    <section id="node-4"><h2>4. Research Methods & Ethics</h2><p>Detailed information about quantitative and qualitative research design, statistical analysis, and ethical standards in psychological studies goes here.</p><p><a href="#">Back to top</a></p></section>
-    <section id="node-5"><h2>5. Campus & Community Wellbeing</h2><p>Detailed information about connecting academic theory to practice through community engagement, wellness programs, and mental health initiatives goes here.</p><p><a href="#">Back to top</a></p></section>
-
     <footer>
         <div class="container">
             <p>&copy; HKBU Mental Health Studies Student Hub</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR INTERACTIVE STORY -->
+    <!-- JAVASCRIPT FOR INTERACTIVE STORY AND TABS -->
     <script>
         let currentScene = 1;
         const totalScenes = 5;
@@ -331,16 +301,13 @@
                 popup.style.display = 'block';
             }
         }
-    </script>
-            function openTab(tabId, btn) {
-            // Hide all tab panes
+
+        function openTab(tabId, btn) {
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-            // Remove active class from all buttons
             document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-            
-            // Show the selected tab and highlight the button
             document.getElementById(tabId).classList.add('active');
             btn.classList.add('active');
         }
+    </script>
 </body>
 </html>
