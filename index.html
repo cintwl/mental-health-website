@@ -6,7 +6,7 @@
     <title>Mental Health Student Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+    <body>
 
     <!-- 1. NAVIGATION -->
     <nav>
@@ -203,6 +203,30 @@
             <p>&copy; HKBU Mental Health Studies Student Hub</p>
         </div>
     </footer>
+    </footer>
 
+    <!-- JavaScript for Interactive Story -->
+    <script>
+        let currentScene = 1;
+        const totalScenes = 5;
+
+        function changeScene(direction) {
+            // Hide current scene
+            document.getElementById('scene-' + currentScene).classList.remove('active');
+            
+            // Calculate new scene
+            currentScene += direction;
+            if (currentScene < 1) currentScene = 1;
+            if (currentScene > totalScenes) currentScene = totalScenes;
+            
+            // Show new scene
+            document.getElementById('scene-' + currentScene).classList.add('active');
+            
+            // Update text
+            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
+    </script>
+</body>
+</html>
 </body>
 </html>
