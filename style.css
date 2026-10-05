@@ -1,13 +1,13 @@
-/* --- WARM & FUN MULTI-COLOR THEME --- */
+/* --- WARM COLOR PALETTE FROM USER IMAGE --- */
 :root {
-    --bg: #fcf9f2;          /* Warm cream background */
-    --card: #ffffff;        /* White cards */
-    --text: #332f2c;        /* Warm dark brown text */
-    --warm-terracotta: #c76b4e; /* Warm terracotta */
-    --warm-sage: #76967b;   /* Sage green */
-    --warm-gold: #d9a05b;   /* Golden amber */
-    --warm-pink: #e8c4c4;   /* Soft blush */
-    --border: #e8e0d5;
+    --ivory: #F1EBDC;      /* Ivory Linen background */
+    --sand: #C4A38E;       /* Soft Sand */
+    --umber: #5C3822;      /* Burnt Umber (text) */
+    --olive: #4B4E2A;      /* Olive Grove (accents) */
+    --text: #332f2c;       /* Deep warm brown for readability */
+    --bg: var(--ivory);
+    --card: #FDFBF7;       /* Very light cream, not pure white */
+    --border: #dcd5c8;
 }
 
 * {
@@ -28,14 +28,14 @@ nav {
     background-color: var(--card);
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid var(--warm-pink);
+    border-bottom: 2px solid var(--sand);
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 nav a {
-    color: var(--text);
+    color: var(--umber);
     margin: 0 15px;
     text-decoration: none;
     font-size: 0.95em;
@@ -44,7 +44,7 @@ nav a {
     font-weight: bold;
     transition: color 0.2s;
 }
-nav a:hover { color: var(--warm-terracotta); }
+nav a:hover { color: var(--olive); }
 
 /* --- SECTIONS & LAYOUT --- */
 section {
@@ -56,17 +56,17 @@ section {
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: #fff8e1;
+    background: #F1EBDC;
     padding: 15px;
-    border-left: 4px solid var(--warm-gold);
+    border-left: 4px solid var(--sand);
     margin-bottom: 20px;
     font-size: 0.95em;
     border-radius: 0 8px 8px 0;
 }
 .skip-link {
     display: inline-block;
-    background: var(--warm-sage);
-    color: white;
+    background: var(--olive);
+    color: var(--ivory);
     padding: 10px 20px;
     text-decoration: none;
     margin-bottom: 20px;
@@ -74,7 +74,7 @@ section {
     font-weight: bold;
 }
 .fiction-label {
-    color: var(--warm-terracotta);
+    color: var(--umber);
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 15px;
@@ -92,16 +92,16 @@ section {
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 6px solid var(--warm-terracotta);
+    border-left: 6px solid var(--umber);
     transition: all 0.3s ease;
 }
 .graph-node:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-    border-left: 6px solid var(--warm-sage);
+    border-left: 6px solid var(--olive);
 }
 .graph-node h3 a { color: var(--text); text-decoration: none; font-size: 1.2em; }
-.graph-node h3 a:hover { color: var(--warm-terracotta); }
+.graph-node h3 a:hover { color: var(--olive); }
 .graph-node p { font-size: 0.95em; color: #555; margin-top: 10px; }
 
 /* --- CHARTS & VISUALIZATION --- */
@@ -119,12 +119,12 @@ section {
     border: 1px solid var(--border);
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
-.visualization-section h3 { color: var(--warm-terracotta); margin-bottom: 15px; }
+.visualization-section h3 { color: var(--umber); margin-bottom: 15px; }
 
 /* Bar Chart */
 .chart-bar-container {
     width: 100%;
-    background-color: #e8e0d5;
+    background-color: var(--sand);
     border-radius: 4px;
     margin: 20px 0 10px 0;
     height: 35px;
@@ -132,8 +132,8 @@ section {
 }
 .chart-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--warm-terracotta), #e08b6e);
-    color: white;
+    background: linear-gradient(90deg, var(--olive), #6b6e3b);
+    color: var(--ivory);
     text-align: right;
     padding-right: 15px;
     line-height: 35px;
@@ -149,9 +149,9 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--umber); /* Dark text for readability */
     font-weight: bold;
-    font-size: 1em;
+    font-size: 1.1em;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .donut-legend {
@@ -170,14 +170,16 @@ section {
 .animated-line {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: drawLine 2s ease forwards;
+    animation: drawLine 2.5s ease-out forwards;
 }
-@keyframes drawLine { to { stroke-dashoffset: 0; } }
+@keyframes drawLine {
+    to { stroke-dashoffset: 0; }
+}
 
 .caption {
     font-size: 0.9em;
     color: #555;
-    border-left: 3px solid var(--warm-sage);
+    border-left: 3px solid var(--olive);
     padding-left: 15px;
     margin-top: 20px;
 }
@@ -190,8 +192,8 @@ section {
 
 .story-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
 .story-controls button {
-    background-color: var(--warm-terracotta);
-    color: white;
+    background-color: var(--umber);
+    color: var(--ivory);
     border: none;
     padding: 12px 25px;
     border-radius: 6px;
@@ -200,8 +202,8 @@ section {
     font-weight: bold;
     transition: background 0.3s;
 }
-.story-controls button:hover { background-color: #a85a41; }
-#scene-indicator { font-weight: bold; color: var(--warm-terracotta); font-size: 1.1em; }
+.story-controls button:hover { background-color: var(--olive); }
+#scene-indicator { font-weight: bold; color: var(--umber); font-size: 1.1em; }
 
 /* The "Door Circles" (Pulsing Hotspots) */
 .story-image-wrapper { position: relative; display: inline-block; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -211,9 +213,9 @@ section {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--warm-terracotta);
-    color: white;
-    border: 4px solid white;
+    background-color: var(--umber);
+    color: var(--ivory);
+    border: 4px solid var(--ivory);
     font-weight: bold;
     font-size: 1.2rem;
     cursor: pointer;
@@ -232,7 +234,7 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: var(--warm-terracotta);
+    background-color: var(--umber);
     opacity: 0.6;
     animation: pulse 2s infinite;
     z-index: -1;
@@ -247,10 +249,10 @@ section {
 /* Hotspot Popups */
 .hotspot-popup {
     display: none;
-    background: #fff8e1;
+    background: var(--bg);
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid var(--warm-gold);
+    border-left: 5px solid var(--sand);
     margin-bottom: 20px;
     font-size: 1rem;
     color: var(--text);
@@ -260,20 +262,20 @@ section {
 
 /* --- AUDIO PLAYER --- */
 .audio-player { background: var(--bg); padding: 25px; border-radius: 12px; margin-top: 30px; border: 1px solid var(--border); }
-.audio-player h4 { margin-top: 0; color: var(--warm-sage); font-size: 1.2em; }
+.audio-player h4 { margin-top: 0; color: var(--olive); font-size: 1.2em; }
 .audio-player audio { width: 100%; margin-top: 15px; }
 .audio-player details { margin-top: 15px; background: transparent; border: none; padding: 0; }
-.audio-player summary { color: var(--warm-terracotta); font-weight: bold; cursor: pointer; }
+.audio-player summary { color: var(--umber); font-weight: bold; cursor: pointer; }
 
 /* --- STORY TIMELINE --- */
 .story-timeline { display: flex; justify-content: space-between; margin-top: 40px; border-top: 2px solid var(--border); padding-top: 20px; flex-wrap: wrap; gap: 15px; }
 .timeline-step { cursor: pointer; color: #888; font-size: 0.95em; padding: 8px; transition: all 0.3s; font-weight: 500; }
-.timeline-step:hover { color: var(--warm-sage); }
-.timeline-step.active { color: var(--warm-terracotta); font-weight: bold; border-top: 4px solid var(--warm-terracotta); margin-top: -22px; padding-top: 18px; }
+.timeline-step:hover { color: var(--olive); }
+.timeline-step.active { color: var(--umber); font-weight: bold; border-top: 4px solid var(--umber); margin-top: -22px; padding-top: 18px; }
 
 /* --- HELP & ACCESS --- */
 .self-care-check { background: #f0fdf4; padding: 30px; border-radius: 12px; margin-top: 30px; border: 1px solid #bbf7d0; }
-.self-care-check label { display: block; padding: 15px; background: white; margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid #dcfce7; transition: background 0.2s; }
+.self-care-check label { display: block; padding: 15px; background: var(--card); margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); transition: background 0.2s; }
 .self-care-check label:hover { background: #f0fdf4; }
 .self-care-check input[type="checkbox"] { margin-right: 15px; transform: scale(1.3); }
 
