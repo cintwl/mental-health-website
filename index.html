@@ -229,8 +229,9 @@
 
     <!-- JavaScript for Interactive Story -->
 
-    </script>
-                        let currentScene = 1;
+       <!-- JavaScript for Interactive Story -->
+    <script>
+        let currentScene = 1;
         const totalScenes = 5;
 
         function changeScene(direction) {
@@ -256,5 +257,6 @@
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
+    </script>
 </body>
 </html>
