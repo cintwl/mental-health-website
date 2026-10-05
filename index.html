@@ -128,10 +128,32 @@
             </div>
 
             <!-- Navigation Buttons -->
+                     <!-- Audio Player -->
+            <div class="audio-player">
+                <h4>Ada's Inner Voice</h4>
+                <p><em>Optional: Listen to Ada's reflection. A transcript is available below.</em></p>
+                <audio controls>
+                    <!-- You can replace this URL with your own MP3 file later -->
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <details>
+                    <summary>Read the transcript instead</summary>
+                    <p>"I can't explain all of it yet. I just know the ordinary things have started to feel heavier. Maybe I can tell someone that much."</p>
+                </details>
+            </div>
             <div class="story-controls">
                 <button onclick="changeScene(-1)">← Previous</button>
                 <span id="scene-indicator">Scene 1 of 5</span>
                 <button onclick="changeScene(1)">Next →</button>
+            </div>
+                        <!-- Visual Timeline -->
+            <div class="story-timeline">
+                <span class="timeline-step active" onclick="jumpToScene(1)">1. Room</span>
+                <span class="timeline-step" onclick="jumpToScene(2)">2. Street</span>
+                <span class="timeline-step" onclick="jumpToScene(3)">3. Message</span>
+                <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
+                <span class="timeline-step" onclick="jumpToScene(5)">5. Plan</span>
             </div>
         </div>
     </section>
@@ -206,13 +228,15 @@
     </footer>
 
     <!-- JavaScript for Interactive Story -->
-    <script>
-        let currentScene = 1;
+
+    </script>
+                let currentScene = 1;
         const totalScenes = 5;
 
         function changeScene(direction) {
             // Hide current scene
             document.getElementById('scene-' + currentScene).classList.remove('active');
+            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             
             // Calculate new scene
             currentScene += direction;
@@ -221,12 +245,19 @@
             
             // Show new scene
             document.getElementById('scene-' + currentScene).classList.add('active');
-            
-            // Update text
+            document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
-    </script>
-</body>
-</html>
+
+        function jumpToScene(sceneNumber) {
+            document.getElementById('scene-' + currentScene).classList.remove('active');
+            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
+            
+            currentScene = sceneNumber;
+            
+            document.getElementById('scene-' + currentScene).classList.add('active');
+            document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
+            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
 </body>
 </html>
