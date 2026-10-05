@@ -62,6 +62,37 @@
                     <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
                 </article>
             </div>
+                        <!-- Line Chart -->
+            <div class="visualization-section">
+                <h3>Rising Awareness Over Time</h3>
+                <div class="line-chart-container">
+                    <svg viewBox="0 0 500 200" class="line-chart">
+                        <!-- Grid lines -->
+                        <line x1="0" y1="200" x2="500" y2="200" stroke="#ddd" stroke-width="1" />
+                        <line x1="0" y1="150" x2="500" y2="150" stroke="#eee" stroke-width="1" />
+                        <line x1="0" y1="100" x2="500" y2="100" stroke="#eee" stroke-width="1" />
+                        <line x1="0" y1="50" x2="500" y2="50" stroke="#eee" stroke-width="1" />
+                        
+                        <!-- The Ascending Line -->
+                        <polyline points="0,180 100,160 200,130 300,90 400,50 500,20" 
+                                  fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" />
+                        
+                        <!-- Data Points -->
+                        <circle cx="0" cy="180" r="6" fill="var(--primary)" />
+                        <circle cx="100" cy="160" r="6" fill="var(--primary)" />
+                        <circle cx="200" cy="130" r="6" fill="var(--primary)" />
+                        <circle cx="300" cy="90" r="6" fill="var(--primary)" />
+                        <circle cx="400" cy="50" r="6" fill="var(--primary)" />
+                        <circle cx="500" cy="20" r="6" fill="var(--primary)" />
+                    </svg>
+                </div>
+                <div class="caption">
+                    <p><strong>Title:</strong> Rising Mental Health Awareness</p>
+                    <p><strong>Data:</strong> Synthetic dataset · 2020-2025</p>
+                    <p><strong>Method:</strong> SVG Line Chart showing increasing engagement.</p>
+                    <p><strong>Limit:</strong> Correlation does not imply causation.</p>
+                </div>
+            </div>
         </section>
             <!-- Data Visualization -->
             <div class="visualization-section">
@@ -218,31 +249,34 @@
     </footer>
     </footer>
 
-       <!-- JavaScript for Interactive Story -->
+          <!-- JavaScript for Interactive Story -->
     <script>
         let currentScene = 1;
         const totalScenes = 5;
 
         function changeScene(direction) {
+            // Hide current scene
             document.getElementById('scene-' + currentScene).classList.remove('active');
-            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             
+            // Calculate new scene
             currentScene += direction;
             if (currentScene < 1) currentScene = 1;
             if (currentScene > totalScenes) currentScene = totalScenes;
             
+            // Show new scene
             document.getElementById('scene-' + currentScene).classList.add('active');
+            
+            // Update timeline and indicator
+            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
 
         function jumpToScene(sceneNumber) {
             document.getElementById('scene-' + currentScene).classList.remove('active');
-            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
-            
             currentScene = sceneNumber;
-            
             document.getElementById('scene-' + currentScene).classList.add('active');
+            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
