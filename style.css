@@ -1,13 +1,13 @@
-/* --- WARM COLOR PALETTE FROM USER IMAGE --- */
+/* --- WARM COLOR PALETTE (LIGHTER IVORY BACKGROUND) --- */
 :root {
-    --ivory: #F1EBDC;      /* Ivory Linen background */
+    --ivory: #FAF8F5;      /* Lighter Ivory Linen background (fixed) */
     --sand: #C4A38E;       /* Soft Sand */
     --umber: #5C3822;      /* Burnt Umber (text) */
     --olive: #4B4E2A;      /* Olive Grove (accents) */
-    --text: #332f2c;       /* Deep warm brown for readability */
+    --text: #3A3532;       /* Deep warm brown for readability */
     --bg: var(--ivory);
-    --card: #FDFBF7;       /* Very light cream, not pure white */
-    --border: #dcd5c8;
+    --card: #FDFBF7;       /* Off-white, not pure white */
+    --border: #e0dcd5;
 }
 
 * {
@@ -54,6 +54,52 @@ section {
     border-bottom: 1px solid var(--border);
 }
 
+/* --- HERO SECTION (Front Page) --- */
+.hero-section {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(180deg, var(--ivory) 0%, var(--card) 100%);
+    border-bottom: none;
+}
+.hero-section h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--umber);
+}
+.hero-subtitle {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.btn-primary {
+    background-color: var(--olive);
+    color: var(--ivory);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.btn-primary:hover { background-color: var(--umber); }
+.btn-secondary {
+    background-color: transparent;
+    color: var(--umber);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    border: 2px solid var(--umber);
+    transition: all 0.3s;
+}
+.btn-secondary:hover { background-color: var(--umber); color: var(--ivory); }
+
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
     background: #F1EBDC;
@@ -78,6 +124,7 @@ section {
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 15px;
+    font-size: 0.9em;
 }
 
 /* --- KNOWLEDGE GRAPH CARDS --- */
@@ -170,10 +217,11 @@ section {
 .animated-line {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
-    animation: drawLine 2.5s ease-out forwards;
+    animation: drawLine 3s ease-out forwards;
 }
 @keyframes drawLine {
-    to { stroke-dashoffset: 0; }
+    0% { stroke-dashoffset: 1000; }
+    100% { stroke-dashoffset: 0; }
 }
 
 .caption {
