@@ -41,29 +41,45 @@
             <h2>What We Know</h2>
             <p><em>Explore how key disciplines interact within the study of mental health at HKBU:</em></p>
             
-            <div class="knowledge-graph">
-                <article class="graph-node">
-                    <h3><a href="#node-1">1. Biological & Neuroscientific Foundations</a></h3>
-                    <p>Research shows that genetics and neurotransmitters play a significant role in mental health conditions. (Evidence: Biological studies). However, biology is not destiny. This data cannot diagnose an individual student's experience.</p>
-                </article>
-                <article class="graph-node">
-                    <h3><a href="#node-2">2. Psychological Theories & Therapies</a></h3>
-                    <p>Therapies like Cognitive Behavioral Therapy (CBT) are widely used to help people manage anxiety and stress. (Evidence: Clinical psychology literature). However, therapy is not a one-size-fits-all solution; its effectiveness depends on access to care.</p>
-                </article>
-                <article class="graph-node">
-                    <h3><a href="#node-3">3. Social & Cultural Factors</a></h3>
-                    <p>In Hong Kong, societal stigma and family dynamics can delay help-seeking behaviors among youth. (Evidence: HK Mental Morbidity Survey). This pattern does not mean every student faces the same barriers, and it cannot predict how a specific individual will act.</p>
-                </article>
-                <article class="graph-node">
-                    <h3><a href="#node-4">4. Research Methods & Ethics</a></h3>
-                    <p>Responsible research requires ethical standards, informed consent, and transparent methods. (Evidence: Course readings on data ethics). The choice of method shapes what we can find. A survey cannot capture the full complexity of a person's story.</p>
-                </article>
-                <article class="graph-node">
-                    <h3><a href="#node-5">5. Campus & Community Wellbeing</a></h3>
-                    <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
-                </article>
+            <div class="tabs-container">
+                <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
+                <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
+                <button class="tab-button" onclick="openTab('tab-3', this)">Social</button>
+                <button class="tab-button" onclick="openTab('tab-4', this)">Research</button>
+                <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
             </div>
 
+            <div class="tabs-container">
+                <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
+                <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
+                <button class="tab-button" onclick="openTab('tab-3', this)">Social</button>
+                <button class="tab-button" onclick="openTab('tab-4', this)">Research</button>
+                <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-1">
+                    <h3>1. Biological & Neuroscientific Foundations</h3>
+                    <p>Research shows that genetics and neurotransmitters play a significant role in mental health conditions. (Evidence: Biological studies). However, biology is not destiny. This data cannot diagnose an individual student's experience.</p>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                    <h3>2. Psychological Theories & Therapies</h3>
+                    <p>Therapies like Cognitive Behavioral Therapy (CBT) are widely used to help people manage anxiety and stress. (Evidence: Clinical psychology literature). However, therapy is not a one-size-fits-all solution; its effectiveness depends on access to care.</p>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                    <h3>3. Social & Cultural Factors</h3>
+                    <p>In Hong Kong, societal stigma and family dynamics can delay help-seeking behaviors among youth. (Evidence: HK Mental Morbidity Survey). This pattern does not mean every student faces the same barriers, and it cannot predict how a specific individual will act.</p>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                    <h3>4. Research Methods & Ethics</h3>
+                    <p>Responsible research requires ethical standards, informed consent, and transparent methods. (Evidence: Course readings on data ethics). The choice of method shapes what we can find. A survey cannot capture the full complexity of a person's story.</p>
+                </div>
+                <div class="tab-pane" id="tab-5">
+                    <h3>5. Campus & Community Wellbeing</h3>
+                    <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
+                </div>
+            </div>
+            </div>
             <!-- CHARTS SECTION -->
             <div class="chart-grid">
                 <!-- Bar Chart -->
@@ -138,6 +154,15 @@
             <h2>Human Story</h2>
             
             <div class="story-container">
+                155            <h2>Human Story</h2>
+156        <div class="story-container">
+157            <!-- Pull Quote -->
+158            <div class="pull-quote">
+159                "I can't explain all of it yet. I just know the ordinary things have started to feel heavier."
+160            </div>
+161
+162            <!-- Interactive Image with Hotspots -->
+163            <div class="story-image-wrapper">
                 <!-- Interactive Image with Hotspots -->
                 <div class="story-image-wrapper">
                     <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
@@ -307,5 +332,15 @@
             }
         }
     </script>
+            function openTab(tabId, btn) {
+            // Hide all tab panes
+            document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
+            // Remove active class from all buttons
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            
+            // Show the selected tab and highlight the button
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
 </body>
 </html>
