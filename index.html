@@ -234,14 +234,43 @@
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
         <!-- JavaScript for Hotspot Popups -->
+       <!-- JavaScript for Interactive Story -->
     <script>
+        let currentScene = 1;
+        const totalScenes = 5;
+
+        function changeScene(direction) {
+            // Hide current scene
+            document.getElementById('scene-' + currentScene).classList.remove('active');
+            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
+            
+            // Calculate new scene
+            currentScene += direction;
+            if (currentScene < 1) currentScene = 1;
+            if (currentScene > totalScenes) currentScene = totalScenes;
+            
+            // Show new scene
+            document.getElementById('scene-' + currentScene).classList.add('active');
+            document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
+            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
+
+        function jumpToScene(sceneNumber) {
+            document.getElementById('scene-' + currentScene).classList.remove('active');
+            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
+            
+            currentScene = sceneNumber;
+            
+            document.getElementById('scene-' + currentScene).classList.add('active');
+            document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
+            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
+
         function togglePopup(id) {
             const popup = document.getElementById(id);
-            // Hide all other popups first
             document.querySelectorAll('.hotspot-popup').forEach(el => {
                 if (el.id !== id) el.style.display = 'none';
             });
-            // Toggle the clicked one
             if (popup.style.display === 'block') {
                 popup.style.display = 'none';
             } else {
