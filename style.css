@@ -434,3 +434,54 @@ details p {
     transform: scale(1.1); /* Makes it grow slightly when you hover or tab to it */
     outline: none;
 }
+/* Interactive Story Styles */
+.story-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.scene {
+    display: none; /* Hides all scenes by default */
+    animation: fadeIn 0.5s;
+}
+
+.scene.active {
+    display: block; /* Shows only the active scene */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.story-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.story-controls button {
+    background-color: var(--green);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.story-controls button:hover {
+    background-color: var(--coral);
+}
+
+#scene-indicator {
+    font-weight: bold;
+    color: var(--green);
+}
