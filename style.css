@@ -1,10 +1,12 @@
-/* --- BASE STYLES (Warm Paper Theme) --- */
+/* --- BASE STYLES (Calming Light Blue Theme) --- */
 :root {
-    --paper: #f3efe8; /* Warm paper background */
-    --ink: #1f2926;   /* Deep dark ink text */
-    --green: #344f45; /* Deep green */
-    --coral: #b7654a; /* Restrained coral */
-    --amber: #f59e0b;
+    --bg: #f0f9ff;        /* Very light blue background */
+    --card: #ffffff;      /* White cards */
+    --text: #0f172a;      /* Deep navy text */
+    --primary: #0284c7;   /* Vibrant blue */
+    --secondary: #0d9488; /* Teal */
+    --accent: #f59e0b;    /* Amber */
+    --border: #e2e8f0;
 }
 
 * {
@@ -14,24 +16,25 @@
 }
 
 body {
-    font-family: Georgia, 'Times New Roman', serif; /* Editorial font */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.7;
-    color: var(--ink);
-    background-color: var(--paper);
+    color: var(--text);
+    background-color: var(--bg);
 }
 
 /* --- NAVIGATION --- */
 nav {
-    background-color: var(--paper);
+    background-color: var(--card);
     padding: 20px;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 nav a {
-    color: var(--ink);
+    color: var(--text);
     margin: 0 15px;
     text-decoration: none;
     font-size: 0.95em;
@@ -40,43 +43,43 @@ nav a {
     font-weight: bold;
     transition: color 0.2s;
 }
-nav a:hover { color: var(--coral); }
+nav a:hover { color: var(--primary); }
 
 /* --- SECTIONS & LAYOUT --- */
 section {
     padding: 60px 20px;
     max-width: 1000px;
     margin: 0 auto;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border);
 }
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: #fff3cd;
+    background: #fffbeb;
     padding: 15px;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid var(--accent);
     margin-bottom: 20px;
     font-size: 0.95em;
     border-radius: 0 8px 8px 0;
 }
 .skip-link {
     display: inline-block;
-    background: var(--green);
+    background: var(--primary);
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     margin-bottom: 20px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: bold;
 }
 .fiction-label {
-    color: var(--coral);
+    color: var(--primary);
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
 
-/* --- KNOWLEDGE GRAPH --- */
+/* --- KNOWLEDGE GRAPH CARDS --- */
 .knowledge-graph {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -84,40 +87,40 @@ section {
     margin-top: 30px;
 }
 .graph-node {
-    background: #ffffff;
+    background: var(--card);
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-left: 6px solid var(--coral);
+    border-left: 6px solid var(--secondary);
     transition: all 0.3s ease;
 }
 .graph-node:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px rgba(0,0,0,0.1);
-    border-left: 6px solid var(--green);
+    border-left: 6px solid var(--primary);
 }
 .graph-node h3 a {
-    color: var(--ink);
+    color: var(--text);
     text-decoration: none;
     font-size: 1.2em;
 }
-.graph-node h3 a:hover { color: var(--coral); }
+.graph-node h3 a:hover { color: var(--primary); }
 .graph-node p { font-size: 0.95em; color: #555; margin-top: 10px; }
 
 /* --- CHARTS & VISUALIZATION --- */
 .visualization-section {
     margin-top: 40px;
-    background: #ffffff;
+    background: var(--card);
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border);
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
 /* Bar Chart */
 .chart-bar-container {
     width: 100%;
-    background-color: #e0e0e0;
+    background-color: #e2e8f0;
     border-radius: 4px;
     margin: 20px 0 10px 0;
     height: 35px;
@@ -125,7 +128,7 @@ section {
 }
 .chart-bar {
     height: 100%;
-    background: linear-gradient(90deg, var(--coral), #d98a72);
+    background: linear-gradient(90deg, var(--primary), #38bdf8);
     color: white;
     text-align: right;
     padding-right: 15px;
@@ -139,25 +142,24 @@ section {
     justify-content: center;
     align-items: center;
     margin: 30px 0;
-    gap: 5px;
+    gap: 10px;
 }
 .donut-segment {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text); /* Fixed: dark text for readability */
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1em;
     position: relative;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
-/* Creating the donut shape using conic-gradient */
-.donut-segment:nth-child(1) { background: conic-gradient(var(--coral) 0% 45%, transparent 45% 100%); }
-.donut-segment:nth-child(2) { background: conic-gradient(var(--green) 0% 30%, transparent 30% 100%); }
-.donut-segment:nth-child(3) { background: conic-gradient(var(--amber) 0% 25%, transparent 25% 100%); }
+.donut-segment:nth-child(1) { background: conic-gradient(var(--primary) 0% 45%, #e2e8f0 45% 100%); }
+.donut-segment:nth-child(2) { background: conic-gradient(var(--secondary) 0% 30%, #e2e8f0 30% 100%); }
+.donut-segment:nth-child(3) { background: conic-gradient(var(--accent) 0% 25%, #e2e8f0 25% 100%); }
 
 .donut-legend {
     display: flex;
@@ -175,10 +177,23 @@ section {
     margin-right: 5px;
 }
 
+/* Line Chart */
+.line-chart-container {
+    width: 100%;
+    margin: 20px 0;
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 8px;
+}
+.line-chart {
+    width: 100%;
+    height: auto;
+}
+
 .caption {
     font-size: 0.9em;
     color: #555;
-    border-left: 3px solid var(--green);
+    border-left: 3px solid var(--secondary);
     padding-left: 15px;
     margin-top: 20px;
 }
@@ -186,30 +201,30 @@ section {
 
 /* --- MYTH VS FACT --- */
 .myth-fact-box {
-    background: #f8f9fa;
+    background: var(--bg);
     padding: 30px;
     border-radius: 12px;
     margin-top: 30px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border);
 }
 details {
-    background: white;
+    background: var(--card);
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 10px;
     cursor: pointer;
-    border: 1px solid #eee;
+    border: 1px solid var(--border);
 }
-summary { font-weight: bold; color: var(--coral); font-size: 1.1em; }
-details p { margin-top: 10px; color: var(--green); font-weight: bold; }
+summary { font-weight: bold; color: var(--accent); font-size: 1.1em; }
+details p { margin-top: 10px; color: var(--secondary); font-weight: bold; }
 
 /* --- HUMAN STORY & HOTSPOTS --- */
 .story-container {
-    background: #ffffff;
+    background: var(--card);
     padding: 40px;
     border-radius: 16px;
     margin-top: 30px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 .scene { display: none; animation: fadeIn 0.5s; }
@@ -221,11 +236,11 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
     justify-content: space-between;
     align-items: center;
     margin-top: 30px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--border);
     padding-top: 20px;
 }
 .story-controls button {
-    background-color: var(--green);
+    background-color: var(--primary);
     color: white;
     border: none;
     padding: 12px 25px;
@@ -235,8 +250,8 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
     font-weight: bold;
     transition: background 0.3s;
 }
-.story-controls button:hover { background-color: var(--coral); }
-#scene-indicator { font-weight: bold; color: var(--green); font-size: 1.1em; }
+.story-controls button:hover { background-color: #035f9e; }
+#scene-indicator { font-weight: bold; color: var(--primary); font-size: 1.1em; }
 
 /* The "Door Circles" (Pulsing Hotspots) */
 .story-image-wrapper {
@@ -257,7 +272,7 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--coral);
+    background-color: var(--primary);
     color: white;
     border: 4px solid white;
     font-weight: bold;
@@ -278,7 +293,7 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: var(--coral);
+    background-color: var(--primary);
     opacity: 0.6;
     animation: pulse 2s infinite;
     z-index: -1;
@@ -296,36 +311,36 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
 /* Hotspot Popups */
 .hotspot-popup {
     display: none;
-    background: #f8f9fa;
+    background: var(--bg);
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid var(--coral);
+    border-left: 5px solid var(--primary);
     margin-bottom: 20px;
     font-size: 1rem;
-    color: var(--ink);
+    color: var(--text);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     animation: fadeIn 0.3s;
 }
 
 /* --- AUDIO PLAYER --- */
 .audio-player {
-    background: #f9f9f9;
+    background: var(--bg);
     padding: 25px;
     border-radius: 12px;
     margin-top: 30px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid var(--border);
 }
-.audio-player h4 { margin-top: 0; color: var(--green); font-size: 1.2em; }
+.audio-player h4 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
 .audio-player audio { width: 100%; margin-top: 15px; }
 .audio-player details { margin-top: 15px; background: transparent; border: none; padding: 0; }
-.audio-player summary { color: var(--coral); font-weight: bold; cursor: pointer; }
+.audio-player summary { color: var(--primary); font-weight: bold; cursor: pointer; }
 
 /* --- STORY TIMELINE --- */
 .story-timeline {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
-    border-top: 2px solid #eee;
+    border-top: 2px solid var(--border);
     padding-top: 20px;
     flex-wrap: wrap;
     gap: 15px;
@@ -338,22 +353,22 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
     transition: all 0.3s;
     font-weight: 500;
 }
-.timeline-step:hover { color: var(--green); }
+.timeline-step:hover { color: var(--primary); }
 .timeline-step.active {
-    color: var(--coral);
+    color: var(--primary);
     font-weight: bold;
-    border-top: 4px solid var(--coral);
+    border-top: 4px solid var(--primary);
     margin-top: -22px;
     padding-top: 18px;
 }
 
 /* --- HELP & ACCESS --- */
 .self-care-check {
-    background: #e8f8f5;
+    background: #f0fdf4;
     padding: 30px;
     border-radius: 12px;
     margin-top: 30px;
-    border: 1px solid #a3e4d7;
+    border: 1px solid #bbf7d0;
 }
 .self-care-check label {
     display: block;
@@ -362,27 +377,27 @@ details p { margin-top: 10px; color: var(--green); font-weight: bold; }
     margin-bottom: 10px;
     border-radius: 8px;
     cursor: pointer;
-    border: 1px solid #d1f2eb;
+    border: 1px solid #dcfce7;
     transition: background 0.2s;
 }
 .self-care-check label:hover { background: #f0fdf4; }
 .self-care-check input[type="checkbox"] { margin-right: 15px; transform: scale(1.3); }
 
 .safety-note {
-    background-color: #fdedec;
-    border-left: 6px solid #e74c3c;
+    background-color: #fef2f2;
+    border-left: 6px solid #ef4444;
     padding: 25px;
     margin-top: 30px;
     border-radius: 0 8px 8px 0;
 }
-.safety-note h3 { color: #c0392b; margin-top: 0; }
+.safety-note h3 { color: #b91c1c; margin-top: 0; }
 
 /* --- FOOTER --- */
 footer {
     text-align: center;
     padding: 50px 20px;
-    background-color: var(--paper);
+    background-color: var(--card);
     color: #666;
     font-size: 0.95em;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border);
 }
