@@ -93,67 +93,43 @@
             </div>
         </section>
 
-        <!-- 4. HUMAN STORY -->
-            <!-- 4. HUMAN STORY -->
+           <!-- 4. HUMAN STORY -->
     <section id="story">
         <h2>Human Story</h2>
         <p><em>THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</em></p>
         
-        <!-- The Interactive Scene Container -->
         <div class="story-container">
-            <!-- Scene 1 -->
-            <div class="scene active" id="scene-1">
-                <h3>1. The Room</h3>
-                <p>Getting up is the first mile. The light comes in. The kettle waits. Ada knows the day has started, but her body feels as if it is still carrying yesterday.</p>
-            </div>
-            <!-- Scene 2 -->
-            <div class="scene" id="scene-2">
-                <h3>2. The Street</h3>
-                <p>Life keeps its usual pace. Outside, the street is loud and busy. Ada walks, but she feels separated from the movement around her.</p>
-            </div>
-            <!-- Scene 3 -->
-            <div class="scene" id="scene-3">
-                <h3>3. The Message</h3>
-                <p>Asking can begin with one sentence. She types: "I'm not okay today." She deletes it. Then types it again.</p>
-            </div>
-            <!-- Scene 4 -->
-            <div class="scene" id="scene-4">
-                <h3>4. A Pause</h3>
-                <p>There is no single straight way through. Ada sits by the window. She doesn't have to solve everything right now.</p>
-            </div>
-            <!-- Scene 5 -->
-            <div class="scene" id="scene-5">
-                <h3>5. A Small Plan</h3>
-                <p>Connection leaves a light on. She sends the message to a friend. A small plan is made to get a coffee tomorrow.</p>
+            <!-- Interactive Image with Hotspots -->
+            <div class="story-image-wrapper">
+                <img src="https://placehold.co/800x450/e0e0e0/333333?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
+                
+                <!-- Hotspot 1 -->
+                <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')">
+                    <span class="pulse-ring"></span>
+                    1
+                </button>
+                <!-- Hotspot 2 -->
+                <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')">
+                    <span class="pulse-ring"></span>
+                    2
+                </button>
+                <!-- Hotspot 3 -->
+                <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')">
+                    <span class="pulse-ring"></span>
+                    3
+                </button>
             </div>
 
-            <!-- Navigation Buttons -->
-                     <!-- Audio Player -->
-            <div class="audio-player">
-                <h4>Ada's Inner Voice</h4>
-                <p><em>Optional: Listen to Ada's reflection. A transcript is available below.</em></p>
-                <audio controls>
-                    <!-- You can replace this URL with your own MP3 file later -->
-                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
-                <details>
-                    <summary>Read the transcript instead</summary>
-                    <p>"I can't explain all of it yet. I just know the ordinary things have started to feel heavier. Maybe I can tell someone that much."</p>
-                </details>
-            </div>
+            <!-- Pop-up Text for Hotspots -->
+            <div id="popup-1" class="hotspot-popup">The phone is face down. The person is choosing to pause and disconnect.</div>
+            <div id="popup-2" class="hotspot-popup">A cold cup of tea. It has been there for hours, untouched.</div>
+            <div id="popup-3" class="hotspot-popup">The notebook is open, but the page is blank. A symbol of waiting for clarity.</div>
+
+            <!-- Story Navigation -->
             <div class="story-controls">
                 <button onclick="changeScene(-1)">← Previous</button>
                 <span id="scene-indicator">Scene 1 of 5</span>
                 <button onclick="changeScene(1)">Next →</button>
-            </div>
-                        <!-- Visual Timeline -->
-            <div class="story-timeline">
-                <span class="timeline-step active" onclick="jumpToScene(1)">1. Room</span>
-                <span class="timeline-step" onclick="jumpToScene(2)">2. Street</span>
-                <span class="timeline-step" onclick="jumpToScene(3)">3. Message</span>
-                <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
-                <span class="timeline-step" onclick="jumpToScene(5)">5. Plan</span>
             </div>
         </div>
     </section>
@@ -256,6 +232,21 @@
             document.getElementById('scene-' + currentScene).classList.add('active');
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
+        <!-- JavaScript for Hotspot Popups -->
+    <script>
+        function togglePopup(id) {
+            const popup = document.getElementById(id);
+            // Hide all other popups first
+            document.querySelectorAll('.hotspot-popup').forEach(el => {
+                if (el.id !== id) el.style.display = 'none';
+            });
+            // Toggle the clicked one
+            if (popup.style.display === 'block') {
+                popup.style.display = 'none';
+            } else {
+                popup.style.display = 'block';
+            }
         }
     </script>
 </body>
