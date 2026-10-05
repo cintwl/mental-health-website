@@ -94,20 +94,47 @@
         </section>
 
         <!-- 4. HUMAN STORY -->
-        <section id="story">
-            <h2>Human Story</h2>
-            <p><strong><em>Fictional Composite:</em></strong> "Alex stared at the clock. It was 2:00 AM. The deadline was tomorrow. Alex's chest felt tight, and the words on the screen blurred. It wasn't just stress; it was a weight that made everything feel impossible."</p>
-            <p><em>This story is a fictional composite based on public evidence. It does not represent a real person.</em></p>
-            
-            <!-- Interactive Hotspot -->
-            <div class="story-image-container">
-                <img src="https://placehold.co/600x400/e0e0e0/333333?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" />
-                <button class="hotspot" onclick="document.getElementById('reflection-1').style.display='block'">1</button>
+            <!-- 4. HUMAN STORY -->
+    <section id="story">
+        <h2>Human Story</h2>
+        <p><em>THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</em></p>
+        
+        <!-- The Interactive Scene Container -->
+        <div class="story-container">
+            <!-- Scene 1 -->
+            <div class="scene active" id="scene-1">
+                <h3>1. The Room</h3>
+                <p>Getting up is the first mile. The light comes in. The kettle waits. Ada knows the day has started, but her body feels as if it is still carrying yesterday.</p>
             </div>
-            <p id="reflection-1" style="display:none; background:#f9f9f9; padding:15px; border-left:4px solid #b7654a; margin-top:10px;">
-                <strong>Reflection:</strong> The phone is face down. The person is choosing to pause.
-            </p>
-        </section>
+            <!-- Scene 2 -->
+            <div class="scene" id="scene-2">
+                <h3>2. The Street</h3>
+                <p>Life keeps its usual pace. Outside, the street is loud and busy. Ada walks, but she feels separated from the movement around her.</p>
+            </div>
+            <!-- Scene 3 -->
+            <div class="scene" id="scene-3">
+                <h3>3. The Message</h3>
+                <p>Asking can begin with one sentence. She types: "I'm not okay today." She deletes it. Then types it again.</p>
+            </div>
+            <!-- Scene 4 -->
+            <div class="scene" id="scene-4">
+                <h3>4. A Pause</h3>
+                <p>There is no single straight way through. Ada sits by the window. She doesn't have to solve everything right now.</p>
+            </div>
+            <!-- Scene 5 -->
+            <div class="scene" id="scene-5">
+                <h3>5. A Small Plan</h3>
+                <p>Connection leaves a light on. She sends the message to a friend. A small plan is made to get a coffee tomorrow.</p>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="story-controls">
+                <button onclick="changeScene(-1)">← Previous</button>
+                <span id="scene-indicator">Scene 1 of 5</span>
+                <button onclick="changeScene(1)">Next →</button>
+            </div>
+        </div>
+    </section>
 
         <!-- 5. METHOD + AI -->
         <section id="method">
