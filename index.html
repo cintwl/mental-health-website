@@ -70,26 +70,41 @@
                     <div class="chart-bar" style="width: 24%;">24%</div>
                 </div>
                 <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
+                           <!-- Bar Chart -->
+            <div class="visualization-section">
+                <h3>Student Stress Levels</h3>
+                <div class="chart-bar-container">
+                    <div class="chart-bar" style="width: 24%;">24%</div>
+                </div>
+                <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
+                
                 <div class="caption">
                     <p><strong>Title:</strong> Student Stress Levels</p>
                     <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
                     <p><strong>Method:</strong> Simple HTML/CSS bar chart showing the proportion of students reporting high stress.</p>
-                    <p><strong>Note:</strong> These figures describe a population group. They cannot diagnose an individual or explain cause.</p>
                     <p><strong>Limit:</strong> This data is a synthetic example and cannot diagnose an individual student's experience.</p>
                 </div>
             </div>
 
-            <!-- Myth vs. Fact -->
-            <div class="myth-fact-box">
-                <h3>Myth vs. Fact</h3>
-                <details>
-                    <summary>❌ Myth: Mental health struggles are a sign of weakness.</summary>
-                    <p>✅ <strong>Fact:</strong> Mental health conditions are common and treatable. Seeking help is a sign of strength, not weakness. (Evidence: WHO).</p>
-                </details>
-                <details>
-                    <summary>❌ Myth: You can tell if someone has anxiety just by looking at them.</summary>
-                    <p>✅ <strong>Fact:</strong> Anxiety is often invisible. Observable behavior does not provide direct access to a person's mental state.</p>
-                </details>
+            <!-- Donut Chart (New & Beautiful) -->
+            <div class="visualization-section">
+                <h3>Types of Support Needed</h3>
+                <div class="donut-chart">
+                    <div class="donut-segment" style="--percentage: 45; --color: var(--coral);">45%</div>
+                    <div class="donut-segment" style="--percentage: 30; --color: var(--green);">30%</div>
+                    <div class="donut-segment" style="--percentage: 25; --color: #f59e0b;">25%</div>
+                </div>
+                <div class="donut-legend">
+                    <span><span class="legend-dot" style="background: var(--coral);"></span> Counselling (45%)</span>
+                    <span><span class="legend-dot" style="background: var(--green);"></span> Peer Support (30%)</span>
+                    <span><span class="legend-dot" style="background: #f59e0b;"></span> Self-Care (25%)</span>
+                </div>
+                <div class="caption">
+                    <p><strong>Title:</strong> Preferred Support Types</p>
+                    <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
+                    <p><strong>Method:</strong> CSS Donut Chart showing the distribution of preferred support types.</p>
+                    <p><strong>Limit:</strong> This data describes a population group. It cannot predict an individual's needs.</p>
+                </div>
             </div>
         </section>
 
@@ -203,8 +218,6 @@
     </footer>
     </footer>
 
-    <!-- JavaScript for Interactive Story -->
-
        <!-- JavaScript for Interactive Story -->
     <script>
         let currentScene = 1;
@@ -218,38 +231,6 @@
             if (currentScene < 1) currentScene = 1;
             if (currentScene > totalScenes) currentScene = totalScenes;
             
-            document.getElementById('scene-' + currentScene).classList.add('active');
-            document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
-            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
-        }
-
-        function jumpToScene(sceneNumber) {
-            document.getElementById('scene-' + currentScene).classList.remove('active');
-            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
-            
-            currentScene = sceneNumber;
-            
-            document.getElementById('scene-' + currentScene).classList.add('active');
-            document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
-            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
-        }
-        <!-- JavaScript for Hotspot Popups -->
-       <!-- JavaScript for Interactive Story -->
-    <script>
-        let currentScene = 1;
-        const totalScenes = 5;
-
-        function changeScene(direction) {
-            // Hide current scene
-            document.getElementById('scene-' + currentScene).classList.remove('active');
-            document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
-            
-            // Calculate new scene
-            currentScene += direction;
-            if (currentScene < 1) currentScene = 1;
-            if (currentScene > totalScenes) currentScene = totalScenes;
-            
-            // Show new scene
             document.getElementById('scene-' + currentScene).classList.add('active');
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
