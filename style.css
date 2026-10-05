@@ -340,3 +340,11 @@ section {
 
 /* --- FOOTER --- */
 footer { text-align: center; padding: 50px 20px; background-color: var(--card); color: #666; font-size: 0.95em; border-top: 1px solid var(--border); }
+/* Elegant Section Dividers */
+.section-divider {
+    height: 2px;
+    width: 80%;
+    margin: 60px auto;
+    background: linear-gradient(90deg, transparent, var(--sand), transparent);
+    border: none;
+}
