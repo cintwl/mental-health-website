@@ -6,9 +6,9 @@
     <title>Mental Health Student Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
-    <body>
+<body>
 
-    <!-- 1. NAVIGATION -->
+    <!-- NAVIGATION -->
     <nav>
         <a href="#home">Home</a>
         <a href="#evidence">What We Know</a>
@@ -18,26 +18,25 @@
     </nav>
 
     <main>
-        <!-- Content Note & Skip Route -->
+        <!-- CONTENT NOTE & SKIP ROUTE -->
         <div class="content-note">
-            <p><strong>A gentle note:</strong> This story mentions depression and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
+            <p><strong>✨ A gentle note:</strong> This story mentions depression and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
         </div>
         <a href="#help" class="skip-link">Skip directly to support information</a>
 
-        <!-- Fiction Label -->
         <div class="fiction-label">
             <p><em>THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</em></p>
         </div>
 
-        <!-- 2. LANDING PAGE -->
+        <!-- 1. LANDING PAGE -->
         <section id="home">
-            <h1>Welcome, Year 1 Students!</h1>
+            <h1>Welcome, Year 1 Students! 🌿</h1>
             <p>Your journey to understanding mental health starts here. This is a safe, evidence-based space to explore how we communicate about mental health.</p>
         </section>
 
-                <!-- 3. EVIDENCE (Knowledge Graph) -->
+        <!-- 2. EVIDENCE (Knowledge Graph, Charts) -->
         <section id="evidence">
-            <h2>Mental Health Knowledge Graph</h2>
+            <h2>Mental Health Knowledge Graph 🧠</h2>
             <p><em>Explore how key disciplines interact within the study of mental health at HKBU:</em></p>
             
             <div class="knowledge-graph">
@@ -62,134 +61,173 @@
                     <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
                 </article>
             </div>
-                        <!-- Line Chart -->
+
+            <!-- CHARTS SECTION -->
+            <div class="chart-grid">
+                <!-- Bar Chart -->
+                <div class="visualization-section">
+                    <h3>Student Stress Levels 📊</h3>
+                    <div class="chart-bar-container">
+                        <div class="chart-bar" style="width: 24%;">24%</div>
+                    </div>
+                    <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
+                    <div class="caption">
+                        <p><strong>Title:</strong> Student Stress Levels</p>
+                        <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
+                        <p><strong>Limit:</strong> This data is a synthetic example and cannot diagnose an individual student's experience.</p>
+                    </div>
+                </div>
+
+                <!-- Donut Chart -->
+                <div class="visualization-section">
+                    <h3>Types of Support Needed 🍩</h3>
+                    <div class="donut-chart">
+                        <div class="donut-segment" style="background: conic-gradient(var(--warm-terracotta) 0% 45%, #f0f0f0 45% 100%);">45%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--warm-sage) 0% 30%, #f0f0f0 30% 100%);">30%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--warm-gold) 0% 25%, #f0f0f0 25% 100%);">25%</div>
+                    </div>
+                    <div class="donut-legend">
+                        <span><span class="legend-dot" style="background: var(--warm-terracotta);"></span> Counselling (45%)</span>
+                        <span><span class="legend-dot" style="background: var(--warm-sage);"></span> Peer Support (30%)</span>
+                        <span><span class="legend-dot" style="background: var(--warm-gold);"></span> Self-Care (25%)</span>
+                    </div>
+                    <div class="caption">
+                        <p><strong>Title:</strong> Preferred Support Types</p>
+                        <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
+                        <p><strong>Limit:</strong> This data describes a population group. It cannot predict an individual's needs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated Line Chart -->
             <div class="visualization-section">
-                <h3>Rising Awareness Over Time</h3>
+                <h3>Rising Mental Health Awareness 📈</h3>
                 <div class="line-chart-container">
                     <svg viewBox="0 0 500 200" class="line-chart">
-                        <!-- Grid lines -->
                         <line x1="0" y1="200" x2="500" y2="200" stroke="#ddd" stroke-width="1" />
                         <line x1="0" y1="150" x2="500" y2="150" stroke="#eee" stroke-width="1" />
                         <line x1="0" y1="100" x2="500" y2="100" stroke="#eee" stroke-width="1" />
                         <line x1="0" y1="50" x2="500" y2="50" stroke="#eee" stroke-width="1" />
                         
-                        <!-- The Ascending Line -->
-                        <polyline points="0,180 100,160 200,130 300,90 400,50 500,20" 
-                                  fill="none" stroke="var(--primary)" stroke-width="4" stroke-linecap="round" />
+                        <!-- The Ascending Line with Animation -->
+                        <polyline class="animated-line" points="0,180 100,160 200,130 300,90 400,50 500,20" 
+                                  fill="none" stroke="var(--warm-terracotta)" stroke-width="4" stroke-linecap="round" />
                         
                         <!-- Data Points -->
-                        <circle cx="0" cy="180" r="6" fill="var(--primary)" />
-                        <circle cx="100" cy="160" r="6" fill="var(--primary)" />
-                        <circle cx="200" cy="130" r="6" fill="var(--primary)" />
-                        <circle cx="300" cy="90" r="6" fill="var(--primary)" />
-                        <circle cx="400" cy="50" r="6" fill="var(--primary)" />
-                        <circle cx="500" cy="20" r="6" fill="var(--primary)" />
+                        <circle cx="0" cy="180" r="6" fill="var(--warm-terracotta)" />
+                        <circle cx="100" cy="160" r="6" fill="var(--warm-terracotta)" />
+                        <circle cx="200" cy="130" r="6" fill="var(--warm-terracotta)" />
+                        <circle cx="300" cy="90" r="6" fill="var(--warm-terracotta)" />
+                        <circle cx="400" cy="50" r="6" fill="var(--warm-terracotta)" />
+                        <circle cx="500" cy="20" r="6" fill="var(--warm-terracotta)" />
                     </svg>
                 </div>
                 <div class="caption">
                     <p><strong>Title:</strong> Rising Mental Health Awareness</p>
                     <p><strong>Data:</strong> Synthetic dataset · 2020-2025</p>
-                    <p><strong>Method:</strong> SVG Line Chart showing increasing engagement.</p>
                     <p><strong>Limit:</strong> Correlation does not imply causation.</p>
                 </div>
             </div>
         </section>
-            <!-- Data Visualization -->
-            <div class="visualization-section">
-                <h3>Student Stress Levels</h3>
-                <div class="chart-bar-container">
-                    <div class="chart-bar" style="width: 24%;">24%</div>
-                </div>
-                <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
-                           <!-- Bar Chart -->
-            <div class="visualization-section">
-                <h3>Student Stress Levels</h3>
-                <div class="chart-bar-container">
-                    <div class="chart-bar" style="width: 24%;">24%</div>
-                </div>
-                <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
-                
-                <div class="caption">
-                    <p><strong>Title:</strong> Student Stress Levels</p>
-                    <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
-                    <p><strong>Method:</strong> Simple HTML/CSS bar chart showing the proportion of students reporting high stress.</p>
-                    <p><strong>Limit:</strong> This data is a synthetic example and cannot diagnose an individual student's experience.</p>
-                </div>
-            </div>
 
-            <!-- Donut Chart (New & Beautiful) -->
-            <div class="visualization-section">
-                <h3>Types of Support Needed</h3>
-                <div class="donut-chart">
-                    <div class="donut-segment" style="--percentage: 45; --color: var(--coral);">45%</div>
-                    <div class="donut-segment" style="--percentage: 30; --color: var(--green);">30%</div>
-                    <div class="donut-segment" style="--percentage: 25; --color: #f59e0b;">25%</div>
+        <!-- 3. HUMAN STORY (Interactive) -->
+        <section id="story">
+            <h2>Human Story 🌸</h2>
+            <p class="fiction-label">THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</p>
+            
+            <div class="story-container">
+                <!-- Interactive Image with Hotspots -->
+                <div class="story-image-wrapper">
+                    <img src="https://placehold.co/800x450/f2e8e1/c28b74?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
+                    
+                    <!-- Hotspot 1 -->
+                    <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')">
+                        <span class="pulse-ring"></span>
+                        1
+                    </button>
+                    <!-- Hotspot 2 -->
+                    <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')">
+                        <span class="pulse-ring"></span>
+                        2
+                    </button>
+                    <!-- Hotspot 3 -->
+                    <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')">
+                        <span class="pulse-ring"></span>
+                        3
+                    </button>
                 </div>
-                <div class="donut-legend">
-                    <span><span class="legend-dot" style="background: var(--coral);"></span> Counselling (45%)</span>
-                    <span><span class="legend-dot" style="background: var(--green);"></span> Peer Support (30%)</span>
-                    <span><span class="legend-dot" style="background: #f59e0b;"></span> Self-Care (25%)</span>
+
+                <!-- Pop-up Text for Hotspots -->
+                <div id="popup-1" class="hotspot-popup">The phone is face down. The person is choosing to pause and disconnect.</div>
+                <div id="popup-2" class="hotspot-popup">A cold cup of tea. It has been there for hours, untouched.</div>
+                <div id="popup-3" class="hotspot-popup">The notebook is open, but the page is blank. A symbol of waiting for clarity.</div>
+
+                <!-- The 5 Scenes -->
+                <div class="scenes-container">
+                    <div class="scene active" id="scene-1">
+                        <h3>1. The Room</h3>
+                        <p>Getting up is the first mile. The light comes in. The kettle waits. Ada knows the day has started, but her body feels as if it is still carrying yesterday.</p>
+                    </div>
+                    <div class="scene" id="scene-2">
+                        <h3>2. The Street</h3>
+                        <p>Life keeps its usual pace. Outside, the street is loud and busy. Ada walks, but she feels separated from the movement around her.</p>
+                    </div>
+                    <div class="scene" id="scene-3">
+                        <h3>3. The Message</h3>
+                        <p>Asking can begin with one sentence. She types: "I'm not okay today." She deletes it. Then types it again.</p>
+                    </div>
+                    <div class="scene" id="scene-4">
+                        <h3>4. A Pause</h3>
+                        <p>There is no single straight way through. Ada sits by the window. She doesn't have to solve everything right now.</p>
+                    </div>
+                    <div class="scene" id="scene-5">
+                        <h3>5. A Small Plan</h3>
+                        <p>Connection leaves a light on. She sends the message to a friend. A small plan is made to get a coffee tomorrow.</p>
+                    </div>
                 </div>
-                <div class="caption">
-                    <p><strong>Title:</strong> Preferred Support Types</p>
-                    <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
-                    <p><strong>Method:</strong> CSS Donut Chart showing the distribution of preferred support types.</p>
-                    <p><strong>Limit:</strong> This data describes a population group. It cannot predict an individual's needs.</p>
+
+                <!-- Audio Player -->
+                <div class="audio-player">
+                    <h4>Ada's Inner Voice 🎧</h4>
+                    <p><em>Optional: Listen to Ada's reflection. A transcript is available below.</em></p>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <details>
+                        <summary>Read the transcript instead</summary>
+                        <p>"I can't explain all of it yet. I just know the ordinary things have started to feel heavier. Maybe I can tell someone that much."</p>
+                    </details>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="story-controls">
+                    <button onclick="changeScene(-1)">← Previous</button>
+                    <span id="scene-indicator">Scene 1 of 5</span>
+                    <button onclick="changeScene(1)">Next →</button>
+                </div>
+
+                <!-- Visual Timeline -->
+                <div class="story-timeline">
+                    <span class="timeline-step active" onclick="jumpToScene(1)">1. Room</span>
+                    <span class="timeline-step" onclick="jumpToScene(2)">2. Street</span>
+                    <span class="timeline-step" onclick="jumpToScene(3)">3. Message</span>
+                    <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
+                    <span class="timeline-step" onclick="jumpToScene(5)">5. Plan</span>
                 </div>
             </div>
         </section>
 
-           <!-- 4. HUMAN STORY -->
-    <section id="story">
-        <h2>Human Story</h2>
-        <p><em>THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</em></p>
-        
-        <div class="story-container">
-            <!-- Interactive Image with Hotspots -->
-            <div class="story-image-wrapper">
-                <img src="https://placehold.co/800x450/e0e0e0/333333?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
-                
-                <!-- Hotspot 1 -->
-                <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')">
-                    <span class="pulse-ring"></span>
-                    1
-                </button>
-                <!-- Hotspot 2 -->
-                <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')">
-                    <span class="pulse-ring"></span>
-                    2
-                </button>
-                <!-- Hotspot 3 -->
-                <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')">
-                    <span class="pulse-ring"></span>
-                    3
-                </button>
-            </div>
-
-            <!-- Pop-up Text for Hotspots -->
-            <div id="popup-1" class="hotspot-popup">The phone is face down. The person is choosing to pause and disconnect.</div>
-            <div id="popup-2" class="hotspot-popup">A cold cup of tea. It has been there for hours, untouched.</div>
-            <div id="popup-3" class="hotspot-popup">The notebook is open, but the page is blank. A symbol of waiting for clarity.</div>
-
-            <!-- Story Navigation -->
-            <div class="story-controls">
-                <button onclick="changeScene(-1)">← Previous</button>
-                <span id="scene-indicator">Scene 1 of 5</span>
-                <button onclick="changeScene(1)">Next →</button>
-            </div>
-        </div>
-    </section>
-
-        <!-- 5. METHOD + AI -->
+        <!-- 4. METHOD + AI -->
         <section id="method">
-            <h2>Method + AI</h2>
+            <h2>Method + AI 🤖</h2>
             <p>We used WorkBuddy AI to design a safe annotation framework for our data. We rejected diagnosis language and forced yes/no labels.</p>
             <p><a href="ai-log.md">View our AI-Use Log here</a></p>
         </section>
 
-        <!-- 6. HELP + ACCESS -->
+        <!-- 5. HELP + ACCESS -->
         <section id="help">
-            <h2>Help + Access</h2>
+            <h2>Help + Access 🆘</h2>
             <p>If you or someone you know needs support, here are verified resources:</p>
             <ul>
                 <li><a href="https://www.hkbu.edu.hk/">HKBU Counselling and Person Enrichment</a></li>
@@ -198,16 +236,16 @@
 
             <!-- Self-Care Check -->
             <div class="self-care-check">
-                <h3>Daily Self-Care Check</h3>
+                <h3>Daily Self-Care Check 📝</h3>
                 <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
-                <label><input type="checkbox"> I got at least 7 hours of sleep.</label><br>
-                <label><input type="checkbox"> I took a break from screens.</label><br>
-                <label><input type="checkbox"> I connected with a friend or family member.</label><br>
-                <label><input type="checkbox"> I ate a proper meal.</label><br>
+                <label><input type="checkbox"> I got at least 7 hours of sleep.</label>
+                <label><input type="checkbox"> I took a break from screens.</label>
+                <label><input type="checkbox"> I connected with a friend or family member.</label>
+                <label><input type="checkbox"> I ate a proper meal.</label>
                 <label><input type="checkbox"> I asked for help if I needed it.</label>
             </div>
 
-            <!-- Safety Note for Immediate Danger -->
+            <!-- Safety Note -->
             <div class="safety-note">
                 <h3>If you may be in immediate danger</h3>
                 <p>If you or someone else is at immediate risk, contact local emergency services (999 in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
@@ -215,58 +253,30 @@
         </section>
     </main>
 
-    <!-- 7. KNOWLEDGE GRAPH DESTINATION SECTIONS (Bottom of page) -->
-    <section id="node-1">
-        <h2>1. Biological & Neuroscientific Foundations</h2>
-        <p>Detailed information about brain function, neurotransmitters, genetics, and physiological responses goes here.</p>
-        <p><a href="#">Back to top</a></p>
-    </section>
-    <section id="node-2">
-        <h2>2. Psychological Theories & Therapies</h2>
-        <p>Detailed information about cognitive-behavioral principles, developmental psychology, emotional regulation, and therapeutic methodologies goes here.</p>
-        <p><a href="#">Back to top</a></p>
-    </section>
-    <section id="node-3">
-        <h2>3. Social & Cultural Factors</h2>
-        <p>Detailed information about environmental influences, societal stigma, family dynamics, and cultural contexts relevant to Hong Kong and globally goes here.</p>
-        <p><a href="#">Back to top</a></p>
-    </section>
-    <section id="node-4">
-        <h2>4. Research Methods & Ethics</h2>
-        <p>Detailed information about quantitative and qualitative research design, statistical analysis, and ethical standards in psychological studies goes here.</p>
-        <p><a href="#">Back to top</a></p>
-    </section>
-    <section id="node-5">
-        <h2>5. Campus & Community Wellbeing</h2>
-        <p>Detailed information about connecting academic theory to practice through community engagement, wellness programs, and mental health initiatives goes here.</p>
-        <p><a href="#">Back to top</a></p>
-    </section>
+    <!-- KNOWLEDGE GRAPH DESTINATION SECTIONS -->
+    <section id="node-1"><h2>1. Biological & Neuroscientific Foundations</h2><p>Detailed information about brain function, neurotransmitters, genetics, and physiological responses goes here.</p><p><a href="#">Back to top</a></p></section>
+    <section id="node-2"><h2>2. Psychological Theories & Therapies</h2><p>Detailed information about cognitive-behavioral principles, developmental psychology, emotional regulation, and therapeutic methodologies goes here.</p><p><a href="#">Back to top</a></p></section>
+    <section id="node-3"><h2>3. Social & Cultural Factors</h2><p>Detailed information about environmental influences, societal stigma, family dynamics, and cultural contexts relevant to Hong Kong and globally goes here.</p><p><a href="#">Back to top</a></p></section>
+    <section id="node-4"><h2>4. Research Methods & Ethics</h2><p>Detailed information about quantitative and qualitative research design, statistical analysis, and ethical standards in psychological studies goes here.</p><p><a href="#">Back to top</a></p></section>
+    <section id="node-5"><h2>5. Campus & Community Wellbeing</h2><p>Detailed information about connecting academic theory to practice through community engagement, wellness programs, and mental health initiatives goes here.</p><p><a href="#">Back to top</a></p></section>
 
     <footer>
         <div class="container">
             <p>&copy; HKBU Mental Health Studies Student Hub</p>
         </div>
     </footer>
-    </footer>
 
-          <!-- JavaScript for Interactive Story -->
+    <!-- JAVASCRIPT FOR INTERACTIVE STORY -->
     <script>
         let currentScene = 1;
         const totalScenes = 5;
 
         function changeScene(direction) {
-            // Hide current scene
             document.getElementById('scene-' + currentScene).classList.remove('active');
-            
-            // Calculate new scene
             currentScene += direction;
             if (currentScene < 1) currentScene = 1;
             if (currentScene > totalScenes) currentScene = totalScenes;
-            
-            // Show new scene
             document.getElementById('scene-' + currentScene).classList.add('active');
-            
-            // Update timeline and indicator
             document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
