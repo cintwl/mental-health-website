@@ -348,3 +348,73 @@ footer { text-align: center; padding: 50px 20px; background-color: var(--card); 
     background: linear-gradient(90deg, transparent, var(--sand), transparent);
     border: none;
 }
+/* --- INTERACTIVE TABS FOR KNOWLEDGE GRAPH --- */
+.tabs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+.tab-button {
+    background: var(--card);
+    border: 2px solid var(--sand);
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--umber);
+    transition: all 0.3s ease;
+    font-family: 'Georgia', serif;
+    font-size: 0.95em;
+}
+.tab-button:hover {
+    background: var(--sand);
+    color: var(--ivory);
+}
+.tab-button.active {
+    background: var(--olive);
+    color: var(--ivory);
+    border-color: var(--olive);
+}
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+.tab-pane.active {
+    display: block;
+}
+
+/* --- PULL QUOTE FOR HUMAN STORY --- */
+.pull-quote {
+    font-size: 2rem;
+    font-style: italic;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin: 60px auto;
+    max-width: 700px;
+    color: var(--umber);
+    position: relative;
+    padding: 0 40px;
+    line-height: 1.4;
+}
+.pull-quote::before {
+    content: '“';
+    font-size: 4rem;
+    position: absolute;
+    left: 0;
+    top: -20px;
+    color: var(--sand);
+    font-family: 'Georgia', serif;
+    line-height: 1;
+}
+.pull-quote::after {
+    content: '”';
+    font-size: 4rem;
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    color: var(--sand);
+    font-family: 'Georgia', serif;
+    line-height: 1;
+}
