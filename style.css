@@ -359,3 +359,13 @@ section {
 .safety-note { background-color: #fef2f2; border-left: 6px solid #ef4444; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; }
 .safety-note h3 { color: #b91c1c; margin-top: 0; }
 footer { text-align: center; padding: 50px 20px; background-color: var(--card); color: #666; font-size: 0.95em; border-top: 1px solid var(--border); }
+/* Fade-in on Scroll */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: none;
+}
