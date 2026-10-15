@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <!-- TOP BANNER: SELF-CHECK PROMPT -->
+    <!-- TOP BANNER -->
     <div class="top-banner">
         <p>Not sure if it's more than shyness? <a href="#check">Take the 3-question check →</a></p>
     </div>
@@ -24,13 +24,13 @@
     </nav>
 
     <main>
-        <!-- CONTENT NOTE & SKIP ROUTE -->
+        <!-- CONTENT NOTE -->
         <div class="content-note">
             <p><strong>A gentle note:</strong> This website discusses social anxiety disorder and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
         </div>
         <a href="#help" class="skip-link">Skip directly to support information</a>
 
-        <!-- 1. LANDING PAGE (HERO SECTION) -->
+        <!-- 1. HERO SECTION -->
         <section id="home" class="hero-section">
             <p class="fiction-label">THE STORY IS FICTIONAL — THE EVIDENCE MUST BE REAL</p>
             <h1>The ten seconds before the door.</h1>
@@ -43,7 +43,7 @@
 
         <hr class="section-divider">
 
-        <!-- 2. SELF-CHECK (Mini-SPIN Screening Tool) -->
+        <!-- 2. SELF-CHECK (Mini-SPIN) -->
         <section id="check">
             <h2>Is it more than shyness?</h2>
             <p>This is a short, private check based on the <strong>Mini-SPIN</strong>, a 3-question screening tool used by clinicians to identify likely social anxiety disorder. It takes about one minute. Your answers stay in your browser — nothing is sent anywhere.</p>
@@ -99,7 +99,7 @@
 
         <hr class="section-divider">
 
-        <!-- 3. EVIDENCE (Knowledge Graph with Tabs) -->
+        <!-- 3. EVIDENCE -->
         <section id="evidence">
             <h2>What We Know</h2>
             <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
@@ -140,7 +140,7 @@
                 </div>
             </div>
 
-            <!-- CHARTS SECTION -->
+            <!-- CHARTS -->
             <div class="chart-grid">
                 <!-- Bar Chart -->
                 <div class="visualization-section">
@@ -178,9 +178,7 @@
                 <!-- Donut Chart -->
                 <div class="visualization-section">
                     <h3>What Stops Students From Getting Help</h3>
-                    <div class="donut"
-                         role="img"
-                         aria-label="Barriers to seeking help: fear of being judged 35 percent, not knowing where to go 25 percent, worry about privacy 20 percent, cost or time 20 percent.">
+                    <div class="donut" role="img" aria-label="Barriers to seeking help: fear of being judged 35%, not knowing where to go 25%, worry about privacy 20%, cost or time 20%.">
                         <span class="donut-hole">Barriers to<br>help-seeking</span>
                     </div>
                     <div class="donut-legend">
@@ -197,22 +195,20 @@
                 </div>
             </div>
 
-            <!-- Timeline (replaces the old line chart) -->
+            <!-- Timeline Chart -->
             <div class="visualization-section">
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
                 <div class="timeline-chart-container">
-                    <svg viewBox="0 0 520 160" class="timeline-chart"
-                         role="img"
-                         aria-label="Timeline: average age of first symptoms is around 13; average age of first treatment is around 27 — roughly 14 years without care.">
-                        <line x1="30" y1="95" x2="500" y2="95" stroke="#C4A38E" stroke-width="2"/>
-                        <rect x="107" y="88" width="316" height="14" rx="7" fill="#C4A38E" opacity="0.35"/>
-                        <circle cx="107" cy="95" r="9" fill="#5C3822"/>
-                        <circle cx="423" cy="95" r="9" fill="#4B4E2A"/>
-                        <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#5C3822">First symptoms</text>
-                        <text x="107" y="78" text-anchor="middle" font-size="13" fill="#3A3532">around age 13</text>
-                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#4B4E2A">First treatment</text>
-                        <text x="423" y="78" text-anchor="middle" font-size="13" fill="#3A3532">around age 27</text>
-                        <text x="265" y="138" text-anchor="middle" font-size="14" fill="#3A3532">≈ 14 years without care</text>
+                    <svg viewBox="0 0 520 160" class="timeline-chart" role="img" aria-label="Timeline: average age of first symptoms is around 13; average age of first treatment is around 27 — roughly 14 years without care.">
+                        <line x1="30" y1="95" x2="500" y2="95" stroke="var(--sand)" stroke-width="2"/>
+                        <rect x="107" y="88" width="316" height="14" rx="7" fill="var(--sand)" opacity="0.4"/>
+                        <circle cx="107" cy="95" r="9" fill="var(--umber)"/>
+                        <circle cx="423" cy="95" r="9" fill="var(--olive)"/>
+                        <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--umber)">First symptoms</text>
+                        <text x="107" y="78" text-anchor="middle" font-size="13" fill="var(--text)">around age 13</text>
+                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--olive)">First treatment</text>
+                        <text x="423" y="78" text-anchor="middle" font-size="13" fill="var(--text)">around age 27</text>
+                        <text x="265" y="138" text-anchor="middle" font-size="14" fill="var(--text)">≈ 14 years without care</text>
                     </svg>
                 </div>
                 <div class="caption">
@@ -222,7 +218,7 @@
                 </div>
             </div>
 
-            <!-- Myth vs. Fact Flip Cards -->
+            <!-- Myth vs Fact -->
             <h3>Myth vs. Fact</h3>
             <p><em>Hover over a card to reveal the truth.</em></p>
             <div class="flip-card-container">
@@ -261,17 +257,15 @@
 
         <hr class="section-divider">
 
-        <!-- 4. HUMAN STORY (Interactive) -->
+        <!-- 4. HUMAN STORY -->
         <section id="story">
             <h2>Human Story</h2>
 
             <div class="story-container">
-                <!-- Pull Quote -->
                 <div class="pull-quote">
                     "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
                 </div>
 
-                <!-- Interactive Image with Hotspots -->
                 <div class="story-image-wrapper">
                     <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
@@ -387,7 +381,6 @@
                 <p>If you or someone else is at immediate risk, contact local emergency services (<strong>999</strong> in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
             </div>
 
-            <!-- SOURCES -->
             <div class="sources">
                 <h3>Sources</h3>
                 <ul>
@@ -408,10 +401,8 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
     <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
-    <!-- JAVASCRIPT FOR ALL FEATURES -->
     <script>
         // Fade-in on Scroll
         const observer = new IntersectionObserver((entries) => {
