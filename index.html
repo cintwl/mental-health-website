@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Health Student Hub</title>
+    <title>The Quiet Between Stops - Mental Health Communication</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,11 +24,14 @@
         </div>
         <a href="#help" class="skip-link">Skip directly to support information</a>
 
-        <!-- 1. LANDING PAGE (HERO SECTION) -->
+        <div class="fiction-label">
+            <p><em>THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</em></p>
+        </div>
+
+        <!-- 1. LANDING PAGE -->
         <section id="home" class="hero-section">
-            <p class="fiction-label">THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</p>
             <h1>The quiet between stops.</h1>
-            <p class="hero-subtitle">Depression doesn't always announce itself. Sometimes it travels beside an ordinary day - through the room, the street, a doorway, and the small decision to let someone in.</p>
+            <p>Depression doesn't always announce itself. Sometimes it travels beside an ordinary day - through the room, the street, a doorway, and the small decision to let someone in.</p>
             <div class="hero-buttons">
                 <a href="#story" class="btn-primary">Follow the story</a>
                 <a href="#help" class="btn-secondary">Find a next step</a>
@@ -93,14 +96,14 @@
                 <div class="visualization-section">
                     <h3>Types of Support Needed</h3>
                     <div class="donut-chart">
-                        <div class="donut-segment" style="background: conic-gradient(var(--umber) 0% 45%, var(--ivory) 45% 100%);">45%</div>
-                        <div class="donut-segment" style="background: conic-gradient(var(--olive) 0% 30%, var(--ivory) 30% 100%);">30%</div>
-                        <div class="donut-segment" style="background: conic-gradient(var(--sand) 0% 25%, var(--ivory) 25% 100%);">25%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--accent) 0% 45%, #f0f0f0 45% 100%);">45%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--accent2) 0% 30%, #f0f0f0 30% 100%);">30%</div>
+                        <div class="donut-segment" style="background: conic-gradient(#f4a261 0% 25%, #f0f0f0 25% 100%);">25%</div>
                     </div>
                     <div class="donut-legend">
-                        <span><span class="legend-dot" style="background: var(--umber);"></span> Counselling (45%)</span>
-                        <span><span class="legend-dot" style="background: var(--olive);"></span> Peer Support (30%)</span>
-                        <span><span class="legend-dot" style="background: var(--sand);"></span> Self-Care (25%)</span>
+                        <span><span class="legend-dot" style="background: var(--accent);"></span> Counselling (45%)</span>
+                        <span><span class="legend-dot" style="background: var(--accent2);"></span> Peer Support (30%)</span>
+                        <span><span class="legend-dot" style="background: #f4a261;"></span> Self-Care (25%)</span>
                     </div>
                     <div class="caption">
                         <p><strong>Title:</strong> Preferred Support Types</p>
@@ -110,25 +113,25 @@
                 </div>
             </div>
 
-            <!-- Animated Line Chart -->
+            <!-- Line Chart -->
             <div class="visualization-section">
                 <h3>Rising Mental Health Awareness</h3>
                 <div class="line-chart-container">
                     <svg viewBox="0 0 500 200" class="line-chart">
-                        <line x1="0" y1="200" x2="500" y2="200" stroke="#C4A38E" stroke-width="1" />
-                        <line x1="0" y1="150" x2="500" y2="150" stroke="#F1EBDC" stroke-width="1" />
-                        <line x1="0" y1="100" x2="500" y2="100" stroke="#F1EBDC" stroke-width="1" />
-                        <line x1="0" y1="50" x2="500" y2="50" stroke="#F1EBDC" stroke-width="1" />
+                        <line x1="0" y1="200" x2="500" y2="200" stroke="#ddd" stroke-width="1" />
+                        <line x1="0" y1="150" x2="500" y2="150" stroke="#eee" stroke-width="1" />
+                        <line x1="0" y1="100" x2="500" y2="100" stroke="#eee" stroke-width="1" />
+                        <line x1="0" y1="50" x2="500" y2="50" stroke="#eee" stroke-width="1" />
                         
                         <polyline class="animated-line" points="0,180 100,160 200,130 300,90 400,50 500,20" 
-                                  fill="none" stroke="var(--umber)" stroke-width="4" stroke-linecap="round" />
+                                  fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" />
                         
-                        <circle cx="0" cy="180" r="6" fill="var(--umber)" />
-                        <circle cx="100" cy="160" r="6" fill="var(--umber)" />
-                        <circle cx="200" cy="130" r="6" fill="var(--umber)" />
-                        <circle cx="300" cy="90" r="6" fill="var(--umber)" />
-                        <circle cx="400" cy="50" r="6" fill="var(--umber)" />
-                        <circle cx="500" cy="20" r="6" fill="var(--umber)" />
+                        <circle cx="0" cy="180" r="6" fill="var(--accent)" />
+                        <circle cx="100" cy="160" r="6" fill="var(--accent)" />
+                        <circle cx="200" cy="130" r="6" fill="var(--accent)" />
+                        <circle cx="300" cy="90" r="6" fill="var(--accent)" />
+                        <circle cx="400" cy="50" r="6" fill="var(--accent)" />
+                        <circle cx="500" cy="20" r="6" fill="var(--accent)" />
                     </svg>
                 </div>
                 <div class="caption">
@@ -137,64 +140,32 @@
                     <p><strong>Limit:</strong> Correlation does not imply causation.</p>
                 </div>
             </div>
-            
-            <!-- Myth vs. Fact Flip Cards -->
-            <h3>Myth vs. Fact</h3>
-            <p><em>Hover over a card to reveal the truth.</em></p>
-            <div class="flip-card-container">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            MYTH: Mental health struggles are a sign of weakness.
-                        </div>
-                        <div class="flip-card-back">
-                            FACT: Mental health conditions are common and treatable. Seeking help is a sign of strength.
-                        </div>
-                    </div>
-                </div>
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            MYTH: You can tell if someone has anxiety just by looking at them.
-                        </div>
-                        <div class="flip-card-back">
-                            FACT: Anxiety is often invisible. Observable behavior does not provide direct access to a person's mental state.
-                        </div>
-                    </div>
-                </div>
+
+            <!-- Myth vs. Fact -->
+            <div class="myth-fact-box">
+                <h3>Myth vs. Fact</h3>
+                <details>
+                    <summary>❌ Myth: Mental health struggles are a sign of weakness.</summary>
+                    <p>✅ <strong>Fact:</strong> Mental health conditions are common and treatable. Seeking help is a sign of strength, not weakness. (Evidence: WHO).</p>
+                </details>
+                <details>
+                    <summary>❌ Myth: You can tell if someone has anxiety just by looking at them.</summary>
+                    <p>✅ <strong>Fact:</strong> Anxiety is often invisible. Observable behavior does not provide direct access to a person's mental state.</p>
+                </details>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- 3. HUMAN STORY (Interactive) -->
+        <!-- 3. HUMAN STORY -->
         <section id="story">
             <h2>Human Story</h2>
+            <p class="fiction-label">THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</p>
             
             <div class="story-container">
-                <!-- Pull Quote -->
                 <div class="pull-quote">
                     "I can't explain all of it yet. I just know the ordinary things have started to feel heavier."
                 </div>
-
-                <!-- Interactive Image with Hotspots -->
-                <div class="story-image-wrapper">
-                    <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
-                    
-                    <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')">
-                        <span class="pulse-ring"></span> 1
-                    </button>
-                    <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')">
-                        <span class="pulse-ring"></span> 2
-                    </button>
-                    <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')">
-                        <span class="pulse-ring"></span> 3
-                    </button>
-                </div>
-
-                <div id="popup-1" class="hotspot-popup">The phone is face down. The person is choosing to pause and disconnect.</div>
-                <div id="popup-2" class="hotspot-popup">A cold cup of tea. It has been there for hours, untouched.</div>
-                <div id="popup-3" class="hotspot-popup">The notebook is open, but the page is blank. A symbol of waiting for clarity.</div>
 
                 <div class="scenes-container">
                     <div class="scene active" id="scene-1">
@@ -217,19 +188,6 @@
                         <h3>5. A Small Plan</h3>
                         <p>Connection leaves a light on. She sends the message to a friend. A small plan is made to get a coffee tomorrow.</p>
                     </div>
-                </div>
-
-                <div class="audio-player">
-                    <h4>Ada's Inner Voice</h4>
-                    <p><em>Optional: Listen to Ada's reflection. A transcript is available below.</em></p>
-                    <audio controls>
-                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    <details>
-                        <summary>Read the transcript instead</summary>
-                        <p>"I can't explain all of it yet. I just know the ordinary things have started to feel heavier. Maybe I can tell someone that much."</p>
-                    </details>
                 </div>
 
                 <div class="story-controls">
@@ -286,43 +244,11 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; HKBU Mental Health Studies Student Hub</p>
-        </div>
+        <p>&copy; HKBU Mental Health Studies Student Hub</p>
     </footer>
 
-    <!-- Back to Top Button -->
-    <a href="#home" class="back-to-top" id="backToTop">↑</a>
-
-    <!-- JAVASCRIPT FOR ALL FEATURES -->
     <script>
-        // Fade-in on Scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(section => {
-            section.classList.add('fade-in-section');
-            observer.observe(section);
-        });
-
-        // Back to Top Button
-        const backToTopBtn = document.getElementById('backToTop');
-        if (backToTopBtn) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    backToTopBtn.classList.add('show');
-                } else {
-                    backToTopBtn.classList.remove('show');
-                }
-            });
-        }
-
-        // Tab Switching Logic
+        // --- TABS LOGIC ---
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
             document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
@@ -330,7 +256,7 @@
             btn.classList.add('active');
         }
 
-        // Story Navigation Logic
+        // --- STORY LOGIC ---
         let currentScene = 1;
         const totalScenes = 5;
         function changeScene(direction) {
@@ -351,19 +277,6 @@
             document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
-        }
-
-        // Hotspot Popup Logic
-        function togglePopup(id) {
-            const popup = document.getElementById(id);
-            document.querySelectorAll('.hotspot-popup').forEach(el => {
-                if (el.id !== id) el.style.display = 'none';
-            });
-            if (popup.style.display === 'block') {
-                popup.style.display = 'none';
-            } else {
-                popup.style.display = 'block';
-            }
         }
     </script>
 </body>
