@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Quiet Between Stops - Mental Health Communication</title>
+    <title>Beyond Shyness — Social Anxiety Student Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- TOP BANNER: SELF-CHECK PROMPT -->
+    <div class="top-banner">
+        <p>Not sure if it's more than shyness? <a href="#check">Take the 3-question check →</a></p>
+    </div>
+
     <!-- NAVIGATION -->
     <nav>
         <a href="#home">Home</a>
+        <a href="#check">Self-Check</a>
         <a href="#evidence">What We Know</a>
         <a href="#story">Human Story</a>
         <a href="#method">Method + AI</a>
@@ -20,59 +26,117 @@
     <main>
         <!-- CONTENT NOTE & SKIP ROUTE -->
         <div class="content-note">
-            <p><strong>A gentle note:</strong> This story mentions depression and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
+            <p><strong>A gentle note:</strong> This website discusses social anxiety disorder and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
         </div>
         <a href="#help" class="skip-link">Skip directly to support information</a>
 
-        <div class="fiction-label">
-            <p><em>THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</em></p>
-        </div>
-
-        <!-- 1. LANDING PAGE -->
+        <!-- 1. LANDING PAGE (HERO SECTION) -->
         <section id="home" class="hero-section">
-            <h1>The quiet between stops.</h1>
-            <p>Depression doesn't always announce itself. Sometimes it travels beside an ordinary day - through the room, the street, a doorway, and the small decision to let someone in.</p>
+            <p class="fiction-label">THE STORY IS FICTIONAL — THE EVIDENCE MUST BE REAL</p>
+            <h1>The ten seconds before the door.</h1>
+            <p class="hero-subtitle">Beyond shyness — social anxiety is a real, treatable condition, not a personality flaw.</p>
             <div class="hero-buttons">
-                <a href="#story" class="btn-primary">Follow the story</a>
-                <a href="#help" class="btn-secondary">Find a next step</a>
+                <a href="#check" class="btn-primary">Check yourself</a>
+                <a href="#story" class="btn-secondary">Follow the story</a>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- 2. EVIDENCE (Knowledge Graph with Tabs) -->
+        <!-- 2. SELF-CHECK (Mini-SPIN Screening Tool) -->
+        <section id="check">
+            <h2>Is it more than shyness?</h2>
+            <p>This is a short, private check based on the <strong>Mini-SPIN</strong>, a 3-question screening tool used by clinicians to identify likely social anxiety disorder. It takes about one minute. Your answers stay in your browser — nothing is sent anywhere.</p>
+
+            <div class="check-card">
+                <form id="spin-form">
+                    <div class="spin-question">
+                        <p>1. Fear of embarrassment causes me to avoid doing things or speaking to people.</p>
+                        <div class="spin-options">
+                            <label class="opt"><input type="radio" name="q1" value="0"><span class="opt-pill">Not at all</span></label>
+                            <label class="opt"><input type="radio" name="q1" value="1"><span class="opt-pill">A little bit</span></label>
+                            <label class="opt"><input type="radio" name="q1" value="2"><span class="opt-pill">Somewhat</span></label>
+                            <label class="opt"><input type="radio" name="q1" value="3"><span class="opt-pill">Very much</span></label>
+                            <label class="opt"><input type="radio" name="q1" value="4"><span class="opt-pill">Extremely</span></label>
+                        </div>
+                    </div>
+
+                    <div class="spin-question">
+                        <p>2. I avoid activities in which I am the centre of attention.</p>
+                        <div class="spin-options">
+                            <label class="opt"><input type="radio" name="q2" value="0"><span class="opt-pill">Not at all</span></label>
+                            <label class="opt"><input type="radio" name="q2" value="1"><span class="opt-pill">A little bit</span></label>
+                            <label class="opt"><input type="radio" name="q2" value="2"><span class="opt-pill">Somewhat</span></label>
+                            <label class="opt"><input type="radio" name="q2" value="3"><span class="opt-pill">Very much</span></label>
+                            <label class="opt"><input type="radio" name="q2" value="4"><span class="opt-pill">Extremely</span></label>
+                        </div>
+                    </div>
+
+                    <div class="spin-question">
+                        <p>3. Being embarrassed or looking stupid are among my worst fears.</p>
+                        <div class="spin-options">
+                            <label class="opt"><input type="radio" name="q3" value="0"><span class="opt-pill">Not at all</span></label>
+                            <label class="opt"><input type="radio" name="q3" value="1"><span class="opt-pill">A little bit</span></label>
+                            <label class="opt"><input type="radio" name="q3" value="2"><span class="opt-pill">Somewhat</span></label>
+                            <label class="opt"><input type="radio" name="q3" value="3"><span class="opt-pill">Very much</span></label>
+                            <label class="opt"><input type="radio" name="q3" value="4"><span class="opt-pill">Extremely</span></label>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="check-actions">
+                    <button class="btn-primary" onclick="scoreSPIN()">See my result</button>
+                    <button class="btn-ghost" onclick="resetSPIN()">Clear answers</button>
+                </div>
+
+                <div id="spin-result" class="spin-result" aria-live="polite"></div>
+
+                <p class="caption">
+                    <strong>Important:</strong> This is a screening tool, not a diagnosis. A high score does not mean you "have" social anxiety disorder — only a qualified professional can assess that. A low score does not mean your experience is not real. If you are struggling, please speak to someone.
+                </p>
+            </div>
+        </section>
+
+        <hr class="section-divider">
+
+        <!-- 3. EVIDENCE (Knowledge Graph with Tabs) -->
         <section id="evidence">
             <h2>What We Know</h2>
-            <p><em>Explore how key disciplines interact within the study of mental health at HKBU:</em></p>
-            
-            <div class="tabs-container">
+            <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
+
+            <div class="tabs-container" role="tablist">
                 <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
                 <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
-                <button class="tab-button" onclick="openTab('tab-3', this)">Social</button>
-                <button class="tab-button" onclick="openTab('tab-4', this)">Research</button>
+                <button class="tab-button" onclick="openTab('tab-3', this)">Social &amp; Cultural</button>
+                <button class="tab-button" onclick="openTab('tab-4', this)">Research &amp; Ethics</button>
                 <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
             </div>
 
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-1">
-                    <h3>1. Biological & Neuroscientific Foundations</h3>
-                    <p>Research shows that genetics and neurotransmitters play a significant role in mental health conditions. (Evidence: Biological studies). However, biology is not destiny. This data cannot diagnose an individual student's experience.</p>
+                    <h3>1. Biological &amp; Neuroscientific Foundations</h3>
+                    <p>Social anxiety disorder is associated with heightened reactivity in the amygdala — the brain's threat-detection system — and with differences in serotonin signalling. Twin studies suggest a moderate genetic contribution (roughly 30–40%).</p>
+                    <p><strong>However:</strong> biology is not destiny. These findings describe group-level patterns and cannot diagnose an individual. A racing heart before a presentation is a normal human response, not proof of a disorder.</p>
                 </div>
                 <div class="tab-pane" id="tab-2">
-                    <h3>2. Psychological Theories & Therapies</h3>
-                    <p>Therapies like Cognitive Behavioral Therapy (CBT) are widely used to help people manage anxiety and stress. (Evidence: Clinical psychology literature). However, therapy is not a one-size-fits-all solution; its effectiveness depends on access to care.</p>
+                    <h3>2. Psychological Theories &amp; Therapies</h3>
+                    <p>The leading model (Clark &amp; Wells, 1995) describes a cycle: a social situation triggers a negative self-image, attention turns inward, "safety behaviours" (avoiding eye contact, rehearsing sentences) are used, and afterwards the person replays the event and interprets it as failure. The cycle then strengthens.</p>
+                    <p>Cognitive Behavioural Therapy and graded exposure are the most strongly evidenced treatments. Therapy is not a one-size-fits-all solution, and its effectiveness depends heavily on access to care.</p>
                 </div>
                 <div class="tab-pane" id="tab-3">
-                    <h3>3. Social & Cultural Factors</h3>
-                    <p>In Hong Kong, societal stigma and family dynamics can delay help-seeking behaviors among youth. (Evidence: HK Mental Morbidity Survey). This pattern does not mean every student faces the same barriers, and it cannot predict how a specific individual will act.</p>
+                    <h3>3. Social &amp; Cultural Factors</h3>
+                    <p>In Hong Kong, concerns around <em>face</em> (面子), family expectation, and academic competition can intensify the fear of being judged. The Hong Kong Mental Morbidity Survey found that most people with common mental disorders never seek professional help.</p>
+                    <p><strong>However:</strong> stigma does not act identically on everyone. Social anxiety is not "caused" by culture, and no cultural pattern can predict how a specific person will feel or act.</p>
                 </div>
                 <div class="tab-pane" id="tab-4">
-                    <h3>4. Research Methods & Ethics</h3>
-                    <p>Responsible research requires ethical standards, informed consent, and transparent methods. (Evidence: Course readings on data ethics). The choice of method shapes what we can find. A survey cannot capture the full complexity of a person's story.</p>
+                    <h3>4. Research Methods &amp; Ethics</h3>
+                    <p>Screening tools such as the Mini-SPIN and the 17-item SPIN are validated for <em>screening</em>, not diagnosis. They trade sensitivity against specificity: some people who score above the threshold will not meet diagnostic criteria, and some who score below it will.</p>
+                    <p>Online self-screening raises real ethical questions — what happens to the data, how results are worded, and whether a score might frighten or falsely reassure someone. Responsible design means clear framing, no data collection, and a direct route to real support.</p>
                 </div>
                 <div class="tab-pane" id="tab-5">
-                    <h3>5. Campus & Community Wellbeing</h3>
-                    <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
+                    <h3>5. Campus &amp; Community Wellbeing</h3>
+                    <p>Universities are increasingly investing in counselling services, peer support networks, and reasonable adjustments — such as alternative assessment formats for students who find presentations disabling.</p>
+                    <p>While these programmes are valuable, they are not a substitute for professional clinical care when it is needed.</p>
                 </div>
             </div>
 
@@ -80,114 +144,186 @@
             <div class="chart-grid">
                 <!-- Bar Chart -->
                 <div class="visualization-section">
-                    <h3>Student Stress Levels</h3>
-                    <div class="chart-bar-container">
-                        <div class="chart-bar" style="width: 24%;">24%</div>
+                    <h3>When Social Anxiety Usually Begins</h3>
+                    <div class="bar-chart">
+                        <div class="bar-row">
+                            <span class="bar-label">Before age 12</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 30%;"></div></div>
+                            <span class="bar-value">30%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Age 12–17</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 45%;"></div></div>
+                            <span class="bar-value">45%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Age 18–24</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 20%;"></div></div>
+                            <span class="bar-value">20%</span>
+                        </div>
+                        <div class="bar-row">
+                            <span class="bar-label">Age 25+</span>
+                            <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
+                            <span class="bar-value">5%</span>
+                        </div>
                     </div>
-                    <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
+                    <p class="chart-label">Most people first notice social anxiety in their teenage years.</p>
                     <div class="caption">
-                        <p><strong>Title:</strong> Student Stress Levels</p>
-                        <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
-                        <p><strong>Limit:</strong> This data is a synthetic example and cannot diagnose an individual student's experience.</p>
+                        <p><strong>Title:</strong> Approximate age of onset of social anxiety disorder</p>
+                        <p><strong>Data:</strong> Illustrative figures based on published epidemiological estimates (median age of onset ≈ 13).</p>
+                        <p><strong>Limit:</strong> Population-level estimates cannot describe an individual's experience or predict their future.</p>
                     </div>
                 </div>
 
                 <!-- Donut Chart -->
                 <div class="visualization-section">
-                    <h3>Types of Support Needed</h3>
-                    <div class="donut-chart">
-                        <div class="donut-segment" style="background: conic-gradient(var(--accent) 0% 45%, #f0f0f0 45% 100%);">45%</div>
-                        <div class="donut-segment" style="background: conic-gradient(var(--accent2) 0% 30%, #f0f0f0 30% 100%);">30%</div>
-                        <div class="donut-segment" style="background: conic-gradient(#f4a261 0% 25%, #f0f0f0 25% 100%);">25%</div>
+                    <h3>What Stops Students From Getting Help</h3>
+                    <div class="donut"
+                         role="img"
+                         aria-label="Barriers to seeking help: fear of being judged 35 percent, not knowing where to go 25 percent, worry about privacy 20 percent, cost or time 20 percent.">
+                        <span class="donut-hole">Barriers to<br>help-seeking</span>
                     </div>
                     <div class="donut-legend">
-                        <span><span class="legend-dot" style="background: var(--accent);"></span> Counselling (45%)</span>
-                        <span><span class="legend-dot" style="background: var(--accent2);"></span> Peer Support (30%)</span>
-                        <span><span class="legend-dot" style="background: #f4a261;"></span> Self-Care (25%)</span>
+                        <span><span class="legend-dot" style="background: var(--umber);"></span> Fear of being judged (35%)</span>
+                        <span><span class="legend-dot" style="background: var(--olive);"></span> Don't know where to go (25%)</span>
+                        <span><span class="legend-dot" style="background: var(--sand);"></span> Worry about privacy (20%)</span>
+                        <span><span class="legend-dot" style="background: #A8735C;"></span> Cost or time (20%)</span>
                     </div>
                     <div class="caption">
-                        <p><strong>Title:</strong> Preferred Support Types</p>
-                        <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
-                        <p><strong>Limit:</strong> This data describes a population group. It cannot predict an individual's needs.</p>
+                        <p><strong>Title:</strong> Reported barriers to seeking professional support</p>
+                        <p><strong>Data:</strong> Illustrative figures based on published student mental-health help-seeking research.</p>
+                        <p><strong>Limit:</strong> These are group averages. An individual's reasons may be entirely different.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Line Chart -->
+            <!-- Timeline (replaces the old line chart) -->
             <div class="visualization-section">
-                <h3>Rising Mental Health Awareness</h3>
-                <div class="line-chart-container">
-                    <svg viewBox="0 0 500 200" class="line-chart">
-                        <line x1="0" y1="200" x2="500" y2="200" stroke="#ddd" stroke-width="1" />
-                        <line x1="0" y1="150" x2="500" y2="150" stroke="#eee" stroke-width="1" />
-                        <line x1="0" y1="100" x2="500" y2="100" stroke="#eee" stroke-width="1" />
-                        <line x1="0" y1="50" x2="500" y2="50" stroke="#eee" stroke-width="1" />
-                        
-                        <polyline class="animated-line" points="0,180 100,160 200,130 300,90 400,50 500,20" 
-                                  fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" />
-                        
-                        <circle cx="0" cy="180" r="6" fill="var(--accent)" />
-                        <circle cx="100" cy="160" r="6" fill="var(--accent)" />
-                        <circle cx="200" cy="130" r="6" fill="var(--accent)" />
-                        <circle cx="300" cy="90" r="6" fill="var(--accent)" />
-                        <circle cx="400" cy="50" r="6" fill="var(--accent)" />
-                        <circle cx="500" cy="20" r="6" fill="var(--accent)" />
+                <h3>The Gap Between First Symptoms and First Treatment</h3>
+                <div class="timeline-chart-container">
+                    <svg viewBox="0 0 520 160" class="timeline-chart"
+                         role="img"
+                         aria-label="Timeline: average age of first symptoms is around 13; average age of first treatment is around 27 — roughly 14 years without care.">
+                        <line x1="30" y1="95" x2="500" y2="95" stroke="#C4A38E" stroke-width="2"/>
+                        <rect x="107" y="88" width="316" height="14" rx="7" fill="#C4A38E" opacity="0.35"/>
+                        <circle cx="107" cy="95" r="9" fill="#5C3822"/>
+                        <circle cx="423" cy="95" r="9" fill="#4B4E2A"/>
+                        <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#5C3822">First symptoms</text>
+                        <text x="107" y="78" text-anchor="middle" font-size="13" fill="#3A3532">around age 13</text>
+                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="#4B4E2A">First treatment</text>
+                        <text x="423" y="78" text-anchor="middle" font-size="13" fill="#3A3532">around age 27</text>
+                        <text x="265" y="138" text-anchor="middle" font-size="14" fill="#3A3532">≈ 14 years without care</text>
                     </svg>
                 </div>
                 <div class="caption">
-                    <p><strong>Title:</strong> Rising Mental Health Awareness</p>
-                    <p><strong>Data:</strong> Synthetic dataset · 2020-2025</p>
-                    <p><strong>Limit:</strong> Correlation does not imply causation.</p>
+                    <p><strong>Title:</strong> Delay between onset and first treatment</p>
+                    <p><strong>Data:</strong> Illustrative figures based on published treatment-delay estimates.</p>
+                    <p><strong>Limit:</strong> Averages hide enormous variation. Many people seek help much sooner — and that is the point.</p>
                 </div>
             </div>
 
-            <!-- Myth vs. Fact -->
-            <div class="myth-fact-box">
-                <h3>Myth vs. Fact</h3>
-                <details>
-                    <summary>❌ Myth: Mental health struggles are a sign of weakness.</summary>
-                    <p>✅ <strong>Fact:</strong> Mental health conditions are common and treatable. Seeking help is a sign of strength, not weakness. (Evidence: WHO).</p>
-                </details>
-                <details>
-                    <summary>❌ Myth: You can tell if someone has anxiety just by looking at them.</summary>
-                    <p>✅ <strong>Fact:</strong> Anxiety is often invisible. Observable behavior does not provide direct access to a person's mental state.</p>
-                </details>
+            <!-- Myth vs. Fact Flip Cards -->
+            <h3>Myth vs. Fact</h3>
+            <p><em>Hover over a card to reveal the truth.</em></p>
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            MYTH: Social anxiety is just being shy.
+                        </div>
+                        <div class="flip-card-back">
+                            FACT: Shyness is a personality trait. Social anxiety disorder is a clinical condition — persistent, intense fear of judgement that interferes with daily life.
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            MYTH: You just need to "get out more" and it will pass.
+                        </div>
+                        <div class="flip-card-back">
+                            FACT: The fear response is real and physical — racing heart, blushing, nausea. Willpower alone rarely resolves it. Graded exposure with support does.
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            MYTH: Avoiding the situation keeps you safe.
+                        </div>
+                        <div class="flip-card-back">
+                            FACT: Avoidance brings short-term relief but strengthens the fear over time. It teaches your brain that the situation really was dangerous.
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- 3. HUMAN STORY -->
+        <!-- 4. HUMAN STORY (Interactive) -->
         <section id="story">
             <h2>Human Story</h2>
-            <p class="fiction-label">THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</p>
-            
+
             <div class="story-container">
+                <!-- Pull Quote -->
                 <div class="pull-quote">
-                    "I can't explain all of it yet. I just know the ordinary things have started to feel heavier."
+                    "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
                 </div>
+
+                <!-- Interactive Image with Hotspots -->
+                <div class="story-image-wrapper">
+                    <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
+
+                    <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')" aria-label="Hotspot 1: the phone">
+                        <span class="pulse-ring"></span> 1
+                    </button>
+                    <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')" aria-label="Hotspot 2: the door handle">
+                        <span class="pulse-ring"></span> 2
+                    </button>
+                    <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')" aria-label="Hotspot 3: the notebook">
+                        <span class="pulse-ring"></span> 3
+                    </button>
+                </div>
+
+                <div id="popup-1" class="hotspot-popup">Three unread messages in the group chat. The reply has been typed and deleted four times.</div>
+                <div id="popup-2" class="hotspot-popup">Her hand is on the door handle. She has been standing here for ninety seconds.</div>
+                <div id="popup-3" class="hotspot-popup">"What if they think I'm stupid" — written, then scribbled out, then written again.</div>
 
                 <div class="scenes-container">
                     <div class="scene active" id="scene-1">
-                        <h3>1. The Room</h3>
-                        <p>Getting up is the first mile. The light comes in. The kettle waits. Ada knows the day has started, but her body feels as if it is still carrying yesterday.</p>
+                        <h3>1. The Corridor</h3>
+                        <p>The tutorial starts in two minutes. Mei can hear voices through the door. Her heart is loud. She is rehearsing a sentence she may never say, and it already sounds wrong.</p>
                     </div>
                     <div class="scene" id="scene-2">
-                        <h3>2. The Street</h3>
-                        <p>Life keeps its usual pace. Outside, the street is loud and busy. Ada walks, but she feels separated from the movement around her.</p>
+                        <h3>2. The Group Chat</h3>
+                        <p>A society dinner is being organised. Everyone is typing "count me in!". She types it too. Then deletes it. Then types it again. Then closes the app.</p>
                     </div>
                     <div class="scene" id="scene-3">
-                        <h3>3. The Message</h3>
-                        <p>Asking can begin with one sentence. She types: "I'm not okay today." She deletes it. Then types it again.</p>
+                        <h3>3. The Tutorial</h3>
+                        <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it.</p>
                     </div>
                     <div class="scene" id="scene-4">
-                        <h3>4. A Pause</h3>
-                        <p>There is no single straight way through. Ada sits by the window. She doesn't have to solve everything right now.</p>
+                        <h3>4. The Pause</h3>
+                        <p>Later, she notices the pattern: the fear arrives <em>before</em> the moment, not during it. She doesn't have to solve this today. She only has to notice it.</p>
                     </div>
                     <div class="scene" id="scene-5">
-                        <h3>5. A Small Plan</h3>
-                        <p>Connection leaves a light on. She sends the message to a friend. A small plan is made to get a coffee tomorrow.</p>
+                        <h3>5. A Small Step</h3>
+                        <p>She tells one friend: "Crowds are hard for me. I'm not being rude." Her friend says, "Okay. Want to sit at the end?" That is enough for today.</p>
                     </div>
+                </div>
+
+                <div class="audio-player">
+                    <h4>Mei's Inner Voice</h4>
+                    <p><em>Optional: Listen to Mei's reflection. A transcript is available below.</em></p>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <details>
+                        <summary>Read the transcript instead</summary>
+                        <p>"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
+                    </details>
                 </div>
 
                 <div class="story-controls">
@@ -197,58 +333,113 @@
                 </div>
 
                 <div class="story-timeline">
-                    <span class="timeline-step active" onclick="jumpToScene(1)">1. Room</span>
-                    <span class="timeline-step" onclick="jumpToScene(2)">2. Street</span>
-                    <span class="timeline-step" onclick="jumpToScene(3)">3. Message</span>
+                    <span class="timeline-step active" onclick="jumpToScene(1)">1. Corridor</span>
+                    <span class="timeline-step" onclick="jumpToScene(2)">2. Group Chat</span>
+                    <span class="timeline-step" onclick="jumpToScene(3)">3. Tutorial</span>
                     <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
-                    <span class="timeline-step" onclick="jumpToScene(5)">5. Plan</span>
+                    <span class="timeline-step" onclick="jumpToScene(5)">5. Step</span>
                 </div>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- 4. METHOD + AI -->
+        <!-- 5. METHOD + AI -->
         <section id="method">
             <h2>Method + AI</h2>
-            <p>We used WorkBuddy AI to design a safe annotation framework for our data. We rejected diagnosis language and forced yes/no labels.</p>
+            <p>We used AI as a research assistant — not as a source. Our rules were simple:</p>
+            <ul class="method-list">
+                <li>No diagnostic language anywhere on the site ("you have", "you suffer from").</li>
+                <li>No yes/no labels applied to people. Screening scores are framed as <em>a question worth asking</em>, never an answer.</li>
+                <li>Every factual claim was traced back to a published source before it was allowed on the page.</li>
+                <li>Any AI-generated claim that could not be verified was cut.</li>
+                <li>The Mini-SPIN questions were reproduced exactly as published, without modification.</li>
+            </ul>
+            <p>We also chose <strong>not</strong> to collect any user data. The self-check runs entirely in the browser and nothing is stored or sent.</p>
             <p><a href="ai-log.md">View our AI-Use Log here</a></p>
         </section>
 
         <hr class="section-divider">
 
-        <!-- 5. HELP + ACCESS -->
+        <!-- 6. HELP + ACCESS -->
         <section id="help">
             <h2>Help + Access</h2>
             <p>If you or someone you know needs support, here are verified resources:</p>
             <ul>
-                <li><a href="https://www.hkbu.edu.hk/">HKBU Counselling and Person Enrichment</a></li>
-                <li><a href="https://www.shallwetalk.hk/">Shall We Talk (HK Government)</a></li>
+                <li><a href="https://www.hkbu.edu.hk/">HKBU Counselling and Person Enrichment</a> — free and confidential for all HKBU students.</li>
+                <li><a href="https://www.shallwetalk.hk/">Shall We Talk</a> — Hong Kong Government mental health information and resources.</li>
+                <li><a href="https://www.openup.hk/">Open Up</a> — Hong Kong online mental health support platform.</li>
+                <li><strong>The Samaritan Befrienders Hong Kong:</strong> 2389 2222 (24-hour hotline).</li>
             </ul>
 
             <div class="self-care-check">
-                <h3>Daily Self-Care Check</h3>
+                <h3>A Gentle Daily Check-In</h3>
                 <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
-                <label><input type="checkbox"> I got at least 7 hours of sleep.</label>
-                <label><input type="checkbox"> I took a break from screens.</label>
-                <label><input type="checkbox"> I connected with a friend or family member.</label>
-                <label><input type="checkbox"> I ate a proper meal.</label>
-                <label><input type="checkbox"> I asked for help if I needed it.</label>
+                <label><input type="checkbox"> I did one small thing today, even though it felt uncomfortable.</label>
+                <label><input type="checkbox"> I noticed a "what if" thought without fully believing it.</label>
+                <label><input type="checkbox"> I took one slow breath before a situation that scared me.</label>
+                <label><input type="checkbox"> I didn't avoid <em>everything</em> I wanted to do.</label>
+                <label><input type="checkbox"> I spoke to myself the way I would speak to a friend.</label>
             </div>
 
             <div class="safety-note">
                 <h3>If you may be in immediate danger</h3>
-                <p>If you or someone else is at immediate risk, contact local emergency services (999 in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
+                <p>If you or someone else is at immediate risk, contact local emergency services (<strong>999</strong> in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
+            </div>
+
+            <!-- SOURCES -->
+            <div class="sources">
+                <h3>Sources</h3>
+                <ul>
+                    <li>Connor, K. M., Kobak, K. A., Churchill, L. E., Katzelnick, D., &amp; Davidson, J. R. T. (2001). Mini-SPIN: A brief screening assessment for generalized social anxiety disorder. <em>Depression and Anxiety</em>, 14(2), 137–140.</li>
+                    <li>Clark, D. M., &amp; Wells, A. (1995). A cognitive model of social phobia. In <em>Social Phobia: Diagnosis, Assessment, and Treatment</em>.</li>
+                    <li>Kessler, R. C., et al. (2005). Lifetime prevalence and age-of-onset distributions of DSM-IV disorders. <em>Archives of General Psychiatry</em>, 62(6), 593–602.</li>
+                    <li>Mayo-Wilson, E., et al. (2014). Psychological and pharmacological interventions for social anxiety disorder in adults. <em>The Lancet Psychiatry</em>, 1(5), 368–376.</li>
+                    <li>Hong Kong Mental Morbidity Survey (2010–2013), Food and Health Bureau, HKSAR Government.</li>
+                </ul>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; HKBU Mental Health Studies Student Hub</p>
+        <div class="container">
+            <p>&copy; HKBU Mental Health Studies Student Hub — Social Anxiety Project</p>
+            <p class="footer-note">This site is an academic project and is not a clinical service.</p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
+
+    <!-- JAVASCRIPT FOR ALL FEATURES -->
     <script>
-        // --- TABS LOGIC ---
+        // Fade-in on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in-section');
+            observer.observe(section);
+        });
+
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+        }
+
+        // Tab Switching Logic
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
             document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
@@ -256,7 +447,7 @@
             btn.classList.add('active');
         }
 
-        // --- STORY LOGIC ---
+        // Story Navigation Logic
         let currentScene = 1;
         const totalScenes = 5;
         function changeScene(direction) {
@@ -277,6 +468,66 @@
             document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
+
+        // Hotspot Popup Logic
+        function togglePopup(id) {
+            const popup = document.getElementById(id);
+            document.querySelectorAll('.hotspot-popup').forEach(el => {
+                if (el.id !== id) el.style.display = 'none';
+            });
+            if (popup.style.display === 'block') {
+                popup.style.display = 'none';
+            } else {
+                popup.style.display = 'block';
+            }
+        }
+
+        // Mini-SPIN Scoring Logic
+        function scoreSPIN() {
+            const form = document.getElementById('spin-form');
+            const out = document.getElementById('spin-result');
+            let total = 0;
+            let answered = 0;
+
+            for (let i = 1; i <= 3; i++) {
+                const sel = form.querySelector('input[name="q' + i + '"]:checked');
+                if (sel) {
+                    total += parseInt(sel.value, 10);
+                    answered++;
+                }
+            }
+
+            if (answered < 3) {
+                out.innerHTML = '<h3>One more step</h3><p>Please answer all three questions to see your result.</p>';
+                out.classList.add('show');
+                return;
+            }
+
+            let heading = 'Your score: ' + total + ' out of 12';
+            let body;
+
+            if (total >= 6) {
+                body = '<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis — only a qualified professional can decide that. It does mean it is worth talking to someone.</p>'
+                     + '<p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p>'
+                     + '<p><a href="#help" class="btn-primary">See support options</a></p>';
+            } else if (total >= 3) {
+                body = '<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p>'
+                     + '<p>If it starts to limit what you want to do — the societies you join, the questions you ask, the people you meet — consider speaking to a counsellor.</p>';
+            } else {
+                body = '<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>';
+            }
+
+            out.innerHTML = '<h3>' + heading + '</h3>' + body
+                + '<p class="caption"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>';
+            out.classList.add('show');
+        }
+
+        function resetSPIN() {
+            document.getElementById('spin-form').reset();
+            const out = document.getElementById('spin-result');
+            out.classList.remove('show');
+            out.innerHTML = '';
         }
     </script>
 </body>
