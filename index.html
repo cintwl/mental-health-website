@@ -3,62 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beyond Shyness - Understanding Social Anxiety Disorder</title>
+    <title>Mental Health Student Hub</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- PASSWORD SCREEN OVERLAY -->
-    <div id="password-screen">
-        <div class="password-box">
-            <h2>🔒 Private Gallery</h2>
-            <p>Please enter the password to view this website.</p>
-            <input type="password" id="password-input" placeholder="Enter password...">
-            <button onclick="checkPassword()">Unlock</button>
-            <p id="error-message"></p>
+    <!-- NAVIGATION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#evidence">What We Know</a>
+        <a href="#story">Human Story</a>
+        <a href="#method">Method + AI</a>
+        <a href="#help">Help + Access</a>
+    </nav>
+
+    <main>
+        <!-- CONTENT NOTE & SKIP ROUTE -->
+        <div class="content-note">
+            <p><strong>A gentle note:</strong> This story mentions depression and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
         </div>
-    </div>
+        <a href="#help" class="skip-link">Skip directly to support information</a>
 
-    <!-- MAIN WEBSITE CONTENT -->
-    <div id="website-content" style="display: none;">
-
-        <!-- NAVIGATION -->
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#evidence">What We Know</a>
-            <a href="#story">Human Story</a>
-            <a href="#method">Method + AI</a>
-            <a href="#help">Help + Access</a>
-        </nav>
-
-        <!-- HERO SECTION + SELF-CHECK -->
-        <header id="home" class="hero-section">
-            <h1>Beyond Shyness</h1>
-            <p>Understanding Social Anxiety Disorder</p>
-            
-            <!-- INTERACTIVE SELF-CHECK -->
-            <div class="self-check-box">
-                <h3>Quick Self-Check</h3>
-                <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
-                <div class="question">
-                    <label><input type="checkbox" class="sad-check"> I avoid speaking in class or meetings.</label>
-                    <label><input type="checkbox" class="sad-check"> I worry for days before a social event.</label>
-                    <label><input type="checkbox" class="sad-check"> I experience physical symptoms (racing heart, sweating) in social situations.</label>
-                    <label><input type="checkbox" class="sad-check"> I avoid social situations because of fear of judgment.</label>
-                </div>
-                <button onclick="checkSymptoms()">See Result</button>
-                <p id="check-result"></p>
+        <!-- 1. LANDING PAGE (HERO SECTION) -->
+        <section id="home" class="hero-section">
+            <p class="fiction-label">THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</p>
+            <h1>The quiet between stops.</h1>
+            <p class="hero-subtitle">Depression doesn't always announce itself. Sometimes it travels beside an ordinary day - through the room, the street, a doorway, and the small decision to let someone in.</p>
+            <div class="hero-buttons">
+                <a href="#story" class="btn-primary">Follow the story</a>
+                <a href="#help" class="btn-secondary">Find a next step</a>
             </div>
-        </header>
+        </section>
 
         <hr class="section-divider">
 
-        <!-- EVIDENCE SECTION (Knowledge Graph & Charts) -->
+        <!-- 2. EVIDENCE (Knowledge Graph with Tabs) -->
         <section id="evidence">
             <h2>What We Know</h2>
-            <p><em>Explore the facts and evidence about Social Anxiety Disorder (SAD).</em></p>
+            <p><em>Explore how key disciplines interact within the study of mental health at HKBU:</em></p>
             
-            <!-- TABS -->
             <div class="tabs-container">
                 <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
                 <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
@@ -69,24 +52,24 @@
 
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-1">
-                    <h3>1. Biological Foundations</h3>
-                    <p>Research shows that the amygdala (the brain's fear center) is hyperactive in people with SAD. Neurotransmitters like serotonin also play a significant role. (Evidence: Neuroimaging studies). However, biology is not destiny. This data cannot diagnose an individual.</p>
+                    <h3>1. Biological & Neuroscientific Foundations</h3>
+                    <p>Research shows that genetics and neurotransmitters play a significant role in mental health conditions. (Evidence: Biological studies). However, biology is not destiny. This data cannot diagnose an individual student's experience.</p>
                 </div>
                 <div class="tab-pane" id="tab-2">
-                    <h3>2. Psychological Theories</h3>
-                    <p>SAD is maintained by a cycle of negative self-talk and avoidance. People fear being judged, so they avoid situations, which prevents them from learning that the situations are actually safe. (Evidence: Cognitive Behavioral Therapy literature).</p>
+                    <h3>2. Psychological Theories & Therapies</h3>
+                    <p>Therapies like Cognitive Behavioral Therapy (CBT) are widely used to help people manage anxiety and stress. (Evidence: Clinical psychology literature). However, therapy is not a one-size-fits-all solution; its effectiveness depends on access to care.</p>
                 </div>
                 <div class="tab-pane" id="tab-3">
                     <h3>3. Social & Cultural Factors</h3>
-                    <p>In Hong Kong, societal stigma and high academic pressure can worsen symptoms. A fear of "losing face" or appearing weak often prevents young people from seeking help. (Evidence: HK Mental Morbidity Survey).</p>
+                    <p>In Hong Kong, societal stigma and family dynamics can delay help-seeking behaviors among youth. (Evidence: HK Mental Morbidity Survey). This pattern does not mean every student faces the same barriers, and it cannot predict how a specific individual will act.</p>
                 </div>
                 <div class="tab-pane" id="tab-4">
-                    <h3>4. Research & Treatment</h3>
-                    <p>Cognitive Behavioral Therapy (CBT) and Exposure Therapy are the gold standards for treatment. However, only 8.7% of people with SAD in Hong Kong actually seek professional help. (Evidence: Clinical research).</p>
+                    <h3>4. Research Methods & Ethics</h3>
+                    <p>Responsible research requires ethical standards, informed consent, and transparent methods. (Evidence: Course readings on data ethics). The choice of method shapes what we can find. A survey cannot capture the full complexity of a person's story.</p>
                 </div>
                 <div class="tab-pane" id="tab-5">
-                    <h3>5. Campus & Community</h3>
-                    <p>University environments (presentations, group projects, networking) can be intense triggers. It is crucial for campuses to provide accessible, low-stigma counselling services. (Evidence: Student wellbeing surveys).</p>
+                    <h3>5. Campus & Community Wellbeing</h3>
+                    <p>Universities are increasingly investing in campus wellbeing programs and peer support networks. (Evidence: HKBU Student Affairs initiatives). While these programs are valuable, they are not a substitute for professional clinical care when it is needed.</p>
                 </div>
             </div>
 
@@ -94,134 +77,159 @@
             <div class="chart-grid">
                 <!-- Bar Chart -->
                 <div class="visualization-section">
-                    <h3>Common Triggers for Social Anxiety</h3>
+                    <h3>Student Stress Levels</h3>
                     <div class="chart-bar-container">
-                        <div class="chart-bar" style="width: 88.8%;">88.8%</div>
+                        <div class="chart-bar" style="width: 24%;">24%</div>
                     </div>
-                    <p class="chart-label">Public speaking</p>
-                    <div class="chart-bar-container">
-                        <div class="chart-bar" style="width: 39.3%;">39.3%</div>
-                    </div>
-                    <p class="chart-label">Eating in front of others</p>
-                    <div class="chart-bar-container">
-                        <div class="chart-bar" style="width: 27.6%;">27.6%</div>
-                    </div>
-                    <p class="chart-label">Participating in meetings</p>
-                    <div class="chart-bar-container">
-                        <div class="chart-bar" style="width: 27.6%;">27.6%</div>
-                    </div>
-                    <p class="chart-label">Writing while being watched</p>
-                    
+                    <p class="chart-label">Out of 100 students, 24 report high stress levels.</p>
                     <div class="caption">
-                        <p><strong>Data:</strong> Clinical study on SAD symptoms.</p>
-                        <p><strong>Limit:</strong> This describes a population group. It cannot predict an individual's experience.</p>
+                        <p><strong>Title:</strong> Student Stress Levels</p>
+                        <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
+                        <p><strong>Limit:</strong> This data is a synthetic example and cannot diagnose an individual student's experience.</p>
                     </div>
                 </div>
 
                 <!-- Donut Chart -->
                 <div class="visualization-section">
-                    <h3>The Treatment Gap: Who Actually Gets Help?</h3>
+                    <h3>Types of Support Needed</h3>
                     <div class="donut-chart">
-                        <div class="donut-segment" style="background: conic-gradient(var(--accent) 0% 8.7%, #e0e0e0 8.7% 100%);">8.7%</div>
-                        <div class="donut-segment" style="background: conic-gradient(var(--accent2) 0% 30%, #e0e0e0 30% 100%);">30%</div>
-                        <div class="donut-segment" style="background: conic-gradient(#bcddf0 0% 61.3%, #e0e0e0 61.3% 100%);">61.3%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--umber) 0% 45%, var(--ivory) 45% 100%);">45%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--olive) 0% 30%, var(--ivory) 30% 100%);">30%</div>
+                        <div class="donut-segment" style="background: conic-gradient(var(--sand) 0% 25%, var(--ivory) 25% 100%);">25%</div>
                     </div>
                     <div class="donut-legend">
-                        <span><span class="legend-dot" style="background: var(--accent);"></span> Professional Help (8.7%)</span>
-                        <span><span class="legend-dot" style="background: var(--accent2);"></span> Online Resources (~30%)</span>
-                        <span><span class="legend-dot" style="background: #bcddf0;"></span> No Professional Help (~61.3%)</span>
+                        <span><span class="legend-dot" style="background: var(--umber);"></span> Counselling (45%)</span>
+                        <span><span class="legend-dot" style="background: var(--olive);"></span> Peer Support (30%)</span>
+                        <span><span class="legend-dot" style="background: var(--sand);"></span> Self-Care (25%)</span>
                     </div>
                     <div class="caption">
-                        <p><strong>Data:</strong> HK treatment rates for SAD.</p>
-                        <p><strong>Limit:</strong> Shows a trend, not individual behavior.</p>
+                        <p><strong>Title:</strong> Preferred Support Types</p>
+                        <p><strong>Data:</strong> Synthetic dataset · 100 students · 2026 · n=100</p>
+                        <p><strong>Limit:</strong> This data describes a population group. It cannot predict an individual's needs.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Line Chart -->
+            <!-- Animated Line Chart -->
             <div class="visualization-section">
-                <h3>The Treatment Gap: Years to First Treatment</h3>
+                <h3>Rising Mental Health Awareness</h3>
                 <div class="line-chart-container">
                     <svg viewBox="0 0 500 200" class="line-chart">
-                        <line x1="0" y1="200" x2="500" y2="200" stroke="#ddd" stroke-width="1" />
+                        <line x1="0" y1="200" x2="500" y2="200" stroke="#C4A38E" stroke-width="1" />
+                        <line x1="0" y1="150" x2="500" y2="150" stroke="#F1EBDC" stroke-width="1" />
+                        <line x1="0" y1="100" x2="500" y2="100" stroke="#F1EBDC" stroke-width="1" />
+                        <line x1="0" y1="50" x2="500" y2="50" stroke="#F1EBDC" stroke-width="1" />
                         
-                        <!-- Panic (1 year) -->
-                        <circle cx="50" cy="180" r="6" fill="var(--accent)" />
-                        <text x="50" y="170" text-anchor="middle" font-size="10">Panic: 1 yr</text>
-
-                        <!-- GAD (1 year) -->
-                        <circle cx="150" cy="180" r="6" fill="var(--accent)" />
-                        <text x="150" y="170" text-anchor="middle" font-size="10">GAD: 1 yr</text>
-
-                        <!-- Specific Phobia (13 years) -->
-                        <circle cx="300" cy="80" r="6" fill="var(--accent)" />
-                        <text x="300" y="70" text-anchor="middle" font-size="10">Phobia: 13 yrs</text>
-
-                        <!-- SAD (16 years) -->
-                        <circle cx="450" cy="40" r="6" fill="var(--accent)" />
-                        <text x="450" y="30" text-anchor="middle" font-size="10">SAD: 16 yrs</text>
-
-                        <!-- Connecting Lines -->
-                        <polyline points="50,180 150,180 300,80 450,40" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" />
+                        <polyline class="animated-line" points="0,180 100,160 200,130 300,90 400,50 500,20" 
+                                  fill="none" stroke="var(--umber)" stroke-width="4" stroke-linecap="round" />
+                        
+                        <circle cx="0" cy="180" r="6" fill="var(--umber)" />
+                        <circle cx="100" cy="160" r="6" fill="var(--umber)" />
+                        <circle cx="200" cy="130" r="6" fill="var(--umber)" />
+                        <circle cx="300" cy="90" r="6" fill="var(--umber)" />
+                        <circle cx="400" cy="50" r="6" fill="var(--umber)" />
+                        <circle cx="500" cy="20" r="6" fill="var(--umber)" />
                     </svg>
                 </div>
                 <div class="caption">
-                    <p><strong>Data:</strong> Clinical study on anxiety disorders.</p>
-                    <p><strong>Limit:</strong> Averages for specific groups, not everyone.</p>
+                    <p><strong>Title:</strong> Rising Mental Health Awareness</p>
+                    <p><strong>Data:</strong> Synthetic dataset · 2020-2025</p>
+                    <p><strong>Limit:</strong> Correlation does not imply causation.</p>
                 </div>
             </div>
-
-            <!-- Myth vs Fact -->
-            <div class="myth-fact-box">
-                <h3>Myth vs. Fact</h3>
-                <details>
-                    <summary>❌ Myth: Social anxiety is just extreme shyness.</summary>
-                    <p>✅ <strong>Fact:</strong> It is a persistent, intense fear of judgment that can cause physical panic attacks.</p>
-                </details>
-                <details>
-                    <summary>❌ Myth: People with SAD just need to relax.</summary>
-                    <p>✅ <strong>Fact:</strong> It is a recognized medical condition requiring professional support, not a choice.</p>
-                </details>
-                <details>
-                    <summary>❌ Myth: Avoiding social events solves the problem.</summary>
-                    <p>✅ <strong>Fact:</strong> Avoidance worsens anxiety over time. Exposure therapy is a proven treatment.</p>
-                </details>
+            
+            <!-- Myth vs. Fact Flip Cards -->
+            <h3>Myth vs. Fact</h3>
+            <p><em>Hover over a card to reveal the truth.</em></p>
+            <div class="flip-card-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            MYTH: Mental health struggles are a sign of weakness.
+                        </div>
+                        <div class="flip-card-back">
+                            FACT: Mental health conditions are common and treatable. Seeking help is a sign of strength.
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            MYTH: You can tell if someone has anxiety just by looking at them.
+                        </div>
+                        <div class="flip-card-back">
+                            FACT: Anxiety is often invisible. Observable behavior does not provide direct access to a person's mental state.
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- HUMAN STORY SECTION -->
+        <!-- 3. HUMAN STORY (Interactive) -->
         <section id="story">
             <h2>Human Story</h2>
-            <p class="fiction-label">THE STORY IS FICTIONAL - THE EVIDENCE MUST BE REAL</p>
             
             <div class="story-container">
+                <!-- Pull Quote -->
                 <div class="pull-quote">
-                    "I can't explain it. My heart races, my hands shake, and my mind goes completely blank."
+                    "I can't explain all of it yet. I just know the ordinary things have started to feel heavier."
                 </div>
+
+                <!-- Interactive Image with Hotspots -->
+                <div class="story-image-wrapper">
+                    <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A quiet desk with a notebook and a cup of tea" class="story-image" />
+                    
+                    <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')">
+                        <span class="pulse-ring"></span> 1
+                    </button>
+                    <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')">
+                        <span class="pulse-ring"></span> 2
+                    </button>
+                    <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')">
+                        <span class="pulse-ring"></span> 3
+                    </button>
+                </div>
+
+                <div id="popup-1" class="hotspot-popup">The phone is face down. The person is choosing to pause and disconnect.</div>
+                <div id="popup-2" class="hotspot-popup">A cold cup of tea. It has been there for hours, untouched.</div>
+                <div id="popup-3" class="hotspot-popup">The notebook is open, but the page is blank. A symbol of waiting for clarity.</div>
 
                 <div class="scenes-container">
                     <div class="scene active" id="scene-1">
-                        <h3>1. The Presentation</h3>
-                        <p>Leo stands at the front of the class. The room is silent. His heart is pounding so loudly he is sure everyone can hear it. He opens his mouth, but no words come out.</p>
+                        <h3>1. The Room</h3>
+                        <p>Getting up is the first mile. The light comes in. The kettle waits. Ada knows the day has started, but her body feels as if it is still carrying yesterday.</p>
                     </div>
                     <div class="scene" id="scene-2">
-                        <h3>2. The Avoidance</h3>
-                        <p>After that day, Leo stops raising his hand. He skips tutorials. He starts eating lunch alone in the library to avoid the cafeteria. The fear grows bigger the more he hides.</p>
+                        <h3>2. The Street</h3>
+                        <p>Life keeps its usual pace. Outside, the street is loud and busy. Ada walks, but she feels separated from the movement around her.</p>
                     </div>
                     <div class="scene" id="scene-3">
-                        <h3>3. The Physical Toll</h3>
-                        <p>It's not just nerves. Before a group meeting, Leo feels nauseous. He sweats. He feels like he is trapped. He knows he is missing out, but the fear feels impossible to fight.</p>
+                        <h3>3. The Message</h3>
+                        <p>Asking can begin with one sentence. She types: "I'm not okay today." She deletes it. Then types it again.</p>
                     </div>
                     <div class="scene" id="scene-4">
-                        <h3>4. The Turning Point</h3>
-                        <p>Leo's friend notices he has been distant. She doesn't push him. She just says, "I'm here if you want to talk." For the first time, Leo feels seen.</p>
+                        <h3>4. A Pause</h3>
+                        <p>There is no single straight way through. Ada sits by the window. She doesn't have to solve everything right now.</p>
                     </div>
                     <div class="scene" id="scene-5">
-                        <h3>5. A Small Step</h3>
-                        <p>Leo books an appointment at the university counselling center. It is scary. But as he sits in the waiting room, he realizes: He is not alone. And help is here.</p>
+                        <h3>5. A Small Plan</h3>
+                        <p>Connection leaves a light on. She sends the message to a friend. A small plan is made to get a coffee tomorrow.</p>
                     </div>
+                </div>
+
+                <div class="audio-player">
+                    <h4>Ada's Inner Voice</h4>
+                    <p><em>Optional: Listen to Ada's reflection. A transcript is available below.</em></p>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <details>
+                        <summary>Read the transcript instead</summary>
+                        <p>"I can't explain all of it yet. I just know the ordinary things have started to feel heavier. Maybe I can tell someone that much."</p>
+                    </details>
                 </div>
 
                 <div class="story-controls">
@@ -231,18 +239,18 @@
                 </div>
 
                 <div class="story-timeline">
-                    <span class="timeline-step active" onclick="jumpToScene(1)">1. Presentation</span>
-                    <span class="timeline-step" onclick="jumpToScene(2)">2. Avoidance</span>
-                    <span class="timeline-step" onclick="jumpToScene(3)">3. Physical</span>
-                    <span class="timeline-step" onclick="jumpToScene(4)">4. Turning</span>
-                    <span class="timeline-step" onclick="jumpToScene(5)">5. Help</span>
+                    <span class="timeline-step active" onclick="jumpToScene(1)">1. Room</span>
+                    <span class="timeline-step" onclick="jumpToScene(2)">2. Street</span>
+                    <span class="timeline-step" onclick="jumpToScene(3)">3. Message</span>
+                    <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
+                    <span class="timeline-step" onclick="jumpToScene(5)">5. Plan</span>
                 </div>
             </div>
         </section>
 
         <hr class="section-divider">
 
-        <!-- METHOD + AI -->
+        <!-- 4. METHOD + AI -->
         <section id="method">
             <h2>Method + AI</h2>
             <p>We used WorkBuddy AI to design a safe annotation framework for our data. We rejected diagnosis language and forced yes/no labels.</p>
@@ -251,68 +259,70 @@
 
         <hr class="section-divider">
 
-        <!-- HELP + ACCESS -->
+        <!-- 5. HELP + ACCESS -->
         <section id="help">
             <h2>Help + Access</h2>
             <p>If you or someone you know needs support, here are verified resources:</p>
             <ul>
                 <li><a href="https://www.hkbu.edu.hk/">HKBU Counselling and Person Enrichment</a></li>
                 <li><a href="https://www.shallwetalk.hk/">Shall We Talk (HK Government)</a></li>
-                <li><a href="https://www.hkbh.org.hk/">HKBH East Kowloon Medical Centre (SAD Services)</a></li>
             </ul>
+
+            <div class="self-care-check">
+                <h3>Daily Self-Care Check</h3>
+                <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
+                <label><input type="checkbox"> I got at least 7 hours of sleep.</label>
+                <label><input type="checkbox"> I took a break from screens.</label>
+                <label><input type="checkbox"> I connected with a friend or family member.</label>
+                <label><input type="checkbox"> I ate a proper meal.</label>
+                <label><input type="checkbox"> I asked for help if I needed it.</label>
+            </div>
 
             <div class="safety-note">
                 <h3>If you may be in immediate danger</h3>
                 <p>If you or someone else is at immediate risk, contact local emergency services (999 in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
             </div>
         </section>
+    </main>
 
-        <footer>
-            <p>You are not alone. 💙</p>
-        </footer>
+    <footer>
+        <div class="container">
+            <p>&copy; HKBU Mental Health Studies Student Hub</p>
+        </div>
+    </footer>
 
-    </div> <!-- End of website-content -->
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top" id="backToTop">↑</a>
 
+    <!-- JAVASCRIPT FOR ALL FEATURES -->
     <script>
-        // --- PASSWORD LOGIC ---
-        function checkPassword() {
-            const input = document.getElementById('password-input').value;
-            const correctPassword = "sad2026"; // You can change this password
+        // Fade-in on Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
 
-            if (input === correctPassword) {
-                document.getElementById('password-screen').style.display = 'none';
-                document.getElementById('website-content').style.display = 'block';
-            } else {
-                document.getElementById('error-message').innerText = "Incorrect password. Try again.";
-                document.getElementById('password-input').value = '';
-            }
-        }
-
-        document.getElementById('password-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('fade-in-section');
+            observer.observe(section);
         });
 
-        // --- SELF-CHECK LOGIC ---
-        function checkSymptoms() {
-            const checkboxes = document.querySelectorAll('.sad-check');
-            let count = 0;
-            checkboxes.forEach(cb => {
-                if (cb.checked) count++;
+        // Back to Top Button
+        const backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
             });
-            
-            const result = document.getElementById('check-result');
-            if (count === 0) {
-                result.innerText = "You checked 0 symptoms. That's great! Keep taking care of your mental health.";
-            } else if (count <= 2) {
-                result.innerText = "You checked " + count + " out of 4. Everyone feels anxious sometimes. If these feelings are affecting your daily life, consider talking to a counsellor.";
-            } else {
-                result.innerText = "You checked " + count + " out of 4. These feelings can be overwhelming. This does not mean you have SAD, but we encourage you to speak to a professional for support.";
-            }
         }
 
-        // --- TABS LOGIC ---
+        // Tab Switching Logic
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
             document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
@@ -320,7 +330,7 @@
             btn.classList.add('active');
         }
 
-        // --- STORY LOGIC ---
+        // Story Navigation Logic
         let currentScene = 1;
         const totalScenes = 5;
         function changeScene(direction) {
@@ -341,6 +351,19 @@
             document.querySelectorAll('.timeline-step').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.timeline-step')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+        }
+
+        // Hotspot Popup Logic
+        function togglePopup(id) {
+            const popup = document.getElementById(id);
+            document.querySelectorAll('.hotspot-popup').forEach(el => {
+                if (el.id !== id) el.style.display = 'none';
+            });
+            if (popup.style.display === 'block') {
+                popup.style.display = 'none';
+            } else {
+                popup.style.display = 'block';
+            }
         }
     </script>
 </body>
