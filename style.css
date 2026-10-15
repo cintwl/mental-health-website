@@ -16,11 +16,11 @@
     padding: 0;
 }
 
-body {
+html, body {
+    background-color: var(--bg) !important; /* Forced to fix any white default */
+    color: var(--text);
     font-family: 'Georgia', serif;
     line-height: 1.7;
-    color: var(--text);
-    background-color: var(--bg);
 }
 
 /* --- TOP BANNER --- */
@@ -76,6 +76,13 @@ section {
     margin: 60px auto;
     background: linear-gradient(90deg, transparent, var(--sand), transparent);
     border: none;
+}
+.chart-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border);
+    margin: 50px auto;
+    width: 60%;
 }
 
 /* --- FADE-IN ON SCROLL --- */
@@ -387,8 +394,8 @@ section {
 }
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 220px;
+    width: 280px;
+    height: 200px; /* Uniform height for 4 cards */
     perspective: 1000px;
     cursor: pointer;
 }
@@ -414,7 +421,7 @@ section {
     justify-content: center;
     padding: 20px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.95rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 .flip-card-front {
@@ -431,6 +438,18 @@ section {
 .story-container { background: var(--card); padding: 40px; border-radius: 16px; margin-top: 30px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 .scene { display: none; animation: fadeIn 0.5s; }
 .scene.active { display: block; }
+
+/* Added spacing for "1. The Corridor" and text */
+.scene h3 { 
+    margin-bottom: 15px; 
+    margin-top: 25px;
+    color: var(--umber);
+}
+.scene p { 
+    margin-bottom: 25px; 
+    line-height: 1.8;
+}
+
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .story-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
 .story-controls button {
@@ -482,18 +501,24 @@ section {
 .hotspot-1 { top: 30%; left: 40%; }
 .hotspot-2 { top: 60%; left: 70%; }
 .hotspot-3 { bottom: 20%; left: 20%; }
+
+/* Fixed popup overlap and spacing */
 .hotspot-popup {
     display: none;
     background: var(--bg);
     padding: 20px;
     border-radius: 8px;
     border-left: 5px solid var(--sand);
-    margin-bottom: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
     font-size: 1rem;
     color: var(--text);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     animation: fadeIn 0.3s;
+    position: relative;
+    z-index: 5;
 }
+
 .audio-player { background: var(--bg); padding: 25px; border-radius: 12px; margin-top: 30px; border: 1px solid var(--border); }
 .audio-player h4 { margin-top: 0; color: var(--olive); font-size: 1.2em; }
 .audio-player audio { width: 100%; margin-top: 15px; }
@@ -579,15 +604,6 @@ section {
     margin-top: 15px;
 }
 
-/* --- METHOD LIST --- */
-.method-list {
-    margin: 15px 0 15px 25px;
-    list-style-type: disc;
-}
-.method-list li {
-    margin-bottom: 8px;
-}
-
 /* --- HELP & ACCESS --- */
 .self-care-check { background: #f0fdf4; padding: 30px; border-radius: 12px; margin-top: 30px; border: 1px solid #bbf7d0; }
 .self-care-check label { display: block; padding: 15px; background: var(--card); margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); transition: background 0.2s; font-size: 1rem; }
@@ -596,28 +612,6 @@ section {
 .safety-note { background-color: #fef2f2; border-left: 6px solid #ef4444; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; }
 .safety-note h3 { color: #b91c1c; margin-top: 0; }
 .safety-note p { color: #7f1d1d; }
-
-/* --- SOURCES --- */
-.sources {
-    margin-top: 40px;
-    background: var(--card);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
-.sources h3 {
-    color: var(--umber);
-    margin-bottom: 15px;
-}
-.sources ul {
-    margin-left: 20px;
-    font-size: 0.9em;
-    line-height: 1.6;
-    color: var(--text);
-}
-.sources li {
-    margin-bottom: 8px;
-}
 
 /* --- BACK TO TOP BUTTON --- */
 .back-to-top {
