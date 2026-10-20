@@ -90,8 +90,6 @@
                 </div>
 
                 <div id="spin-result" class="spin-result" aria-live="polite"></div>
-
-                <!-- Removed the duplicate "Important" note here to fix the messy layout -->
             </div>
         </section>
 
@@ -138,8 +136,8 @@
                 </div>
             </div>
 
-            <!-- NEW DIVIDER LINE between text and charts -->
-            <hr class="chart-divider">
+            <!-- DIVIDER BETWEEN TEXT AND CHARTS -->
+            <hr class="inner-divider">
 
             <!-- CHARTS -->
             <div class="chart-grid">
@@ -183,10 +181,10 @@
                         <span class="donut-hole">Barriers to<br>help-seeking</span>
                     </div>
                     <div class="donut-legend">
-                        <span><span class="legend-dot" style="background: var(--umber);"></span> Fear of being judged (35%)</span>
-                        <span><span class="legend-dot" style="background: var(--olive);"></span> Don't know where to go (25%)</span>
+                        <span><span class="legend-dot" style="background: var(--mauve);"></span> Fear of being judged (35%)</span>
+                        <span><span class="legend-dot" style="background: var(--taupe);"></span> Don't know where to go (25%)</span>
                         <span><span class="legend-dot" style="background: var(--sand);"></span> Worry about privacy (20%)</span>
-                        <span><span class="legend-dot" style="background: #A8735C;"></span> Cost or time (20%)</span>
+                        <span><span class="legend-dot" style="background: var(--text);"></span> Cost or time (20%)</span>
                     </div>
                     <div class="caption">
                         <p><strong>Title:</strong> Reported barriers to seeking professional support</p>
@@ -201,13 +199,13 @@
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
                 <div class="timeline-chart-container">
                     <svg viewBox="0 0 520 160" class="timeline-chart" role="img" aria-label="Timeline: average age of first symptoms is around 13; average age of first treatment is around 27 — roughly 14 years without care.">
-                        <line x1="30" y1="95" x2="500" y2="95" stroke="var(--sand)" stroke-width="2"/>
-                        <rect x="107" y="88" width="316" height="14" rx="7" fill="var(--sand)" opacity="0.4"/>
-                        <circle cx="107" cy="95" r="9" fill="var(--umber)"/>
-                        <circle cx="423" cy="95" r="9" fill="var(--olive)"/>
-                        <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--umber)">First symptoms</text>
+                        <line x1="30" y1="95" x2="500" y2="95" stroke="var(--taupe)" stroke-width="2"/>
+                        <rect x="107" y="88" width="316" height="14" rx="7" fill="var(--sand)" opacity="0.6"/>
+                        <circle cx="107" cy="95" r="9" fill="var(--text)"/>
+                        <circle cx="423" cy="95" r="9" fill="var(--mauve)"/>
+                        <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--text)">First symptoms</text>
                         <text x="107" y="78" text-anchor="middle" font-size="13" fill="var(--text)">around age 13</text>
-                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--olive)">First treatment</text>
+                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--mauve)">First treatment</text>
                         <text x="423" y="78" text-anchor="middle" font-size="13" fill="var(--text)">around age 27</text>
                         <text x="265" y="138" text-anchor="middle" font-size="14" fill="var(--text)">≈ 14 years without care</text>
                     </svg>
@@ -219,7 +217,10 @@
                 </div>
             </div>
 
-            <!-- Myth vs Fact (Now with 4 cards and shorter text) -->
+            <!-- DIVIDER BETWEEN CHARTS AND MYTHS -->
+            <hr class="inner-divider">
+
+            <!-- Myth vs Fact -->
             <h3>Myth vs. Fact</h3>
             <p><em>Hover over a card to reveal the truth.</em></p>
             <div class="flip-card-container">
@@ -278,8 +279,9 @@
                 </div>
 
                 <div class="story-image-wrapper">
-                    <img src="https://placehold.co/800x450/F1EBDC/C4A38E?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
+                    <img src="https://placehold.co/800x450/F3E9E1/9F9187?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
+                    <!-- Fixed positions to ensure they don't get cut off -->
                     <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')" aria-label="Hotspot 1: the phone">
                         <span class="pulse-ring"></span> 1
                     </button>
@@ -349,7 +351,7 @@
 
         <hr class="section-divider">
 
-        <!-- 5. METHOD + AI (Only the link, as requested) -->
+        <!-- 5. METHOD + AI -->
         <section id="method">
             <h2>Method + AI</h2>
             <p><a href="ai-log.md">View our AI-Use Log here</a></p>
@@ -357,7 +359,7 @@
 
         <hr class="section-divider">
 
-        <!-- 6. HELP + ACCESS (Sources removed) -->
+        <!-- 6. HELP + ACCESS -->
         <section id="help">
             <h2>Help + Access</h2>
             <p>If you or someone you know needs support, here are verified resources:</p>
@@ -500,7 +502,6 @@
                 body = '<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>';
             }
 
-            // Clean, single "Remember" note inside the result box
             out.innerHTML = '<h3>' + heading + '</h3>' + body
                 + '<p class="caption" style="margin-top: 20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>';
             out.classList.add('show');

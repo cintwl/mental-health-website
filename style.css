@@ -1,13 +1,13 @@
-/* --- WARM COLOR PALETTE (LIGHTER IVORY BACKGROUND) --- */
+/* --- NEW WARM & COZY PALETTE (FROM YOUR IMAGE) --- */
 :root {
-    --ivory: #FAF8F5;      /* Lighter Ivory Linen background */
-    --sand: #C4A38E;       /* Soft Sand */
-    --umber: #5C3822;      /* Burnt Umber (text) */
-    --olive: #4B4E2A;      /* Olive Grove (accents) */
-    --text: #3A3532;       /* Deep warm brown for readability */
+    --ivory: #FCFAF7;      /* Soft warm cream background */
+    --sand: #D8CBBF;       /* Warm light beige */
+    --taupe: #9F9187;      /* Muted taupe */
+    --mauve: #8A6B63;      /* Gentle rose-brown (replaces green) */
+    --text: #42322B;       /* Dark warm brown for text readability */
     --bg: var(--ivory);
-    --card: #FDFBF7;       /* Off-white, not pure white */
-    --border: #e0dcd5;
+    --card: #F7F3EE;       /* Slightly darker cream for cards */
+    --border: #E6E0D8;     /* Soft border color */
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 html, body {
-    background-color: var(--bg) !important; /* Forced to fix any white default */
+    background-color: var(--bg) !important;
     color: var(--text);
     font-family: 'Georgia', serif;
     line-height: 1.7;
@@ -25,7 +25,7 @@ html, body {
 
 /* --- TOP BANNER --- */
 .top-banner {
-    background-color: var(--olive);
+    background-color: var(--mauve);
     color: var(--ivory);
     text-align: center;
     padding: 12px 20px;
@@ -49,10 +49,10 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 nav a {
-    color: var(--umber);
+    color: var(--text);
     margin: 0 15px;
     text-decoration: none;
     font-size: 0.95em;
@@ -61,7 +61,7 @@ nav a {
     font-weight: bold;
     transition: color 0.2s;
 }
-nav a:hover { color: var(--olive); }
+nav a:hover { color: var(--mauve); }
 
 /* --- SECTIONS & LAYOUT --- */
 section {
@@ -77,12 +77,14 @@ section {
     background: linear-gradient(90deg, transparent, var(--sand), transparent);
     border: none;
 }
-.chart-divider {
-    border: 0;
+
+/* New Inner Divider for spacing between charts and cards */
+.inner-divider {
     height: 1px;
+    width: 80%;
+    margin: 60px auto;
     background: var(--border);
-    margin: 50px auto;
-    width: 60%;
+    border: none;
 }
 
 /* --- FADE-IN ON SCROLL --- */
@@ -107,13 +109,13 @@ section {
     font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
-    color: var(--umber);
+    color: var(--text);
 }
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 40px auto;
-    color: #666;
+    color: var(--taupe);
 }
 .hero-buttons {
     display: flex;
@@ -121,7 +123,7 @@ section {
     gap: 20px;
 }
 .btn-primary {
-    background-color: var(--olive);
+    background-color: var(--mauve);
     color: var(--ivory);
     padding: 15px 30px;
     text-decoration: none;
@@ -133,21 +135,21 @@ section {
     font-family: 'Georgia', serif;
     font-size: 1rem;
 }
-.btn-primary:hover { background-color: var(--umber); }
+.btn-primary:hover { background-color: #70544D; } /* Slightly darker mauve */
 .btn-secondary {
     background-color: transparent;
-    color: var(--umber);
+    color: var(--mauve);
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    border: 2px solid var(--umber);
+    border: 2px solid var(--mauve);
     transition: all 0.3s;
     cursor: pointer;
     font-family: 'Georgia', serif;
     font-size: 1rem;
 }
-.btn-secondary:hover { background-color: var(--umber); color: var(--ivory); }
+.btn-secondary:hover { background-color: var(--mauve); color: var(--ivory); }
 .btn-ghost {
     background: transparent;
     border: 2px solid var(--border);
@@ -161,22 +163,22 @@ section {
     transition: all 0.3s;
 }
 .btn-ghost:hover {
-    border-color: var(--umber);
-    color: var(--umber);
+    border-color: var(--mauve);
+    color: var(--mauve);
 }
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: #F1EBDC;
+    background: #F4EBE6;
     padding: 15px;
-    border-left: 4px solid var(--sand);
+    border-left: 4px solid var(--mauve);
     margin-bottom: 20px;
     font-size: 0.95em;
     border-radius: 0 8px 8px 0;
 }
 .skip-link {
     display: inline-block;
-    background: var(--olive);
+    background: var(--mauve);
     color: var(--ivory);
     padding: 10px 20px;
     text-decoration: none;
@@ -185,7 +187,7 @@ section {
     font-weight: bold;
 }
 .fiction-label {
-    color: var(--umber);
+    color: var(--taupe);
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 15px;
@@ -207,16 +209,16 @@ section {
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    color: var(--umber);
+    color: var(--text);
     transition: all 0.3s ease;
     font-family: 'Georgia', serif;
     font-size: 0.95em;
 }
 .tab-button:hover { background: var(--sand); color: var(--ivory); }
-.tab-button.active { background: var(--olive); color: var(--ivory); border-color: var(--olive); }
+.tab-button.active { background: var(--mauve); color: var(--ivory); border-color: var(--mauve); }
 .tab-pane { display: none; animation: fadeIn 0.5s; }
 .tab-pane.active { display: block; }
-.tab-pane h3 { color: var(--umber); margin-bottom: 15px; }
+.tab-pane h3 { color: var(--text); margin-bottom: 15px; }
 .tab-pane p { margin-bottom: 15px; }
 
 /* --- PULL QUOTE --- */
@@ -227,7 +229,7 @@ section {
     text-align: center;
     margin: 60px auto;
     max-width: 700px;
-    color: var(--umber);
+    color: var(--text);
     position: relative;
     padding: 0 40px;
     line-height: 1.4;
@@ -268,7 +270,7 @@ section {
     border: 1px solid var(--border);
     box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
-.visualization-section h3 { color: var(--umber); margin-bottom: 15px; text-align: center; }
+.visualization-section h3 { color: var(--text); margin-bottom: 15px; text-align: center; }
 
 /* Bar chart */
 .bar-chart {
@@ -285,7 +287,7 @@ section {
 .bar-label {
     flex: 0 0 100px;
     font-weight: bold;
-    color: var(--umber);
+    color: var(--text);
     font-size: 0.95em;
     text-align: right;
 }
@@ -298,7 +300,7 @@ section {
 }
 .bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--olive), #6b6e3b);
+    background: linear-gradient(90deg, var(--mauve), var(--taupe));
     border-radius: 6px;
     transition: width 1s ease-out;
 }
@@ -306,11 +308,11 @@ section {
     flex: 0 0 50px;
     text-align: left;
     font-weight: bold;
-    color: var(--umber);
+    color: var(--text);
 }
 .chart-label {
     font-size: 0.95em;
-    color: #555;
+    color: var(--taupe);
     margin-top: 10px;
     text-align: center;
 }
@@ -321,10 +323,10 @@ section {
     height: 200px;
     border-radius: 50%;
     background: conic-gradient(
-        var(--umber) 0% 35%,
-        var(--olive) 35% 60%,
+        var(--mauve) 0% 35%,
+        var(--taupe) 35% 60%,
         var(--sand) 60% 80%,
-        #A8735C 80% 100%
+        var(--text) 80% 100%
     );
     position: relative;
     margin: 30px auto;
@@ -343,7 +345,7 @@ section {
     justify-content: center;
     text-align: center;
     font-weight: bold;
-    color: var(--umber);
+    color: var(--text);
     font-size: 0.9em;
     line-height: 1.3;
     box-shadow: inset 0 0 0 2px var(--border);
@@ -375,7 +377,7 @@ section {
 /* Caption */
 .caption {
     font-size: 0.85em;
-    color: #666;
+    color: var(--taupe);
     background: var(--bg);
     padding: 15px 20px;
     border-radius: 8px;
@@ -395,7 +397,7 @@ section {
 .flip-card {
     background-color: transparent;
     width: 280px;
-    height: 200px; /* Uniform height for 4 cards */
+    height: 200px;
     perspective: 1000px;
     cursor: pointer;
 }
@@ -422,28 +424,27 @@ section {
     padding: 20px;
     font-weight: bold;
     font-size: 0.95rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .flip-card-front {
     background-color: var(--sand);
-    color: var(--umber);
+    color: var(--text);
 }
 .flip-card-back {
-    background-color: var(--olive);
+    background-color: var(--mauve);
     color: var(--ivory);
     transform: rotateY(180deg);
 }
 
 /* --- HUMAN STORY & HOTSPOTS --- */
-.story-container { background: var(--card); padding: 40px; border-radius: 16px; margin-top: 30px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.story-container { background: var(--card); padding: 40px; border-radius: 16px; margin-top: 30px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 .scene { display: none; animation: fadeIn 0.5s; }
 .scene.active { display: block; }
 
-/* Added spacing for "1. The Corridor" and text */
 .scene h3 { 
     margin-bottom: 15px; 
     margin-top: 25px;
-    color: var(--umber);
+    color: var(--text);
 }
 .scene p { 
     margin-bottom: 25px; 
@@ -453,7 +454,7 @@ section {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .story-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
 .story-controls button {
-    background-color: var(--umber);
+    background-color: var(--mauve);
     color: var(--ivory);
     border: none;
     padding: 12px 25px;
@@ -464,16 +465,16 @@ section {
     transition: background 0.3s;
     font-family: 'Georgia', serif;
 }
-.story-controls button:hover { background-color: var(--olive); }
-#scene-indicator { font-weight: bold; color: var(--umber); font-size: 1.1em; }
-.story-image-wrapper { position: relative; display: inline-block; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+.story-controls button:hover { background-color: #70544D; }
+#scene-indicator { font-weight: bold; color: var(--text); font-size: 1.1em; }
+.story-image-wrapper { position: relative; display: inline-block; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .story-image { width: 100%; display: block; }
 .hotspot {
     position: absolute;
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--umber);
+    background-color: var(--mauve);
     color: var(--ivory);
     border: 4px solid var(--ivory);
     font-weight: bold;
@@ -482,7 +483,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     transition: transform 0.2s;
     z-index: 10;
 }
@@ -492,23 +493,24 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: var(--umber);
+    background-color: var(--mauve);
     opacity: 0.6;
     animation: pulse 2s infinite;
     z-index: -1;
 }
 @keyframes pulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.2); opacity: 0; } }
-.hotspot-1 { top: 30%; left: 40%; }
-.hotspot-2 { top: 60%; left: 70%; }
-.hotspot-3 { bottom: 20%; left: 20%; }
 
-/* Fixed popup overlap and spacing */
+/* Adjusted positions so they don't get cut off */
+.hotspot-1 { top: 35%; left: 45%; }
+.hotspot-2 { top: 55%; left: 65%; }
+.hotspot-3 { bottom: 25%; left: 25%; }
+
 .hotspot-popup {
     display: none;
     background: var(--bg);
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid var(--sand);
+    border-left: 5px solid var(--mauve);
     margin-top: 15px;
     margin-bottom: 25px;
     font-size: 1rem;
@@ -520,14 +522,14 @@ section {
 }
 
 .audio-player { background: var(--bg); padding: 25px; border-radius: 12px; margin-top: 30px; border: 1px solid var(--border); }
-.audio-player h4 { margin-top: 0; color: var(--olive); font-size: 1.2em; }
+.audio-player h4 { margin-top: 0; color: var(--mauve); font-size: 1.2em; }
 .audio-player audio { width: 100%; margin-top: 15px; }
 .audio-player details { margin-top: 15px; background: transparent; border: none; padding: 0; }
-.audio-player summary { color: var(--umber); font-weight: bold; cursor: pointer; }
+.audio-player summary { color: var(--text); font-weight: bold; cursor: pointer; }
 .story-timeline { display: flex; justify-content: space-between; margin-top: 40px; border-top: 2px solid var(--border); padding-top: 20px; flex-wrap: wrap; gap: 15px; }
-.timeline-step { cursor: pointer; color: #888; font-size: 0.95em; padding: 8px; transition: all 0.3s; font-weight: 500; }
-.timeline-step:hover { color: var(--olive); }
-.timeline-step.active { color: var(--umber); font-weight: bold; border-top: 4px solid var(--umber); margin-top: -22px; padding-top: 18px; }
+.timeline-step { cursor: pointer; color: var(--taupe); font-size: 0.95em; padding: 8px; transition: all 0.3s; font-weight: 500; }
+.timeline-step:hover { color: var(--mauve); }
+.timeline-step.active { color: var(--text); font-weight: bold; border-top: 4px solid var(--mauve); margin-top: -22px; padding-top: 18px; }
 
 /* --- SELF-CHECK (Mini-SPIN) --- */
 .check-card {
@@ -536,7 +538,7 @@ section {
     padding: 35px;
     margin-top: 30px;
     border: 1px solid var(--border);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
 }
 .spin-question {
     margin-bottom: 30px;
@@ -544,7 +546,7 @@ section {
 .spin-question p {
     font-weight: bold;
     margin-bottom: 15px;
-    color: var(--umber);
+    color: var(--text);
     font-size: 1.05em;
 }
 .spin-options {
@@ -569,13 +571,13 @@ section {
     color: var(--text);
 }
 .opt input:checked + .opt-pill {
-    background: var(--olive);
+    background: var(--mauve);
     color: var(--ivory);
-    border-color: var(--olive);
+    border-color: var(--mauve);
 }
 .opt-pill:hover {
-    border-color: var(--sand);
-    background: #F1EBDC;
+    border-color: var(--mauve);
+    background: #F4EBE6;
 }
 .check-actions {
     display: flex;
@@ -589,14 +591,14 @@ section {
     padding: 25px;
     background: var(--bg);
     border-radius: 12px;
-    border-left: 6px solid var(--olive);
+    border-left: 6px solid var(--mauve);
     animation: fadeIn 0.4s;
 }
 .spin-result.show {
     display: block;
 }
 .spin-result h3 {
-    color: var(--olive);
+    color: var(--mauve);
     margin-bottom: 12px;
 }
 .spin-result .btn-primary {
@@ -605,12 +607,12 @@ section {
 }
 
 /* --- HELP & ACCESS --- */
-.self-care-check { background: #f0fdf4; padding: 30px; border-radius: 12px; margin-top: 30px; border: 1px solid #bbf7d0; }
+.self-care-check { background: #F7F3EE; padding: 30px; border-radius: 12px; margin-top: 30px; border: 1px solid var(--sand); }
 .self-care-check label { display: block; padding: 15px; background: var(--card); margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); transition: background 0.2s; font-size: 1rem; }
-.self-care-check label:hover { background: #f0fdf4; }
+.self-care-check label:hover { background: #F4EBE6; }
 .self-care-check input[type="checkbox"] { margin-right: 15px; transform: scale(1.3); }
-.safety-note { background-color: #fef2f2; border-left: 6px solid #ef4444; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; }
-.safety-note h3 { color: #b91c1c; margin-top: 0; }
+.safety-note { background-color: #F9ECEC; border-left: 6px solid #C76A6A; padding: 25px; margin-top: 30px; border-radius: 0 8px 8px 0; }
+.safety-note h3 { color: #9A4040; margin-top: 0; }
 .safety-note p { color: #7f1d1d; }
 
 /* --- BACK TO TOP BUTTON --- */
@@ -618,7 +620,7 @@ section {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: var(--umber);
+    background: var(--mauve);
     color: var(--ivory);
     width: 50px;
     height: 50px;
@@ -628,17 +630,17 @@ section {
     justify-content: center;
     text-decoration: none;
     font-size: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
     z-index: 1000;
 }
 .back-to-top.show { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: var(--olive); transform: translateY(-5px); }
+.back-to-top:hover { background: #70544D; transform: translateY(-5px); }
 
 /* --- FOOTER --- */
-footer { text-align: center; padding: 50px 20px; background-color: var(--card); color: #666; font-size: 0.95em; border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 50px 20px; background-color: var(--card); color: var(--taupe); font-size: 0.95em; border-top: 1px solid var(--border); }
 .footer-note {
     font-size: 0.85em;
     margin-top: 8px;
