@@ -100,12 +100,17 @@
             <h2>What We Know</h2>
             <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
 
+            <!-- NEW 3-2 LAYOUT FOR TABS -->
             <div class="tabs-container" role="tablist">
-                <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
-                <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
-                <button class="tab-button" onclick="openTab('tab-3', this)">Social &amp; Cultural</button>
-                <button class="tab-button" onclick="openTab('tab-4', this)">Research &amp; Ethics</button>
-                <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
+                <div class="tabs-row">
+                    <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
+                    <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
+                    <button class="tab-button" onclick="openTab('tab-3', this)">Social &amp; Cultural</button>
+                </div>
+                <div class="tabs-row">
+                    <button class="tab-button" onclick="openTab('tab-4', this)">Research &amp; Ethics</button>
+                    <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
+                </div>
             </div>
 
             <div class="tab-content">
@@ -181,9 +186,9 @@
                         <span class="donut-hole">Barriers to<br>help-seeking</span>
                     </div>
                     <div class="donut-legend">
-                        <span><span class="legend-dot" style="background: var(--mauve);"></span> Fear of being judged (35%)</span>
-                        <span><span class="legend-dot" style="background: var(--taupe);"></span> Don't know where to go (25%)</span>
-                        <span><span class="legend-dot" style="background: var(--sand);"></span> Worry about privacy (20%)</span>
+                        <span><span class="legend-dot" style="background: var(--rose);"></span> Fear of being judged (35%)</span>
+                        <span><span class="legend-dot" style="background: var(--purple-gray);"></span> Don't know where to go (25%)</span>
+                        <span><span class="legend-dot" style="background: var(--blue);"></span> Worry about privacy (20%)</span>
                         <span><span class="legend-dot" style="background: var(--text);"></span> Cost or time (20%)</span>
                     </div>
                     <div class="caption">
@@ -199,13 +204,13 @@
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
                 <div class="timeline-chart-container">
                     <svg viewBox="0 0 520 160" class="timeline-chart" role="img" aria-label="Timeline: average age of first symptoms is around 13; average age of first treatment is around 27 — roughly 14 years without care.">
-                        <line x1="30" y1="95" x2="500" y2="95" stroke="var(--taupe)" stroke-width="2"/>
-                        <rect x="107" y="88" width="316" height="14" rx="7" fill="var(--sand)" opacity="0.6"/>
+                        <line x1="30" y1="95" x2="500" y2="95" stroke="var(--purple-gray)" stroke-width="2"/>
+                        <rect x="107" y="88" width="316" height="14" rx="7" fill="var(--blue)" opacity="0.6"/>
                         <circle cx="107" cy="95" r="9" fill="var(--text)"/>
-                        <circle cx="423" cy="95" r="9" fill="var(--mauve)"/>
+                        <circle cx="423" cy="95" r="9" fill="var(--rose)"/>
                         <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--text)">First symptoms</text>
                         <text x="107" y="78" text-anchor="middle" font-size="13" fill="var(--text)">around age 13</text>
-                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--mauve)">First treatment</text>
+                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--rose)">First treatment</text>
                         <text x="423" y="78" text-anchor="middle" font-size="13" fill="var(--text)">around age 27</text>
                         <text x="265" y="138" text-anchor="middle" font-size="14" fill="var(--text)">≈ 14 years without care</text>
                     </svg>
@@ -279,9 +284,8 @@
                 </div>
 
                 <div class="story-image-wrapper">
-                    <img src="https://placehold.co/800x450/F3E9E1/9F9187?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
+                    <img src="https://placehold.co/800x450/F8F4F1/7C7375?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
-                    <!-- Fixed positions to ensure they don't get cut off -->
                     <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')" aria-label="Hotspot 1: the phone">
                         <span class="pulse-ring"></span> 1
                     </button>
