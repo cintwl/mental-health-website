@@ -1,13 +1,13 @@
-/* --- SOFT PASTEL SKY PALETTE --- */
+/* --- SOFT PASTEL SKY PALETTE (NO BROWN) --- */
 :root {
-    --cream: #F8F4F1;       /* Background (from the pale cream) */
-    --card: #FFFFFF;        /* White cards for contrast */
-    --rose: #B97E67;        /* Dusty rose/terracotta (primary accent) */
-    --rose-hover: #9C664F;  /* Darker rose for hover states */
-    --purple-gray: #7C7375; /* Muted purple-gray (secondary text) */
-    --blue: #D1D6E4;        /* Pale periwinkle blue (soft highlights) */
-    --text: #3E3235;        /* Dark warm plum (main text) */
-    --border: #E6DFDC;      /* Very soft border color */
+    --cream: #F8F6F4;       /* Soft warm cream background */
+    --card: #FFFFFF;        /* Pure white cards */
+    --pink: #D49995;        /* Soft dusty pink (replaces the brown) */
+    --pink-hover: #C28581;  /* Slightly darker pink for hover */
+    --periwinkle: #A7B5C9;  /* Pale periwinkle blue (soft highlights) */
+    --text-main: #3B3033;   /* Deep plum-grey for high contrast text */
+    --text-light: #7D7276;  /* Muted mauve-grey for secondary text */
+    --border: #E6E0DD;      /* Very soft border color */
 }
 
 * {
@@ -18,14 +18,14 @@
 
 html, body {
     background-color: var(--cream) !important;
-    color: var(--text);
+    color: var(--text-main);
     font-family: 'Georgia', serif;
     line-height: 1.7;
 }
 
 /* --- TOP BANNER --- */
 .top-banner {
-    background-color: var(--rose);
+    background-color: var(--pink);
     color: var(--cream);
     text-align: center;
     padding: 12px 20px;
@@ -37,7 +37,7 @@ html, body {
     font-weight: bold;
 }
 .top-banner a:hover {
-    color: var(--blue);
+    color: var(--periwinkle);
 }
 
 /* --- NAVIGATION --- */
@@ -52,7 +52,7 @@ nav {
     box-shadow: 0 2px 10px rgba(0,0,0,0.03);
 }
 nav a {
-    color: var(--text);
+    color: var(--text-main);
     margin: 0 15px;
     text-decoration: none;
     font-size: 0.95em;
@@ -61,7 +61,7 @@ nav a {
     font-weight: bold;
     transition: color 0.2s;
 }
-nav a:hover { color: var(--rose); }
+nav a:hover { color: var(--pink); }
 
 /* --- SECTIONS & LAYOUT --- */
 section {
@@ -74,7 +74,7 @@ section {
     height: 2px;
     width: 80%;
     margin: 60px auto;
-    background: linear-gradient(90deg, transparent, var(--blue), transparent);
+    background: linear-gradient(90deg, transparent, var(--periwinkle), transparent);
     border: none;
 }
 .inner-divider {
@@ -107,13 +107,13 @@ section {
     font-size: 3.5rem;
     line-height: 1.1;
     margin-bottom: 20px;
-    color: var(--text);
+    color: var(--text-main);
 }
 .hero-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto 40px auto;
-    color: var(--purple-gray);
+    color: var(--text-light);
 }
 .hero-buttons {
     display: flex;
@@ -121,7 +121,7 @@ section {
     gap: 20px;
 }
 .btn-primary {
-    background-color: var(--rose);
+    background-color: var(--pink);
     color: var(--cream);
     padding: 15px 30px;
     text-decoration: none;
@@ -132,27 +132,27 @@ section {
     cursor: pointer;
     font-family: 'Georgia', serif;
     font-size: 1rem;
-    box-shadow: 0 4px 6px rgba(185, 126, 103, 0.2);
+    box-shadow: 0 4px 6px rgba(212, 153, 149, 0.2);
 }
-.btn-primary:hover { background-color: var(--rose-hover); }
+.btn-primary:hover { background-color: var(--pink-hover); }
 .btn-secondary {
     background-color: transparent;
-    color: var(--rose);
+    color: var(--pink);
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 8px;
     font-weight: bold;
-    border: 2px solid var(--rose);
+    border: 2px solid var(--pink);
     transition: all 0.3s;
     cursor: pointer;
     font-family: 'Georgia', serif;
     font-size: 1rem;
 }
-.btn-secondary:hover { background-color: var(--rose); color: var(--cream); }
+.btn-secondary:hover { background-color: var(--pink); color: var(--cream); }
 .btn-ghost {
     background: transparent;
     border: 2px solid var(--border);
-    color: var(--text);
+    color: var(--text-main);
     padding: 15px 30px;
     border-radius: 8px;
     font-weight: bold;
@@ -162,23 +162,23 @@ section {
     transition: all 0.3s;
 }
 .btn-ghost:hover {
-    border-color: var(--rose);
-    color: var(--rose);
+    border-color: var(--pink);
+    color: var(--pink);
 }
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: var(--blue);
+    background: var(--periwinkle);
     padding: 15px;
-    border-left: 4px solid var(--rose);
+    border-left: 4px solid var(--pink);
     margin-bottom: 20px;
     font-size: 0.95em;
     border-radius: 0 8px 8px 0;
-    color: var(--text);
+    color: var(--text-main);
 }
 .skip-link {
     display: inline-block;
-    background: var(--rose);
+    background: var(--pink);
     color: var(--cream);
     padding: 10px 20px;
     text-decoration: none;
@@ -187,19 +187,19 @@ section {
     font-weight: bold;
 }
 .fiction-label {
-    color: var(--rose);
+    color: var(--pink);
     font-weight: bold;
     letter-spacing: 1px;
     margin-bottom: 15px;
     font-size: 0.9em;
 }
 
-/* --- INTERACTIVE TABS (NEW 3-2 LAYOUT) --- */
+/* --- INTERACTIVE TABS (3-2 LAYOUT) --- */
 .tabs-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin-top: 35px; /* Added space between text and buttons */
+    margin-top: 35px;
     margin-bottom: 30px;
     align-items: center;
 }
@@ -216,16 +216,16 @@ section {
     border-radius: 25px;
     cursor: pointer;
     font-weight: bold;
-    color: var(--text);
+    color: var(--text-main);
     transition: all 0.3s ease;
     font-family: 'Georgia', serif;
     font-size: 0.95em;
 }
-.tab-button:hover { background: var(--blue); border-color: var(--blue); }
-.tab-button.active { background: var(--rose); color: var(--cream); border-color: var(--rose); }
+.tab-button:hover { background: var(--periwinkle); border-color: var(--periwinkle); }
+.tab-button.active { background: var(--pink); color: var(--cream); border-color: var(--pink); }
 .tab-pane { display: none; animation: fadeIn 0.5s; }
 .tab-pane.active { display: block; }
-.tab-pane h3 { color: var(--text); margin-bottom: 15px; }
+.tab-pane h3 { color: var(--text-main); margin-bottom: 15px; }
 .tab-pane p { margin-bottom: 15px; }
 
 /* --- PULL QUOTE --- */
@@ -236,7 +236,7 @@ section {
     text-align: center;
     margin: 60px auto;
     max-width: 700px;
-    color: var(--text);
+    color: var(--text-main);
     position: relative;
     padding: 0 40px;
     line-height: 1.4;
@@ -247,7 +247,7 @@ section {
     position: absolute;
     left: 0;
     top: -20px;
-    color: var(--rose);
+    color: var(--pink);
     font-family: 'Georgia', serif;
     line-height: 1;
 }
@@ -257,7 +257,7 @@ section {
     position: absolute;
     right: 0;
     bottom: -50px;
-    color: var(--rose);
+    color: var(--pink);
     font-family: 'Georgia', serif;
     line-height: 1;
 }
@@ -277,7 +277,7 @@ section {
     border: 1px solid var(--border);
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
-.visualization-section h3 { color: var(--text); margin-bottom: 15px; text-align: center; }
+.visualization-section h3 { color: var(--text-main); margin-bottom: 15px; text-align: center; }
 
 /* Bar chart */
 .bar-chart {
@@ -294,7 +294,7 @@ section {
 .bar-label {
     flex: 0 0 100px;
     font-weight: bold;
-    color: var(--text);
+    color: var(--text-main);
     font-size: 0.95em;
     text-align: right;
 }
@@ -307,7 +307,7 @@ section {
 }
 .bar-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--rose), var(--purple-gray));
+    background: linear-gradient(90deg, var(--pink), var(--text-light));
     border-radius: 6px;
     transition: width 1s ease-out;
 }
@@ -315,11 +315,11 @@ section {
     flex: 0 0 50px;
     text-align: left;
     font-weight: bold;
-    color: var(--text);
+    color: var(--text-main);
 }
 .chart-label {
     font-size: 0.95em;
-    color: var(--purple-gray);
+    color: var(--text-light);
     margin-top: 10px;
     text-align: center;
 }
@@ -330,9 +330,9 @@ section {
     height: 200px;
     border-radius: 50%;
     background: conic-gradient(
-        var(--rose) 0% 35%,
-        var(--purple-gray) 35% 60%,
-        var(--blue) 60% 80%,
+        var(--pink) 0% 35%,
+        var(--text-light) 35% 60%,
+        var(--periwinkle) 60% 80%,
         var(--border) 80% 100%
     );
     position: relative;
@@ -352,7 +352,7 @@ section {
     justify-content: center;
     text-align: center;
     font-weight: bold;
-    color: var(--text);
+    color: var(--text-main);
     font-size: 0.9em;
     line-height: 1.3;
     box-shadow: inset 0 0 0 2px var(--border);
@@ -384,11 +384,11 @@ section {
 /* Caption */
 .caption {
     font-size: 0.85em;
-    color: var(--purple-gray);
+    color: var(--text-light);
     background: var(--cream);
     padding: 15px 20px;
     border-radius: 8px;
-    border-left: 4px solid var(--rose);
+    border-left: 4px solid var(--pink);
     margin-top: 20px;
 }
 .caption p { margin: 5px 0; }
@@ -434,11 +434,11 @@ section {
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 .flip-card-front {
-    background-color: var(--blue);
-    color: var(--text);
+    background-color: var(--periwinkle);
+    color: var(--text-main);
 }
 .flip-card-back {
-    background-color: var(--rose);
+    background-color: var(--pink);
     color: var(--cream);
     transform: rotateY(180deg);
 }
@@ -451,7 +451,7 @@ section {
 .scene h3 { 
     margin-bottom: 15px; 
     margin-top: 25px;
-    color: var(--text);
+    color: var(--text-main);
 }
 .scene p { 
     margin-bottom: 25px; 
@@ -461,7 +461,7 @@ section {
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 .story-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 30px; border-top: 1px solid var(--border); padding-top: 20px; }
 .story-controls button {
-    background-color: var(--rose);
+    background-color: var(--pink);
     color: var(--cream);
     border: none;
     padding: 12px 25px;
@@ -472,8 +472,8 @@ section {
     transition: background 0.3s;
     font-family: 'Georgia', serif;
 }
-.story-controls button:hover { background-color: var(--rose-hover); }
-#scene-indicator { font-weight: bold; color: var(--text); font-size: 1.1em; }
+.story-controls button:hover { background-color: var(--pink-hover); }
+#scene-indicator { font-weight: bold; color: var(--text-main); font-size: 1.1em; }
 .story-image-wrapper { position: relative; display: inline-block; width: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
 .story-image { width: 100%; display: block; }
 .hotspot {
@@ -481,7 +481,7 @@ section {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background-color: var(--rose);
+    background-color: var(--pink);
     color: var(--cream);
     border: 4px solid var(--cream);
     font-weight: bold;
@@ -500,7 +500,7 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background-color: var(--rose);
+    background-color: var(--pink);
     opacity: 0.6;
     animation: pulse 2s infinite;
     z-index: -1;
@@ -516,11 +516,11 @@ section {
     background: var(--cream);
     padding: 20px;
     border-radius: 8px;
-    border-left: 5px solid var(--rose);
+    border-left: 5px solid var(--pink);
     margin-top: 15px;
     margin-bottom: 25px;
     font-size: 1rem;
-    color: var(--text);
+    color: var(--text-main);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     animation: fadeIn 0.3s;
     position: relative;
@@ -528,14 +528,14 @@ section {
 }
 
 .audio-player { background: var(--cream); padding: 25px; border-radius: 12px; margin-top: 30px; border: 1px solid var(--border); }
-.audio-player h4 { margin-top: 0; color: var(--rose); font-size: 1.2em; }
+.audio-player h4 { margin-top: 0; color: var(--pink); font-size: 1.2em; }
 .audio-player audio { width: 100%; margin-top: 15px; }
 .audio-player details { margin-top: 15px; background: transparent; border: none; padding: 0; }
-.audio-player summary { color: var(--text); font-weight: bold; cursor: pointer; }
+.audio-player summary { color: var(--text-main); font-weight: bold; cursor: pointer; }
 .story-timeline { display: flex; justify-content: space-between; margin-top: 40px; border-top: 2px solid var(--border); padding-top: 20px; flex-wrap: wrap; gap: 15px; }
-.timeline-step { cursor: pointer; color: var(--purple-gray); font-size: 0.95em; padding: 8px; transition: all 0.3s; font-weight: 500; }
-.timeline-step:hover { color: var(--rose); }
-.timeline-step.active { color: var(--text); font-weight: bold; border-top: 4px solid var(--rose); margin-top: -22px; padding-top: 18px; }
+.timeline-step { cursor: pointer; color: var(--text-light); font-size: 0.95em; padding: 8px; transition: all 0.3s; font-weight: 500; }
+.timeline-step:hover { color: var(--pink); }
+.timeline-step.active { color: var(--text-main); font-weight: bold; border-top: 4px solid var(--pink); margin-top: -22px; padding-top: 18px; }
 
 /* --- SELF-CHECK (Mini-SPIN) --- */
 .check-card {
@@ -552,7 +552,7 @@ section {
 .spin-question p {
     font-weight: bold;
     margin-bottom: 15px;
-    color: var(--text);
+    color: var(--text-main);
     font-size: 1.05em;
 }
 .spin-options {
@@ -574,16 +574,16 @@ section {
     border-radius: 25px;
     font-size: 0.9em;
     transition: all 0.2s;
-    color: var(--text);
+    color: var(--text-main);
 }
 .opt input:checked + .opt-pill {
-    background: var(--rose);
+    background: var(--pink);
     color: var(--cream);
-    border-color: var(--rose);
+    border-color: var(--pink);
 }
 .opt-pill:hover {
-    border-color: var(--rose);
-    background: var(--blue);
+    border-color: var(--pink);
+    background: var(--periwinkle);
 }
 .check-actions {
     display: flex;
@@ -597,14 +597,14 @@ section {
     padding: 25px;
     background: var(--cream);
     border-radius: 12px;
-    border-left: 6px solid var(--rose);
+    border-left: 6px solid var(--pink);
     animation: fadeIn 0.4s;
 }
 .spin-result.show {
     display: block;
 }
 .spin-result h3 {
-    color: var(--rose);
+    color: var(--pink);
     margin-bottom: 12px;
 }
 .spin-result .btn-primary {
@@ -613,7 +613,7 @@ section {
 }
 
 /* --- HELP & ACCESS --- */
-.self-care-check { background: var(--blue); padding: 30px; border-radius: 12px; margin-top: 30px; border: 1px solid #C0C8D8; }
+.self-care-check { background: var(--periwinkle); padding: 30px; border-radius: 12px; margin-top: 30px; border: 1px solid #C0C8D8; }
 .self-care-check label { display: block; padding: 15px; background: var(--card); margin-bottom: 10px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); transition: background 0.2s; font-size: 1rem; }
 .self-care-check label:hover { background: var(--cream); }
 .self-care-check input[type="checkbox"] { margin-right: 15px; transform: scale(1.3); }
@@ -626,7 +626,7 @@ section {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: var(--rose);
+    background: var(--pink);
     color: var(--cream);
     width: 50px;
     height: 50px;
@@ -643,10 +643,10 @@ section {
     z-index: 1000;
 }
 .back-to-top.show { opacity: 1; visibility: visible; }
-.back-to-top:hover { background: var(--rose-hover); transform: translateY(-5px); }
+.back-to-top:hover { background: var(--pink-hover); transform: translateY(-5px); }
 
 /* --- FOOTER --- */
-footer { text-align: center; padding: 50px 20px; background-color: var(--card); color: var(--purple-gray); font-size: 0.95em; border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 50px 20px; background-color: var(--card); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
 .footer-note {
     font-size: 0.85em;
     margin-top: 8px;
