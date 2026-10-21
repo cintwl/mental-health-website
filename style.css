@@ -324,7 +324,7 @@ section h2, .myth-fact-title {
     color: rgba(139, 106, 85, 0.15); 
 }
 
-/* --- COMBINED CHARTS LAYOUT --- */
+/* --- COMBINED CHARTS LAYOUT (FORCED LEFT AND RIGHT) --- */
 .combined-charts-wrapper {
     background: var(--card);
     border-radius: 12px;
@@ -337,7 +337,7 @@ section h2, .myth-fact-title {
 
 .charts-row {
     display: flex;
-    flex-direction: row !important; 
+    flex-direction: row !important; /* Force left and right */
     align-items: stretch;
     padding: 40px;
     gap: 40px;
@@ -348,7 +348,7 @@ section h2, .myth-fact-title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 0; 
+    min-width: 0; /* Prevents overflow */
 }
 
 .chart-item h3 {
@@ -366,7 +366,7 @@ section h2, .myth-fact-title {
 
 /* Soft Highlight for Insight Text */
 .chart-insight {
-    background-color: #F4EFEA; 
+    background-color: #F4EFEA; /* Very soft highlight */
     padding: 30px 40px;
     border-top: 1px solid var(--border);
     font-size: 1rem;
@@ -390,6 +390,7 @@ section h2, .myth-fact-title {
     margin-bottom: 30px;
 }
 
+/* Fixed Timeline Centering */
 .css-timeline-wrapper {
     padding: 40px 20px 30px;
     position: relative;
@@ -424,7 +425,7 @@ section h2, .myth-fact-title {
     border-radius: 3px;
     position: relative;
     margin: 0 auto; 
-    width: 80%; 
+    width: 80%; /* Centers the track */
 }
 
 .css-timeline-fill {
@@ -625,7 +626,7 @@ section h2, .myth-fact-title {
     border-color: var(--primary);
 }
 
-/* --- HUMAN STORY (FIXED SIZES) --- */
+/* --- HUMAN STORY & HOTSPOTS (ORIGINAL LAYOUT) --- */
 .story-container { 
     background: var(--card); 
     padding: 50px; 
