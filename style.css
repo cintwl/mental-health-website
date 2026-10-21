@@ -41,43 +41,41 @@ html, body {
     color: var(--tan);
 }
 
-/* --- NAVIGATION (SMALLER, NO CIRCLE, ONE LINE) --- */
+/* --- NAVIGATION (SMALLER, ONE LINE) --- */
 nav {
     background-color: var(--card);
     padding: 12px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap; /* Forces one line */
+    flex-wrap: nowrap; 
     gap: 15px; 
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 15px rgba(0,0,0,0.03);
-    overflow-x: auto; /* Prevents breaking on small screens */
+    overflow-x: auto; 
 }
 nav a {
     color: var(--text-main);
     text-decoration: none;
-    font-size: 0.85em; /* Smaller size */
+    font-size: 0.85em; 
     letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 6px 14px; /* Smaller padding */
+    padding: 6px 14px; 
     border-radius: 50px;
     transition: all 0.3s;
-    white-space: nowrap; /* Keeps text on one line inside button */
+    white-space: nowrap; 
 }
 nav a:hover { 
     color: var(--primary); 
 }
-/* Dynamic highlight applied by JS */
 nav a.active {
     background-color: var(--primary);
     color: var(--card);
 }
-/* The circle pseudo-element has been completely removed */
 
 /* --- SECTIONS & LAYOUT --- */
 section {
@@ -209,7 +207,7 @@ section h2, .myth-fact-title {
     background-color: var(--card);
 }
 
-/* --- SAFE STORY ELEMENTS (BELOW BUTTONS) --- */
+/* --- SAFE STORY ELEMENTS --- */
 .content-note {
     background: var(--card);
     padding: 20px 25px;
@@ -240,32 +238,40 @@ section h2, .myth-fact-title {
     color: var(--primary-hover);
 }
 
-/* --- INTERACTIVE TABS (3-2 LAYOUT) --- */
+/* --- INTERACTIVE TABS (SINGLE LINE) --- */
 .tabs-container {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row; 
+    flex-wrap: nowrap; 
+    justify-content: flex-start; 
+    overflow-x: auto; 
+    gap: 10px;
     margin-top: 40px;
     margin-bottom: 40px;
-    align-items: center;
+    padding-bottom: 10px; 
+    -webkit-overflow-scrolling: touch; 
 }
-.tabs-row {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
+.tabs-container::-webkit-scrollbar {
+    height: 4px;
 }
+.tabs-container::-webkit-scrollbar-thumb {
+    background: var(--tan); 
+    border-radius: 4px;
+}
+
 .tab-button {
     background: var(--card);
     border: 1px solid var(--border);
-    padding: 12px 28px;
+    padding: 10px 20px; 
     border-radius: 30px;
     cursor: pointer;
     font-weight: bold;
     color: var(--text-light);
     transition: all 0.3s ease;
     font-family: 'Georgia', serif;
-    font-size: 0.95em;
+    font-size: 0.9em;
+    white-space: nowrap; 
+    flex-shrink: 0; 
 }
 .tab-button:hover { 
     background: var(--bg-base); 
@@ -278,7 +284,12 @@ section h2, .myth-fact-title {
     border-color: var(--primary); 
     box-shadow: 0 4px 10px rgba(139, 106, 85, 0.15);
 }
-.tab-pane { display: none; animation: fadeIn 0.5s; }
+
+/* --- TAB CONTENT & KEY TAKEAWAY --- */
+.tab-pane { 
+    display: none; 
+    animation: fadeIn 0.5s; 
+}
 .tab-pane.active { 
     display: block; 
     background: var(--card); 
@@ -289,6 +300,17 @@ section h2, .myth-fact-title {
 }
 .tab-pane h3 { color: var(--text-main); margin-bottom: 20px; font-size: 1.4rem; }
 .tab-pane p { margin-bottom: 20px; font-size: 1.05rem; }
+
+.key-takeaway {
+    background-color: var(--bg-base);
+    border-left: 4px solid var(--primary);
+    padding: 15px 20px;
+    margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1.05em;
+}
 
 /* --- PULL QUOTE --- */
 .pull-quote {
@@ -613,7 +635,7 @@ section h2, .myth-fact-title {
 .timeline-step:hover { color: var(--primary); }
 .timeline-step.active { color: var(--text-main); font-weight: bold; border-top: 3px solid var(--primary); margin-top: -27px; padding-top: 24px; }
 
-/* --- SELF-CHECK (Mini-SPIN) --- */
+/* --- SELF-CHECK (Mini-SPIN) - UNCHANGED --- */
 .check-card {
     background: var(--card);
     border-radius: 16px;

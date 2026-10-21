@@ -15,7 +15,6 @@
 
     <!-- NAVIGATION -->
     <nav id="main-nav">
-        <!-- No hardcoded active class, JavaScript handles it -->
         <a href="#home">Home</a>
         <a href="#check">Self-Check</a>
         <a href="#evidence">What We Know</a>
@@ -27,7 +26,6 @@
     <main>
         <!-- 1. HERO SECTION -->
         <section id="home" class="hero-section">
-            <!-- No circle here, just the label -->
             <p class="fiction-label">AN INTERACTIVE GUIDE TO SOCIAL ANXIETY</p>
             
             <h1>Beyond Shyness</h1>
@@ -49,7 +47,7 @@
 
         <hr class="section-divider">
 
-        <!-- 2. SELF-CHECK (Mini-SPIN) -->
+        <!-- 2. SELF-CHECK (Mini-SPIN) - UNCHANGED -->
         <section id="check">
             <h2>Is it more than shyness?</h2>
             <p>This is a short, private check based on the <strong>Mini-SPIN</strong>, a 3-question screening tool used by clinicians to identify likely social anxiety disorder. It takes about one minute. Your answers stay in your browser — nothing is sent anywhere.</p>
@@ -101,45 +99,47 @@
 
         <hr class="section-divider">
 
-        <!-- 3. EVIDENCE -->
+        <!-- 3. EVIDENCE (WHAT WE KNOW) -->
         <section id="evidence">
             <h2>What We Know</h2>
             <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
 
+            <!-- Single Line Tabs -->
             <div class="tabs-container" role="tablist">
-                <div class="tabs-row">
-                    <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
-                    <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
-                    <button class="tab-button" onclick="openTab('tab-3', this)">Social &amp; Cultural</button>
-                </div>
-                <div class="tabs-row">
-                    <button class="tab-button" onclick="openTab('tab-4', this)">Research &amp; Ethics</button>
-                    <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
-                </div>
+                <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
+                <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
+                <button class="tab-button" onclick="openTab('tab-3', this)">Social &amp; Cultural</button>
+                <button class="tab-button" onclick="openTab('tab-4', this)">Research &amp; Ethics</button>
+                <button class="tab-button" onclick="openTab('tab-5', this)">Campus</button>
             </div>
 
             <div class="tab-content">
                 <div class="tab-pane active" id="tab-1">
+                    <div class="key-takeaway">Key Takeaway: Biology plays a role, but it is not destiny.</div>
                     <h3>1. Biological &amp; Neuroscientific Foundations</h3>
                     <p>Social anxiety disorder is associated with heightened reactivity in the amygdala — the brain's threat-detection system — and with differences in serotonin signalling. Twin studies suggest a moderate genetic contribution (roughly 30–40%).</p>
                     <p><strong>However:</strong> biology is not destiny. These findings describe group-level patterns and cannot diagnose an individual. A racing heart before a presentation is a normal human response, not proof of a disorder.</p>
                 </div>
                 <div class="tab-pane" id="tab-2">
+                    <div class="key-takeaway">Key Takeaway: Social anxiety is maintained by a cycle of negative thoughts and avoidance.</div>
                     <h3>2. Psychological Theories &amp; Therapies</h3>
                     <p>The leading model (Clark &amp; Wells, 1995) describes a cycle: a social situation triggers a negative self-image, attention turns inward, "safety behaviours" (avoiding eye contact, rehearsing sentences) are used, and afterwards the person replays the event and interprets it as failure. The cycle then strengthens.</p>
                     <p>Cognitive Behavioural Therapy and graded exposure are the most strongly evidenced treatments. Therapy is not a one-size-fits-all solution, and its effectiveness depends heavily on access to care.</p>
                 </div>
                 <div class="tab-pane" id="tab-3">
+                    <div class="key-takeaway">Key Takeaway: Cultural pressures like 'face' can heighten the fear, but stigma affects everyone differently.</div>
                     <h3>3. Social &amp; Cultural Factors</h3>
                     <p>In Hong Kong, concerns around <em>face</em> (面子), family expectation, and academic competition can intensify the fear of being judged. The Hong Kong Mental Morbidity Survey found that most people with common mental disorders never seek professional help.</p>
                     <p><strong>However:</strong> stigma does not act identically on everyone. Social anxiety is not "caused" by culture, and no cultural pattern can predict how a specific person will feel or act.</p>
                 </div>
                 <div class="tab-pane" id="tab-4">
+                    <div class="key-takeaway">Key Takeaway: Screening is not diagnosis. Privacy and clear framing are essential.</div>
                     <h3>4. Research Methods &amp; Ethics</h3>
                     <p>Screening tools such as the Mini-SPIN and the 17-item SPIN are validated for <em>screening</em>, not diagnosis. They trade sensitivity against specificity: some people who score above the threshold will not meet diagnostic criteria, and some who score below it will.</p>
                     <p>Online self-screening raises real ethical questions — what happens to the data, how results are worded, and whether a score might frighten or falsely reassure someone. Responsible design means clear framing, no data collection, and a direct route to real support.</p>
                 </div>
                 <div class="tab-pane" id="tab-5">
+                    <div class="key-takeaway">Key Takeaway: Universities offer support, but they do not replace professional clinical care.</div>
                     <h3>5. Campus &amp; Community Wellbeing</h3>
                     <p>Universities are increasingly investing in counselling services, peer support networks, and reasonable adjustments — such as alternative assessment formats for students who find presentations disabling.</p>
                     <p>While these programmes are valuable, they are not a substitute for professional clinical care when it is needed.</p>
@@ -408,7 +408,7 @@
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');
-            const scrollPosition = window.scrollY + 150; // Offset for sticky nav
+            const scrollPosition = window.scrollY + 150; 
 
             sections.forEach(section => {
                 if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
