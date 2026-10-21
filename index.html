@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <!-- Added ?v=2 to force the browser to load the new CSS -->
-    <link rel="stylesheet" href="style.css?v=2">
+    <!-- Adding a version number forces the browser to load the new CSS -->
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
@@ -219,6 +219,7 @@
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
                 
                 <div class="css-timeline-wrapper">
+                    <!-- Flexbox labels to force perfect alignment -->
                     <div class="timeline-labels">
                         <div class="label-left">First symptoms<br><small>around age 13</small></div>
                         <div class="label-right">First treatment<br><small>around age 27</small></div>
@@ -358,9 +359,10 @@
 
                 <!-- UNIFIED CONTROLS BAR WITH HIGHLIGHTED BUTTONS -->
                 <div class="story-controls-bar">
-                    <button class="nav-btn" onclick="changeScene(-1)">← Previous</button>
+                    <!-- Added specific class to guarantee highlight -->
+                    <button class="nav-btn highlight-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
-                    <button class="nav-btn" onclick="changeScene(1)">Next →</button>
+                    <button class="nav-btn highlight-btn" onclick="changeScene(1)">Next →</button>
                 </div>
             </div>
         </section>

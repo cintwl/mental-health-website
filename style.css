@@ -324,7 +324,7 @@ section h2, .myth-fact-title {
     color: rgba(139, 106, 85, 0.15); 
 }
 
-/* --- COMBINED CHARTS LAYOUT (FORCED LEFT AND RIGHT) --- */
+/* --- COMBINED CHARTS LAYOUT --- */
 .combined-charts-wrapper {
     background: var(--card);
     border-radius: 12px;
@@ -337,7 +337,7 @@ section h2, .myth-fact-title {
 
 .charts-row {
     display: flex;
-    flex-direction: row !important; /* Force left and right */
+    flex-direction: row !important; 
     align-items: stretch;
     padding: 40px;
     gap: 40px;
@@ -348,7 +348,7 @@ section h2, .myth-fact-title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-width: 0; /* Prevents overflow */
+    min-width: 0; 
 }
 
 .chart-item h3 {
@@ -366,7 +366,7 @@ section h2, .myth-fact-title {
 
 /* Soft Highlight for Insight Text */
 .chart-insight {
-    background-color: #F4EFEA; /* Very soft highlight */
+    background-color: #F4EFEA; 
     padding: 30px 40px;
     border-top: 1px solid var(--border);
     font-size: 1rem;
@@ -390,7 +390,6 @@ section h2, .myth-fact-title {
     margin-bottom: 30px;
 }
 
-/* Fixed Timeline Centering */
 .css-timeline-wrapper {
     padding: 40px 20px 30px;
     position: relative;
@@ -425,7 +424,7 @@ section h2, .myth-fact-title {
     border-radius: 3px;
     position: relative;
     margin: 0 auto; 
-    width: 80%; /* Centers the track */
+    width: 80%; 
 }
 
 .css-timeline-fill {
@@ -657,7 +656,7 @@ section h2, .myth-fact-title {
     position: relative; 
     display: block; 
     width: 100%; 
-    max-width: 325px; /* Reduced by half */
+    max-width: 325px; /* EXACTLY HALF OF PREVIOUS WIDTH */
     margin: 0 auto 25px auto; 
     border-radius: 12px; 
     overflow: hidden; 
@@ -794,10 +793,13 @@ section h2, .myth-fact-title {
     border-radius: 50px; 
     border: 1px solid var(--border);
 }
-.nav-btn {
-    background-color: var(--primary); /* Highlight color */
-    color: var(--card);
-    border: none;
+
+/* Targeted CSS to absolutely force the highlight */
+.story-controls-bar .nav-btn,
+.story-controls-bar button.nav-btn {
+    background-color: var(--primary) !important; 
+    color: var(--card) !important;
+    border: none !important;
     padding: 10px 25px;
     border-radius: 50px;
     cursor: pointer;
@@ -806,8 +808,8 @@ section h2, .myth-fact-title {
     font-family: 'Georgia', serif;
     transition: background 0.3s;
 }
-.nav-btn:hover { 
-    background-color: var(--primary-hover); 
+.story-controls-bar .nav-btn:hover {
+    background-color: var(--primary-hover) !important;
 }
 #scene-indicator { 
     font-weight: bold; 
