@@ -324,7 +324,7 @@ section h2, .myth-fact-title {
     color: rgba(139, 106, 85, 0.15); 
 }
 
-/* --- COMBINED CHARTS LAYOUT --- */
+/* --- COMBINED CHARTS LAYOUT (FORCED LEFT AND RIGHT) --- */
 .combined-charts-wrapper {
     background: var(--card);
     border-radius: 12px;
@@ -337,9 +337,10 @@ section h2, .myth-fact-title {
 
 .charts-row {
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important; /* Force left and right */
     align-items: stretch;
     padding: 40px;
+    gap: 40px;
 }
 
 .chart-item {
@@ -347,6 +348,7 @@ section h2, .myth-fact-title {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    min-width: 0; /* Prevents overflow */
 }
 
 .chart-item h3 {
@@ -359,24 +361,25 @@ section h2, .myth-fact-title {
 .chart-divider-line {
     width: 1px;
     background-color: var(--border);
-    margin: 0 40px;
     align-self: stretch;
 }
 
+/* Soft Highlight for Insight Text */
 .chart-insight {
-    background-color: var(--bg-base);
+    background-color: #F4EFEA; /* Very soft highlight */
     padding: 30px 40px;
     border-top: 1px solid var(--border);
     font-size: 1rem;
     color: var(--text-main);
     line-height: 1.7;
+    border-radius: 0 0 12px 12px;
 }
 
 .chart-insight strong {
     color: var(--primary);
 }
 
-/* --- FULL WIDTH TIMELINE --- */
+/* --- REDESIGNED CSS TIMELINE --- */
 .timeline-full-width {
     width: 100%;
     background: var(--card);
@@ -385,6 +388,79 @@ section h2, .myth-fact-title {
     border: 1px solid var(--border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     margin-bottom: 30px;
+}
+
+.css-timeline-wrapper {
+    padding: 60px 20px 40px;
+    position: relative;
+    background: var(--bg-base);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    margin-top: 20px;
+}
+
+.css-timeline-track {
+    height: 6px;
+    background: var(--tan);
+    border-radius: 3px;
+    position: relative;
+    margin: 0 40px; 
+}
+
+.css-timeline-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%; 
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.timeline-point {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.point-start { left: 0; }
+.point-end { right: 0; }
+
+.dot {
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border: 3px solid var(--card);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+.point-start .dot { background: var(--text-main); }
+
+.point-label {
+    position: absolute;
+    bottom: 25px;
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--text-main);
+}
+.point-label small {
+    display: block;
+    font-weight: normal;
+    font-size: 0.85em;
+    color: var(--text-light);
+}
+
+.timeline-center-text {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-main);
 }
 
 /* --- CHART ELEMENTS (Bar & Donut) --- */
@@ -477,19 +553,6 @@ section h2, .myth-fact-title {
 }
 .legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; }
 
-.timeline-chart-container {
-    width: 100%;
-    margin: 20px 0;
-    background: var(--bg-base);
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-}
-.timeline-chart {
-    width: 100%;
-    height: auto;
-}
-
 .caption {
     font-size: 0.8em;
     color: var(--text-light);
@@ -502,10 +565,10 @@ section h2, .myth-fact-title {
 }
 .caption p { margin: 4px 0; }
 
-/* Mobile Responsiveness for Charts */
-@media (max-width: 768px) {
+/* Mobile Only: Stack charts if screen is tiny */
+@media (max-width: 600px) {
     .charts-row {
-        flex-direction: column;
+        flex-direction: column !important;
     }
     .chart-divider-line {
         width: 100%;

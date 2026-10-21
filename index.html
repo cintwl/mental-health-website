@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <!-- THIS LINE IS CRUCIAL: It links your HTML to your CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -159,7 +158,7 @@
 
             <hr class="inner-divider">
 
-            <!-- COMBINED CHARTS SECTION -->
+            <!-- COMBINED CHARTS SECTION (LEFT AND RIGHT) -->
             <div class="combined-charts-wrapper">
                 <div class="charts-row">
                     <!-- Bar Chart -->
@@ -208,28 +207,33 @@
                     </div>
                 </div>
 
-                <!-- Conclusion / Insight Text -->
+                <!-- Conclusion / Insight Text with Soft Highlight -->
                 <div class="chart-insight">
                     <p><strong>What this means:</strong> Social anxiety often begins early in life (before age 17), but many people wait years before seeking help. The biggest barrier isn't a lack of resources—it's the fear of being judged. Knowing this helps us understand why creating a non-judgmental, supportive environment is the most important step in encouraging people to reach out.</p>
                 </div>
             </div>
 
-            <!-- Timeline Chart (Full Width) -->
+            <!-- Timeline Chart (Redesigned with CSS) -->
             <div class="timeline-full-width">
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
-                <div class="timeline-chart-container">
-                    <svg viewBox="0 0 520 160" class="timeline-chart" role="img" aria-label="Timeline: average age of first symptoms is around 13; average age of first treatment is around 27 — roughly 14 years without care.">
-                        <line x1="30" y1="95" x2="500" y2="95" stroke="var(--tan)" stroke-width="2"/>
-                        <rect x="107" y="88" width="316" height="14" rx="7" fill="var(--tan)" opacity="0.6"/>
-                        <circle cx="107" cy="95" r="9" fill="var(--text-main)"/>
-                        <circle cx="423" cy="95" r="9" fill="var(--primary)"/>
-                        <text x="107" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--text-main)">First symptoms</text>
-                        <text x="107" y="78" text-anchor="middle" font-size="13" fill="var(--text-main)">around age 13</text>
-                        <text x="423" y="60" text-anchor="middle" font-size="14" font-weight="bold" fill="var(--primary)">First treatment</text>
-                        <text x="423" y="78" text-anchor="middle" font-size="13" fill="var(--text-main)">around age 27</text>
-                        <text x="265" y="138" text-anchor="middle" font-size="14" fill="var(--text-main)">≈ 14 years without care</text>
-                    </svg>
+                
+                <div class="css-timeline-wrapper">
+                    <div class="css-timeline-track">
+                        <div class="css-timeline-fill"></div>
+                        
+                        <div class="timeline-point point-start">
+                            <span class="point-label">First symptoms<br><small>around age 13</small></span>
+                            <div class="dot"></div>
+                        </div>
+                        
+                        <div class="timeline-point point-end">
+                            <span class="point-label">First treatment<br><small>around age 27</small></span>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+                    <div class="timeline-center-text">≈ 14 years without care</div>
                 </div>
+
                 <div class="caption">
                     <p><strong>Data:</strong> Illustrative figures based on published treatment-delay estimates.</p>
                 </div>
