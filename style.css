@@ -390,6 +390,7 @@ section h2, .myth-fact-title {
     margin-bottom: 30px;
 }
 
+/* Fixed Timeline Centering */
 .css-timeline-wrapper {
     padding: 60px 20px 40px;
     position: relative;
@@ -397,6 +398,7 @@ section h2, .myth-fact-title {
     border-radius: 8px;
     border: 1px solid var(--border);
     margin-top: 20px;
+    text-align: center;
 }
 
 .css-timeline-track {
@@ -404,7 +406,8 @@ section h2, .myth-fact-title {
     background: var(--tan);
     border-radius: 3px;
     position: relative;
-    margin: 0 40px; 
+    margin: 0 auto; 
+    width: 80%; /* Centers the track */
 }
 
 .css-timeline-fill {
@@ -420,14 +423,15 @@ section h2, .myth-fact-title {
 .timeline-point {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%); /* Perfect centering */
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .point-start { left: 0; }
-.point-end { right: 0; }
+.point-end { left: 100%; }
 
 .dot {
     width: 18px;
@@ -443,10 +447,10 @@ section h2, .myth-fact-title {
 .point-label {
     position: absolute;
     bottom: 25px;
-    text-align: center;
-    font-weight: bold;
     white-space: nowrap;
     color: var(--text-main);
+    text-align: center;
+    font-weight: bold;
 }
 .point-label small {
     display: block;
@@ -457,7 +461,7 @@ section h2, .myth-fact-title {
 
 .timeline-center-text {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 60px; /* Pushes text down */
     font-size: 1.1em;
     font-weight: bold;
     color: var(--text-main);
@@ -629,7 +633,7 @@ section h2, .myth-fact-title {
     border-color: var(--primary);
 }
 
-/* --- NEW EDITORIAL HUMAN STORY LAYOUT --- */
+/* --- HUMAN STORY & HOTSPOTS (FIXED SIZES) --- */
 .story-editorial-layout {
     display: flex;
     flex-direction: row;
@@ -638,7 +642,6 @@ section h2, .myth-fact-title {
     align-items: flex-start;
 }
 
-/* Left Column (Visuals) */
 .story-visual-col {
     flex: 0 0 40%;
     position: relative;
@@ -653,11 +656,13 @@ section h2, .myth-fact-title {
     position: relative;
 }
 
+/* FIXED: Image won't become gigantic */
 .story-visual-col .story-image {
     width: 100%;
     height: auto;
-    display: block;
+    max-height: 450px; /* Caps the height */
     object-fit: cover;
+    display: block;
 }
 
 .image-caption {
@@ -669,12 +674,10 @@ section h2, .myth-fact-title {
     font-weight: bold;
 }
 
-/* Right Column (Text & Audio) */
 .story-text-col {
     flex: 1;
 }
 
-/* Pull Quote in Editorial Style */
 .story-text-col .pull-quote {
     font-size: 1.8rem;
     font-style: italic;
@@ -692,7 +695,6 @@ section h2, .myth-fact-title {
     display: none; 
 }
 
-/* Scene Text */
 .story-text-col .scene h3 {
     font-size: 1.4rem;
     color: var(--text-main);
@@ -706,28 +708,13 @@ section h2, .myth-fact-title {
     margin-bottom: 25px;
 }
 
-/* Scene Controls */
-.story-text-col .story-controls {
-    border-top: none;
-    padding-top: 0;
-    margin-top: 20px;
-    margin-bottom: 30px;
-}
-
-/* Timeline Navigation */
-.story-text-col .story-timeline {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px dashed var(--border);
-    margin-bottom: 40px;
-}
-
-/* Audio Player (Sleek Design) */
+/* Audio Player */
 .story-text-col .audio-player {
     background: var(--bg-base);
     padding: 25px;
     border-radius: 12px;
     border: 1px solid var(--border);
+    margin-bottom: 20px; /* Space between audio and Next/Prev */
 }
 .story-text-col .audio-player h4 {
     font-size: 1.1rem;
@@ -751,11 +738,160 @@ section h2, .myth-fact-title {
     font-size: 0.9rem;
 }
 
-/* Story Hotspots (Need to adjust positions slightly for new image format) */
+/* Scene Controls (Moved back down) */
+.story-text-col .story-controls {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* Timeline Navigation */
+.story-text-col .story-timeline {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border);
+    margin-bottom: 40px;
+}
+
+/* Adjust Hotspot Positions */
 .story-visual-col .hotspot-1 { top: 25%; left: 50%; }
 .story-visual-col .hotspot-2 { top: 60%; left: 30%; }
 .story-visual-col .hotspot-3 { bottom: 20%; left: 60%; }
 
+.hotspot {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--card);
+    border: 3px solid var(--card);
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    z-index: 10;
+}
+.hotspot:hover { transform: scale(1.15); }
+.pulse-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--primary);
+    opacity: 0.6;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+@keyframes pulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.2); opacity: 0; } }
+
+.hotspot-popup {
+    display: none;
+    background: var(--bg-base);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid var(--primary);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    color: var(--text-main);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    animation: fadeIn 0.3s;
+    position: relative;
+    z-index: 5;
+}
+
+/* Mobile Responsiveness for Story */
+@media (max-width: 768px) {
+    .story-editorial-layout {
+        flex-direction: column;
+    }
+    .story-visual-col {
+        flex: 1;
+        width: 100%;
+    }
+}
+
+/* --- SELF-CHECK (Mini-SPIN) --- */
+.check-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 50px;
+    margin-top: 40px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+.spin-question {
+    margin-bottom: 40px;
+}
+.spin-question p {
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    font-size: 1.1em;
+}
+.spin-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.opt {
+    cursor: pointer;
+}
+.opt input {
+    display: none;
+}
+.opt-pill {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--bg-base);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 0.95em;
+    transition: all 0.2s;
+    color: var(--text-main);
+}
+.opt input:checked + .opt-pill {
+    background: var(--primary);
+    color: var(--card);
+    border-color: var(--primary);
+}
+.opt-pill:hover {
+    border-color: var(--primary);
+    background: var(--card);
+}
+.check-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.spin-result {
+    display: none;
+    margin-top: 40px;
+    padding: 30px;
+    background: var(--bg-base);
+    border-radius: 12px;
+    border-left: 5px solid var(--primary);
+    animation: fadeIn 0.4s;
+}
+.spin-result.show {
+    display: block;
+}
+.spin-result h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+.spin-result .btn-primary {
+    display: inline-block;
+    margin-top: 20px;
+}
 
 /* --- HELP & ACCESS --- */
 .self-care-check { background: var(--card); padding: 40px; border-radius: 12px; margin-top: 40px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
@@ -796,15 +932,4 @@ footer { text-align: center; padding: 60px 20px; background-color: var(--card); 
     font-size: 0.85em;
     margin-top: 10px;
     opacity: 0.8;
-}
-
-/* Mobile Responsiveness for Story */
-@media (max-width: 768px) {
-    .story-editorial-layout {
-        flex-direction: column;
-    }
-    .story-visual-col {
-        flex: 1;
-        width: 100%;
-    }
 }

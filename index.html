@@ -222,13 +222,13 @@
                         <div class="css-timeline-fill"></div>
                         
                         <div class="timeline-point point-start">
-                            <span class="point-label">First symptoms<br><small>around age 13</small></span>
                             <div class="dot"></div>
+                            <span class="point-label">First symptoms<br><small>around age 13</small></span>
                         </div>
                         
                         <div class="timeline-point point-end">
-                            <span class="point-label">First treatment<br><small>around age 27</small></span>
                             <div class="dot"></div>
+                            <span class="point-label">First treatment<br><small>around age 27</small></span>
                         </div>
                     </div>
                     <div class="timeline-center-text">≈ 14 years without care</div>
@@ -290,7 +290,7 @@
 
         <hr class="section-divider">
 
-        <!-- 4. HUMAN STORY (EDITORIAL LAYOUT) -->
+        <!-- 4. HUMAN STORY (EDITORIAL LAYOUT - REORDERED) -->
         <section id="story">
             <h2>Human Story</h2>
             
@@ -317,7 +317,7 @@
                     <div id="popup-3" class="hotspot-popup">"What if they think I'm stupid" — written, then scribbled out, then written again.</div>
                 </div>
 
-                <!-- Right Column: Text & Audio -->
+                <!-- Right Column: Text, Audio, and Controls -->
                 <div class="story-text-col">
                     <div class="pull-quote">
                         "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
@@ -346,6 +346,21 @@
                         </div>
                     </div>
 
+                    <!-- AUDIO PLAYER MOVED UP -->
+                    <div class="audio-player">
+                        <h4>A thought she can say aloud</h4>
+                        <p><em>Close, calm narration · no performance or diagnosis. A transcript is available.</em></p>
+                        <audio controls>
+                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <details>
+                            <summary>Read the transcript instead</summary>
+                            <p>"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
+                        </details>
+                    </div>
+
+                    <!-- CONTROLS MOVED DOWN UNDER AUDIO -->
                     <div class="story-controls">
                         <button onclick="changeScene(-1)">← Prev</button>
                         <span id="scene-indicator">Scene 1 of 5</span>
@@ -358,19 +373,6 @@
                         <span class="timeline-step" onclick="jumpToScene(3)">3. Tutorial</span>
                         <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
                         <span class="timeline-step" onclick="jumpToScene(5)">5. Step</span>
-                    </div>
-
-                    <div class="audio-player">
-                        <h4>A thought she can say aloud</h4>
-                        <p><em>Close, calm narration · no performance or diagnosis. A transcript is available.</em></p>
-                        <audio controls>
-                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <details>
-                            <summary>Read the transcript instead</summary>
-                            <p>"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
-                        </details>
                     </div>
                 </div>
             </div>
