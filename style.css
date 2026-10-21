@@ -1,13 +1,13 @@
-/* --- BOHO MARBLE PALETTE (BRIGHTER & TEXTURED) --- */
+/* --- WARM COFFEE & CREAM PALETTE WITH MARBLE TEXTURE --- */
 :root {
-    --bg-base: #F9F7F4;       /* Soft cream base */
-    --surface: #FFFFFF;       /* Bright warm white for cards */
-    --primary: #A67C6D;       /* Gentle terracotta brown (from the cushion) */
-    --primary-hover: #8D6557;
-    --tan: #E3D7CD;           /* Soft beige accent */
-    --text-main: #3A2F2B;     /* Soft warm brown (not too dark) */
-    --text-light: #85756E;    /* Muted taupe */
-    --border: #EAE3DC;        /* Light subtle border */
+    --bg-base: #F6F4F0;       /* Exact pale cream from your image */
+    --surface: #FFFFFF;       /* Crisp white for cards */
+    --primary: #8B6A55;       /* Rich coffee brown (no pink undertone) */
+    --primary-hover: #755A47;
+    --tan: #D6C5B3;           /* Warm beige accent */
+    --text-main: #3E2D24;     /* Deep dark brown for readable text */
+    --text-light: #736559;    /* Muted warm grey/brown */
+    --border: #E8E0D8;        /* Soft warm border */
 }
 
 * {
@@ -16,7 +16,7 @@
     padding: 0;
 }
 
-/* --- MARBLE/WATERCOLOR TEXTURE BACKGROUND --- */
+/* --- MARBLE TEXTURE BACKGROUND --- */
 html {
     background-color: var(--bg-base);
 }
@@ -25,12 +25,9 @@ body {
     color: var(--text-main);
     font-family: 'Georgia', serif;
     line-height: 1.8;
-    background-color: var(--bg-base) !important;
-    background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.9) 0%, transparent 50%),
-        radial-gradient(circle at 85% 70%, rgba(240, 235, 230, 0.7) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.6) 0%, transparent 60%),
-        linear-gradient(120deg, rgba(230, 223, 216, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: var(--bg-base);
+    /* Subtle SVG Marble Pattern Overlay */
+    background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h400v400H0z' fill='%23F6F4F0'/%3E%3Cpath d='M-50 100 Q 100 150 150 50 T 400 0' fill='none' stroke='%23EBE5DD' stroke-width='40' opacity='0.6'/%3E%3Cpath d='M-50 200 Q 150 250 200 100 T 450 50' fill='none' stroke='%23E0D8CE' stroke-width='20' opacity='0.4'/%3E%3Cpath d='M-50 300 Q 120 350 250 200 T 450 150' fill='none' stroke='%23EBE5DD' stroke-width='60' opacity='0.5'/%3E%3Cpath d='M 100 450 Q 200 300 300 350 T 400 450' fill='none' stroke='%23E0D8CE' stroke-width='30' opacity='0.3'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
 }
@@ -56,7 +53,7 @@ body {
 /* --- NAVIGATION --- */
 nav {
     background-color: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px); /* Adds a modern glass feel over texture */
+    backdrop-filter: blur(10px); 
     padding: 20px;
     text-align: center;
     border-bottom: 1px solid var(--border);
@@ -151,12 +148,12 @@ section h2 {
     cursor: pointer;
     font-family: 'Georgia', serif;
     font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(166, 124, 109, 0.2);
+    box-shadow: 0 4px 10px rgba(139, 106, 85, 0.2);
 }
 .btn-primary:hover { 
     background-color: var(--primary-hover); 
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(166, 124, 109, 0.3);
+    box-shadow: 0 6px 15px rgba(139, 106, 85, 0.3);
 }
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.5);
@@ -196,7 +193,7 @@ section h2 {
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(5px);
     padding: 20px 25px;
     border: 1px solid var(--border);
@@ -270,7 +267,7 @@ section h2 {
     background: var(--primary); 
     color: var(--surface); 
     border-color: var(--primary); 
-    box-shadow: 0 4px 10px rgba(166, 124, 109, 0.2);
+    box-shadow: 0 4px 10px rgba(139, 106, 85, 0.2);
 }
 .tab-pane { display: none; animation: fadeIn 0.5s; }
 .tab-pane.active { 
@@ -707,7 +704,7 @@ section h2 {
     justify-content: center;
     text-decoration: none;
     font-size: 1.5rem;
-    box-shadow: 0 4px 15px rgba(166, 124, 109, 0.3);
+    box-shadow: 0 4px 15px rgba(139, 106, 85, 0.3);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s;
