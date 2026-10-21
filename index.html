@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <!-- THIS LINE IS CRUCIAL: It links to your CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -214,23 +213,19 @@
                 </div>
             </div>
 
-            <!-- Timeline Chart -->
+            <!-- Timeline Chart (Fixed Centering) -->
             <div class="timeline-full-width">
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
                 
                 <div class="css-timeline-wrapper">
+                    <div class="timeline-labels">
+                        <div class="label-left">First symptoms<br><small>around age 13</small></div>
+                        <div class="label-right">First treatment<br><small>around age 27</small></div>
+                    </div>
                     <div class="css-timeline-track">
                         <div class="css-timeline-fill"></div>
-                        
-                        <div class="timeline-point point-start">
-                            <div class="dot"></div>
-                            <span class="point-label">First symptoms<br><small>around age 13</small></span>
-                        </div>
-                        
-                        <div class="timeline-point point-end">
-                            <div class="dot"></div>
-                            <span class="point-label">First treatment<br><small>around age 27</small></span>
-                        </div>
+                        <div class="dot dot-left"></div>
+                        <div class="dot dot-right"></div>
                     </div>
                     <div class="timeline-center-text">≈ 14 years without care</div>
                 </div>
@@ -291,7 +286,7 @@
 
         <hr class="section-divider">
 
-        <!-- 4. HUMAN STORY (ORIGINAL LAYOUT + NEW DESIGN) -->
+        <!-- 4. HUMAN STORY -->
         <section id="story">
             <h2>Human Story</h2>
 
@@ -360,21 +355,14 @@
                     </details>
                 </div>
 
-                <!-- UNIFIED CONTROLS BAR -->
+                <!-- UNIFIED CONTROLS BAR WITH HIGHLIGHTED BUTTONS -->
                 <div class="story-controls-bar">
-                    <button class="nav-btn" onclick="changeScene(-1)">← Prev</button>
+                    <button class="nav-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
                     <button class="nav-btn" onclick="changeScene(1)">Next →</button>
                 </div>
 
-                <!-- PILL-SHAPED TIMELINE TABS -->
-                <div class="story-timeline-tabs">
-                    <span class="timeline-tab active" onclick="jumpToScene(1)">1. Corridor</span>
-                    <span class="timeline-tab" onclick="jumpToScene(2)">2. Group Chat</span>
-                    <span class="timeline-tab" onclick="jumpToScene(3)">3. Tutorial</span>
-                    <span class="timeline-tab" onclick="jumpToScene(4)">4. Pause</span>
-                    <span class="timeline-tab" onclick="jumpToScene(5)">5. Step</span>
-                </div>
+                <!-- (Timeline tabs removed as requested) -->
             </div>
         </section>
 
@@ -489,17 +477,6 @@
             if (currentScene < 1) currentScene = 1;
             if (currentScene > totalScenes) currentScene = totalScenes;
             document.getElementById('scene-' + currentScene).classList.add('active');
-            document.querySelectorAll('.timeline-tab').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.timeline-tab')[currentScene - 1].classList.add('active');
-            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
-        }
-
-        function jumpToScene(sceneNumber) {
-            document.getElementById('scene-' + currentScene).classList.remove('active');
-            currentScene = sceneNumber;
-            document.getElementById('scene-' + currentScene).classList.add('active');
-            document.querySelectorAll('.timeline-tab').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.timeline-tab')[currentScene - 1].classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
 
