@@ -41,7 +41,7 @@ html, body {
     color: var(--tan);
 }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION (PILL WITH CIRCLE ON ACTIVE) --- */
 nav {
     background-color: var(--card);
     padding: 20px;
@@ -49,7 +49,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px 30px;
+    gap: 15px 20px;
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
@@ -63,9 +63,30 @@ nav a {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
-    transition: color 0.2s;
+    padding: 8px 20px;
+    border-radius: 50px; /* Pill shape */
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
 }
-nav a:hover { color: var(--primary); }
+nav a:hover { 
+    color: var(--primary); 
+}
+/* The active state with the white circle */
+nav a.active {
+    background-color: var(--primary);
+    color: var(--card);
+    padding: 8px 24px;
+}
+nav a.active::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: var(--card);
+    border-radius: 50%;
+    margin-right: 10px;
+}
 
 /* --- SECTIONS & LAYOUT --- */
 section {
@@ -107,26 +128,11 @@ section h2, .myth-fact-title {
     transform: none;
 }
 
-/* --- NEW HERO SECTION (MOODLE STYLE) --- */
+/* --- HERO SECTION --- */
 .hero-section {
     text-align: center;
     padding: 80px 20px 60px 20px;
     border-bottom: none;
-}
-.hero-label-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 25px;
-}
-.hero-circle {
-    width: 12px;
-    height: 12px;
-    background-color: var(--primary);
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
 }
 .fiction-label {
     color: var(--primary);
@@ -134,17 +140,18 @@ section h2, .myth-fact-title {
     letter-spacing: 1.5px;
     font-size: 0.85em;
     text-transform: uppercase;
-    margin: 0;
+    margin-bottom: 20px;
 }
+/* Made title smaller and more refined */
 .hero-section h1 {
-    font-size: 4.5rem;
+    font-size: 3.8rem; 
     line-height: 1.1;
     margin-bottom: 20px;
     color: var(--text-main);
-    letter-spacing: -1.5px;
+    letter-spacing: -1px;
 }
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     max-width: 700px;
     margin: 0 auto 40px auto;
     color: var(--text-light);
@@ -162,7 +169,7 @@ section h2, .myth-fact-title {
     color: var(--card);
     padding: 15px 40px;
     text-decoration: none;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     font-weight: bold;
     transition: all 0.3s;
     border: none;
@@ -181,7 +188,7 @@ section h2, .myth-fact-title {
     color: var(--primary);
     padding: 15px 40px;
     text-decoration: none;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     font-weight: bold;
     border: 1px solid var(--primary);
     transition: all 0.3s;
@@ -544,7 +551,7 @@ section h2, .myth-fact-title {
     color: var(--card);
     border: none;
     padding: 12px 30px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: bold;
