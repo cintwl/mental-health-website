@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <!-- v=999 forces the browser to load the fresh CSS -->
-    <link rel="stylesheet" href="style.css?v=999">
+    <link rel="stylesheet" href="style.css?v=200">
 </head>
 <body>
 
@@ -179,7 +178,7 @@
                 </div>
             </div>
 
-            <!-- TIMELINE CHART (PERFECTLY CENTERED) -->
+            <!-- TIMELINE CHART -->
             <div class="timeline-full-width">
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
                 <div class="timeline-container">
@@ -242,7 +241,7 @@
                     "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
                 </div>
 
-                <!-- Wider, rectangular image -->
+                <!-- FULL WIDTH IMAGE -->
                 <div class="story-image-wrapper">
                     <img src="https://placehold.co/800x450/F5F2EB/C5B198?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
@@ -284,6 +283,7 @@
                     </div>
                 </div>
 
+                <!-- AUDIO PLAYER WITH DYNAMIC TRANSCRIPT -->
                 <div class="audio-player-clean">
                     <div class="audio-header">
                         <h4>A thought she can say aloud</h4>
@@ -295,13 +295,13 @@
                     </audio>
                     <details>
                         <summary>Read the transcript instead</summary>
-                        <div class="transcript-content">
-                            <p>"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
+                        <div class="transcript-content" id="transcript-box">
+                            <p id="transcript-text">"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
                         </div>
                     </details>
                 </div>
 
-                <!-- Highlighted buttons, bottom text completely removed -->
+                <!-- HIGHLIGHTED BUTTONS -->
                 <div class="story-controls-bar">
                     <button class="nav-btn highlight-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
@@ -406,8 +406,18 @@
             btn.classList.add('active');
         }
 
+        // --- DYNAMIC TRANSCRIPT DATA ---
+        const transcripts = [
+            '"The tutorial starts in two minutes. I can hear them laughing through the door. My heart is so loud. I just need to reach for the handle."',
+            '"Everyone else is typing \'count me in\'. Why does my reply feel so heavy? Delete. Type. Delete. I\'ll just close the app."',
+            '"The tutor asked for my view. I said something, but it sounded wrong. I\'m replaying it over and over. Everyone must think I\'m stupid."',
+            '"The fear arrives before the moment even happens. I don\'t have to solve it all today. I just need to notice it, without judging myself."',
+            '"I told her: \'Crowds are hard for me.\' She just said, \'Okay.\' It wasn\'t a disaster. Maybe I can do this one small step."'
+        ];
+
         let currentScene = 1;
         const totalScenes = 5;
+        
         function changeScene(direction) {
             document.getElementById('scene-' + currentScene).classList.remove('active');
             currentScene += direction;
@@ -415,6 +425,9 @@
             if (currentScene > totalScenes) currentScene = totalScenes;
             document.getElementById('scene-' + currentScene).classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+            
+            // Update transcript text dynamically
+            document.getElementById('transcript-text').innerText = transcripts[currentScene - 1];
         }
 
         function togglePopup(id) {
