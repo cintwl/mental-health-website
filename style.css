@@ -1,13 +1,13 @@
-/* --- WARM COFFEE & CREAM PALETTE WITH MARBLE TEXTURE --- */
+/* --- WARM COFFEE & CREAM PALETTE WITH REAL MARBLE TEXTURE --- */
 :root {
     --bg-base: #F6F4F0;       /* Exact pale cream from your image */
-    --surface: #FFFFFF;       /* Crisp white for cards */
+    --card: #F5F2EC;          /* Soft warm ivory/stone for cards (No pure white) */
     --primary: #8B6A55;       /* Rich coffee brown (no pink undertone) */
     --primary-hover: #755A47;
     --tan: #D6C5B3;           /* Warm beige accent */
     --text-main: #3E2D24;     /* Deep dark brown for readable text */
     --text-light: #736559;    /* Muted warm grey/brown */
-    --border: #E8E0D8;        /* Soft warm border */
+    --border: #E2DCD3;        /* Soft warm border */
 }
 
 * {
@@ -16,7 +16,7 @@
     padding: 0;
 }
 
-/* --- MARBLE TEXTURE BACKGROUND --- */
+/* --- REALISTIC MARBLE TEXTURE BACKGROUND --- */
 html {
     background-color: var(--bg-base);
 }
@@ -25,24 +25,27 @@ body {
     color: var(--text-main);
     font-family: 'Georgia', serif;
     line-height: 1.8;
-    background-color: var(--bg-base);
-    /* Subtle SVG Marble Pattern Overlay */
-    background-image: url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h400v400H0z' fill='%23F6F4F0'/%3E%3Cpath d='M-50 100 Q 100 150 150 50 T 400 0' fill='none' stroke='%23EBE5DD' stroke-width='40' opacity='0.6'/%3E%3Cpath d='M-50 200 Q 150 250 200 100 T 450 50' fill='none' stroke='%23E0D8CE' stroke-width='20' opacity='0.4'/%3E%3Cpath d='M-50 300 Q 120 350 250 200 T 450 150' fill='none' stroke='%23EBE5DD' stroke-width='60' opacity='0.5'/%3E%3Cpath d='M 100 450 Q 200 300 300 350 T 400 450' fill='none' stroke='%23E0D8CE' stroke-width='30' opacity='0.3'/%3E%3C/svg%3E");
-    background-attachment: fixed;
+    
+    /* High-quality real marble image, softened by the pale cream overlay */
+    background-image: 
+        linear-gradient(rgba(246, 244, 240, 0.88), rgba(246, 244, 240, 0.88)),
+        url('https://images.unsplash.com/photo-1596204976718-094b827593e1?q=80&w=2500&auto=format&fit=crop');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* --- TOP BANNER --- */
 .top-banner {
     background-color: var(--primary);
-    color: var(--surface);
+    color: var(--bg-base);
     text-align: center;
     padding: 12px 20px;
     font-size: 0.95em;
     letter-spacing: 0.5px;
 }
 .top-banner a {
-    color: var(--surface);
+    color: var(--bg-base);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -52,7 +55,7 @@ body {
 
 /* --- NAVIGATION --- */
 nav {
-    background-color: rgba(255, 255, 255, 0.85);
+    background-color: rgba(246, 244, 240, 0.85);
     backdrop-filter: blur(10px); 
     padding: 20px;
     text-align: center;
@@ -138,7 +141,7 @@ section h2 {
 }
 .btn-primary {
     background-color: var(--primary);
-    color: var(--surface);
+    color: var(--bg-base);
     padding: 15px 35px;
     text-decoration: none;
     border-radius: 6px;
@@ -156,7 +159,7 @@ section h2 {
     box-shadow: 0 6px 15px rgba(139, 106, 85, 0.3);
 }
 .btn-secondary {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
     color: var(--primary);
     padding: 15px 35px;
     text-decoration: none;
@@ -170,7 +173,7 @@ section h2 {
 }
 .btn-secondary:hover { 
     background-color: var(--primary); 
-    color: var(--surface); 
+    color: var(--bg-base); 
     transform: translateY(-2px);
 }
 .btn-ghost {
@@ -188,12 +191,12 @@ section h2 {
 .btn-ghost:hover {
     border-color: var(--primary);
     color: var(--primary);
-    background-color: var(--surface);
+    background-color: var(--card);
 }
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(245, 242, 236, 0.9);
     backdrop-filter: blur(5px);
     padding: 20px 25px;
     border: 1px solid var(--border);
@@ -247,7 +250,7 @@ section h2 {
     flex-wrap: wrap;
 }
 .tab-button {
-    background: var(--surface);
+    background: var(--card);
     border: 1px solid var(--border);
     padding: 12px 28px;
     border-radius: 30px;
@@ -265,14 +268,14 @@ section h2 {
 }
 .tab-button.active { 
     background: var(--primary); 
-    color: var(--surface); 
+    color: var(--bg-base); 
     border-color: var(--primary); 
     box-shadow: 0 4px 10px rgba(139, 106, 85, 0.2);
 }
 .tab-pane { display: none; animation: fadeIn 0.5s; }
 .tab-pane.active { 
     display: block; 
-    background: var(--surface); 
+    background: var(--card); 
     padding: 40px; 
     border-radius: 12px; 
     border: 1px solid var(--border); 
@@ -324,7 +327,7 @@ section h2 {
 }
 .visualization-section {
     margin-top: 40px;
-    background: var(--surface);
+    background: var(--card);
     padding: 40px;
     border-radius: 12px;
     border: 1px solid var(--border);
@@ -400,7 +403,7 @@ section h2 {
 .donut-hole {
     width: 130px;
     height: 130px;
-    background-color: var(--surface);
+    background-color: var(--card);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -491,19 +494,19 @@ section h2 {
     border: 1px solid var(--border);
 }
 .flip-card-front {
-    background-color: var(--surface);
+    background-color: var(--card);
     color: var(--text-main);
 }
 .flip-card-back {
     background-color: var(--primary);
-    color: var(--surface);
+    color: var(--bg-base);
     transform: rotateY(180deg);
     border-color: var(--primary);
 }
 
 /* --- HUMAN STORY & HOTSPOTS --- */
 .story-container { 
-    background: var(--surface); 
+    background: var(--card); 
     padding: 50px; 
     border-radius: 16px; 
     margin-top: 40px; 
@@ -529,7 +532,7 @@ section h2 {
 .story-controls { display: flex; justify-content: space-between; align-items: center; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 25px; }
 .story-controls button {
     background-color: var(--primary);
-    color: var(--surface);
+    color: var(--bg-base);
     border: none;
     padding: 12px 30px;
     border-radius: 6px;
@@ -549,8 +552,8 @@ section h2 {
     height: 45px;
     border-radius: 50%;
     background-color: var(--primary);
-    color: var(--surface);
-    border: 3px solid var(--surface);
+    color: var(--bg-base);
+    border: 3px solid var(--card);
     font-weight: bold;
     font-size: 1.2rem;
     cursor: pointer;
@@ -606,7 +609,7 @@ section h2 {
 
 /* --- SELF-CHECK (Mini-SPIN) --- */
 .check-card {
-    background: var(--surface);
+    background: var(--card);
     border-radius: 16px;
     padding: 50px;
     margin-top: 40px;
@@ -645,12 +648,12 @@ section h2 {
 }
 .opt input:checked + .opt-pill {
     background: var(--primary);
-    color: var(--surface);
+    color: var(--bg-base);
     border-color: var(--primary);
 }
 .opt-pill:hover {
     border-color: var(--primary);
-    background: var(--surface);
+    background: var(--card);
 }
 .check-actions {
     display: flex;
@@ -681,9 +684,9 @@ section h2 {
 }
 
 /* --- HELP & ACCESS --- */
-.self-care-check { background: var(--surface); padding: 40px; border-radius: 12px; margin-top: 40px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.self-care-check { background: var(--card); padding: 40px; border-radius: 12px; margin-top: 40px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
 .self-care-check label { display: block; padding: 18px; background: var(--bg-base); margin-bottom: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); transition: background 0.2s; font-size: 1rem; }
-.self-care-check label:hover { background: var(--surface); border-color: var(--tan); }
+.self-care-check label:hover { background: var(--card); border-color: var(--tan); }
 .self-care-check input[type="checkbox"] { margin-right: 15px; transform: scale(1.3); accent-color: var(--primary); }
 .safety-note { background-color: #FDF5F5; border-left: 5px solid #D68C8C; padding: 30px; margin-top: 40px; border-radius: 0 8px 8px 0; }
 .safety-note h3 { color: #A35252; margin-top: 0; margin-bottom: 15px; }
@@ -695,7 +698,7 @@ section h2 {
     bottom: 30px;
     right: 30px;
     background: var(--primary);
-    color: var(--surface);
+    color: var(--bg-base);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -714,7 +717,7 @@ section h2 {
 .back-to-top:hover { background: var(--primary-hover); transform: translateY(-5px); }
 
 /* --- FOOTER --- */
-footer { text-align: center; padding: 60px 20px; background-color: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 60px 20px; background-color: rgba(245, 242, 236, 0.9); backdrop-filter: blur(10px); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
 .footer-note {
     font-size: 0.85em;
     margin-top: 10px;
