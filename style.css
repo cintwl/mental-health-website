@@ -1,6 +1,6 @@
 /* --- WARM COFFEE & CREAM PALETTE (CLEAN SOLID BG) --- */
 :root {
-    --bg-base: #EBE7E0;       /* Deeper warm cream background */
+    --bg-base: #EBE7E0;       /* Deeper warm cream background (Solid, no texture) */
     --card: #F8F6F2;          /* Soft warm white for cards */
     --primary: #8B6A55;       /* Rich coffee brown */
     --primary-hover: #755A47;
@@ -41,16 +41,15 @@ html, body {
     color: var(--tan);
 }
 
-/* --- NAVIGATION (FIXED WRAPPING) --- */
+/* --- NAVIGATION --- */
 nav {
-    background-color: rgba(248, 246, 242, 0.95);
-    backdrop-filter: blur(10px); 
+    background-color: var(--card);
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px 30px; /* Proper spacing */
+    gap: 15px 30px;
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
@@ -108,7 +107,7 @@ section h2, .myth-fact-title {
     transform: none;
 }
 
-/* --- NEW HERO SECTION (MOODLE STYLE) --- */
+/* --- HERO SECTION (MOODLE STYLE) --- */
 .hero-section {
     text-align: center;
     padding: 80px 20px 60px 20px;
@@ -211,9 +210,9 @@ section h2, .myth-fact-title {
     background-color: var(--card);
 }
 
-/* --- SAFE STORY ELEMENTS (MOVED BELOW BUTTONS) --- */
+/* --- SAFE STORY ELEMENTS (BELOW BUTTONS) --- */
 .content-note {
-    background: rgba(248, 246, 242, 0.7);
+    background: var(--card);
     padding: 20px 25px;
     border: 1px solid var(--border);
     border-left: 4px solid var(--primary);
@@ -725,7 +724,7 @@ section h2, .myth-fact-title {
 .back-to-top:hover { background: var(--primary-hover); transform: translateY(-5px); }
 
 /* --- FOOTER --- */
-footer { text-align: center; padding: 60px 20px; background-color: rgba(248, 246, 242, 0.9); backdrop-filter: blur(10px); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 60px 20px; background-color: var(--card); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
 .footer-note {
     font-size: 0.85em;
     margin-top: 10px;
