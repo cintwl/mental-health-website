@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <!-- Adding a version number forces the browser to load the new CSS -->
-    <link rel="stylesheet" href="style.css?v=3">
+    <!-- The ?v=100 forces the browser to ignore the cache -->
+    <link rel="stylesheet" href="style.css?v=100">
 </head>
 <body>
 
@@ -105,7 +105,6 @@
             <h2>What We Know</h2>
             <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
 
-            <!-- Single Line Tabs -->
             <div class="tabs-container" role="tablist">
                 <button class="tab-button active" onclick="openTab('tab-1', this)">Biological</button>
                 <button class="tab-button" onclick="openTab('tab-2', this)">Psychological</button>
@@ -119,81 +118,49 @@
                     <h3>1. Biological &amp; Neuroscientific Foundations</h3>
                     <p>Social anxiety disorder is associated with heightened reactivity in the amygdala — the brain's threat-detection system — and with differences in serotonin signalling. Twin studies suggest a moderate genetic contribution (roughly 30–40%).</p>
                     <p><strong>However:</strong> biology is not destiny. These findings describe group-level patterns and cannot diagnose an individual. A racing heart before a presentation is a normal human response, not proof of a disorder.</p>
-                    <div class="key-takeaway">
-                        Key Takeaway: Biology plays a role, but it is not destiny.
-                    </div>
+                    <div class="key-takeaway">Key Takeaway: Biology plays a role, but it is not destiny.</div>
                 </div>
                 <div class="tab-pane" id="tab-2">
                     <h3>2. Psychological Theories &amp; Therapies</h3>
                     <p>The leading model (Clark &amp; Wells, 1995) describes a cycle: a social situation triggers a negative self-image, attention turns inward, "safety behaviours" (avoiding eye contact, rehearsing sentences) are used, and afterwards the person replays the event and interprets it as failure. The cycle then strengthens.</p>
                     <p>Cognitive Behavioural Therapy and graded exposure are the most strongly evidenced treatments. Therapy is not a one-size-fits-all solution, and its effectiveness depends heavily on access to care.</p>
-                    <div class="key-takeaway">
-                        Key Takeaway: Social anxiety is maintained by a cycle of negative thoughts and avoidance.
-                    </div>
+                    <div class="key-takeaway">Key Takeaway: Social anxiety is maintained by a cycle of negative thoughts and avoidance.</div>
                 </div>
                 <div class="tab-pane" id="tab-3">
                     <h3>3. Social &amp; Cultural Factors</h3>
                     <p>In Hong Kong, concerns around <em>face</em> (面子), family expectation, and academic competition can intensify the fear of being judged. The Hong Kong Mental Morbidity Survey found that most people with common mental disorders never seek professional help.</p>
                     <p><strong>However:</strong> stigma does not act identically on everyone. Social anxiety is not "caused" by culture, and no cultural pattern can predict how a specific person will feel or act.</p>
-                    <div class="key-takeaway">
-                        Key Takeaway: Cultural pressures like 'face' can heighten the fear, but stigma affects everyone differently.
-                    </div>
+                    <div class="key-takeaway">Key Takeaway: Cultural pressures like 'face' can heighten the fear, but stigma affects everyone differently.</div>
                 </div>
                 <div class="tab-pane" id="tab-4">
                     <h3>4. Research Methods &amp; Ethics</h3>
                     <p>Screening tools such as the Mini-SPIN and the 17-item SPIN are validated for <em>screening</em>, not diagnosis. They trade sensitivity against specificity: some people who score above the threshold will not meet diagnostic criteria, and some who score below it will.</p>
                     <p>Online self-screening raises real ethical questions — what happens to the data, how results are worded, and whether a score might frighten or falsely reassure someone. Responsible design means clear framing, no data collection, and a direct route to real support.</p>
-                    <div class="key-takeaway">
-                        Key Takeaway: Screening is not diagnosis. Privacy and clear framing are essential.
-                    </div>
+                    <div class="key-takeaway">Key Takeaway: Screening is not diagnosis. Privacy and clear framing are essential.</div>
                 </div>
                 <div class="tab-pane" id="tab-5">
                     <h3>5. Campus &amp; Community Wellbeing</h3>
                     <p>Universities are increasingly investing in counselling services, peer support networks, and reasonable adjustments — such as alternative assessment formats for students who find presentations disabling.</p>
                     <p>While these programmes are valuable, they are not a substitute for professional clinical care when it is needed.</p>
-                    <div class="key-takeaway">
-                        Key Takeaway: Universities offer support, but they do not replace professional clinical care.
-                    </div>
+                    <div class="key-takeaway">Key Takeaway: Universities offer support, but they do not replace professional clinical care.</div>
                 </div>
             </div>
 
             <hr class="inner-divider">
 
-            <!-- COMBINED CHARTS SECTION -->
             <div class="combined-charts-wrapper">
                 <div class="charts-row">
-                    <!-- Bar Chart -->
                     <div class="chart-item">
                         <h3>When Social Anxiety Usually Begins</h3>
                         <div class="bar-chart">
-                            <div class="bar-row">
-                                <span class="bar-label">Before age 12</span>
-                                <div class="bar-track"><div class="bar-fill" style="width: 30%;"></div></div>
-                                <span class="bar-value">30%</span>
-                            </div>
-                            <div class="bar-row">
-                                <span class="bar-label">Age 12–17</span>
-                                <div class="bar-track"><div class="bar-fill" style="width: 45%;"></div></div>
-                                <span class="bar-value">45%</span>
-                            </div>
-                            <div class="bar-row">
-                                <span class="bar-label">Age 18–24</span>
-                                <div class="bar-track"><div class="bar-fill" style="width: 20%;"></div></div>
-                                <span class="bar-value">20%</span>
-                            </div>
-                            <div class="bar-row">
-                                <span class="bar-label">Age 25+</span>
-                                <div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div>
-                                <span class="bar-value">5%</span>
-                            </div>
+                            <div class="bar-row"><span class="bar-label">Before age 12</span><div class="bar-track"><div class="bar-fill" style="width: 30%;"></div></div><span class="bar-value">30%</span></div>
+                            <div class="bar-row"><span class="bar-label">Age 12–17</span><div class="bar-track"><div class="bar-fill" style="width: 45%;"></div></div><span class="bar-value">45%</span></div>
+                            <div class="bar-row"><span class="bar-label">Age 18–24</span><div class="bar-track"><div class="bar-fill" style="width: 20%;"></div></div><span class="bar-value">20%</span></div>
+                            <div class="bar-row"><span class="bar-label">Age 25+</span><div class="bar-track"><div class="bar-fill" style="width: 5%;"></div></div><span class="bar-value">5%</span></div>
                         </div>
                         <p class="chart-label">Most people first notice social anxiety in their teenage years.</p>
                     </div>
-
-                    <!-- Vertical Divider Line -->
                     <div class="chart-divider-line"></div>
-
-                    <!-- Donut Chart -->
                     <div class="chart-item">
                         <h3>What Stops Students From Getting Help</h3>
                         <div class="donut" role="img" aria-label="Barriers: fear of being judged 35%, not knowing where to go 25%, worry about privacy 20%, cost 20%.">
@@ -207,19 +174,14 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Conclusion / Insight Text -->
                 <div class="chart-insight">
                     <p><strong>What this means:</strong> Social anxiety often begins early in life (before age 17), but many people wait years before seeking help. The biggest barrier isn't a lack of resources—it's the fear of being judged. Knowing this helps us understand why creating a non-judgmental, supportive environment is the most important step in encouraging people to reach out.</p>
                 </div>
             </div>
 
-            <!-- Timeline Chart (Fixed Centering) -->
             <div class="timeline-full-width">
                 <h3>The Gap Between First Symptoms and First Treatment</h3>
-                
                 <div class="css-timeline-wrapper">
-                    <!-- Flexbox labels to force perfect alignment -->
                     <div class="timeline-labels">
                         <div class="label-left">First symptoms<br><small>around age 13</small></div>
                         <div class="label-right">First treatment<br><small>around age 27</small></div>
@@ -231,7 +193,6 @@
                     </div>
                     <div class="timeline-center-text">≈ 14 years without care</div>
                 </div>
-
                 <div class="caption">
                     <p><strong>Data:</strong> Illustrative figures based on published treatment-delay estimates.</p>
                 </div>
@@ -239,48 +200,31 @@
 
             <hr class="inner-divider">
 
-            <!-- Myth vs Fact -->
             <h2 class="myth-fact-title">Myth vs. Fact</h2>
             <p><em>Hover over a card to reveal the truth.</em></p>
             <div class="flip-card-container">
                 <div class="flip-card">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            MYTH: Just shyness.
-                        </div>
-                        <div class="flip-card-back">
-                            FACT: Social anxiety is a clinical condition, not a personality trait.
-                        </div>
+                        <div class="flip-card-front">MYTH: Just shyness.</div>
+                        <div class="flip-card-back">FACT: Social anxiety is a clinical condition, not a personality trait.</div>
                     </div>
                 </div>
                 <div class="flip-card">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            MYTH: Just get out more.
-                        </div>
-                        <div class="flip-card-back">
-                            FACT: The fear response is physical. It needs support, not willpower.
-                        </div>
+                        <div class="flip-card-front">MYTH: Just get out more.</div>
+                        <div class="flip-card-back">FACT: The fear response is physical. It needs support, not willpower.</div>
                     </div>
                 </div>
                 <div class="flip-card">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            MYTH: Avoidance keeps you safe.
-                        </div>
-                        <div class="flip-card-back">
-                            FACT: Avoidance brings relief now, but strengthens the fear over time.
-                        </div>
+                        <div class="flip-card-front">MYTH: Avoidance keeps you safe.</div>
+                        <div class="flip-card-back">FACT: Avoidance brings relief now, but strengthens the fear over time.</div>
                     </div>
                 </div>
                 <div class="flip-card">
                     <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            MYTH: Everyone is judging me.
-                        </div>
-                        <div class="flip-card-back">
-                            FACT: People are usually focused on themselves, not on you.
-                        </div>
+                        <div class="flip-card-front">MYTH: Everyone is judging me.</div>
+                        <div class="flip-card-back">FACT: People are usually focused on themselves, not on you.</div>
                     </div>
                 </div>
             </div>
@@ -297,7 +241,6 @@
                     "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
                 </div>
 
-                <!-- Smaller Image Wrapper -->
                 <div class="story-image-wrapper">
                     <img src="https://placehold.co/800x450/F5F2EB/C5B198?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
@@ -339,7 +282,6 @@
                     </div>
                 </div>
 
-                <!-- CLEAN AUDIO PLAYER -->
                 <div class="audio-player-clean">
                     <div class="audio-header">
                         <h4>A thought she can say aloud</h4>
@@ -357,9 +299,7 @@
                     </details>
                 </div>
 
-                <!-- UNIFIED CONTROLS BAR WITH HIGHLIGHTED BUTTONS -->
                 <div class="story-controls-bar">
-                    <!-- Added specific class to guarantee highlight -->
                     <button class="nav-btn highlight-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
                     <button class="nav-btn highlight-btn" onclick="changeScene(1)">Next →</button>
@@ -415,18 +355,15 @@
     <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
     <script>
-        // --- SCROLL SPY ---
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');
             const scrollPosition = window.scrollY + 150; 
-
             sections.forEach(section => {
                 if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
                     current = section.getAttribute('id');
                 }
             });
-
             document.querySelectorAll('nav a').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${current}`) {
@@ -435,7 +372,6 @@
             });
         });
 
-        // Fade-in on Scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -449,7 +385,6 @@
             observer.observe(section);
         });
 
-        // Back to Top Button
         const backToTopBtn = document.getElementById('backToTop');
         if (backToTopBtn) {
             window.addEventListener('scroll', () => {
@@ -461,7 +396,6 @@
             });
         }
 
-        // Tab Switching Logic
         function openTab(tabId, btn) {
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
             document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
@@ -469,7 +403,6 @@
             btn.classList.add('active');
         }
 
-        // Story Navigation Logic
         let currentScene = 1;
         const totalScenes = 5;
         function changeScene(direction) {
@@ -481,7 +414,6 @@
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
         }
 
-        // Hotspot Popup Logic
         function togglePopup(id) {
             const popup = document.getElementById(id);
             document.querySelectorAll('.hotspot-popup').forEach(el => {
@@ -494,7 +426,6 @@
             }
         }
 
-        // Mini-SPIN Scoring Logic
         function scoreSPIN() {
             const form = document.getElementById('spin-form');
             const out = document.getElementById('spin-result');
