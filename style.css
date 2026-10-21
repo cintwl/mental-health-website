@@ -41,42 +41,43 @@ html, body {
     color: var(--tan);
 }
 
-/* --- NAVIGATION (SMALLER, NO CIRCLE, DYNAMIC HIGHLIGHT) --- */
+/* --- NAVIGATION (SMALLER, NO CIRCLE, ONE LINE) --- */
 nav {
     background-color: var(--card);
-    padding: 15px 20px;
+    padding: 12px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 10px; 
+    flex-wrap: nowrap; /* Forces one line */
+    gap: 15px; 
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
     z-index: 100;
     box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+    overflow-x: auto; /* Prevents breaking on small screens */
 }
 nav a {
     color: var(--text-main);
     text-decoration: none;
-    font-size: 0.95em;
-    letter-spacing: 1px;
+    font-size: 0.85em; /* Smaller size */
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 8px 16px; 
+    padding: 6px 14px; /* Smaller padding */
     border-radius: 50px;
     transition: all 0.3s;
-    display: flex;
-    align-items: center;
+    white-space: nowrap; /* Keeps text on one line inside button */
 }
 nav a:hover { 
     color: var(--primary); 
 }
-/* The dynamic highlight (JS applies this class) */
+/* Dynamic highlight applied by JS */
 nav a.active {
     background-color: var(--primary);
     color: var(--card);
 }
+/* The circle pseudo-element has been completely removed */
 
 /* --- SECTIONS & LAYOUT --- */
 section {
