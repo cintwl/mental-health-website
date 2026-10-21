@@ -290,90 +290,82 @@
 
         <hr class="section-divider">
 
-        <!-- 4. HUMAN STORY (EDITORIAL LAYOUT - REORDERED) -->
+        <!-- 4. HUMAN STORY (ORIGINAL LAYOUT + NEW AUDIO) -->
         <section id="story">
             <h2>Human Story</h2>
-            
-            <div class="story-editorial-layout">
-                <!-- Left Column: Visuals -->
-                <div class="story-visual-col">
-                    <div class="story-image-wrapper">
-                        <img src="https://placehold.co/600x800/F5F2EB/C5B198?text=Fictional+Portrait" alt="A quiet, evocative illustration of a person sitting alone" class="story-image" />
-                        
-                        <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')" aria-label="Hotspot 1">
-                            <span class="pulse-ring"></span> 1
-                        </button>
-                        <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')" aria-label="Hotspot 2">
-                            <span class="pulse-ring"></span> 2
-                        </button>
-                        <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')" aria-label="Hotspot 3">
-                            <span class="pulse-ring"></span> 3
-                        </button>
-                    </div>
-                    <p class="image-caption">MEI — FICTIONAL COMPOSITE</p>
-                    
-                    <div id="popup-1" class="hotspot-popup">Three unread messages in the group chat. The reply has been typed and deleted four times.</div>
-                    <div id="popup-2" class="hotspot-popup">Her hand is on the door handle. She has been standing here for ninety seconds.</div>
-                    <div id="popup-3" class="hotspot-popup">"What if they think I'm stupid" — written, then scribbled out, then written again.</div>
+
+            <div class="story-container">
+                <div class="pull-quote">
+                    "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
                 </div>
 
-                <!-- Right Column: Text, Audio, and Controls -->
-                <div class="story-text-col">
-                    <div class="pull-quote">
-                        "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
-                    </div>
+                <div class="story-image-wrapper">
+                    <img src="https://placehold.co/800x450/F5F2EB/C5B198?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
-                    <div class="scenes-container">
-                        <div class="scene active" id="scene-1">
-                            <h3>1. The Corridor</h3>
-                            <p>The tutorial starts in two minutes. Mei can hear voices through the door. Her heart is loud. She is rehearsing a sentence she may never say, and it already sounds wrong.</p>
-                        </div>
-                        <div class="scene" id="scene-2">
-                            <h3>2. The Group Chat</h3>
-                            <p>A society dinner is being organised. Everyone is typing "count me in!". She types it too. Then deletes it. Then types it again. Then closes the app.</p>
-                        </div>
-                        <div class="scene" id="scene-3">
-                            <h3>3. The Tutorial</h3>
-                            <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it.</p>
-                        </div>
-                        <div class="scene" id="scene-4">
-                            <h3>4. The Pause</h3>
-                            <p>Later, she notices the pattern: the fear arrives <em>before</em> the moment, not during it. She doesn't have to solve this today. She only has to notice it.</p>
-                        </div>
-                        <div class="scene" id="scene-5">
-                            <h3>5. A Small Step</h3>
-                            <p>She tells one friend: "Crowds are hard for me. I'm not being rude." Her friend says, "Okay. Want to sit at the end?" That is enough for today.</p>
-                        </div>
-                    </div>
+                    <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')" aria-label="Hotspot 1">
+                        <span class="pulse-ring"></span> 1
+                    </button>
+                    <button class="hotspot hotspot-2" onclick="togglePopup('popup-2')" aria-label="Hotspot 2">
+                        <span class="pulse-ring"></span> 2
+                    </button>
+                    <button class="hotspot hotspot-3" onclick="togglePopup('popup-3')" aria-label="Hotspot 3">
+                        <span class="pulse-ring"></span> 3
+                    </button>
+                </div>
 
-                    <!-- AUDIO PLAYER MOVED UP -->
-                    <div class="audio-player">
-                        <h4>A thought she can say aloud</h4>
-                        <p><em>Close, calm narration · no performance or diagnosis. A transcript is available.</em></p>
-                        <audio controls>
-                            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                        <details>
-                            <summary>Read the transcript instead</summary>
-                            <p>"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
-                        </details>
-                    </div>
+                <div id="popup-1" class="hotspot-popup">Three unread messages in the group chat. The reply has been typed and deleted four times.</div>
+                <div id="popup-2" class="hotspot-popup">Her hand is on the door handle. She has been standing here for ninety seconds.</div>
+                <div id="popup-3" class="hotspot-popup">"What if they think I'm stupid" — written, then scribbled out, then written again.</div>
 
-                    <!-- CONTROLS MOVED DOWN UNDER AUDIO -->
-                    <div class="story-controls">
-                        <button onclick="changeScene(-1)">← Prev</button>
-                        <span id="scene-indicator">Scene 1 of 5</span>
-                        <button onclick="changeScene(1)">Next →</button>
+                <div class="scenes-container">
+                    <div class="scene active" id="scene-1">
+                        <h3>1. The Corridor</h3>
+                        <p>The tutorial starts in two minutes. Mei can hear voices through the door. Her heart is loud. She is rehearsing a sentence she may never say, and it already sounds wrong.</p>
                     </div>
+                    <div class="scene" id="scene-2">
+                        <h3>2. The Group Chat</h3>
+                        <p>A society dinner is being organised. Everyone is typing "count me in!". She types it too. Then deletes it. Then types it again. Then closes the app.</p>
+                    </div>
+                    <div class="scene" id="scene-3">
+                        <h3>3. The Tutorial</h3>
+                        <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it.</p>
+                    </div>
+                    <div class="scene" id="scene-4">
+                        <h3>4. The Pause</h3>
+                        <p>Later, she notices the pattern: the fear arrives <em>before</em> the moment, not during it. She doesn't have to solve this today. She only has to notice it.</p>
+                    </div>
+                    <div class="scene" id="scene-5">
+                        <h3>5. A Small Step</h3>
+                        <p>She tells one friend: "Crowds are hard for me. I'm not being rude." Her friend says, "Okay. Want to sit at the end?" That is enough for today.</p>
+                    </div>
+                </div>
 
-                    <div class="story-timeline">
-                        <span class="timeline-step active" onclick="jumpToScene(1)">1. Corridor</span>
-                        <span class="timeline-step" onclick="jumpToScene(2)">2. Group Chat</span>
-                        <span class="timeline-step" onclick="jumpToScene(3)">3. Tutorial</span>
-                        <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
-                        <span class="timeline-step" onclick="jumpToScene(5)">5. Step</span>
-                    </div>
+                <!-- AUDIO PLAYER (Styling like the sample) -->
+                <div class="audio-player-clean">
+                    <h4>A thought she can say aloud</h4>
+                    <p>Close, calm narration · no performance or diagnosis. A transcript is always available.</p>
+                    <audio controls>
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <details>
+                        <summary>Read the transcript instead</summary>
+                        <p>"It isn't that I don't want to speak. It's that I've already heard how it will go wrong. My body reacts before the moment even arrives. Maybe I can tell someone that much."</p>
+                    </details>
+                </div>
+
+                <div class="story-controls">
+                    <button onclick="changeScene(-1)">← Previous</button>
+                    <span id="scene-indicator">Scene 1 of 5</span>
+                    <button onclick="changeScene(1)">Next →</button>
+                </div>
+
+                <div class="story-timeline">
+                    <span class="timeline-step active" onclick="jumpToScene(1)">1. Corridor</span>
+                    <span class="timeline-step" onclick="jumpToScene(2)">2. Group Chat</span>
+                    <span class="timeline-step" onclick="jumpToScene(3)">3. Tutorial</span>
+                    <span class="timeline-step" onclick="jumpToScene(4)">4. Pause</span>
+                    <span class="timeline-step" onclick="jumpToScene(5)">5. Step</span>
                 </div>
             </div>
         </section>
