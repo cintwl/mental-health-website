@@ -41,15 +41,15 @@ html, body {
     color: var(--tan);
 }
 
-/* --- NAVIGATION (PILL WITH CIRCLE ON ACTIVE) --- */
+/* --- NAVIGATION (SMALLER, NO CIRCLE, DYNAMIC HIGHLIGHT) --- */
 nav {
     background-color: var(--card);
-    padding: 20px;
+    padding: 15px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 15px 20px;
+    gap: 10px; 
     border-bottom: 1px solid var(--border);
     position: sticky;
     top: 0;
@@ -63,8 +63,8 @@ nav a {
     letter-spacing: 1px;
     text-transform: uppercase;
     font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 50px; /* Pill shape */
+    padding: 8px 16px; 
+    border-radius: 50px;
     transition: all 0.3s;
     display: flex;
     align-items: center;
@@ -72,20 +72,10 @@ nav a {
 nav a:hover { 
     color: var(--primary); 
 }
-/* The active state with the white circle */
+/* The dynamic highlight (JS applies this class) */
 nav a.active {
     background-color: var(--primary);
     color: var(--card);
-    padding: 8px 24px;
-}
-nav a.active::before {
-    content: '';
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background-color: var(--card);
-    border-radius: 50%;
-    margin-right: 10px;
 }
 
 /* --- SECTIONS & LAYOUT --- */
@@ -142,7 +132,6 @@ section h2, .myth-fact-title {
     text-transform: uppercase;
     margin-bottom: 20px;
 }
-/* Made title smaller and more refined */
 .hero-section h1 {
     font-size: 3.8rem; 
     line-height: 1.1;
