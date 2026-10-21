@@ -1,13 +1,13 @@
-/* --- WARM COFFEE & CREAM PALETTE WITH REAL MARBLE --- */
+/* --- WARM COFFEE & CREAM PALETTE WITH BUILT-IN MARBLE --- */
 :root {
-    --bg-base: #E8E2D8;       /* Slightly darker warm cream to show marble */
-    --card: #F7F3EC;          /* Lighter warm ivory for cards to stand out */
+    --bg-base: #F6F4F0;       /* Light, fresh cream background */
+    --card: #FDFBFA;          /* Warm soft-white for cards (stands out perfectly) */
     --primary: #8B6A55;       /* Rich coffee brown */
     --primary-hover: #755A47;
     --tan: #D6C5B3;           /* Warm beige accent */
     --text-main: #3E2D24;     /* Deep dark brown for readable text */
     --text-light: #736559;    /* Muted warm grey/brown */
-    --border: #DCD3C6;        /* Slightly darker border for definition */
+    --border: #E2DCD3;        /* Soft warm border */
 }
 
 * {
@@ -16,7 +16,7 @@
     padding: 0;
 }
 
-/* --- REALISTIC MARBLE TEXTURE BACKGROUND --- */
+/* --- BUILT-IN GUARANTEED MARBLE TEXTURE --- */
 html {
     background-color: var(--bg-base);
 }
@@ -26,13 +26,11 @@ body {
     font-family: 'Georgia', serif;
     line-height: 1.8;
     
-    /* High-quality real marble image with a softer overlay */
-    background-image: 
-        linear-gradient(rgba(232, 226, 216, 0.85), rgba(232, 226, 216, 0.85)),
-        url('https://images.unsplash.com/photo-1518089040942-2c022a798642?q=80&w=2500&auto=format&fit=crop');
-    background-size: cover;
-    background-position: center;
+    /* Inline SVG marble texture - guaranteed to load, no internet needed */
+    background-color: var(--bg-base);
+    background-image: url("data:image/svg+xml,%3Csvg width='1000' height='1000' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='1000' height='1000' fill='%23F6F4F0'/%3E%3Cpath d='M-100,200 C150,300 250,-100 600,150 S900,600 1100,400' stroke='%23EBE5DD' stroke-width='8' fill='none' opacity='0.6'/%3E%3Cpath d='M-50,500 C200,700 400,300 800,600 S1000,900 1100,800' stroke='%23E0D8CE' stroke-width='3' fill='none' opacity='0.5'/%3E%3Cpath d='M200,-100 C400,200 100,500 500,700 S800,900 1000,600' stroke='%23EBE5DD' stroke-width='15' fill='none' opacity='0.4'/%3E%3Cpath d='M300,1100 C500,800 700,900 900,500 S1100,200 1200,100' stroke='%23E0D8CE' stroke-width='4' fill='none' opacity='0.5'/%3E%3C/svg%3E");
     background-attachment: fixed;
+    background-size: cover;
 }
 
 /* --- TOP BANNER --- */
@@ -55,7 +53,7 @@ body {
 
 /* --- NAVIGATION --- */
 nav {
-    background-color: rgba(247, 243, 236, 0.9);
+    background-color: rgba(253, 251, 250, 0.9);
     backdrop-filter: blur(10px); 
     padding: 20px;
     text-align: center;
@@ -196,7 +194,7 @@ section h2, .myth-fact-title {
 
 /* --- SAFE STORY ELEMENTS --- */
 .content-note {
-    background: rgba(247, 243, 236, 0.95);
+    background: rgba(253, 251, 250, 0.95);
     backdrop-filter: blur(5px);
     padding: 20px 25px;
     border: 1px solid var(--border);
@@ -717,7 +715,7 @@ section h2, .myth-fact-title {
 .back-to-top:hover { background: var(--primary-hover); transform: translateY(-5px); }
 
 /* --- FOOTER --- */
-footer { text-align: center; padding: 60px 20px; background-color: rgba(247, 243, 236, 0.9); backdrop-filter: blur(10px); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
+footer { text-align: center; padding: 60px 20px; background-color: rgba(253, 251, 250, 0.9); backdrop-filter: blur(10px); color: var(--text-light); font-size: 0.95em; border-top: 1px solid var(--border); }
 .footer-note {
     font-size: 0.85em;
     margin-top: 10px;
