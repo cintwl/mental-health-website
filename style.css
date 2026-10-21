@@ -358,7 +358,7 @@ section h2, .myth-fact-title {
 }
 .chart-insight strong { color: var(--primary); }
 
-/* --- TIMELINE CHART --- */
+/* --- TIMELINE CHART (PERFECTLY CENTERED) --- */
 .timeline-full-width {
     width: 100%;
     background: var(--card);
@@ -368,22 +368,22 @@ section h2, .myth-fact-title {
     box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     margin-bottom: 30px;
 }
-.css-timeline-wrapper {
-    padding: 40px 20px 30px;
-    position: relative;
+
+.timeline-container {
     background: var(--bg-base);
     border-radius: 8px;
     border: 1px solid var(--border);
+    padding: 40px 30px 30px 30px;
     margin-top: 20px;
-    text-align: center;
 }
+
 .timeline-labels {
     display: flex;
     justify-content: space-between;
-    width: 80%;
-    margin: 0 auto 10px auto;
+    width: 100%;
     font-weight: bold;
     color: var(--text-main);
+    margin-bottom: 15px;
 }
 .label-left { text-align: left; }
 .label-right { text-align: right; }
@@ -393,23 +393,25 @@ section h2, .myth-fact-title {
     font-size: 0.85em;
     color: var(--text-light);
 }
-.css-timeline-track {
+
+.timeline-track-wrapper {
+    width: 100%;
     height: 6px;
     background: var(--tan);
     border-radius: 3px;
     position: relative;
-    margin: 0 auto; 
-    width: 80%; 
 }
-.css-timeline-fill {
+
+.timeline-fill {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%; 
+    width: 100%;
     background: var(--primary);
     border-radius: 3px;
 }
+
 .dot {
     position: absolute;
     top: 50%;
@@ -423,9 +425,10 @@ section h2, .myth-fact-title {
 }
 .dot-left { background: var(--text-main); left: -9px; }
 .dot-right { background: var(--primary); right: -9px; }
-.timeline-center-text {
+
+.timeline-bottom-text {
     text-align: center;
-    margin-top: 30px; 
+    margin-top: 30px;
     font-size: 1.1em;
     font-weight: bold;
     color: var(--text-main);
@@ -501,8 +504,8 @@ section h2, .myth-fact-title {
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* HALF SIZE IMAGE */
-.story-image-wrapper { position: relative; display: block; width: 100%; max-width: 325px; margin: 0 auto 25px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
+/* WIDER RECTANGLE IMAGE */
+.story-image-wrapper { position: relative; display: block; width: 100%; max-width: 600px; margin: 0 auto 25px auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border: 1px solid var(--border); }
 .story-image { width: 100%; display: block; height: auto; }
 
 .hotspot { position: absolute; width: 45px; height: 45px; border-radius: 50%; background-color: var(--primary); color: var(--card); border: 3px solid var(--card); font-weight: bold; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; z-index: 10; }
