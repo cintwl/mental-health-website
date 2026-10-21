@@ -24,20 +24,28 @@
     </nav>
 
     <main>
-        <!-- CONTENT NOTE -->
-        <div class="content-note">
-            <p><strong>A gentle note:</strong> This website discusses social anxiety disorder and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
-        </div>
-        <a href="#help" class="skip-link">Skip directly to support information</a>
-
         <!-- 1. HERO SECTION -->
         <section id="home" class="hero-section">
-            <p class="fiction-label">THE STORY IS FICTIONAL — THE EVIDENCE MUST BE REAL</p>
+            <div class="hero-label-container">
+                <span class="hero-circle"></span>
+                <p class="fiction-label">AN INTERACTIVE GUIDE TO SOCIAL ANXIETY</p>
+            </div>
+            
             <h1>Beyond Shyness</h1>
             <p class="hero-subtitle">Social anxiety is a real, treatable condition, not a personality flaw.</p>
+            
             <div class="hero-buttons">
                 <a href="#check" class="btn-primary">Check yourself</a>
                 <a href="#story" class="btn-secondary">Follow the story</a>
+            </div>
+
+            <!-- Moved Gentle Note and Skip Link BELOW the buttons -->
+            <div class="content-note">
+                <p><strong>A gentle note:</strong> This website discusses social anxiety disorder and seeking support. It is not a diagnosis or a substitute for professional care. You may skip any section and go straight to the support information.</p>
+            </div>
+            
+            <div class="skip-container">
+                <a href="#help" class="skip-link">Skip directly to support information ↓</a>
             </div>
         </section>
 
@@ -226,7 +234,7 @@
             <hr class="inner-divider">
 
             <!-- Myth vs Fact -->
-            <h2>Myth vs. Fact</h2>
+            <h2 class="myth-fact-title">Myth vs. Fact</h2>
             <p><em>Hover over a card to reveal the truth.</em></p>
             <div class="flip-card-container">
                 <div class="flip-card">
@@ -284,7 +292,7 @@
                 </div>
 
                 <div class="story-image-wrapper">
-                    <img src="https://placehold.co/800x450/F9F6F2/C5B198?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
+                    <img src="https://placehold.co/800x450/F5F2EB/C5B198?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
                     <button class="hotspot hotspot-1" onclick="togglePopup('popup-1')" aria-label="Hotspot 1: the phone">
                         <span class="pulse-ring"></span> 1
