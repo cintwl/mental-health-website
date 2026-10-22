@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=301">
+    <link rel="stylesheet" href="style.css?v=400">
 </head>
 <body>
 
@@ -315,7 +315,20 @@
         <!-- 5. METHOD + AI -->
         <section id="method">
             <h2>Method + AI</h2>
-            <p><a href="ai-log.md">View our AI-Use Log here</a></p>
+            
+            <div class="method-card">
+                <h3>How we built this</h3>
+                <p>This project was built using HTML, CSS, and JavaScript. We used AI as a coding assistant to help debug layouts and write CSS, but <strong>all clinical information and narrative content were written and verified by us.</strong></p>
+                
+                <h3>Our Ethical Commitments</h3>
+                <ul class="ethics-list">
+                    <li><strong>Privacy First:</strong> The Mini-SPIN self-check runs 100% locally in your browser. We do not collect, store, or send your answers anywhere. No cookies, no tracking.</li>
+                    <li><strong>No Diagnosis:</strong> We explicitly frame the self-check as a "screening tool," not a diagnosis. We have included clear disclaimers and pathways to professional help.</li>
+                    <li><strong>Responsible Representation:</strong> The "Human Story" (Mei) is a fictional composite character. We labeled it clearly to avoid any misrepresentation of real individuals.</li>
+                    <li><strong>AI Ethics:</strong> We did not use AI to generate clinical advice or replace professional judgment.</li>
+                </ul>
+                <p class="method-link"><a href="ai-log.md">View our full AI-Use Log here</a></p>
+            </div>
         </section>
 
         <hr class="section-divider">
@@ -331,7 +344,7 @@
                 <li><strong>The Samaritan Befrienders Hong Kong:</strong> 2389 2222 (24-hour hotline).</li>
             </ul>
 
-            <!-- UPDATED DAILY CHECK-IN WITH PROGRESS BAR -->
+            <!-- INTERACTIVE DAILY CHECK-IN WITH PROGRESS BAR -->
             <div class="self-care-check">
                 <h3>A Gentle Daily Check-In</h3>
                 <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
@@ -354,7 +367,6 @@
                     </label>
                 </div>
 
-                <!-- Interactive Progress Bar -->
                 <div class="progress-container">
                     <div class="progress-bar" id="check-progress"></div>
                 </div>
@@ -378,6 +390,7 @@
     <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
     <script>
+        // --- SCROLL SPY ---
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section');
