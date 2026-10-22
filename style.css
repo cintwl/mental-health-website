@@ -504,11 +504,12 @@ section h2, .myth-fact-title {
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* FULL WIDTH IMAGE */
+/* --- SHORTER HEIGHT IMAGE --- */
 .story-image-wrapper { 
     position: relative; 
     display: block; 
     width: 100%; 
+    height: 220px; /* Reduced height to make it a short rectangle */
     margin: 0 auto 25px auto; 
     border-radius: 12px; 
     overflow: hidden; 
@@ -517,8 +518,9 @@ section h2, .myth-fact-title {
 }
 .story-image { 
     width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Keeps image proportional without stretching */
     display: block; 
-    height: auto; 
 }
 
 .hotspot { position: absolute; width: 45px; height: 45px; border-radius: 50%; background-color: var(--primary); color: var(--card); border: 3px solid var(--card); font-weight: bold; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s; z-index: 10; }
