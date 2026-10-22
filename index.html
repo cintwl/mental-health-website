@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=601">
+    <link rel="stylesheet" href="style.css?v=602">
 </head>
 <body>
 
@@ -311,7 +311,7 @@
                     </div>
                 </div>
 
-                <!-- HIGHLIGHTED CONTROLS (ALWAYS VISIBLE NOW) -->
+                <!-- HIGHLIGHTED CONTROLS -->
                 <div class="story-controls-bar" id="story-controls">
                     <button class="nav-btn highlight-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
@@ -322,25 +322,15 @@
 
         <hr class="section-divider">
 
-        <!-- 5. METHOD + AI -->
+        <!-- 5. METHOD + AI (Cleaned up to just a link) -->
         <section id="method">
             <h2>Method + AI</h2>
-            
-            <a href="ai-log.md" class="method-card-link">
-                <div class="method-card">
-                    <h3>How we built this</h3>
-                    <p>This project was built using HTML, CSS, and JavaScript. We used AI as a coding assistant to help debug layouts and write CSS, but <strong>all clinical information and narrative content were written and verified by us.</strong></p>
-                    
-                    <h3>Our Ethical Commitments</h3>
-                    <ul class="ethics-list">
-                        <li><strong>Privacy First:</strong> The Mini-SPIN self-check runs 100% locally in your browser. We do not collect, store, or send your answers anywhere. No cookies, no tracking.</li>
-                        <li><strong>No Diagnosis:</strong> We explicitly frame the self-check as a "screening tool," not a diagnosis. We have included clear disclaimers and pathways to professional help.</li>
-                        <li><strong>Responsible Representation:</strong> The "Human Story" (Mei) is a fictional composite character. We labeled it clearly to avoid any misrepresentation of real individuals.</li>
-                        <li><strong>AI Ethics:</strong> We did not use AI to generate clinical advice or replace professional judgment.</li>
-                    </ul>
-                    <p class="method-link">Click here to view our full AI-Use Log →</p>
-                </div>
-            </a>
+            <div style="text-align: center; padding: 40px 20px;">
+                <p style="font-size: 1.1rem; margin-bottom: 20px; color: var(--text-light);">
+                    Click below to read about our ethical commitments, privacy policies, and full AI-use log.
+                </p>
+                <a href="ai-log.md" class="btn-primary" style="font-size: 1.1rem; padding: 15px 40px; display: inline-block;">View our Method & AI Log →</a>
+            </div>
         </section>
 
         <hr class="section-divider">
@@ -465,9 +455,8 @@
         let meiChoice = null;
         
         function changeScene(direction) {
-            // Prevent advancing past Scene 3 without making a choice
+            // Prevent going next from scene 3 without making a choice
             if (currentScene === 3 && direction === 1 && !meiChoice) {
-                // Highlight the choice box to prompt the user
                 const choiceBox = document.getElementById('choice-ui');
                 choiceBox.style.border = "2px solid #D68C8C";
                 choiceBox.style.backgroundColor = "#FDF5F5";
