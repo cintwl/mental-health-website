@@ -143,7 +143,6 @@ section h2, .myth-fact-title {
     letter-spacing: -1px;
 }
 
-/* NEW PLAIN TEXT STAT */
 .hero-stat-plain {
     font-size: 1rem;
     color: var(--text-light);
@@ -512,7 +511,7 @@ section h2, .myth-fact-title {
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-/* CHOICE BUTTONS (MOVED) */
+/* CHOICE BUTTONS */
 .choice-container {
     margin-top: 20px;
     margin-bottom: 20px;

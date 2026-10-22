@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=600">
+    <link rel="stylesheet" href="style.css?v=601">
 </head>
 <body>
 
@@ -30,7 +30,6 @@
             
             <h1>Beyond Shyness</h1>
             
-            <!-- Smaller, plain text statistic -->
             <p class="hero-stat-plain">Social anxiety affects up to 1 in 8 university students globally.</p>
             
             <div class="hero-buttons">
@@ -312,7 +311,7 @@
                     </div>
                 </div>
 
-                <!-- HIGHLIGHTED CONTROLS -->
+                <!-- HIGHLIGHTED CONTROLS (ALWAYS VISIBLE NOW) -->
                 <div class="story-controls-bar" id="story-controls">
                     <button class="nav-btn highlight-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
@@ -327,7 +326,6 @@
         <section id="method">
             <h2>Method + AI</h2>
             
-            <!-- Made the entire card a clickable link -->
             <a href="ai-log.md" class="method-card-link">
                 <div class="method-card">
                     <h3>How we built this</h3>
@@ -358,7 +356,7 @@
                 <li><strong>The Samaritan Befrienders Hong Kong:</strong> 2389 2222 (24-hour hotline).</li>
             </ul>
 
-            <!-- INTERACTIVE DAILY CHECK-IN WITH PROGRESS BAR -->
+            <!-- INTERACTIVE DAILY CHECK-IN -->
             <div class="self-care-check">
                 <h3>A Gentle Daily Check-In</h3>
                 <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
@@ -467,8 +465,16 @@
         let meiChoice = null;
         
         function changeScene(direction) {
-            // Prevent going next from scene 3 without making a choice
+            // Prevent advancing past Scene 3 without making a choice
             if (currentScene === 3 && direction === 1 && !meiChoice) {
+                // Highlight the choice box to prompt the user
+                const choiceBox = document.getElementById('choice-ui');
+                choiceBox.style.border = "2px solid #D68C8C";
+                choiceBox.style.backgroundColor = "#FDF5F5";
+                setTimeout(() => {
+                    choiceBox.style.border = "1px dashed var(--primary)";
+                    choiceBox.style.backgroundColor = "var(--bg-base)";
+                }, 1000);
                 return;
             }
 
@@ -477,20 +483,17 @@
             if (currentScene < 1) currentScene = 1;
             if (currentScene > totalScenes) currentScene = totalScenes;
             document.getElementById('scene-' + currentScene).classList.add('active');
-            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
             
-            // Toggle choice UI and controls visibility
+            // Show choice UI only on Scene 3, but keep controls bar visible always
             const choiceUi = document.getElementById('choice-ui');
-            const controlsBar = document.getElementById('story-controls');
-
             if (currentScene === 3) {
                 choiceUi.style.display = 'block';
-                controlsBar.style.display = 'none'; // Hide controls until choice is made
             } else {
                 choiceUi.style.display = 'none';
-                controlsBar.style.display = 'flex';
             }
 
+            document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
+            
             // Update transcript
             if (currentScene === 4) {
                 if (meiChoice === 'speak') {
@@ -521,9 +524,8 @@
             document.getElementById('scene-4').classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene 4 of 5";
             
-            // Toggle UI back
+            // Hide choice UI
             document.getElementById('choice-ui').style.display = 'none';
-            document.getElementById('story-controls').style.display = 'flex';
             
             // Update transcript
             document.getElementById('transcript-text').innerText = (choice === 'speak') ? transcripts[3].speak : transcripts[3].quiet;
