@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=400">
+    <link rel="stylesheet" href="style.css?v=500">
 </head>
 <body>
 
@@ -29,7 +29,10 @@
             <p class="fiction-label">AN INTERACTIVE GUIDE TO SOCIAL ANXIETY</p>
             
             <h1>Beyond Shyness</h1>
-            <p class="hero-subtitle">Social anxiety is a real, treatable condition, not a personality flaw.</p>
+            <!-- Suggestion 4: Quick Stat -->
+            <p class="hero-stat">Social anxiety affects up to 1 in 8 university students globally.</p>
+            
+            <p class="hero-subtitle">Social anxiety is a real, treatable condition, not a personality flaw. This website uses data, narrative, and interactive tools to help anyone understand it.</p>
             
             <div class="hero-buttons">
                 <a href="#check" class="btn-primary">Check yourself</a>
@@ -269,13 +272,19 @@
                         <h3>2. The Group Chat</h3>
                         <p>A society dinner is being organised. Everyone is typing "count me in!". She types it too. Then deletes it. Then types it again. Then closes the app.</p>
                     </div>
+                    <!-- SCENE 3 WITH CHOICE -->
                     <div class="scene" id="scene-3">
                         <h3>3. The Tutorial</h3>
-                        <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it.</p>
+                        <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She has a split second to decide.</p>
+                        <div class="choice-container">
+                            <button class="choice-btn" onclick="makeChoice('speak')">Speak up</button>
+                            <button class="choice-btn" onclick="makeChoice('quiet')">Stay quiet</button>
+                        </div>
                     </div>
+                    <!-- SCENE 4 (Dynamic Text based on choice) -->
                     <div class="scene" id="scene-4">
                         <h3>4. The Pause</h3>
-                        <p>Later, she notices the pattern: the fear arrives <em>before</em> the moment, not during it. She doesn't have to solve this today. She only has to notice it.</p>
+                        <p id="scene-4-text">Later, she notices the pattern: the fear arrives <em>before</em> the moment, not during it. She doesn't have to solve this today. She only has to notice it.</p>
                     </div>
                     <div class="scene" id="scene-5">
                         <h3>5. A Small Step</h3>
@@ -443,8 +452,8 @@
         const transcripts = [
             '"The tutorial starts in two minutes. I can hear them laughing through the door. My heart is so loud. I just need to reach for the handle."',
             '"Everyone else is typing \'count me in\'. Why does my reply feel so heavy? Delete. Type. Delete. I\'ll just close the app."',
-            '"The tutor asked for my view. I said something, but it sounded wrong. I\'m replaying it over and over. Everyone must think I\'m stupid."',
-            '"The fear arrives before the moment even happens. I don\'t have to solve it all today. I just need to notice it, without judging myself."',
+            '"The tutor asks for my view. I have a split second to decide."',
+            '"Later, I notice the pattern: the fear arrives before the moment, not during it. I don\'t have to solve it all today. I just need to notice it."',
             '"I told her: \'Crowds are hard for me.\' She just said, \'Okay.\' It wasn\'t a disaster. Maybe I can do this one small step."'
         ];
 
@@ -461,6 +470,25 @@
             
             // Update transcript text dynamically
             document.getElementById('transcript-text').innerText = transcripts[currentScene - 1];
+        }
+
+        // --- NEW CHOICE LOGIC ---
+        function makeChoice(choice) {
+            const scene4Text = document.getElementById('scene-4-text');
+            if (choice === 'speak') {
+                scene4Text.innerHTML = "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+            } else {
+                scene4Text.innerHTML = "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it. She writes her thought down in her notebook. A different kind of win.";
+            }
+            
+            // Move to Scene 4
+            document.getElementById('scene-3').classList.remove('active');
+            currentScene = 4;
+            document.getElementById('scene-4').classList.add('active');
+            document.getElementById('scene-indicator').innerText = "Scene 4 of 5";
+            
+            // Update transcript to match Scene 4
+            document.getElementById('transcript-text').innerText = transcripts[3];
         }
 
         function togglePopup(id) {

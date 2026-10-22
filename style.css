@@ -23,6 +23,12 @@ html, body {
     line-height: 1.8;
 }
 
+/* --- SUGGESTION 2: ACCESSIBILITY (KEYBOARD FOCUS) --- */
+button:focus-visible, a:focus-visible, input:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
 /* --- TOP BANNER --- */
 .top-banner {
     background-color: var(--primary);
@@ -132,9 +138,20 @@ section h2, .myth-fact-title {
 .hero-section h1 {
     font-size: 3.8rem; 
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     color: var(--text-main);
     letter-spacing: -1px;
+}
+/* SUGGESTION 4: HERO STAT */
+.hero-stat {
+    display: inline-block;
+    background-color: #F4EFEA;
+    color: var(--primary);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95em;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 .hero-subtitle {
     font-size: 1.25rem;
@@ -504,12 +521,36 @@ section h2, .myth-fact-title {
 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+/* --- SUGGESTION 5: CHOICE BUTTONS --- */
+.choice-container {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.choice-btn {
+    background-color: var(--bg-base);
+    border: 1px solid var(--border);
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    color: var(--text-main);
+    transition: all 0.2s;
+}
+.choice-btn:hover {
+    background-color: var(--primary);
+    color: var(--card);
+    border-color: var(--primary);
+}
+
 /* --- SHORTER HEIGHT IMAGE --- */
 .story-image-wrapper { 
     position: relative; 
     display: block; 
     width: 100%; 
-    height: 220px; /* Reduced height to make it a short rectangle */
+    height: 220px; 
     margin: 0 auto 25px auto; 
     border-radius: 12px; 
     overflow: hidden; 
@@ -519,7 +560,7 @@ section h2, .myth-fact-title {
 .story-image { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; /* Keeps image proportional without stretching */
+    object-fit: cover; 
     display: block; 
 }
 
@@ -569,6 +610,62 @@ section h2, .myth-fact-title {
 .spin-result h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
 .spin-result .btn-primary { display: inline-block; margin-top: 20px; }
 
+/* --- METHOD + AI SECTION --- */
+.method-card {
+    background: var(--card);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    margin-top: 20px;
+}
+
+.method-card h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.method-card h3:first-child {
+    margin-top: 0;
+}
+
+.method-card p {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 15px;
+}
+
+.ethics-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.ethics-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.ethics-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.method-link a {
+    color: var(--primary);
+    font-weight: bold;
+    text-decoration: underline;
+}
+.method-link a:hover {
+    color: var(--primary-hover);
+}
+
 /* --- UPDATED HELP & ACCESS (Interactive Check-in) --- */
 .self-care-check { background: var(--card); padding: 40px; border-radius: 12px; margin-top: 40px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
 .self-care-check h3 { color: var(--text-main); margin-bottom: 10px; }
@@ -603,7 +700,7 @@ section h2, .myth-fact-title {
     cursor: pointer;
 }
 .check-item:has(input:checked) {
-    background: #F4EFEA; /* Highlight checked items */
+    background: #F4EFEA;
     border-color: var(--primary);
     text-decoration: line-through;
     text-decoration-color: var(--text-light);
