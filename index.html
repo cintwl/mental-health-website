@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=500">
+    <link rel="stylesheet" href="style.css?v=600">
 </head>
 <body>
 
@@ -29,10 +29,9 @@
             <p class="fiction-label">AN INTERACTIVE GUIDE TO SOCIAL ANXIETY</p>
             
             <h1>Beyond Shyness</h1>
-            <!-- Suggestion 4: Quick Stat -->
-            <p class="hero-stat">Social anxiety affects up to 1 in 8 university students globally.</p>
             
-            <p class="hero-subtitle">Social anxiety is a real, treatable condition, not a personality flaw. This website uses data, narrative, and interactive tools to help anyone understand it.</p>
+            <!-- Smaller, plain text statistic -->
+            <p class="hero-stat-plain">Social anxiety affects up to 1 in 8 university students globally.</p>
             
             <div class="hero-buttons">
                 <a href="#check" class="btn-primary">Check yourself</a>
@@ -272,16 +271,10 @@
                         <h3>2. The Group Chat</h3>
                         <p>A society dinner is being organised. Everyone is typing "count me in!". She types it too. Then deletes it. Then types it again. Then closes the app.</p>
                     </div>
-                    <!-- SCENE 3 WITH CHOICE -->
                     <div class="scene" id="scene-3">
                         <h3>3. The Tutorial</h3>
-                        <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She has a split second to decide.</p>
-                        <div class="choice-container">
-                            <button class="choice-btn" onclick="makeChoice('speak')">Speak up</button>
-                            <button class="choice-btn" onclick="makeChoice('quiet')">Stay quiet</button>
-                        </div>
+                        <p>The tutor asks for her view. Her face goes hot. The room seems to tilt. She has a split second to decide what to do.</p>
                     </div>
-                    <!-- SCENE 4 (Dynamic Text based on choice) -->
                     <div class="scene" id="scene-4">
                         <h3>4. The Pause</h3>
                         <p id="scene-4-text">Later, she notices the pattern: the fear arrives <em>before</em> the moment, not during it. She doesn't have to solve this today. She only has to notice it.</p>
@@ -310,8 +303,17 @@
                     </details>
                 </div>
 
-                <!-- HIGHLIGHTED BUTTONS -->
-                <div class="story-controls-bar">
+                <!-- MOVED CHOICE BUTTONS HERE -->
+                <div id="choice-ui" class="choice-container" style="display:none;">
+                    <p class="choice-prompt">What does Mei do?</p>
+                    <div class="choice-buttons">
+                        <button class="choice-btn" onclick="makeChoice('speak')">Speak up</button>
+                        <button class="choice-btn" onclick="makeChoice('quiet')">Stay quiet</button>
+                    </div>
+                </div>
+
+                <!-- HIGHLIGHTED CONTROLS -->
+                <div class="story-controls-bar" id="story-controls">
                     <button class="nav-btn highlight-btn" onclick="changeScene(-1)">← Previous</button>
                     <span id="scene-indicator">Scene 1 of 5</span>
                     <button class="nav-btn highlight-btn" onclick="changeScene(1)">Next →</button>
@@ -325,19 +327,22 @@
         <section id="method">
             <h2>Method + AI</h2>
             
-            <div class="method-card">
-                <h3>How we built this</h3>
-                <p>This project was built using HTML, CSS, and JavaScript. We used AI as a coding assistant to help debug layouts and write CSS, but <strong>all clinical information and narrative content were written and verified by us.</strong></p>
-                
-                <h3>Our Ethical Commitments</h3>
-                <ul class="ethics-list">
-                    <li><strong>Privacy First:</strong> The Mini-SPIN self-check runs 100% locally in your browser. We do not collect, store, or send your answers anywhere. No cookies, no tracking.</li>
-                    <li><strong>No Diagnosis:</strong> We explicitly frame the self-check as a "screening tool," not a diagnosis. We have included clear disclaimers and pathways to professional help.</li>
-                    <li><strong>Responsible Representation:</strong> The "Human Story" (Mei) is a fictional composite character. We labeled it clearly to avoid any misrepresentation of real individuals.</li>
-                    <li><strong>AI Ethics:</strong> We did not use AI to generate clinical advice or replace professional judgment.</li>
-                </ul>
-                <p class="method-link"><a href="ai-log.md">View our full AI-Use Log here</a></p>
-            </div>
+            <!-- Made the entire card a clickable link -->
+            <a href="ai-log.md" class="method-card-link">
+                <div class="method-card">
+                    <h3>How we built this</h3>
+                    <p>This project was built using HTML, CSS, and JavaScript. We used AI as a coding assistant to help debug layouts and write CSS, but <strong>all clinical information and narrative content were written and verified by us.</strong></p>
+                    
+                    <h3>Our Ethical Commitments</h3>
+                    <ul class="ethics-list">
+                        <li><strong>Privacy First:</strong> The Mini-SPIN self-check runs 100% locally in your browser. We do not collect, store, or send your answers anywhere. No cookies, no tracking.</li>
+                        <li><strong>No Diagnosis:</strong> We explicitly frame the self-check as a "screening tool," not a diagnosis. We have included clear disclaimers and pathways to professional help.</li>
+                        <li><strong>Responsible Representation:</strong> The "Human Story" (Mei) is a fictional composite character. We labeled it clearly to avoid any misrepresentation of real individuals.</li>
+                        <li><strong>AI Ethics:</strong> We did not use AI to generate clinical advice or replace professional judgment.</li>
+                    </ul>
+                    <p class="method-link">Click here to view our full AI-Use Log →</p>
+                </div>
+            </a>
         </section>
 
         <hr class="section-divider">
@@ -459,8 +464,14 @@
 
         let currentScene = 1;
         const totalScenes = 5;
+        let meiChoice = null;
         
         function changeScene(direction) {
+            // Prevent going next from scene 3 without making a choice
+            if (currentScene === 3 && direction === 1 && !meiChoice) {
+                return;
+            }
+
             document.getElementById('scene-' + currentScene).classList.remove('active');
             currentScene += direction;
             if (currentScene < 1) currentScene = 1;
@@ -468,27 +479,54 @@
             document.getElementById('scene-' + currentScene).classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
             
-            // Update transcript text dynamically
-            document.getElementById('transcript-text').innerText = transcripts[currentScene - 1];
+            // Toggle choice UI and controls visibility
+            const choiceUi = document.getElementById('choice-ui');
+            const controlsBar = document.getElementById('story-controls');
+
+            if (currentScene === 3) {
+                choiceUi.style.display = 'block';
+                controlsBar.style.display = 'none'; // Hide controls until choice is made
+            } else {
+                choiceUi.style.display = 'none';
+                controlsBar.style.display = 'flex';
+            }
+
+            // Update transcript
+            if (currentScene === 4) {
+                if (meiChoice === 'speak') {
+                    document.getElementById('transcript-text').innerText = transcripts[3].speak || transcripts[3];
+                } else if (meiChoice === 'quiet') {
+                    document.getElementById('transcript-text').innerText = transcripts[3].quiet || transcripts[3];
+                } else {
+                    document.getElementById('transcript-text').innerText = transcripts[3];
+                }
+            } else {
+                document.getElementById('transcript-text').innerText = transcripts[currentScene - 1];
+            }
         }
 
-        // --- NEW CHOICE LOGIC ---
         function makeChoice(choice) {
+            meiChoice = choice;
             const scene4Text = document.getElementById('scene-4-text');
+            
             if (choice === 'speak') {
                 scene4Text.innerHTML = "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
             } else {
                 scene4Text.innerHTML = "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it. She writes her thought down in her notebook. A different kind of win.";
             }
             
-            // Move to Scene 4
+            // Advance to Scene 4
             document.getElementById('scene-3').classList.remove('active');
             currentScene = 4;
             document.getElementById('scene-4').classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene 4 of 5";
             
-            // Update transcript to match Scene 4
-            document.getElementById('transcript-text').innerText = transcripts[3];
+            // Toggle UI back
+            document.getElementById('choice-ui').style.display = 'none';
+            document.getElementById('story-controls').style.display = 'flex';
+            
+            // Update transcript
+            document.getElementById('transcript-text').innerText = (choice === 'speak') ? transcripts[3].speak : transcripts[3].quiet;
         }
 
         function togglePopup(id) {
