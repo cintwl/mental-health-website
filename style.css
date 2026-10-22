@@ -358,7 +358,7 @@ section h2, .myth-fact-title {
 }
 .chart-insight strong { color: var(--primary); }
 
-/* --- TIMELINE CHART (PERFECTLY CENTERED) --- */
+/* --- TIMELINE CHART --- */
 .timeline-full-width {
     width: 100%;
     background: var(--card);
@@ -569,11 +569,75 @@ section h2, .myth-fact-title {
 .spin-result h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.3rem; }
 .spin-result .btn-primary { display: inline-block; margin-top: 20px; }
 
-/* --- HELP & ACCESS --- */
+/* --- UPDATED HELP & ACCESS (Interactive Check-in) --- */
 .self-care-check { background: var(--card); padding: 40px; border-radius: 12px; margin-top: 40px; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
-.self-care-check label { display: block; padding: 18px; background: var(--bg-base); margin-bottom: 12px; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); transition: background 0.2s; font-size: 1rem; }
-.self-care-check label:hover { background: var(--card); border-color: var(--tan); }
-.self-care-check input[type="checkbox"] { margin-right: 15px; transform: scale(1.3); accent-color: var(--primary); }
+.self-care-check h3 { color: var(--text-main); margin-bottom: 10px; }
+.self-care-check p em { color: var(--text-light); font-size: 0.95em; display: block; margin-bottom: 20px; }
+
+.checklist-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.check-item {
+    display: block;
+    padding: 18px 20px;
+    background: var(--bg-base);
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    color: var(--text-main);
+}
+.check-item:hover {
+    background: var(--card);
+    border-color: var(--tan);
+}
+.check-item input[type="checkbox"] {
+    margin-right: 15px;
+    transform: scale(1.3);
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+.check-item:has(input:checked) {
+    background: #F4EFEA; /* Highlight checked items */
+    border-color: var(--primary);
+    text-decoration: line-through;
+    text-decoration-color: var(--text-light);
+    opacity: 0.8;
+}
+
+/* Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary);
+    border-radius: 5px;
+    transition: width 0.4s ease-out;
+}
+
+.check-feedback {
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+    font-size: 1rem;
+    margin: 0;
+    transition: all 0.3s;
+}
+
+/* --- SAFETY NOTE --- */
 .safety-note { background-color: #FDF5F5; border-left: 5px solid #D68C8C; padding: 30px; margin-top: 40px; border-radius: 0 8px 8px 0; }
 .safety-note h3 { color: #A35252; margin-top: 0; margin-bottom: 15px; }
 .safety-note p { color: #8C5B5B; }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=999">
+    <link rel="stylesheet" href="style.css?v=301">
 </head>
 <body>
 
@@ -241,7 +241,7 @@
                     "It isn't that I don't want to speak. It's that I've already heard how it will go wrong."
                 </div>
 
-                <!-- FULL WIDTH IMAGE -->
+                <!-- SHORTER HEIGHT IMAGE -->
                 <div class="story-image-wrapper">
                     <img src="https://placehold.co/800x450/F5F2EB/C5B198?text=Fictional+Illustration" alt="A closed door with a hand hovering near the handle, a phone face down on a desk, and an open notebook" class="story-image" />
 
@@ -331,14 +331,34 @@
                 <li><strong>The Samaritan Befrienders Hong Kong:</strong> 2389 2222 (24-hour hotline).</li>
             </ul>
 
+            <!-- UPDATED DAILY CHECK-IN WITH PROGRESS BAR -->
             <div class="self-care-check">
                 <h3>A Gentle Daily Check-In</h3>
                 <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
-                <label><input type="checkbox"> I did one small thing today, even though it felt uncomfortable.</label>
-                <label><input type="checkbox"> I noticed a "what if" thought without fully believing it.</label>
-                <label><input type="checkbox"> I took one slow breath before a situation that scared me.</label>
-                <label><input type="checkbox"> I didn't avoid <em>everything</em> I wanted to do.</label>
-                <label><input type="checkbox"> I spoke to myself the way I would speak to a friend.</label>
+                
+                <div class="checklist-container">
+                    <label class="check-item">
+                        <input type="checkbox" class="daily-check"> I did one small thing today, even though it felt uncomfortable.
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="daily-check"> I noticed a "what if" thought without fully believing it.
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="daily-check"> I took one slow breath before a situation that scared me.
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="daily-check"> I didn't avoid <em>everything</em> I wanted to do.
+                    </label>
+                    <label class="check-item">
+                        <input type="checkbox" class="daily-check"> I spoke to myself the way I would speak to a friend.
+                    </label>
+                </div>
+
+                <!-- Interactive Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar" id="check-progress"></div>
+                </div>
+                <p id="check-message" class="check-feedback">0 of 5 completed today.</p>
             </div>
 
             <div class="safety-note">
@@ -486,6 +506,33 @@
             const out = document.getElementById('spin-result');
             out.classList.remove('show');
             out.innerHTML = '';
+        }
+
+        // --- INTERACTIVE DAILY CHECK-IN LOGIC ---
+        const checkboxes = document.querySelectorAll('.daily-check');
+        const progress = document.getElementById('check-progress');
+        const message = document.getElementById('check-message');
+
+        checkboxes.forEach(box => {
+            box.addEventListener('change', updateCheckIn);
+        });
+
+        function updateCheckIn() {
+            const checkedCount = document.querySelectorAll('.daily-check:checked').length;
+            const total = checkboxes.length;
+            const percent = (checkedCount / total) * 100;
+            
+            progress.style.width = percent + '%';
+            
+            if (checkedCount === 0) {
+                message.innerText = "0 of 5 completed today.";
+            } else if (checkedCount < 3) {
+                message.innerText = checkedCount + " of 5 completed. Keep going.";
+            } else if (checkedCount < 5) {
+                message.innerText = checkedCount + " of 5 completed. You're doing great.";
+            } else {
+                message.innerText = "5 of 5 completed. You did a lot today.";
+            }
         }
     </script>
 </body>
