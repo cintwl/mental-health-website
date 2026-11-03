@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=700">
+    <!-- Cache buster updated to v=800 -->
+    <link rel="stylesheet" href="style.css?v=800">
 </head>
 <body>
 
@@ -146,6 +147,22 @@
                 </div>
             </div>
 
+            <!-- NEW: SOCIAL ANXIETY CYCLE -->
+            <div class="cycle-container">
+                <h3>The Social Anxiety Cycle</h3>
+                <p><em>Click each stage to see how the cycle works.</em></p>
+                <div class="cycle-steps">
+                    <button class="cycle-btn active" onclick="showCycle(1)">1. Situation</button>
+                    <button class="cycle-btn" onclick="showCycle(2)">2. Negative Thoughts</button>
+                    <button class="cycle-btn" onclick="showCycle(3)">3. Anxiety Response</button>
+                    <button class="cycle-btn" onclick="showCycle(4)">4. Avoidance</button>
+                    <button class="cycle-btn" onclick="showCycle(5)">5. Temporary Relief</button>
+                </div>
+                <div id="cycle-display" class="cycle-display">
+                    <p><strong>Example:</strong> Being asked to speak in class.</p>
+                </div>
+            </div>
+
             <hr class="inner-divider">
 
             <div class="combined-charts-wrapper">
@@ -261,6 +278,18 @@
                 <div id="popup-2" class="hotspot-popup">Her hand is on the door handle. She has been standing here for ninety seconds.</div>
                 <div id="popup-3" class="hotspot-popup">"What if they think I'm stupid" — written, then scribbled out, then written again.</div>
 
+                <!-- NEW: WHAT YOU SEE VS FEEL -->
+                <div class="see-vs-feel">
+                    <div class="see-card">
+                        <h4>What others see</h4>
+                        <p>A quiet student who doesn't participate.</p>
+                    </div>
+                    <div class="feel-card">
+                        <h4>What Mei feels</h4>
+                        <p>"I want to speak, but I'm terrified of saying the wrong thing."</p>
+                    </div>
+                </div>
+
                 <div class="scenes-container">
                     <div class="scene active" id="scene-1">
                         <h3>1. The Corridor</h3>
@@ -345,6 +374,29 @@
                 <li><a href="https://www.openup.hk/">Open Up</a> — Hong Kong online mental health support platform.</li>
                 <li><strong>The Samaritan Befrienders Hong Kong:</strong> 2389 2222 (24-hour hotline).</li>
             </ul>
+
+            <!-- NEW: HOW TO SUPPORT A FRIEND -->
+            <div class="support-friend">
+                <h3>How to Support a Friend</h3>
+                <div class="support-grid">
+                    <div class="support-card good">
+                        <h4>Say this</h4>
+                        <ul>
+                            <li>"Would you like me to come with you?"</li>
+                            <li>"It's okay. You don't have to rush."</li>
+                            <li>"Do you want to talk about what's bothering you?"</li>
+                        </ul>
+                    </div>
+                    <div class="support-card bad">
+                        <h4>Avoid this</h4>
+                        <ul>
+                            <li>"You're just overthinking."</li>
+                            <li>"Why are you so quiet?"</li>
+                            <li>"Just be confident."</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <!-- INTERACTIVE DAILY CHECK-IN -->
             <div class="self-care-check">
@@ -441,6 +493,23 @@
             btn.classList.add('active');
         }
 
+        // --- NEW: CYCLE LOGIC ---
+        const cycleContent = [
+            "<strong>Situation:</strong> Being asked to speak in class.",
+            "<strong>Negative Thoughts:</strong> 'Everyone will think I'm stupid.'",
+            "<strong>Anxiety Response:</strong> Heart races, face gets hot, hands shake.",
+            "<strong>Avoidance:</strong> Stay silent, look down, or skip the class.",
+            "<strong>Reinforcement:</strong> Feel relief for a moment, but the fear of the next class grows."
+        ];
+        
+        function showCycle(step) {
+            document.querySelectorAll('.cycle-btn').forEach((btn, index) => {
+                if (index === step - 1) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+            document.getElementById('cycle-display').innerHTML = `<p>${cycleContent[step - 1]}</p>`;
+        }
+
         // --- DYNAMIC TRANSCRIPT DATA ---
         const transcripts = [
             '"The tutorial starts in two minutes. I can hear them laughing through the door. My heart is so loud. I just need to reach for the handle."',
@@ -455,7 +524,6 @@
         let meiChoice = null;
         
         function changeScene(direction) {
-            // Prevent going next from scene 3 without making a choice
             if (currentScene === 3 && direction === 1 && !meiChoice) {
                 const choiceBox = document.getElementById('choice-ui');
                 choiceBox.style.border = "2px solid #D68C8C";
@@ -473,7 +541,6 @@
             if (currentScene > totalScenes) currentScene = totalScenes;
             document.getElementById('scene-' + currentScene).classList.add('active');
             
-            // Show choice UI only on Scene 3, but keep controls bar visible always
             const choiceUi = document.getElementById('choice-ui');
             if (currentScene === 3) {
                 choiceUi.style.display = 'block';
@@ -483,7 +550,6 @@
 
             document.getElementById('scene-indicator').innerText = "Scene " + currentScene + " of " + totalScenes;
             
-            // Update transcript
             if (currentScene === 4) {
                 if (meiChoice === 'speak') {
                     document.getElementById('transcript-text').innerText = transcripts[3].speak || transcripts[3];
@@ -507,16 +573,12 @@
                 scene4Text.innerHTML = "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it. She writes her thought down in her notebook. A different kind of win.";
             }
             
-            // Advance to Scene 4
             document.getElementById('scene-3').classList.remove('active');
             currentScene = 4;
             document.getElementById('scene-4').classList.add('active');
             document.getElementById('scene-indicator').innerText = "Scene 4 of 5";
-            
-            // Hide choice UI
             document.getElementById('choice-ui').style.display = 'none';
             
-            // Update transcript
             document.getElementById('transcript-text').innerText = (choice === 'speak') ? transcripts[3].speak : transcripts[3].quiet;
         }
 
