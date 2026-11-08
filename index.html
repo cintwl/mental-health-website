@@ -1677,41 +1677,46 @@
       function makeChoice(choice) {
         meiChoice = choice;
         const scene4Text = document.getElementById("scene-4-text");
+        const audioPlayer = document.getElementById("story-audio"); // 準備切換錄音
 
         if (choice === "speak") {
-          if (scene4Text)
-            scene4Text.innerHTML =
-              "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+          if(scene4Text) scene4Text.innerHTML = "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+          
+          // 載入 Speak up 嘅錄音
+          if (audioPlayer) {
+              audioPlayer.src = "scene4_speak.mp3";
+          }
         } else {
-          if (scene4Text)
-            scene4Text.innerHTML =
-              "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+          if(scene4Text) scene4Text.innerHTML = "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+          
+          // 載入 Stay quiet 嘅錄音
+          if (audioPlayer) {
+              audioPlayer.src = "scene4_quiet.mp3";
+          }
         }
 
-        // Auto-advance to Scene 4
+        // 自動轉去 Scene 4
         const currentEl = document.getElementById("scene-3");
         if (currentEl) currentEl.classList.remove("active");
-
+        
         currentScene = 4;
-
+        
         const newEl = document.getElementById("scene-4");
         if (newEl) newEl.classList.add("active");
 
-        // Hide choice UI & Update Indicators
+        // 收起選擇 UI 同埋更新文字
         const choiceUi = document.getElementById("choice-ui");
         if (choiceUi) choiceUi.style.display = "none";
-
+        
         const indicator = document.getElementById("scene-indicator");
         if (indicator) indicator.innerText = "SCENE 4 OF 5";
-
+        
         const audioNum = document.getElementById("audio-scene-num");
         if (audioNum) audioNum.innerText = 4;
 
-        // Load Scene 4 Audio
-        const audioPlayer = document.getElementById("story-audio");
+        // 載入新音頻等用家撳 Play
         if (audioPlayer) {
-          audioPlayer.src = "scene4.mp3";
-          audioPlayer.load();
+            audioPlayer.load();
         }
       }
 
