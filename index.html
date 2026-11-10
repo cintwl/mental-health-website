@@ -1974,6 +1974,13 @@
           border: 3px solid #F9FAF8;
           box-shadow: 0 6px 15px rgba(92, 122, 104, 0.15); /* 陰影都稍微加強，更有立體感 */
       }
+      /* 徹底隱藏未啟用嘅選擇按鈕區，杜絕空白長方框 */
+      #choice-ui:not([style*="display: block"]) {
+          display: none !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          border: none !important;
+      }
         </style>
 
         <div class="help-grid">
