@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -72,7 +71,52 @@
         </div>
       </section>
 
-      <hr class="section-divider" />
+      <!-- 動態波浪貼喺呢度 (取代咗原本條 hr 直線) -->
+      <div class="ocean-waves">
+        <svg
+          class="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          shape-rendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g class="parallax">
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="0"
+              fill="rgba(92, 122, 104, 0.2)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(92, 122, 104, 0.4)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(92, 122, 104, 0.6)"
+            />
+            <use
+              xlink:href="#gentle-wave"
+              x="48"
+              y="7"
+              fill="rgba(92, 122, 104, 0.8)"
+            />
+          </g>
+        </svg>
+      </div>
+
+      <!-- CONCEPT MAP (RESTORED) -->
 
       <!-- CONCEPT MAP (RESTORED) -->
       <section id="concept-map">
@@ -268,6 +312,290 @@
             border-top: 1px dashed var(--border);
             margin-top: 5px;
             padding-top: 20px;
+          }
+          /* ========================================== */
+          /* 動態呼吸波浪 (Animated CSS Waves) */
+          /* ========================================== */
+          .ocean-waves {
+            width: 100%;
+            margin-bottom: -10px;
+            display: block;
+          }
+          .waves {
+            position: relative;
+            width: 100%;
+            height: 10vh;
+            min-height: 80px;
+            max-height: 120px;
+          }
+          /* 控制波浪流動速度同層次 */
+          .parallax > use {
+            animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5)
+              infinite;
+          }
+          .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+          }
+          .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+          }
+          .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+          }
+          .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+          }
+
+          @keyframes move-forever {
+            0% {
+              transform: translate3d(-90px, 0, 0);
+            }
+            100% {
+              transform: translate3d(85px, 0, 0);
+            }
+          }
+
+          /* 手機版自動縮細，保持順眼 */
+          @media (max-width: 768px) {
+            .waves {
+              height: 40px;
+              min-height: 40px;
+            }
+          }
+          /* ========================================== */
+          /* STYLE 1: SOFT 3D PRESS MINI-SPIN DESIGN    */
+          /* ========================================== */
+
+          /* 美化外框同每條問題嘅分隔 */
+          .check-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(92, 122, 104, 0.06);
+            border: 1px solid var(--border);
+          }
+          .spin-question {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #dce3df;
+          }
+          .spin-question:last-of-type {
+            border-bottom: none;
+            margin-bottom: 15px;
+          }
+
+          /* 問題文字轉用優雅字體 */
+          .spin-question p {
+            font-family: "Lora", serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 15px;
+          }
+          .spin-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+          }
+
+          /* 隱藏原本肉酸嘅預設圓形 Radio 按鈕 */
+          .opt input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+
+          /* 未揀中時嘅「3D 立體啪掣」設計 */
+          .opt-pill {
+            font-family: "Inter", sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-main);
+            background: #f4f7f5;
+            border-radius: 12px;
+            padding: 8px 18px; /* 微型設計，唔佔位 */
+            display: inline-block;
+            cursor: pointer;
+
+            /* 靈魂所在：3D 底部陰影厚度 */
+            border: 1px solid #dce3df;
+            box-shadow: 0 4px 0 #dce3df, 0 5px 10px rgba(0, 0, 0, 0.03);
+            transform: translateY(0);
+            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          /* 滑鼠指住 (Hover) 微微變色 */
+          .opt:hover .opt-pill {
+            background: #ebf0ed;
+          }
+
+          /* 撳落去 (Active) 嘅瞬間：實體啪掣凹陷感 */
+          .opt:active .opt-pill {
+            box-shadow: 0 0px 0 #dce3df;
+            transform: translateY(4px);
+          }
+
+          /* 揀中咗 (Checked) 嘅鎖定狀態：保持凹陷 + 變 Sage Green */
+          .opt input[type="radio"]:checked + .opt-pill {
+            background-color: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            font-weight: 600;
+
+            /* 內陰影，營造「撳實咗」嘅感覺 */
+            box-shadow: 0 1px 0 #3a554a, inset 0 3px 6px rgba(0, 0, 0, 0.15);
+            transform: translateY(3px);
+          }
+
+          .check-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+          }
+          /* ========================================== */
+          /* CUTE BULLET JOURNAL CHECKLIST (ORIGINAL FONT) */
+          /* ========================================== */
+
+          /* 1. 手帳本背景：加入點陣紙 (Dot-grid) 同埋卡通立體陰影 */
+          .self-care-check {
+            background-color: #fafaf7;
+            background-image: radial-gradient(#dce3df 1.5px, transparent 1.5px);
+            background-size: 20px 20px; /* 點陣間距 */
+            padding: 45px 40px 40px 40px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            box-shadow: 6px 6px 0px rgba(122, 132, 107, 0.15),
+              0 15px 30px rgba(0, 0, 0, 0.04);
+            position: relative;
+            margin-top: 20px;
+          }
+
+          /* 2. 頂部裝飾：加一塊半透明嘅「紙膠帶 (Washi Tape)」 */
+          .self-care-check::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 140px;
+            height: 28px;
+            background: rgba(212, 123, 101, 0.35); /* 淺橙色膠帶 */
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          }
+
+          /* 3. 鎖定原版字體：確保標題同文字用返你原本靚靚嘅字體 */
+          .self-care-check h3,
+          .self-care-check p,
+          .check-item {
+            font-family: "Lora", Georgia, serif !important;
+          }
+
+          /* 4. 打卡項目：變成獨立嘅白色小卡片 */
+          .check-item {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            margin-bottom: 15px;
+            padding: 16px 22px;
+            border-radius: 12px;
+            border: 2px solid #eaefea;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          /* 滑鼠指住嗰陣，卡片會好似貼紙咁微微浮起 */
+          .check-item:hover {
+            transform: translateY(-3px) rotate(-0.5deg);
+            box-shadow: 4px 4px 0px rgba(74, 107, 93, 0.1);
+            border-color: #dce3df;
+          }
+
+          /* 5. 隱藏預設 Checkbox，換成可愛圓圈 */
+          .check-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            border: 2px solid #a4b8ad;
+            border-radius: 50%;
+            margin-right: 18px;
+            position: relative;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all 0.3s;
+            background: #fafaf7;
+          }
+
+          /* 勾選後：變成 Sage Green，加一個可愛嘅「彈跳 (Bounce)」動畫 */
+          .check-item input[type="checkbox"]:checked {
+            background: var(--primary);
+            border-color: var(--primary);
+            animation: jelly-bounce 0.4s ease-out;
+          }
+
+          .check-item input[type="checkbox"]:checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: sans-serif;
+          }
+
+          /* 6. 勾咗之後嘅文字效果：加上橙色手繪風刪除線 */
+          .check-item:has(input[type="checkbox"]:checked) {
+            background: #f8f9f8;
+            color: #9aafa3;
+            text-decoration: line-through;
+            text-decoration-color: #d47b65;
+            text-decoration-thickness: 2px;
+          }
+
+          /* 7. 進度條：卡通間條 Highlighter 風格 */
+          .progress-container {
+            background: #eaefea;
+            height: 18px;
+            border-radius: 20px;
+            margin-top: 35px;
+            overflow: hidden;
+            border: 2px solid #dce3df;
+          }
+
+          .progress-bar {
+            height: 100%;
+            background: repeating-linear-gradient(
+              45deg,
+              var(--primary),
+              var(--primary) 15px,
+              #6a8a7a 15px,
+              #6a8a7a 30px
+            );
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          /* 動畫 Keyframes */
+          @keyframes jelly-bounce {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.3);
+            }
+            100% {
+              transform: scale(1);
+            }
           }
         </style>
 
@@ -1157,6 +1485,17 @@
               </audio>
             </div>
           </div>
+          <!-- AUDIO PLAYER -->
+          <div class="audio-player-container">
+            <!-- (呢度係你原本錄音機嘅 code，唔使理) -->
+          </div>
+
+          <!-- 💡 將阿 Mei 嘅圖片貼喺呢度 (錄音機同故事文字之間) -->
+          <img
+            src="mei.jpg"
+            alt="Mei, a shy university student"
+            class="mei-illustration"
+          />
 
           <!-- SCENES -->
           <div class="scene-text-area">
@@ -1421,49 +1760,217 @@
           .help-card.urgent-card:hover .help-action {
             color: #b3523b;
           }
-          .story-container, .audio-story-wrapper, .transcript-box, #spin-result {
-          border-radius: 24px; 
-          border: none;
-          box-shadow: 0 12px 40px rgba(92, 122, 104, 0.08); /* 更柔和嘅陰影 */
-      }
+          .story-container,
+          .audio-story-wrapper,
+          .transcript-box,
+          #spin-result {
+            border-radius: 24px;
+            border: none;
+            box-shadow: 0 12px 40px rgba(92, 122, 104, 0.08); /* 更柔和嘅陰影 */
+          }
 
-      /* 可愛插畫嘅專屬設定 */
-      .cute-illustration {
-          max-width: 180px;
-          border-radius: 20px;
-          mix-blend-mode: multiply; /* 自動溶入米白色背景，唔會有礙眼嘅白底 */
-          animation: float 6s ease-in-out infinite; /* 治癒嘅上下浮動動畫 */
-          display: block;
-          margin: 0 auto;
-      }
+          /* 可愛插畫嘅專屬設定 */
+          .cute-illustration {
+            max-width: 180px;
+            border-radius: 20px;
+            mix-blend-mode: multiply; /* 自動溶入米白色背景，唔會有礙眼嘅白底 */
+            animation: float 6s ease-in-out infinite; /* 治癒嘅上下浮動動畫 */
+            display: block;
+            margin: 0 auto;
+          }
 
-      /* 定義浮動動畫 */
-      @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0px); }
-      }
+          /* 定義浮動動畫 */
+          @keyframes float {
+            0% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-15px);
+            }
+            100% {
+              transform: translateY(0px);
+            }
+          }
 
-      /* 友善嘅左右排版容器 */
-      .friendly-layout {
-          display: flex;
-          align-items: center;
-          gap: 40px;
-          flex-wrap: wrap;
-      }
-      .friendly-text {
-          flex: 1;
-          min-width: 300px;
-      }
-      .friendly-image {
-          flex-shrink: 0;
-          text-align: center;
-          width: 200px;
-      }
-      
-      @media (max-width: 768px) {
-          .friendly-image { width: 100%; margin-top: -20px; margin-bottom: 20px; }
-      }
+          /* 友善嘅左右排版容器 */
+          .friendly-layout {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+          }
+          .friendly-text {
+            flex: 1;
+            min-width: 300px;
+          }
+          .friendly-image {
+            flex-shrink: 0;
+            text-align: center;
+            width: 200px;
+          }
+
+          @media (max-width: 768px) {
+            .friendly-image {
+              width: 100%;
+              margin-top: -20px;
+              margin-bottom: 20px;
+            }
+          }
+          /* ========================================== */
+          /* CUTE BULLET JOURNAL CHECKLIST (ORIGINAL FONT) */
+          /* ========================================== */
+
+          /* 1. 手帳本背景：加入點陣紙 (Dot-grid) 同埋卡通立體陰影 */
+          .self-care-check {
+            background-color: #fafaf7;
+            background-image: radial-gradient(#dce3df 1.5px, transparent 1.5px);
+            background-size: 20px 20px; /* 點陣間距 */
+            padding: 45px 40px 40px 40px;
+            border-radius: 16px;
+            border: 2px solid var(--border);
+            box-shadow: 6px 6px 0px rgba(122, 132, 107, 0.15),
+              0 15px 30px rgba(0, 0, 0, 0.04);
+            position: relative;
+            margin-top: 20px;
+          }
+
+          /* 2. 頂部裝飾：加一塊半透明嘅「紙膠帶 (Washi Tape)」 */
+          .self-care-check::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 140px;
+            height: 28px;
+            background: rgba(212, 123, 101, 0.35); /* 淺橙色膠帶 */
+            border-radius: 2px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+          }
+
+          /* 3. 鎖定原版字體：確保標題同文字用返你原本靚靚嘅字體 */
+          .self-care-check h3,
+          .self-care-check p,
+          .check-item {
+            font-family: "Lora", Georgia, serif !important;
+          }
+
+          /* 4. 打卡項目：變成獨立嘅白色小卡片 */
+          .check-item {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            margin-bottom: 15px;
+            padding: 16px 22px;
+            border-radius: 12px;
+            border: 2px solid #eaefea;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--text-main);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          /* 滑鼠指住嗰陣，卡片會好似貼紙咁微微浮起 */
+          .check-item:hover {
+            transform: translateY(-3px) rotate(-0.5deg);
+            box-shadow: 4px 4px 0px rgba(74, 107, 93, 0.1);
+            border-color: #dce3df;
+          }
+
+          /* 5. 隱藏預設 Checkbox，換成可愛圓圈 */
+          .check-item input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 26px;
+            height: 26px;
+            border: 2px solid #a4b8ad;
+            border-radius: 50%;
+            margin-right: 18px;
+            position: relative;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: all 0.3s;
+            background: #fafaf7;
+          }
+
+          /* 勾選後：變成 Sage Green，加一個可愛嘅「彈跳 (Bounce)」動畫 */
+          .check-item input[type="checkbox"]:checked {
+            background: var(--primary);
+            border-color: var(--primary);
+            animation: jelly-bounce 0.4s ease-out;
+          }
+
+          .check-item input[type="checkbox"]:checked::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: sans-serif;
+          }
+
+          /* 6. 勾咗之後嘅文字效果：加上橙色手繪風刪除線 */
+          .check-item:has(input[type="checkbox"]:checked) {
+            background: #f8f9f8;
+            color: #9aafa3;
+            text-decoration: line-through;
+            text-decoration-color: #d47b65;
+            text-decoration-thickness: 2px;
+          }
+
+          /* 7. 進度條：卡通間條 Highlighter 風格 */
+          .progress-container {
+            background: #eaefea;
+            height: 18px;
+            border-radius: 20px;
+            margin-top: 35px;
+            overflow: hidden;
+            border: 2px solid #dce3df;
+          }
+
+          .progress-bar {
+            height: 100%;
+            background: repeating-linear-gradient(
+              45deg,
+              var(--primary),
+              var(--primary) 15px,
+              #6a8a7a 15px,
+              #6a8a7a 30px
+            );
+            width: 0%;
+            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          /* 動畫 Keyframes */
+          @keyframes jelly-bounce {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.3);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          /* ========================================== */
+          /* MEI ILLUSTRATION (STORY SECTION)           */
+          /* ========================================== */
+          .mei-illustration {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%; /* 變成圓形 */
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 25px auto; /* 自動置中，底部留白 */
+            border: 4px solid #f9faf8;
+            box-shadow: 0 8px 20px rgba(92, 122, 104, 0.15);
+            animation: fadeIn 0.8s ease-in-out;
+          }
         </style>
 
         <div class="help-grid">
@@ -1529,6 +2036,7 @@
         <!-- INTERACTIVE DAILY CHECK-IN -->
         <div class="self-care-check">
           <h3>A Gentle Daily Check-In</h3>
+
           <p>
             <em
               >This is not a diagnostic tool. It is a simple awareness
@@ -1723,43 +2231,47 @@
         const audioPlayer = document.getElementById("story-audio"); // 準備切換錄音
 
         if (choice === "speak") {
-          if(scene4Text) scene4Text.innerHTML = "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
-          
+          if (scene4Text)
+            scene4Text.innerHTML =
+              "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+
           // 載入 Speak up 嘅錄音
           if (audioPlayer) {
-              audioPlayer.src = "scene4_speak.mp3";
+            audioPlayer.src = "scene4_speak.mp3";
           }
         } else {
-          if(scene4Text) scene4Text.innerHTML = "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
-          
+          if (scene4Text)
+            scene4Text.innerHTML =
+              "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+
           // 載入 Stay quiet 嘅錄音
           if (audioPlayer) {
-              audioPlayer.src = "scene4_quiet.mp3";
+            audioPlayer.src = "scene4_quiet.mp3";
           }
         }
 
         // 自動轉去 Scene 4
         const currentEl = document.getElementById("scene-3");
         if (currentEl) currentEl.classList.remove("active");
-        
+
         currentScene = 4;
-        
+
         const newEl = document.getElementById("scene-4");
         if (newEl) newEl.classList.add("active");
 
         // 收起選擇 UI 同埋更新文字
         const choiceUi = document.getElementById("choice-ui");
         if (choiceUi) choiceUi.style.display = "none";
-        
+
         const indicator = document.getElementById("scene-indicator");
         if (indicator) indicator.innerText = "SCENE 4 OF 5";
-        
+
         const audioNum = document.getElementById("audio-scene-num");
         if (audioNum) audioNum.innerText = 4;
 
         // 載入新音頻等用家撳 Play
         if (audioPlayer) {
-            audioPlayer.load();
+          audioPlayer.load();
         }
       }
 
@@ -1875,4 +2387,3 @@
     </script>
   </body>
 </html>
-
