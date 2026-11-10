@@ -1339,13 +1339,14 @@
       <hr class="section-divider" />
       <!-- 4. HUMAN STORY (AUDIO DIARY & TEXT UI) -->
       <section id="story">
-        <h2>Human Story: Mei's Experience</h2>
+        
+        <!-- 全新嘅標題與頭像排版 -->
+        <div class="story-title-container">
+          <h2>Human Story: Mei's Experience</h2>
+          <img src="mei.jpg" alt="Mei" class="mei-title-avatar">
+        </div>
+
         <p>
-          <em
-            >Follow Mei, a Year 2 student, through a typical university day.
-            Listen to the audio and explore the theory behind her actions.</em
-          >
-        </p>
 
         <style>
           .audio-story-wrapper {
@@ -1489,13 +1490,7 @@
           <div class="audio-player-container">
             <!-- (呢度係你原本錄音機嘅 code，唔使理) -->
           </div>
-
-          <!-- 💡 將阿 Mei 嘅圖片貼喺呢度 (錄音機同故事文字之間) -->
-          <img
-            src="mei.jpg"
-            alt="Mei, a shy university student"
-            class="mei-illustration"
-          />
+        
 
           <!-- SCENES -->
           <div class="scene-text-area">
@@ -1958,19 +1953,27 @@
             }
           }
           /* ========================================== */
-          /* MEI ILLUSTRATION (STORY SECTION)           */
-          /* ========================================== */
-          .mei-illustration {
-            width: 130px;
-            height: 130px;
-            border-radius: 50%; /* 變成圓形 */
-            object-fit: cover;
-            display: block;
-            margin: 0 auto 25px auto; /* 自動置中，底部留白 */
-            border: 4px solid #f9faf8;
-            box-shadow: 0 8px 20px rgba(92, 122, 104, 0.15);
-            animation: fadeIn 0.8s ease-in-out;
-          }
+      /* MEI AVATAR (NEXT TO TITLE)                 */
+      /* ========================================== */
+      .story-title-container {
+          display: flex;
+          align-items: center; /* 確保圖片同文字水平置中對齊 */
+          gap: 15px; /* 標題同圖片之間嘅距離 */
+          margin-bottom: 15px;
+      }
+      
+      .story-title-container h2 {
+          margin-bottom: 0; /* 取消標題原本嘅底距，完美對齊 */
+      }
+
+      .mei-title-avatar {
+          width: 55px; /* 縮細變成精緻嘅小頭像 */
+          height: 55px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #EAEFEA;
+          box-shadow: 0 4px 10px rgba(92, 122, 104, 0.12);
+      }
         </style>
 
         <div class="help-grid">
