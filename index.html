@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Beyond Shyness — Social Anxiety Student Hub</title>
-    <link rel="stylesheet" href="style.css?v=602" />
+    <title>Beyond Shyness — Understanding Social Anxiety</title>
+    <meta name="description" content="An evidence-informed guide to social anxiety for university students in Hong Kong. Explore research, personal experiences and support." />
+    <link rel="stylesheet" href="style.css?v=603" />
 
     <!-- Step 1: homepage typography (Fraunces + Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,8 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-  </head>
+</head>
   <body>
+    <div class="reading-progress" aria-hidden="true"><span id="reading-progress-bar"></span></div>
     <!-- TOP BANNER -->
     <div class="top-banner">
       <p>
@@ -24,76 +26,56 @@
     </div>
 
     <!-- NAVIGATION -->
-    <nav id="main-nav">
+    <nav id="main-nav" aria-label="Main navigation">
       <div class="nav-inner">
         <a href="#home" class="nav-brand">Beyond <em>Shyness</em></a>
-        <div class="nav-links">
+        <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav-links">
+          <span aria-hidden="true">☰</span> Menu
+        </button>
+        <div class="nav-links" id="main-nav-links">
           <a href="#check">Self-Check</a>
           <a href="#evidence">What We Know</a>
           <a href="#story">Human Story</a>
-          <a href="#method">Method + AI</a>
+          <a href="#method" onclick="openTab('tab-4', document.querySelectorAll('.tab-button')[3])">Method + AI</a>
           <a href="#help">Help + Access</a>
         </div>
       </div>
     </nav>
 
     <main>
-      <!-- 1. HERO SECTION -->
+      <!-- 1. HOMEPAGE HERO -->
       <section id="home" class="hero-section">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="fiction-label">An interactive guide to social anxiety</p>
-
+            <p class="fiction-label">An interactive guide for university students in Hong Kong</p>
             <h1>Beyond <em>Shyness</em></h1>
-
             <p class="hero-lede">
-              Social anxiety is not just shyness — it is a recognised condition
-              shaped by biology, thought patterns, and the cultures we live in.
-              This is a quiet, evidence-informed guide for university students
-              in Hong Kong who want to understand their own social experience,
-              at their own pace.
+              Social anxiety is more than shyness. Explore the thoughts, experiences
+              and social pressures that can shape it — and discover where support
+              may begin, at your own pace.
             </p>
-
             <div class="hero-buttons">
-              <a href="#check" class="btn-primary">
-                Take the 3-question check <span aria-hidden="true">→</span>
-              </a>
+              <a href="#check" class="btn-primary">Explore the self-check <span aria-hidden="true">→</span></a>
               <a href="#story" class="btn-secondary">Follow Mei's story</a>
             </div>
-
             <ul class="hero-meta" aria-label="At a glance">
-              <li>
-                <span class="meta-value">3 questions</span>
-                <span class="meta-label">A private Mini-SPIN self-check</span>
-              </li>
-              <li>
-                <span class="meta-value">100% private</span>
-                <span class="meta-label">Answers never leave your browser</span>
-              </li>
-              <li>
-                <span class="meta-value">HK focused</span>
-                <span class="meta-label">Campus &amp; community resources</span>
-              </li>
+              <li><span class="meta-value">3 questions</span><span class="meta-label">A short Mini-SPIN screening check</span></li>
+              <li><span class="meta-value">Private</span><span class="meta-label">Answers stay in your browser</span></li>
+              <li><span class="meta-value">Hong Kong</span><span class="meta-label">Campus and community support</span></li>
             </ul>
           </div>
-
           <aside class="hero-side">
-            <div class="hero-note-card">
-              <p class="note-eyebrow">Before you begin</p>
-              <p class="note-body">
-                <strong>A gentle note:</strong> This website discusses social
-                anxiety disorder and seeking support. It is for awareness only
-                — not a diagnosis, and not a substitute for professional care.
-                You are in complete control of your reading experience. You may
-                skip any section, take a break, and go straight to the support
-                information at any time.
-              </p>
-              <a href="#help" class="note-skip-link"
-                >Skip directly to support information ↓</a
-              >
+            <div class="hero-image-placeholder" role="img" aria-label="Reserved space for a photograph selected by the website author">
+              <span class="image-placeholder-kicker">A space for your photograph</span>
+              <span class="image-placeholder-title">Everyday campus life, seen differently.</span>
+              <span class="image-placeholder-note">Image to be selected and added by the project author</span>
             </div>
           </aside>
         </div>
+        <aside class="hero-safety-note">
+          <p><strong>A gentle note:</strong> This website is for awareness and education. It is not a diagnosis or a substitute for professional care. You can skip any section, take a break, or go directly to support information whenever you need.</p>
+          <a href="#help">Go to support information ↓</a>
+        </aside>
       </section>
 
       <!-- 動態波浪貼喺呢度 (取代咗原本條 hr 直線) -->
@@ -143,463 +125,7 @@
 
       <!-- CONCEPT MAP -->
       <section id="concept-map">
-        <style>
-          .concept-timeline-graph {
-            position: relative;
-            overflow: hidden;
-            background: #ffffff;
-            padding: 50px 40px;
-            border-radius: 16px;
-            margin: 50px 0;
-            border: 1px solid var(--border);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-              sans-serif;
-          }
-
-          .concept-timeline-graph::before {
-            content: "";
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 250px;
-            height: 250px;
-            background: radial-gradient(
-              circle,
-              rgba(122, 132, 107, 0.12) 0%,
-              rgba(255, 255, 255, 0) 70%
-            );
-            animation: floatOrb 8s ease-in-out infinite alternate;
-            z-index: 0;
-          }
-          .concept-timeline-graph::after {
-            content: "";
-            position: absolute;
-            bottom: -50px;
-            right: -50px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(
-              circle,
-              rgba(244, 232, 228, 0.4) 0%,
-              rgba(255, 255, 255, 0) 70%
-            );
-            animation: floatOrb 10s ease-in-out infinite alternate-reverse;
-            z-index: 0;
-          }
-
-          .concept-timeline-title {
-            position: relative;
-            z-index: 1;
-            font-size: 1.6rem;
-            color: var(--text-main);
-            margin-bottom: 40px;
-            text-align: center;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-          }
-
-          .concept-timeline-step {
-            position: relative;
-            z-index: 1;
-            padding-left: 45px;
-            margin-bottom: 25px;
-          }
-          .concept-timeline-step::before {
-            content: "";
-            position: absolute;
-            left: 13px;
-            top: 30px;
-            bottom: -30px;
-            width: 2px;
-            background: var(--border);
-            z-index: 1;
-          }
-          .concept-timeline-step:last-child::before {
-            display: none;
-          }
-
-          .concept-timeline-step::after {
-            content: "";
-            position: absolute;
-            left: 4px;
-            top: 25px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: #ffffff;
-            border: 4px solid var(--primary);
-            z-index: 2;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-          .concept-timeline-step:hover::after {
-            background: var(--primary);
-            box-shadow: 0 0 0 6px rgba(122, 132, 107, 0.15);
-            transform: scale(1.1);
-          }
-
-          .concept-gh-card {
-            background: #f9faf8;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
-            position: relative;
-          }
-          .step-1 .concept-gh-card {
-            border-left: 4px solid #4a6b5d;
-          }
-          .step-2 .concept-gh-card {
-            border-left: 4px solid #d47b65;
-          }
-          .step-3 .concept-gh-card {
-            border-left: 4px solid #5b7b9a;
-          }
-
-          .concept-timeline-step:hover .concept-gh-card {
-            transform: translateX(8px);
-            border-right-color: var(--primary);
-            border-top-color: var(--primary);
-            border-bottom-color: var(--primary);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            background: #ffffff;
-          }
-
-          .concept-gh-badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 5px 12px;
-            border-radius: 20px;
-            display: inline-flex;
-            align-items: center;
-            margin-bottom: 12px;
-          }
-
-          .concept-css-icon {
-            display: inline-block;
-            margin-right: 8px;
-          }
-          .concept-css-icon-square {
-            width: 8px;
-            height: 8px;
-            border: 2px solid currentColor;
-            border-radius: 1px;
-            box-shadow: -3px -3px 0 -1px rgba(74, 107, 93, 0.3);
-          }
-          .concept-css-icon-pulse {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            border: 2px solid currentColor;
-            animation: ringPulse 2s infinite cubic-bezier(0.4, 0, 0.2, 1);
-          }
-          .concept-css-icon-arrow {
-            width: 6px;
-            height: 6px;
-            border-top: 2px solid currentColor;
-            border-right: 2px solid currentColor;
-            transform: rotate(45deg);
-            margin-left: -2px;
-          }
-
-          details.concept-gh-details summary {
-            padding: 20px 25px;
-            cursor: pointer;
-            outline: none;
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-          }
-          details.concept-gh-details summary::-webkit-details-marker {
-            display: none;
-          }
-
-          .concept-gh-title {
-            font-size: 1.15rem;
-            color: var(--text-main);
-            margin: 0 0 5px 0;
-            font-weight: 700;
-          }
-          .concept-gh-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            margin: 0;
-          }
-          .concept-gh-content {
-            padding: 0 25px 25px 25px;
-            color: var(--text-light);
-            line-height: 1.6;
-            font-size: 0.9rem;
-            border-top: 1px dashed var(--border);
-            margin-top: 5px;
-            padding-top: 20px;
-          }
-          /* ========================================== */
-          /* 動態呼吸波浪 (Animated CSS Waves) */
-          /* ========================================== */
-          .ocean-waves {
-            width: 100%;
-            margin-bottom: -10px;
-            display: block;
-          }
-          .waves {
-            position: relative;
-            width: 100%;
-            height: 10vh;
-            min-height: 80px;
-            max-height: 120px;
-          }
-          .parallax > use {
-            animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5)
-              infinite;
-          }
-          .parallax > use:nth-child(1) {
-            animation-delay: -2s;
-            animation-duration: 7s;
-          }
-          .parallax > use:nth-child(2) {
-            animation-delay: -3s;
-            animation-duration: 10s;
-          }
-          .parallax > use:nth-child(3) {
-            animation-delay: -4s;
-            animation-duration: 13s;
-          }
-          .parallax > use:nth-child(4) {
-            animation-delay: -5s;
-            animation-duration: 20s;
-          }
-
-          @keyframes move-forever {
-            0% {
-              transform: translate3d(-90px, 0, 0);
-            }
-            100% {
-              transform: translate3d(85px, 0, 0);
-            }
-          }
-
-          @media (max-width: 768px) {
-            .waves {
-              height: 40px;
-              min-height: 40px;
-            }
-          }
-          /* ========================================== */
-          /* STYLE 1: SOFT 3D PRESS MINI-SPIN DESIGN    */
-          /* ========================================== */
-
-          .check-card {
-            background: #ffffff;
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 8px 25px rgba(92, 122, 104, 0.06);
-            border: 1px solid var(--border);
-          }
-          .spin-question {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px dashed #dce3df;
-          }
-          .spin-question:last-of-type {
-            border-bottom: none;
-            margin-bottom: 15px;
-          }
-
-          .spin-question p {
-            font-family: "Lora", serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 15px;
-          }
-          .spin-options {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-          }
-
-          .opt input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-          }
-
-          .opt-pill {
-            font-family: "Inter", sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-main);
-            background: #f4f7f5;
-            border-radius: 12px;
-            padding: 8px 18px;
-            display: inline-block;
-            cursor: pointer;
-            border: 1px solid #dce3df;
-            box-shadow: 0 4px 0 #dce3df, 0 5px 10px rgba(0, 0, 0, 0.03);
-            transform: translateY(0);
-            transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .opt:hover .opt-pill {
-            background: #ebf0ed;
-          }
-
-          .opt:active .opt-pill {
-            box-shadow: 0 0px 0 #dce3df;
-            transform: translateY(4px);
-          }
-
-          .opt input[type="radio"]:checked + .opt-pill {
-            background-color: var(--primary);
-            color: #ffffff;
-            border-color: var(--primary);
-            font-weight: 600;
-            box-shadow: 0 1px 0 #3a554a, inset 0 3px 6px rgba(0, 0, 0, 0.15);
-            transform: translateY(3px);
-          }
-
-          .check-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 10px;
-          }
-          /* ========================================== */
-          /* CUTE BULLET JOURNAL CHECKLIST (ORIGINAL FONT) */
-          /* ========================================== */
-
-          .self-care-check {
-            background-color: #fafaf7;
-            background-image: radial-gradient(#dce3df 1.5px, transparent 1.5px);
-            background-size: 20px 20px;
-            padding: 45px 40px 40px 40px;
-            border-radius: 16px;
-            border: 2px solid var(--border);
-            box-shadow: 6px 6px 0px rgba(122, 132, 107, 0.15),
-              0 15px 30px rgba(0, 0, 0, 0.04);
-            position: relative;
-            margin-top: 20px;
-          }
-
-          .self-care-check::before {
-            content: "";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-2deg);
-            width: 140px;
-            height: 28px;
-            background: rgba(212, 123, 101, 0.35);
-            border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-          }
-
-          .self-care-check h3,
-          .self-care-check p,
-          .check-item {
-            font-family: "Lora", Georgia, serif !important;
-          }
-
-          .check-item {
-            display: flex;
-            align-items: center;
-            background: #ffffff;
-            margin-bottom: 15px;
-            padding: 16px 22px;
-            border-radius: 12px;
-            border: 2px solid #eaefea;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-main);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .check-item:hover {
-            transform: translateY(-3px) rotate(-0.5deg);
-            box-shadow: 4px 4px 0px rgba(74, 107, 93, 0.1);
-            border-color: #dce3df;
-          }
-
-          .check-item input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 26px;
-            height: 26px;
-            border: 2px solid #a4b8ad;
-            border-radius: 50%;
-            margin-right: 18px;
-            position: relative;
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: all 0.3s;
-            background: #fafaf7;
-          }
-
-          .check-item input[type="checkbox"]:checked {
-            background: var(--primary);
-            border-color: var(--primary);
-            animation: jelly-bounce 0.4s ease-out;
-          }
-
-          .check-item input[type="checkbox"]:checked::after {
-            content: "✓";
-            position: absolute;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: sans-serif;
-          }
-
-          .check-item:has(input[type="checkbox"]:checked) {
-            background: #f8f9f8;
-            color: #9aafa3;
-            text-decoration: line-through;
-            text-decoration-color: #d47b65;
-            text-decoration-thickness: 2px;
-          }
-
-          .progress-container {
-            background: #eaefea;
-            height: 18px;
-            border-radius: 20px;
-            margin-top: 35px;
-            overflow: hidden;
-            border: 2px solid #dce3df;
-          }
-
-          .progress-bar {
-            height: 100%;
-            background: repeating-linear-gradient(
-              45deg,
-              var(--primary),
-              var(--primary) 15px,
-              #6a8a7a 15px,
-              #6a8a7a 30px
-            );
-            width: 0%;
-            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          @keyframes jelly-bounce {
-            0% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.3);
-            }
-            100% {
-              transform: scale(1);
-            }
-          }
-        </style>
-
-        <div class="concept-timeline-graph">
+<div class="concept-timeline-graph">
           <h3 class="concept-timeline-title">
             Concept Map: The Anxiety Workflow
           </h3>
@@ -822,8 +348,7 @@
               Clear answers
             </button>
           </div>
-
-          <div id="spin-result" class="spin-result" aria-live="polite"></div>
+                    <div id="spin-result" class="spin-result" aria-live="polite"></div>
         </div>
       </section>
 
@@ -915,7 +440,7 @@
               fear, but stigma affects everyone differently.
             </div>
           </div>
-          <div class="tab-pane" id="tab-4">
+          <div class="tab-pane" id="tab-4" data-section-anchor="method">
             <h3>4. Research Methods &amp; Ethics</h3>
             <p>
               Screening tools such as the Mini-SPIN and the 17-item SPIN are
@@ -1095,129 +620,7 @@
         </div>
 
         <!-- TIMELINE CHART (MODERN FLEXBOX BRIDGE) -->
-        <style>
-          .gap-bridge-wrapper {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 50px 40px;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-          }
-
-          .gap-header {
-            text-align: center;
-            margin-bottom: 40px;
-          }
-
-          .bridge-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            max-width: 850px;
-            margin: 0 auto;
-          }
-
-          .bridge-card {
-            flex: 0 0 220px;
-            background: var(--bg-base);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px 20px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-            z-index: 2;
-          }
-          .bridge-card.start {
-            border-top: 4px solid var(--tan);
-          }
-          .bridge-card.end {
-            border-top: 4px solid var(--primary);
-          }
-
-          .bridge-age {
-            display: inline-block;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
-            padding: 4px 12px;
-            border-radius: 20px;
-          }
-          .bridge-card.start .bridge-age {
-            background: #fdf5f5;
-            color: #b3523b;
-          }
-          .bridge-card.end .bridge-age {
-            background: #e8f0ea;
-            color: #4a6b5d;
-          }
-
-          .bridge-card h4 {
-            margin: 0 0 5px 0;
-            font-size: 1.1rem;
-            color: var(--text-main);
-          }
-          .bridge-card p {
-            margin: 0;
-            font-size: 0.85rem;
-            color: var(--text-light);
-          }
-
-          .bridge-connector {
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            min-width: 150px;
-          }
-          .bridge-line {
-            position: absolute;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #d47b65, var(--primary));
-            opacity: 0.6;
-            border-radius: 2px;
-            z-index: 1;
-          }
-          .bridge-badge {
-            position: relative;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--text-main);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            z-index: 2;
-            white-space: nowrap;
-          }
-
-          @media (max-width: 768px) {
-            .bridge-container {
-              flex-direction: column;
-              align-items: stretch;
-            }
-            .bridge-card {
-              flex: auto;
-            }
-            .bridge-connector {
-              min-height: 80px;
-              width: 100%;
-            }
-            .bridge-line {
-              width: 4px;
-              height: 100%;
-              background: linear-gradient(180deg, #d47b65, var(--primary));
-            }
-          }
-        </style>
-
-        <div class="gap-bridge-wrapper">
+<div class="gap-bridge-wrapper">
           <div class="gap-header">
             <h3
               style="
@@ -1294,7 +697,7 @@
                 View Evidence Frame (Sources & Limitations) ▾
               </summary>
               <div
-                style="
+                              style="
                   font-size: 0.85rem;
                   color: var(--text-light);
                   margin-top: 12px;
@@ -1329,121 +732,7 @@
           <h2>Human Story: Mei's Experience</h2>
           <img src="mei.jpg" alt="Mei" class="mei-title-avatar" />
         </div>
-
-        <style>
-          .audio-story-wrapper {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-            max-width: 750px;
-            margin-left: auto;
-            margin-right: auto;
-          }
-
-          .audio-player-container {
-            background: #f9faf8;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 25px;
-            margin-bottom: 35px;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-left: 4px solid var(--primary);
-          }
-
-          audio {
-            width: 100%;
-            height: 40px;
-            outline: none;
-          }
-
-          .scene-text-area {
-            position: relative;
-            min-height: 220px;
-          }
-          .scene {
-            display: none;
-            animation: fadeIn 0.4s ease-in-out;
-          }
-          .scene.active {
-            display: block;
-          }
-
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
-              transform: translateY(10px);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0);
-            }
-          }
-
-          .scene h3 {
-            color: var(--text-main);
-            font-size: 1.5rem;
-            margin: 0 0 15px 0;
-            border-bottom: 2px solid #e8ece6;
-            padding-bottom: 10px;
-          }
-
-          .scene-description {
-            font-size: 1.15rem;
-            color: var(--text-main);
-            line-height: 1.7;
-            margin-bottom: 25px;
-          }
-
-          /* Elegant Text Link Trigger (Fixed Styling) */
-          .theory-trigger {
-            display: inline-flex;
-            align-items: center;
-            color: #4a6b5d !important;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            margin-bottom: 15px;
-            transition: opacity 0.2s;
-          }
-
-          .theory-trigger:hover {
-            opacity: 0.7;
-          }
-
-          .theory-trigger::after {
-            content: " ▾";
-            font-size: 0.8em;
-            margin-left: 6px;
-          }
-
-          .theory-content {
-            display: none;
-            background: #f9faf8;
-            border-left: 3px solid var(--primary);
-            padding: 15px 20px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
-            color: var(--text-main);
-            margin-bottom: 25px;
-            line-height: 1.6;
-          }
-
-          .story-controls {
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-          }
-        </style>
-
-        <div class="audio-story-wrapper">
+<div class="audio-story-wrapper">
           <!-- AUDIO PLAYER -->
           <div class="audio-player-container">
             <div style="font-size: 2.2rem">🎧</div>
@@ -1635,301 +924,7 @@
           If you or someone you know needs support, here are verified, immediate
           resources:
         </p>
-
-        <style>
-          .help-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
-          }
-          .help-card {
-            display: flex;
-            flex-direction: column;
-            background: #ffffff;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 25px 20px;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-          }
-          .help-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--primary);
-            box-shadow: 0 12px 25px rgba(122, 132, 107, 0.1);
-          }
-
-          .help-badge {
-            align-self: flex-start;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-          }
-          .badge-campus {
-            background: #e8f0ea;
-            color: #4a6b5d;
-          }
-          .badge-gov {
-            background: #f0f4f8;
-            color: #5b7b9a;
-          }
-          .badge-chat {
-            background: #fdeee9;
-            color: #d47b65;
-          }
-          .badge-urgent {
-            background: #fdf5f5;
-            color: #b3523b;
-            border: 1px solid #e28b76;
-          }
-
-          .help-card h4 {
-            margin: 0 0 8px 0;
-            font-size: 1.15rem;
-          }
-          .help-card p {
-            margin: 0 0 20px 0;
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.5;
-            flex-grow: 1;
-          }
-
-          .help-action {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: color 0.2s;
-          }
-          .help-card:hover .help-action {
-            color: var(--text-main);
-          }
-          .help-card.urgent-card:hover .help-action {
-            color: #b3523b;
-          }
-          .story-container,
-          .audio-story-wrapper,
-          .transcript-box,
-          #spin-result {
-            border-radius: 24px;
-            border: none;
-            box-shadow: 0 12px 40px rgba(92, 122, 104, 0.08);
-          }
-
-          .cute-illustration {
-            max-width: 180px;
-            border-radius: 20px;
-            mix-blend-mode: multiply;
-            animation: float 6s ease-in-out infinite;
-            display: block;
-            margin: 0 auto;
-          }
-
-          @keyframes float {
-            0% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-15px);
-            }
-            100% {
-              transform: translateY(0px);
-            }
-          }
-
-          .friendly-layout {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-          }
-          .friendly-text {
-            flex: 1;
-            min-width: 300px;
-          }
-          .friendly-image {
-            flex-shrink: 0;
-            text-align: center;
-            width: 200px;
-          }
-
-          @media (max-width: 768px) {
-            .friendly-image {
-              width: 100%;
-              margin-top: -20px;
-              margin-bottom: 20px;
-            }
-          }
-
-          /* SELF-CARE CHECK */
-          .self-care-check {
-            background-color: #fafaf7;
-            background-image: radial-gradient(#dce3df 1.5px, transparent 1.5px);
-            background-size: 20px 20px;
-            padding: 45px 40px 40px 40px;
-            border-radius: 16px;
-            border: 2px solid var(--border);
-            box-shadow: 6px 6px 0px rgba(122, 132, 107, 0.15),
-              0 15px 30px rgba(0, 0, 0, 0.04);
-            position: relative;
-            margin-top: 20px;
-          }
-
-          .self-care-check::before {
-            content: "";
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-2deg);
-            width: 140px;
-            height: 28px;
-            background: rgba(212, 123, 101, 0.35);
-            border-radius: 2px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-          }
-
-          .self-care-check h3,
-          .self-care-check p,
-          .check-item {
-            font-family: "Lora", Georgia, serif !important;
-          }
-
-          .check-item {
-            display: flex;
-            align-items: center;
-            background: #ffffff;
-            margin-bottom: 15px;
-            padding: 16px 22px;
-            border-radius: 12px;
-            border: 2px solid #eaefea;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--text-main);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .check-item:hover {
-            transform: translateY(-3px) rotate(-0.5deg);
-            box-shadow: 4px 4px 0px rgba(74, 107, 93, 0.1);
-            border-color: #dce3df;
-          }
-
-          .check-item input[type="checkbox"] {
-            appearance: none;
-            -webkit-appearance: none;
-            width: 26px;
-            height: 26px;
-            border: 2px solid #a4b8ad;
-            border-radius: 50%;
-            margin-right: 18px;
-            position: relative;
-            cursor: pointer;
-            flex-shrink: 0;
-            transition: all 0.3s;
-            background: #fafaf7;
-          }
-
-          .check-item input[type="checkbox"]:checked {
-            background: var(--primary);
-            border-color: var(--primary);
-            animation: jelly-bounce 0.4s ease-out;
-          }
-
-          .check-item input[type="checkbox"]:checked::after {
-            content: "✓";
-            position: absolute;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: sans-serif;
-          }
-
-          .check-item:has(input[type="checkbox"]:checked) {
-            background: #f8f9f8;
-            color: #9aafa3;
-            text-decoration: line-through;
-            text-decoration-color: #d47b65;
-            text-decoration-thickness: 2px;
-          }
-
-          .progress-container {
-            background: #eaefea;
-            height: 18px;
-            border-radius: 20px;
-            margin-top: 35px;
-            overflow: hidden;
-            border: 2px solid #dce3df;
-          }
-
-          .progress-bar {
-            height: 100%;
-            background: repeating-linear-gradient(
-              45deg,
-              var(--primary),
-              var(--primary) 15px,
-              #6a8a7a 15px,
-              #6a8a7a 30px
-            );
-            width: 0%;
-            transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          @keyframes jelly-bounce {
-            0% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.3);
-            }
-            100% {
-              transform: scale(1);
-            }
-          }
-
-          /* MEI AVATAR (NEXT TO TITLE) */
-          .story-title-container {
-            display: flex;
-            align-items: center;
-            gap: 35px;
-            margin-bottom: 20px;
-          }
-
-          .story-title-container h2 {
-            margin-bottom: 0;
-          }
-
-          .mei-title-avatar {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #f9faf8;
-            box-shadow: 0 6px 15px rgba(92, 122, 104, 0.15);
-          }
-
-          /* Hide choice UI until it's shown */
-          #choice-ui:not([style*="display: block"]) {
-            display: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            border: none !important;
-          }
-        </style>
-
-        <div class="help-grid">
+<div class="help-grid">
           <!-- Resource 1: HKBU -->
           <a
             href="https://sa.hkbu.edu.hk/en/cdc/counselling/counselling-and-consultation.html"
@@ -2056,9 +1051,57 @@
 
     <a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top"
       >↑</a
-    >
+    >    <script>
+      // ==========================================
+      // 0. GLOBAL NAVIGATION & READING PROGRESS
+      // ==========================================
+      const navToggle = document.getElementById("nav-toggle");
+      const navLinks = document.getElementById("main-nav-links");
+      if (navToggle && navLinks) {
+        navToggle.addEventListener("click", () => {
+          const isOpen = navLinks.classList.toggle("is-open");
+          navToggle.setAttribute("aria-expanded", String(isOpen));
+          navToggle.innerHTML = isOpen ? '<span aria-hidden="true">×</span> Close' : '<span aria-hidden="true">☰</span> Menu';
+        });
+        navLinks.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+            navToggle.innerHTML = '<span aria-hidden="true">☰</span> Menu';
+          });
+        });
+      }
 
-    <script>
+      function updateReadingProgress() {
+        const bar = document.getElementById("reading-progress-bar");
+        if (!bar) return;
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        bar.style.width = Math.min(100, Math.max(0, progress)) + "%";
+      }
+      window.addEventListener("scroll", updateReadingProgress, { passive: true });
+      window.addEventListener("resize", updateReadingProgress);
+      updateReadingProgress();
+
+      // The uploaded source has Research Methods & Ethics inside the What We Know tabs.
+      // Route the existing Method + AI navigation item to that available panel for now.
+      function openMethodPanel(event) {
+        if (event) event.preventDefault();
+        const methodTabButton = document.querySelectorAll(".tab-button")[3];
+        if (methodTabButton) openTab("tab-4", methodTabButton);
+        history.replaceState(null, "", "#method");
+        document.getElementById("evidence")?.scrollIntoView({ behavior: "smooth" });
+      }
+      const methodNavLink = document.querySelector('a[href="#method"]');
+      if (methodNavLink) methodNavLink.addEventListener("click", openMethodPanel);
+      if (window.location.hash === "#method") {
+        const methodTabButton = document.querySelectorAll(".tab-button")[3];
+        if (methodTabButton) openTab("tab-4", methodTabButton);
+        window.addEventListener("load", () => {
+          document.getElementById("evidence")?.scrollIntoView();
+        });
+      }
+
       // ==========================================
       // 1. SCROLL SPY & INTERSECTION OBSERVER
       // ==========================================
