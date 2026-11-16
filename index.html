@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Beyond Shyness — Social Anxiety Student Hub</title>
     <link rel="stylesheet" href="style.css?v=602" />
+
+    <!-- Step 1: homepage typography (Fraunces + Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- TOP BANNER -->
@@ -17,57 +25,74 @@
 
     <!-- NAVIGATION -->
     <nav id="main-nav">
-      <a href="#home">Home</a>
-      <a href="#check">Self-Check</a>
-      <a href="#evidence">What We Know</a>
-      <a href="#story">Human Story</a>
-      <a href="#method">Method + AI</a>
-      <a href="#help">Help + Access</a>
+      <div class="nav-inner">
+        <a href="#home" class="nav-brand">Beyond <em>Shyness</em></a>
+        <div class="nav-links">
+          <a href="#check">Self-Check</a>
+          <a href="#evidence">What We Know</a>
+          <a href="#story">Human Story</a>
+          <a href="#method">Method + AI</a>
+          <a href="#help">Help + Access</a>
+        </div>
+      </div>
     </nav>
 
     <main>
       <!-- 1. HERO SECTION -->
       <section id="home" class="hero-section">
-        <p class="fiction-label">AN INTERACTIVE GUIDE TO SOCIAL ANXIETY</p>
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="fiction-label">An interactive guide to social anxiety</p>
 
-        <h1>Beyond Shyness</h1>
+            <h1>Beyond <em>Shyness</em></h1>
 
-        <p
-          class="hero-stat-plain"
-          style="
-            font-size: 1.15rem;
-            line-height: 1.6;
-            max-width: 650px;
-            margin: 0 auto 35px auto;
-            font-style: normal;
-          "
-        >
-          Navigating <strong>university stress</strong> and
-          <strong>social anxiety</strong> in Hong Kong?<br />
-          This interactive guide is here to help you
-          <strong>understand yourself</strong>, explore the evidence, and find
-          <strong>your own pace</strong>.
-        </p>
+            <p class="hero-lede">
+              Social anxiety is not just shyness — it is a recognised condition
+              shaped by biology, thought patterns, and the cultures we live in.
+              This is a quiet, evidence-informed guide for university students
+              in Hong Kong who want to understand their own social experience,
+              at their own pace.
+            </p>
 
-        <div class="hero-buttons">
-          <a href="#check" class="btn-primary">Check yourself</a>
-          <a href="#story" class="btn-secondary">Follow the story</a>
-        </div>
+            <div class="hero-buttons">
+              <a href="#check" class="btn-primary">
+                Take the 3-question check <span aria-hidden="true">→</span>
+              </a>
+              <a href="#story" class="btn-secondary">Follow Mei's story</a>
+            </div>
 
-        <div class="content-note">
-          <p>
-            <strong>A gentle note:</strong> This website discusses social
-            anxiety disorder and seeking support. It is for awareness only and
-            is not a diagnosis or a substitute for professional care.<br /><br />
-            You are completely in control of your reading experience. You may
-            skip any section, take a break, and go straight to the support
-            information at any time.
-          </p>
-        </div>
-        <div class="skip-container">
-          <a href="#help" class="skip-link"
-            >Skip directly to support information ↓</a
-          >
+            <ul class="hero-meta" aria-label="At a glance">
+              <li>
+                <span class="meta-value">3 questions</span>
+                <span class="meta-label">A private Mini-SPIN self-check</span>
+              </li>
+              <li>
+                <span class="meta-value">100% private</span>
+                <span class="meta-label">Answers never leave your browser</span>
+              </li>
+              <li>
+                <span class="meta-value">HK focused</span>
+                <span class="meta-label">Campus &amp; community resources</span>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="hero-side">
+            <div class="hero-note-card">
+              <p class="note-eyebrow">Before you begin</p>
+              <p class="note-body">
+                <strong>A gentle note:</strong> This website discusses social
+                anxiety disorder and seeking support. It is for awareness only
+                — not a diagnosis, and not a substitute for professional care.
+                You are in complete control of your reading experience. You may
+                skip any section, take a break, and go straight to the support
+                information at any time.
+              </p>
+              <a href="#help" class="note-skip-link"
+                >Skip directly to support information ↓</a
+              >
+            </div>
+          </aside>
         </div>
       </section>
 
@@ -116,9 +141,7 @@
         </svg>
       </div>
 
-      <!-- CONCEPT MAP (RESTORED) -->
-
-      <!-- CONCEPT MAP (RESTORED) -->
+      <!-- CONCEPT MAP -->
       <section id="concept-map">
         <style>
           .concept-timeline-graph {
@@ -328,7 +351,6 @@
             min-height: 80px;
             max-height: 120px;
           }
-          /* 控制波浪流動速度同層次 */
           .parallax > use {
             animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5)
               infinite;
@@ -359,7 +381,6 @@
             }
           }
 
-          /* 手機版自動縮細，保持順眼 */
           @media (max-width: 768px) {
             .waves {
               height: 40px;
@@ -370,7 +391,6 @@
           /* STYLE 1: SOFT 3D PRESS MINI-SPIN DESIGN    */
           /* ========================================== */
 
-          /* 美化外框同每條問題嘅分隔 */
           .check-card {
             background: #ffffff;
             padding: 35px;
@@ -388,7 +408,6 @@
             margin-bottom: 15px;
           }
 
-          /* 問題文字轉用優雅字體 */
           .spin-question p {
             font-family: "Lora", serif;
             font-size: 1.15rem;
@@ -402,14 +421,12 @@
             gap: 12px;
           }
 
-          /* 隱藏原本肉酸嘅預設圓形 Radio 按鈕 */
           .opt input[type="radio"] {
             position: absolute;
             opacity: 0;
             cursor: pointer;
           }
 
-          /* 未揀中時嘅「3D 立體啪掣」設計 */
           .opt-pill {
             font-family: "Inter", sans-serif;
             font-size: 0.9rem;
@@ -417,36 +434,29 @@
             color: var(--text-main);
             background: #f4f7f5;
             border-radius: 12px;
-            padding: 8px 18px; /* 微型設計，唔佔位 */
+            padding: 8px 18px;
             display: inline-block;
             cursor: pointer;
-
-            /* 靈魂所在：3D 底部陰影厚度 */
             border: 1px solid #dce3df;
             box-shadow: 0 4px 0 #dce3df, 0 5px 10px rgba(0, 0, 0, 0.03);
             transform: translateY(0);
             transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          /* 滑鼠指住 (Hover) 微微變色 */
           .opt:hover .opt-pill {
             background: #ebf0ed;
           }
 
-          /* 撳落去 (Active) 嘅瞬間：實體啪掣凹陷感 */
           .opt:active .opt-pill {
             box-shadow: 0 0px 0 #dce3df;
             transform: translateY(4px);
           }
 
-          /* 揀中咗 (Checked) 嘅鎖定狀態：保持凹陷 + 變 Sage Green */
           .opt input[type="radio"]:checked + .opt-pill {
             background-color: var(--primary);
             color: #ffffff;
             border-color: var(--primary);
             font-weight: 600;
-
-            /* 內陰影，營造「撳實咗」嘅感覺 */
             box-shadow: 0 1px 0 #3a554a, inset 0 3px 6px rgba(0, 0, 0, 0.15);
             transform: translateY(3px);
           }
@@ -460,11 +470,10 @@
           /* CUTE BULLET JOURNAL CHECKLIST (ORIGINAL FONT) */
           /* ========================================== */
 
-          /* 1. 手帳本背景：加入點陣紙 (Dot-grid) 同埋卡通立體陰影 */
           .self-care-check {
             background-color: #fafaf7;
             background-image: radial-gradient(#dce3df 1.5px, transparent 1.5px);
-            background-size: 20px 20px; /* 點陣間距 */
+            background-size: 20px 20px;
             padding: 45px 40px 40px 40px;
             border-radius: 16px;
             border: 2px solid var(--border);
@@ -474,7 +483,6 @@
             margin-top: 20px;
           }
 
-          /* 2. 頂部裝飾：加一塊半透明嘅「紙膠帶 (Washi Tape)」 */
           .self-care-check::before {
             content: "";
             position: absolute;
@@ -483,19 +491,17 @@
             transform: translateX(-50%) rotate(-2deg);
             width: 140px;
             height: 28px;
-            background: rgba(212, 123, 101, 0.35); /* 淺橙色膠帶 */
+            background: rgba(212, 123, 101, 0.35);
             border-radius: 2px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
           }
 
-          /* 3. 鎖定原版字體：確保標題同文字用返你原本靚靚嘅字體 */
           .self-care-check h3,
           .self-care-check p,
           .check-item {
             font-family: "Lora", Georgia, serif !important;
           }
 
-          /* 4. 打卡項目：變成獨立嘅白色小卡片 */
           .check-item {
             display: flex;
             align-items: center;
@@ -511,14 +517,12 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          /* 滑鼠指住嗰陣，卡片會好似貼紙咁微微浮起 */
           .check-item:hover {
             transform: translateY(-3px) rotate(-0.5deg);
             box-shadow: 4px 4px 0px rgba(74, 107, 93, 0.1);
             border-color: #dce3df;
           }
 
-          /* 5. 隱藏預設 Checkbox，換成可愛圓圈 */
           .check-item input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
@@ -534,7 +538,6 @@
             background: #fafaf7;
           }
 
-          /* 勾選後：變成 Sage Green，加一個可愛嘅「彈跳 (Bounce)」動畫 */
           .check-item input[type="checkbox"]:checked {
             background: var(--primary);
             border-color: var(--primary);
@@ -553,7 +556,6 @@
             font-family: sans-serif;
           }
 
-          /* 6. 勾咗之後嘅文字效果：加上橙色手繪風刪除線 */
           .check-item:has(input[type="checkbox"]:checked) {
             background: #f8f9f8;
             color: #9aafa3;
@@ -562,7 +564,6 @@
             text-decoration-thickness: 2px;
           }
 
-          /* 7. 進度條：卡通間條 Highlighter 風格 */
           .progress-container {
             background: #eaefea;
             height: 18px;
@@ -585,7 +586,6 @@
             transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          /* 動畫 Keyframes */
           @keyframes jelly-bounce {
             0% {
               transform: scale(1);
@@ -617,7 +617,7 @@
                 </div>
                 <h4 class="concept-gh-title">The Avoidance Cycle</h4>
                 <p class="concept-gh-subtitle">
-                  Clark & Wells' cognitive model of negative self-focus.
+                  Clark &amp; Wells' cognitive model of negative self-focus.
                 </p>
               </summary>
               <div class="concept-gh-content">
@@ -684,6 +684,7 @@
       </section>
 
       <hr class="section-divider" />
+
       <!-- 2. SELF-CHECK (Mini-SPIN) -->
       <section id="check">
         <h2>Is it more than shyness?</h2>
@@ -1046,7 +1047,6 @@
               important step in encouraging people to reach out.
             </p>
 
-            <!-- EVIDENCE FRAME ADDED HERE -->
             <details
               style="
                 margin-top: 15px;
@@ -1092,11 +1092,9 @@
               </div>
             </details>
           </div>
-          <!-- FIXED: 補回 chart-insight 結尾 -->
         </div>
-        <!-- FIXED: 補回 combined-charts-wrapper 結尾 -->
 
-        <!-- TIMELINE CHART (MODERN FLEXBOX BRIDGE - BULLETPROOF LAYOUT) -->
+        <!-- TIMELINE CHART (MODERN FLEXBOX BRIDGE) -->
         <style>
           .gap-bridge-wrapper {
             background: #ffffff;
@@ -1112,7 +1110,6 @@
             margin-bottom: 40px;
           }
 
-          /* Bulletproof Flexbox Container */
           .bridge-container {
             display: flex;
             align-items: center;
@@ -1122,7 +1119,6 @@
             margin: 0 auto;
           }
 
-          /* The Information Cards */
           .bridge-card {
             flex: 0 0 220px;
             background: var(--bg-base);
@@ -1133,7 +1129,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
             z-index: 2;
           }
-          /* Accent Top Borders */
           .bridge-card.start {
             border-top: 4px solid var(--tan);
           }
@@ -1141,7 +1136,6 @@
             border-top: 4px solid var(--primary);
           }
 
-          /* Age Badges */
           .bridge-age {
             display: inline-block;
             font-size: 0.8rem;
@@ -1172,16 +1166,14 @@
             color: var(--text-light);
           }
 
-          /* The Flexible Connecting Bridge (The 14-Year Gap) */
           .bridge-connector {
-            flex-grow: 1; /* Automatically stretches to fill space */
+            flex-grow: 1;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             min-width: 150px;
           }
-          /* The actual line behind the badge */
           .bridge-line {
             position: absolute;
             width: 100%;
@@ -1191,7 +1183,6 @@
             border-radius: 2px;
             z-index: 1;
           }
-          /* The Center Label */
           .bridge-badge {
             position: relative;
             background: #ffffff;
@@ -1206,7 +1197,6 @@
             white-space: nowrap;
           }
 
-          /* Flawless Mobile Responsiveness */
           @media (max-width: 768px) {
             .bridge-container {
               flex-direction: column;
@@ -1245,20 +1235,17 @@
           </div>
 
           <div class="bridge-container">
-            <!-- Card 1: Symptoms -->
             <div class="bridge-card start">
               <span class="bridge-age">Around Age 13</span>
               <h4>First Symptoms</h4>
               <p>Early signs of social anxiety appear</p>
             </div>
 
-            <!-- The Bridge (Automatically Stretches) -->
             <div class="bridge-connector">
               <div class="bridge-line"></div>
               <div class="bridge-badge">≈ 14 Years Untreated</div>
             </div>
 
-            <!-- Card 2: Treatment -->
             <div class="bridge-card end">
               <span class="bridge-age">Around Age 27</span>
               <h4>First Treatment</h4>
@@ -1266,7 +1253,6 @@
             </div>
           </div>
 
-          <!-- Insight and Evidence -->
           <div
             style="
               max-width: 700px;
@@ -1334,19 +1320,15 @@
           </div>
         </div>
       </section>
-      <!-- FIXED: 完美關閉 #evidence section -->
 
       <hr class="section-divider" />
+
       <!-- 4. HUMAN STORY (AUDIO DIARY & TEXT UI) -->
       <section id="story">
-        
-        <!-- 全新嘅標題與頭像排版 -->
         <div class="story-title-container">
           <h2>Human Story: Mei's Experience</h2>
-          <img src="mei.jpg" alt="Mei" class="mei-title-avatar">
+          <img src="mei.jpg" alt="Mei" class="mei-title-avatar" />
         </div>
-
-        <p>
 
         <style>
           .audio-story-wrapper {
@@ -1418,12 +1400,10 @@
           }
 
           /* Elegant Text Link Trigger (Fixed Styling) */
-          ./* 💡 完美還原截圖的無底色文字按鈕 */
-          ./* 💡 強制預設狀態（未觸碰時）為綠色 */
-          ..theory-trigger {
+          .theory-trigger {
             display: inline-flex;
             align-items: center;
-            color: #4a6b5d !important; /* 強制鎖死 Sage Green，唔會變黑 */
+            color: #4a6b5d !important;
             font-size: 1rem;
             font-weight: 700;
             cursor: pointer;
@@ -1432,7 +1412,7 @@
           }
 
           .theory-trigger:hover {
-            opacity: 0.7; /* 指上去時稍微變淺色，保持綠色 */
+            opacity: 0.7;
           }
 
           .theory-trigger::after {
@@ -1441,9 +1421,8 @@
             margin-left: 6px;
           }
 
-          /* 點擊後彈出黎嘅文字框 */
           .theory-content {
-            display: none; /* 預設收埋，撳掣先彈出 */
+            display: none;
             background: #f9faf8;
             border-left: 3px solid var(--primary);
             padding: 15px 20px;
@@ -1481,16 +1460,10 @@
                 <span id="audio-scene-num">1</span>)
               </p>
               <audio id="story-audio" controls>
-                <!-- 呢度改為 scene1.mp3 -->
                 <source src="scene1.mp3" type="audio/mpeg" />
               </audio>
             </div>
           </div>
-          <!-- AUDIO PLAYER -->
-          <div class="audio-player-container">
-            <!-- (呢度係你原本錄音機嘅 code，唔使理) -->
-          </div>
-        
 
           <!-- SCENES -->
           <div class="scene-text-area">
@@ -1503,11 +1476,7 @@
                 for the handle, then stops.
               </p>
 
-              <div
-                class="theory-trigger"
-                onclick="toggleTheory('theory-1')"
-                style="color: #4a6b5d !important"
-              >
+              <div class="theory-trigger" onclick="toggleTheory('theory-1')">
                 💡 Reveal Psychological Theory
               </div>
               <div class="theory-content" id="theory-1">
@@ -1527,11 +1496,7 @@
                 them. Closes the app.
               </p>
 
-              <div
-                class="theory-trigger"
-                onclick="toggleTheory('theory-2')"
-                style="color: #4a6b5d !important"
-              >
+              <div class="theory-trigger" onclick="toggleTheory('theory-2')">
                 💡 Reveal Psychological Theory
               </div>
               <div class="theory-content" id="theory-2">
@@ -1549,9 +1514,8 @@
                 room goes quiet. She has a split second to decide.
               </p>
             </div>
-            <!-- ========================================== -->
-            <!-- 補返呢段！SCENE 3 專用嘅選擇按鈕 (Choice UI) -->
-            <!-- ========================================== -->
+
+            <!-- SCENE 3 CHOICE UI -->
             <div
               class="choice-ui"
               id="choice-ui"
@@ -1597,6 +1561,7 @@
                 </button>
               </div>
             </div>
+
             <!-- SCENE 4 -->
             <div class="scene" id="scene-4">
               <h3>4. The Aftermath</h3>
@@ -1605,11 +1570,7 @@
                 spends the next twenty minutes replaying it.
               </p>
 
-              <div
-                class="theory-trigger"
-                onclick="toggleTheory('theory-4')"
-                style="color: #4a6b5d !important"
-              >
+              <div class="theory-trigger" onclick="toggleTheory('theory-4')">
                 💡 Reveal Psychological Theory
               </div>
               <div class="theory-content" id="theory-4">
@@ -1689,7 +1650,7 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 25px 20px;
-            text-decoration: none; /* Removes the default blue underline */
+            text-decoration: none;
             color: var(--text-main);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
@@ -1761,20 +1722,18 @@
           #spin-result {
             border-radius: 24px;
             border: none;
-            box-shadow: 0 12px 40px rgba(92, 122, 104, 0.08); /* 更柔和嘅陰影 */
+            box-shadow: 0 12px 40px rgba(92, 122, 104, 0.08);
           }
 
-          /* 可愛插畫嘅專屬設定 */
           .cute-illustration {
             max-width: 180px;
             border-radius: 20px;
-            mix-blend-mode: multiply; /* 自動溶入米白色背景，唔會有礙眼嘅白底 */
-            animation: float 6s ease-in-out infinite; /* 治癒嘅上下浮動動畫 */
+            mix-blend-mode: multiply;
+            animation: float 6s ease-in-out infinite;
             display: block;
             margin: 0 auto;
           }
 
-          /* 定義浮動動畫 */
           @keyframes float {
             0% {
               transform: translateY(0px);
@@ -1787,7 +1746,6 @@
             }
           }
 
-          /* 友善嘅左右排版容器 */
           .friendly-layout {
             display: flex;
             align-items: center;
@@ -1811,15 +1769,12 @@
               margin-bottom: 20px;
             }
           }
-          /* ========================================== */
-          /* CUTE BULLET JOURNAL CHECKLIST (ORIGINAL FONT) */
-          /* ========================================== */
 
-          /* 1. 手帳本背景：加入點陣紙 (Dot-grid) 同埋卡通立體陰影 */
+          /* SELF-CARE CHECK */
           .self-care-check {
             background-color: #fafaf7;
             background-image: radial-gradient(#dce3df 1.5px, transparent 1.5px);
-            background-size: 20px 20px; /* 點陣間距 */
+            background-size: 20px 20px;
             padding: 45px 40px 40px 40px;
             border-radius: 16px;
             border: 2px solid var(--border);
@@ -1829,7 +1784,6 @@
             margin-top: 20px;
           }
 
-          /* 2. 頂部裝飾：加一塊半透明嘅「紙膠帶 (Washi Tape)」 */
           .self-care-check::before {
             content: "";
             position: absolute;
@@ -1838,19 +1792,17 @@
             transform: translateX(-50%) rotate(-2deg);
             width: 140px;
             height: 28px;
-            background: rgba(212, 123, 101, 0.35); /* 淺橙色膠帶 */
+            background: rgba(212, 123, 101, 0.35);
             border-radius: 2px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
           }
 
-          /* 3. 鎖定原版字體：確保標題同文字用返你原本靚靚嘅字體 */
           .self-care-check h3,
           .self-care-check p,
           .check-item {
             font-family: "Lora", Georgia, serif !important;
           }
 
-          /* 4. 打卡項目：變成獨立嘅白色小卡片 */
           .check-item {
             display: flex;
             align-items: center;
@@ -1866,14 +1818,12 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          /* 滑鼠指住嗰陣，卡片會好似貼紙咁微微浮起 */
           .check-item:hover {
             transform: translateY(-3px) rotate(-0.5deg);
             box-shadow: 4px 4px 0px rgba(74, 107, 93, 0.1);
             border-color: #dce3df;
           }
 
-          /* 5. 隱藏預設 Checkbox，換成可愛圓圈 */
           .check-item input[type="checkbox"] {
             appearance: none;
             -webkit-appearance: none;
@@ -1889,7 +1839,6 @@
             background: #fafaf7;
           }
 
-          /* 勾選後：變成 Sage Green，加一個可愛嘅「彈跳 (Bounce)」動畫 */
           .check-item input[type="checkbox"]:checked {
             background: var(--primary);
             border-color: var(--primary);
@@ -1908,7 +1857,6 @@
             font-family: sans-serif;
           }
 
-          /* 6. 勾咗之後嘅文字效果：加上橙色手繪風刪除線 */
           .check-item:has(input[type="checkbox"]:checked) {
             background: #f8f9f8;
             color: #9aafa3;
@@ -1917,7 +1865,6 @@
             text-decoration-thickness: 2px;
           }
 
-          /* 7. 進度條：卡通間條 Highlighter 風格 */
           .progress-container {
             background: #eaefea;
             height: 18px;
@@ -1940,7 +1887,6 @@
             transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
           }
 
-          /* 動畫 Keyframes */
           @keyframes jelly-bounce {
             0% {
               transform: scale(1);
@@ -1952,35 +1898,35 @@
               transform: scale(1);
             }
           }
-          /* ========================================== */
-      /* MEI AVATAR (NEXT TO TITLE)                 */
-      /* ========================================== */
-      .story-title-container {
-          display: flex;
-          align-items: center; 
-          gap: 35px; /* ⬅️ 拉闊咗空白位！令標題同圖片之間有足夠空間 */
-          margin-bottom: 20px;
-      }
-      
-      .story-title-container h2 {
-          margin-bottom: 0; 
-      }
 
-      .mei-title-avatar {
-          width: 90px; /* ⬅️ 圖片放大！由原本 55px 加大到 90px */
-          height: 90px; /* ⬅️ 保持完美圓形 */
-          border-radius: 50%;
-          object-fit: cover;
-          border: 3px solid #F9FAF8;
-          box-shadow: 0 6px 15px rgba(92, 122, 104, 0.15); /* 陰影都稍微加強，更有立體感 */
-      }
-      /* 徹底隱藏未啟用嘅選擇按鈕區，杜絕空白長方框 */
-      #choice-ui:not([style*="display: block"]) {
-          display: none !important;
-          margin: 0 !important;
-          padding: 0 !important;
-          border: none !important;
-      }
+          /* MEI AVATAR (NEXT TO TITLE) */
+          .story-title-container {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            margin-bottom: 20px;
+          }
+
+          .story-title-container h2 {
+            margin-bottom: 0;
+          }
+
+          .mei-title-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #f9faf8;
+            box-shadow: 0 6px 15px rgba(92, 122, 104, 0.15);
+          }
+
+          /* Hide choice UI until it's shown */
+          #choice-ui:not([style*="display: block"]) {
+            display: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+          }
         </style>
 
         <div class="help-grid">
@@ -2182,7 +2128,6 @@
       let meiChoice = null;
 
       function changeScene(direction) {
-        // Prevent going next from scene 3 without making a choice
         if (currentScene === 3 && direction === 1 && !meiChoice) {
           const choiceBox = document.getElementById("choice-ui");
           if (choiceBox) {
@@ -2195,26 +2140,21 @@
           return;
         }
 
-        // Hide current scene
         const currentEl = document.getElementById("scene-" + currentScene);
         if (currentEl) currentEl.classList.remove("active");
 
-        // Update scene number
         currentScene += direction;
         if (currentScene < 1) currentScene = 1;
         if (currentScene > totalScenes) currentScene = totalScenes;
 
-        // Show new scene
         const newEl = document.getElementById("scene-" + currentScene);
         if (newEl) newEl.classList.add("active");
 
-        // Show choice UI only on Scene 3
         const choiceUi = document.getElementById("choice-ui");
         if (choiceUi) {
           choiceUi.style.display = currentScene === 3 ? "block" : "none";
         }
 
-        // Update text indicators
         const indicator = document.getElementById("scene-indicator");
         if (indicator)
           indicator.innerText = `SCENE ${currentScene} OF ${totalScenes}`;
@@ -2222,14 +2162,12 @@
         const audioNum = document.getElementById("audio-scene-num");
         if (audioNum) audioNum.innerText = currentScene;
 
-        // Update Audio Player
         const audioPlayer = document.getElementById("story-audio");
         if (audioPlayer) {
           audioPlayer.src = "scene" + currentScene + ".mp3";
           audioPlayer.load();
         }
 
-        // Close all theory boxes when switching scenes
         document.querySelectorAll(".theory-content").forEach((el) => {
           el.style.display = "none";
         });
@@ -2238,14 +2176,12 @@
       function makeChoice(choice) {
         meiChoice = choice;
         const scene4Text = document.getElementById("scene-4-text");
-        const audioPlayer = document.getElementById("story-audio"); // 準備切換錄音
+        const audioPlayer = document.getElementById("story-audio");
 
         if (choice === "speak") {
           if (scene4Text)
             scene4Text.innerHTML =
               "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
-
-          // 載入 Speak up 嘅錄音
           if (audioPlayer) {
             audioPlayer.src = "scene4_speak.mp3";
           }
@@ -2253,14 +2189,11 @@
           if (scene4Text)
             scene4Text.innerHTML =
               "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
-
-          // 載入 Stay quiet 嘅錄音
           if (audioPlayer) {
             audioPlayer.src = "scene4_quiet.mp3";
           }
         }
 
-        // 自動轉去 Scene 4
         const currentEl = document.getElementById("scene-3");
         if (currentEl) currentEl.classList.remove("active");
 
@@ -2269,7 +2202,6 @@
         const newEl = document.getElementById("scene-4");
         if (newEl) newEl.classList.add("active");
 
-        // 收起選擇 UI 同埋更新文字
         const choiceUi = document.getElementById("choice-ui");
         if (choiceUi) choiceUi.style.display = "none";
 
@@ -2279,7 +2211,6 @@
         const audioNum = document.getElementById("audio-scene-num");
         if (audioNum) audioNum.innerText = 4;
 
-        // 載入新音頻等用家撳 Play
         if (audioPlayer) {
           audioPlayer.load();
         }
@@ -2291,12 +2222,10 @@
       function toggleTheory(id) {
         const content = document.getElementById(id);
 
-        // Hide others
         document.querySelectorAll(".theory-content").forEach((el) => {
           if (el.id !== id) el.style.display = "none";
         });
 
-        // Toggle current
         if (content.style.display === "block") {
           content.style.display = "none";
         } else {
