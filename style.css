@@ -80,8 +80,8 @@ main > section > * { max-width: var(--content-width); margin-right: auto; margin
 .nav-brand em { color: var(--dusty-blue); }
 .nav-links { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
 .nav-links a { padding: 8px 16px; border-radius: 50px; color: var(--deep-blue); font-size: 0.78rem; font-weight: 600; white-space: nowrap; transition: all 0.3s ease; }
-.nav-links a:hover { background: rgba(218, 219, 212, 0.5); } /* 悬停时的浅灰药丸底色 */
-.nav-links a.active { background: var(--warm-sand); color: var(--deep-blue); } /* 选中的胶囊(Pillow)底色 */
+.nav-links a:hover { background: rgba(218, 219, 212, 0.5); }
+.nav-links a.active { background: var(--warm-sand); color: var(--deep-blue); }
 .nav-toggle { display: none; padding: 9px 13px; border: 1px solid var(--line); border-radius: 30px; background: transparent; color: var(--deep-blue); font-size: 0.85rem; font-weight: 600; }
 
 /* BUTTONS */
@@ -119,22 +119,6 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
 
 /* UNDERSTANDING */
 #understanding { background: var(--ivory-light); }
-.concept-timeline-graph { max-width: 850px; margin: 0 auto 75px; }
-.concept-timeline-title { margin-bottom: 28px; text-align: center; }
-.concept-timeline-step { position: relative; max-width: 700px; margin: 0 auto; }
-.concept-gh-card { padding: 25px 30px; border: 1px solid var(--line); border-radius: var(--radius-medium); background: var(--white); box-shadow: var(--shadow-soft); }
-.concept-gh-details summary { cursor: pointer; list-style: none; }
-.concept-gh-details summary::-webkit-details-marker { display: none; }
-.concept-gh-badge { display: inline-flex; margin-bottom: 12px; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-.concept-css-icon { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--dusty-blue); }
-.badge-theory .concept-css-icon { background: var(--dusty-blue); }
-.badge-reality .concept-css-icon { background: var(--terracotta); }
-.badge-action .concept-css-icon { background: var(--muted-teal); }
-.concept-gh-title { margin-bottom: 7px; }
-.concept-gh-subtitle { margin-bottom: 0; color: var(--text-muted); font-size: 0.9rem; }
-.concept-gh-content { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--text-muted); font-size: 0.9rem; }
-.concept-timeline-step + .concept-timeline-step { margin-top: 24px; }
-.concept-timeline-step + .concept-timeline-step::before { position: absolute; top: -24px; left: 50%; height: 24px; border-left: 1px dashed var(--dusty-blue); content: ""; }
 
 /* FEATURE BLOCKS (Cycle) */
 .feature-block { margin-top: 70px; padding: 45px; border: 1px solid var(--line); border-radius: var(--radius-large); background: var(--white); box-shadow: var(--shadow-soft); }
@@ -263,26 +247,9 @@ select { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid va
 .check-feedback { margin-top: 12px; color: var(--deep-blue) !important; font-size: 0.85rem; font-weight: 700; }
 .safety-note { max-width: 850px; margin: 40px auto 0; padding: 25px; border-left: 3px solid var(--terracotta); background: #F3EAE3; }
 
-/* METHOD (Full Restored Version) */
-.method-section { background: var(--ivory); }
-.method-intro-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-.method-intro-card { padding: 30px; border: 1px solid var(--line); border-radius: var(--radius-medium); background: var(--white); }
-.method-intro-card h3 { font-size: 1.55rem; }
-.method-intro-card p:last-child { margin-bottom: 0; color: var(--text-muted); font-size: 0.9rem; }
-.method-timeline-heading { margin-top: 75px; }
-.method-timeline { max-width: 850px; margin: 0 auto; }
-.method-stage { margin-bottom: 13px; border: 1px solid var(--line); border-radius: 13px; background: var(--white); }
-.method-stage summary { display: flex; min-height: 90px; padding: 20px 24px; align-items: center; gap: 18px; cursor: pointer; list-style: none; }
-.method-stage summary::-webkit-details-marker { display: none; }
-.method-stage-number { display: grid; width: 42px; height: 42px; flex-shrink: 0; place-items: center; border-radius: 50%; background: var(--warm-sand); color: var(--deep-blue); font-family: var(--font-heading); font-size: 1.1rem; }
-.method-stage summary strong { display: block; }
-.method-stage summary small { display: block; margin-top: 5px; color: var(--text-muted); font-size: 0.8rem; }
-.method-stage-content { padding: 0 25px 22px 84px; color: var(--text-muted); font-size: 0.9rem; }
-.ai-buddy-panel { max-width: 950px; margin: 70px auto 0; padding: 40px; border: 1px solid var(--line); border-radius: var(--radius-large); background: var(--white); }
-.ai-role-grid { display: grid; margin-top: 30px; grid-template-columns: 1fr 1fr; gap: 18px; }
-.ai-role-grid article { padding: 25px; border-radius: 13px; background: var(--ivory); }
-.ai-role-grid article:nth-child(2) { background: #EAF0EF; }
-.ai-role-grid ul { margin: 0; padding-left: 20px; color: var(--text-muted); font-size: 0.9rem; }
+/* METHOD (极简版) */
+.method-section { background: var(--ivory); text-align: center; padding-bottom: 120px; }
+.method-section .section-heading { margin-bottom: 0; }
 
 /* FOOTER & BACK TO TOP */
 footer { padding: 45px 24px; background: var(--deep-blue); color: rgba(255, 255, 255, 0.75); text-align: center; }
@@ -314,7 +281,7 @@ footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
   .hero-copy { max-width: 100%; }
   .hero-safety-note { align-items: flex-start; flex-direction: column; gap: 10px; }
   
-  .cycle-layout, .support-finder-grid, .method-intro-grid, .ai-role-grid { grid-template-columns: 1fr; }
+  .cycle-layout, .support-finder-grid { grid-template-columns: 1fr; }
   .charts-row { display: flex !important; flex-direction: column !important; gap: 40px; }
   .chart-divider-line { width: 100% !important; height: 1px; min-height: 1px; margin: 20px 0; }
   
@@ -334,7 +301,7 @@ footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
   .hero-buttons { align-items: stretch; flex-direction: column; }
   .hero-buttons a { width: 100%; }
   
-  .feature-block, .audio-story-wrapper, .combined-charts-wrapper, .gap-bridge-wrapper, .check-card, .self-care-check, .method-intro-card, .ai-buddy-panel { padding: 22px; }
+  .feature-block, .audio-story-wrapper, .combined-charts-wrapper, .gap-bridge-wrapper, .check-card, .self-care-check { padding: 22px; }
   .spin-options { display: grid; grid-template-columns: 1fr 1fr; }
   .opt-pill { width: 100%; text-align: center; justify-content: center; }
   .check-actions { flex-direction: column; align-items: stretch; }
@@ -346,6 +313,5 @@ footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
   .story-controls { gap: 8px; }
   .story-controls button { padding: 10px 15px; font-size: 0.8rem; }
   #scene-indicator { font-size: 0.7rem; }
-  .method-stage-content { padding-left: 25px; }
   .back-to-top { right: 15px; bottom: 15px; }
 }
