@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Method + AI &mdash; Beyond Shyness</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
+  <!-- 引入相同的样式表 -->
+  <link href="style.css?v=615" rel="stylesheet"/>
+  
+  <style>
+    /* 给这个独立页面添加一点专属的内边距，不破坏原风格 */
+    .method-page-main { padding-top: 80px; min-height: 80vh; }
+    .back-home-btn { margin-bottom: 30px; display: inline-block; }
+  </style>
+ </head>
+ <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  
+  <!-- NAVIGATION (简化版，只保留品牌和返回按钮) -->
+  <nav aria-label="Main navigation" id="main-nav">
+   <div class="nav-inner">
+    <a class="nav-brand" href="index.html">Beyond <em>Shyness</em></a>
+    <div class="nav-links" style="display: flex;">
+      <a href="index.html" class="btn-ghost" style="border-radius: 50px;">&larr; Back to Website</a>
+    </div>
+   </div>
+  </nav>
+  
+  <main class="method-page-main" id="main-content">
+   <section class="method-section" style="padding-top: 0;">
+    <div class="section-heading">
+     <p class="section-kicker">PROJECT PROCESS</p>
+     <h2>Method + AI</h2>
+     <p>Behind Beyond Shyness: the thinking, research and development process, and the role of the AI Buddy as a support tool.</p>
+    </div>
+    
+    <!-- 项目目的与思路 -->
+    <div class="method-intro-grid">
+     <article class="method-intro-card">
+      <p class="detail-label">PROJECT PURPOSE</p>
+      <h3>Why this website?</h3>
+      <p>Beyond Shyness is designed as an educational and interactive resource to help university students understand social anxiety. I wanted to create a space that goes beyond traditional text-heavy articles, using evidence-informed concepts, lived-experience storytelling, and interactive self-reflection to encourage help-seeking behavior.</p>
+     </article>
+     <article class="method-intro-card">
+      <p class="detail-label">APPROACH</p>
+      <h3>How the content is organised</h3>
+      <p>The website brings together psychological concepts, research themes, a fictional student story, self-reflection activities and signposting to support resources. The visual identity uses a calming "Artistic Editorial" style to ensure the topic feels approachable, non-judgmental, and safe to explore at one's own pace.</p>
+     </article>
+    </div>
+    
+    <!-- 开发时间线 -->
+    <div class="feature-heading method-timeline-heading">
+     <p class="section-kicker">THE DEVELOPMENT JOURNEY</p>
+     <h3>How Beyond Shyness Took Shape</h3>
+    </div>
+    
+    <div class="method-timeline">
+     <details class="method-stage" open="">
+      <summary><span class="method-stage-number">01</span><span><strong>Brainstorming &amp; direction</strong><small>Defining the topic and audience</small></span></summary>
+      <div class="method-stage-content"><p>The project begins with a focus on social anxiety among university students. I wanted to avoid clinical jargon and instead build an empathetic, interactive experience specifically tailored to the Hong Kong campus context.</p></div>
+     </details>
+     <details class="method-stage">
+      <summary><span class="method-stage-number">02</span><span><strong>Research &amp; content organisation</strong><small>Turning information into an understandable journey</small></span></summary>
+      <div class="method-stage-content"><p>I researched leading psychological models (like Clark &amp; Wells' cognitive model), the Mini-SPIN screening tool, and Hong Kong's specific mental health landscape. This data was then organised into a narrative flow: Understanding &rarr; Evidence &rarr; Self-Check &rarr; Story &rarr; Help.</p></div>
+     </details>
+     <details class="method-stage">
+      <summary><span class="method-stage-number">03</span><span><strong>Visual design &amp; Interaction</strong><small>Building the Artistic Editorial identity</small></span></summary>
+      <div class="method-stage-content"><p>Using warm neutral space, dusty blue, and muted teal, I designed an interface that feels calm. Interactive elements—like the animated charts and the social anxiety cycle—were built to keep visitors engaged without overwhelming them.</p></div>
+     </details>
+     <details class="method-stage">
+      <summary><span class="method-stage-number">04</span><span><strong>Website development</strong><small>Structuring pages and interactions</small></span></summary>
+      <div class="method-stage-content"><p>HTML provides the structure, CSS shapes the visual identity, and JavaScript powers the interactive experiences (the self-check scoring, story branching, and comfort planner).</p></div>
+     </details>
+    </div>
+    
+    <!-- AI Buddy 协作部分 -->
+    <div class="ai-buddy-panel" id="ai-buddy">
+     <div>
+      <p class="section-kicker">MEET MY AI BUDDY</p>
+      <h3>How AI supported the project</h3>
+      <p>For this project, I utilized an AI assistant (like Word Buddy and other generative AI tools) as a "co-pilot." The AI did not replace my creative vision or academic judgement; rather, it acted as an accelerator for my ideas, a coding tutor, and a structural editor.</p>
+     </div>
+     
+     <div class="ai-role-grid">
+      <article>
+       <h4>AI Buddy (The Assistant)</h4>
+       <ul>
+        <li><strong>Coding &amp; Debugging:</strong> Helped write the HTML/CSS for the responsive layout and fixed complex JavaScript bugs (like the scroll-spy navigation and score calculation).</li>
+        <li><strong>Design Refinement:</strong> Suggested UI improvements, such as replacing underlines with "pillow" navigation styles and adding scroll-reveal animations.</li>
+        <li><strong>Content Drafting:</strong> Assisted in rephrasing clinical concepts into more approachable, empathetic language for the website sections.</li>
+        <li><strong>Structure Generation:</strong> Provided the initial scaffolding for the interactive cards and timeline layouts.</li>
+       </ul>
+      </article>
+      <article>
+       <h4>Project Creator (Me)</h4>
+       <ul>
+        <li><strong>Vision &amp; Direction:</strong> Decided the core message: "Social anxiety is more than shyness." Chose the specific colors, fonts, and overall vibe.</li>
+        <li><strong>Academic Accuracy:</strong> Selected the specific research data, wrote the Mini-SPIN questions, and verified the Hong Kong support links.</li>
+        <li><strong>Storytelling:</strong> Conceptualized "Mei's Story" and wrote the narrative for the branching scenarios.</li>
+        <li><strong>Quality Control:</strong> Tested every button, adjusted the spacing, and ensured the final website felt human, warm, and safe.</li>
+       </ul>
+      </article>
+     </div>
+     
+     <p class="ai-transparency-note">
+      This project demonstrates how human empathy and AI technical capabilities can collaborate to create accessible mental health resources. The AI handled the "how" (the code), allowing me to focus deeply on the "why" and "what" (the message and the people).
+     </p>
+    </div>
+   </section>
+  </main>
+  
+  <footer>
+   <div class="container">
+    <p>&copy; HKBU Mental Health Studies Student Hub &mdash; Social Anxiety Project</p>
+    <p class="footer-note">This site is an academic project and is not a clinical service.</p>
+   </div>
+  </footer>
+  
+ </body>
+</html>
