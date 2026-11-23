@@ -476,15 +476,18 @@ nav, main, footer, .top-banner, .back-to-top {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
-.hero-illustration {
+.hero-visual .hero-illustration {
   width: 100%;
   max-width: 440px !important;
   border-radius: 0 !important;
   box-shadow: none !important;
   border: none !important;
   background: transparent !important;
-  mix-blend-mode: multiply;
+  mix-blend-mode: multiply !important;
 }
 
 .story-illustration-box {
@@ -507,7 +510,7 @@ nav, main, footer, .top-banner, .back-to-top {
   .hero-grid {
     grid-template-columns: 1fr !important;
   }
-  .hero-illustration {
+  .hero-visual .hero-illustration {
     max-width: 360px !important;
   }
   .story-illustration-box img {
@@ -784,15 +787,3 @@ nav, main, footer, .top-banner, .back-to-top {
   background: var(--deep-blue);
   color: var(--white) !important;
 }
-/* Remove white box & blend white background into the page */
-.hero-visual .hero-illustration {
-  max-width: 440px !important;
-  width: 100% !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  mix-blend-mode: multiply !important;
-  isolation: isolate;
-}
-
