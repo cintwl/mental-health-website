@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
-  <link href="style.css?v=633" rel="stylesheet"/>
+  <link href="style.css?v=635" rel="stylesheet"/>
   <style>
     body {
       background-color: #FAF8F3 !important;
@@ -709,15 +709,6 @@
     };
 
     document.addEventListener("DOMContentLoaded", () => {
-      // Back to top button handler
-      const backToTop = document.getElementById("backToTop");
-      if (backToTop) {
-        backToTop.addEventListener("click", (e) => {
-          e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-
       // Ensure charts are always visible and animated
       const revealCharts = () => {
         const chartWrapper = document.querySelector(".combined-charts-wrapper");
