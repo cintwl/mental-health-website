@@ -484,3 +484,58 @@ main > section {
     max-height: 220px;
   }
 }
+/* ========================================== */
+/* PART C: CYCLE, PLANNER & CHECK-IN VISUALS  */
+/* ========================================== */
+
+/* 1. Understanding 橫幅插畫 */
+.cycle-banner-box {
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.cycle-banner-box img {
+  width: 100%;
+  max-height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 2. Comfort Planner 雙欄並排 */
+.planner-split-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 35px;
+  align-items: center;
+}
+.planner-split-layout .planner-panel {
+  max-width: 100%;
+  margin: 0;
+}
+.planner-visual img,
+.checkin-visual img {
+  width: 100%;
+  border-radius: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 28px rgba(53, 75, 89, 0.08);
+}
+
+/* 3. Daily Check-In 雙欄並排 */
+.checkin-split-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 32px;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .planner-split-layout,
+  .checkin-split-layout {
+    grid-template-columns: 1fr;
+  }
+  .cycle-banner-box img {
+    max-height: 150px;
+  }
+}

@@ -86,6 +86,9 @@
       <h3>The Social Anxiety Cycle</h3>
       <p>Select each stage to explore how a difficult social experience can reinforce itself. The cycle is a learning model, not a description of everyone's experience.</p>
      </div>
+     <div class="cycle-banner-box">
+      <img src="cycle-art.jpg" alt="Tangled thoughts gently unwinding into origami cranes" />
+     </div>
      <div class="cycle-layout">
       <div aria-label="Stages of the social anxiety cycle" class="cycle-map" role="group">
        <button aria-pressed="true" class="cycle-node is-active" data-cycle-step="situation" type="button"><span>01</span> Social situation</button>
@@ -398,53 +401,64 @@
       <h3>Social Situation Comfort Planner</h3>
       <p>Think through one situation and explore a manageable next step. You do not need to record or save anything.</p>
      </div>
-     <div class="planner-panel">
-      <div class="planner-step">
-       <label for="planner-situation">1. Which situation are you thinking about?</label>
-       <select id="planner-situation">
-        <option value="tutorial">Speaking in a tutorial</option>
-        <option value="classmate">Starting a conversation with a classmate</option>
-        <option value="group">Taking part in group work</option>
-        <option value="presentation">Giving a presentation</option>
-        <option value="event">Attending a university event</option>
-       </select>
+     <div class="planner-split-layout">
+      <div class="planner-panel">
+       <div class="planner-step">
+        <label for="planner-situation">1. Which situation are you thinking about?</label>
+        <select id="planner-situation">
+         <option value="tutorial">Speaking in a tutorial</option>
+         <option value="classmate">Starting a conversation with a classmate</option>
+         <option value="group">Taking part in group work</option>
+         <option value="presentation">Giving a presentation</option>
+         <option value="event">Attending a university event</option>
+        </select>
+       </div>
+       <div class="planner-step">
+        <label for="planner-feeling">2. What feels most difficult about it?</label>
+        <select id="planner-feeling">
+         <option value="judgement">Worrying about being judged</option>
+         <option value="words">Not knowing what to say</option>
+         <option value="attention">Being the centre of attention</option>
+         <option value="body">Noticing physical anxiety</option>
+        </select>
+       </div>
+       <div class="planner-step">
+        <label for="planner-step-choice">3. What might be one manageable step?</label>
+        <select id="planner-step-choice">
+         <option value="prepare">Prepare one simple opening sentence</option>
+         <option value="observe">Observe the situation first</option>
+         <option value="small">Try a smaller version of the situation</option>
+         <option value="support">Ask a trusted person for support</option>
+        </select>
+       </div>
+       <button class="btn-primary" id="planner-generate" type="button" style="margin-top: 20px;" onclick="generatePlanner()">Explore my next step</button>
+       <div aria-live="polite" class="planner-result" hidden="" id="planner-result"></div>
+       <p class="planner-note" style="text-align: left;">This tool offers general reflection prompts, not treatment or a substitute for professional advice. Choose a step that feels safe and appropriate for you.</p>
       </div>
-      <div class="planner-step">
-       <label for="planner-feeling">2. What feels most difficult about it?</label>
-       <select id="planner-feeling">
-        <option value="judgement">Worrying about being judged</option>
-        <option value="words">Not knowing what to say</option>
-        <option value="attention">Being the centre of attention</option>
-        <option value="body">Noticing physical anxiety</option>
-       </select>
+      <div class="planner-visual">
+       <img src="planner-art.jpg" alt="Cozy bullet journal and warm ceramic teacup" />
       </div>
-      <div class="planner-step">
-       <label for="planner-step-choice">3. What might be one manageable step?</label>
-       <select id="planner-step-choice">
-        <option value="prepare">Prepare one simple opening sentence</option>
-        <option value="observe">Observe the situation first</option>
-        <option value="small">Try a smaller version of the situation</option>
-        <option value="support">Ask a trusted person for support</option>
-       </select>
-      </div>
-      <button class="btn-primary" id="planner-generate" type="button" style="margin-top: 25px;" onclick="generatePlanner()">Explore my next step</button>
-      <div aria-live="polite" class="planner-result" hidden="" id="planner-result"></div>
      </div>
-     <p class="planner-note">This tool offers general reflection prompts, not treatment or a substitute for professional advice. Choose a step that feels safe and appropriate for you.</p>
-    </div>
     
-    <div class="self-care-check">
-     <h3>A Gentle Daily Check-In</h3>
-     <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
-     <div class="checklist-container">
-      <label class="check-item"><input class="daily-check" type="checkbox"/> I did one small thing today, even though it felt uncomfortable.</label>
-      <label class="check-item"><input class="daily-check" type="checkbox"/> I noticed a "what if" thought without fully believing it.</label>
-      <label class="check-item"><input class="daily-check" type="checkbox"/> I took one slow breath before a situation that scared me.</label>
-      <label class="check-item"><input class="daily-check" type="checkbox"/> I didn't avoid <em>everything</em> I wanted to do.</label>
-      <label class="check-item"><input class="daily-check" type="checkbox"/> I spoke to myself the way I would speak to a friend.</label>
+   <div class="self-care-check">
+     <div class="checkin-split-layout">
+      <div class="checkin-content">
+       <h3>A Gentle Daily Check-In</h3>
+       <p><em>This is not a diagnostic tool. It is a simple awareness exercise.</em></p>
+       <div class="checklist-container">
+        <label class="check-item"><input class="daily-check" type="checkbox"/> I did one small thing today, even though it felt uncomfortable.</label>
+        <label class="check-item"><input class="daily-check" type="checkbox"/> I noticed a "what if" thought without fully believing it.</label>
+        <label class="check-item"><input class="daily-check" type="checkbox"/> I took one slow breath before a situation that scared me.</label>
+        <label class="check-item"><input class="daily-check" type="checkbox"/> I didn't avoid <em>everything</em> I wanted to do.</label>
+        <label class="check-item"><input class="daily-check" type="checkbox"/> I spoke to myself the way I would speak to a friend.</label>
+       </div>
+       <div class="progress-container"><div class="progress-bar" id="check-progress"></div></div>
+       <p class="check-feedback" id="check-message">0 of 5 completed today.</p>
+      </div>
+      <div class="checkin-visual">
+       <img src="checkin-art.jpg" alt="Young sage-green sprout growing in warm morning sunlight" />
+      </div>
      </div>
-     <div class="progress-container"><div class="progress-bar" id="check-progress"></div></div>
-     <p class="check-feedback" id="check-message">0 of 5 completed today.</p>
     </div>
     
     <div class="safety-note">
