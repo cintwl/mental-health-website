@@ -395,50 +395,55 @@
      <p class="support-emergency-note"><strong>Immediate danger:</strong> If you or someone else is in immediate danger in Hong Kong, call 999 or go to the nearest emergency department.</p>
     </div>
     
-    <div class="feature-block comfort-planner" id="comfort-planner">
+   <div class="feature-block comfort-planner" id="comfort-planner">
      <div class="feature-heading">
-      <p class="section-kicker">A GENTLE, PRACTICAL TOOL</p>
-      <h3>Social Situation Comfort Planner</h3>
-      <p>Think through one situation and explore a manageable next step. You do not need to record or save anything.</p>
+      <p class="section-kicker">INTERACTIVE REFLECTION BUDDY</p>
+      <h3>Gentle Comfort Companion</h3>
+      <p>Select a common university worry below or share what's on your mind to explore a small, manageable next step. Private &mdash; nothing is saved or sent.</p>
      </div>
+
      <div class="planner-split-layout">
-      <div class="planner-panel">
-       <div class="planner-step">
-        <label for="planner-situation">1. Which situation are you thinking about?</label>
-        <select id="planner-situation">
-         <option value="tutorial">Speaking in a tutorial</option>
-         <option value="classmate">Starting a conversation with a classmate</option>
-         <option value="group">Taking part in group work</option>
-         <option value="presentation">Giving a presentation</option>
-         <option value="event">Attending a university event</option>
-        </select>
+      <!-- 左邊：嵌入式對話機械人 -->
+      <div class="embedded-chat-box">
+       <div class="embedded-chat-header">
+        <span class="bot-status-dot"></span>
+        <div>
+         <strong>Beyond Shyness Companion</strong>
+         <small>Guided CBT reflection &bull; Not medical advice</small>
+        </div>
+        <button type="button" class="chat-reset-btn" onclick="resetPlannerChat()">Reset</button>
        </div>
-       <div class="planner-step">
-        <label for="planner-feeling">2. What feels most difficult about it?</label>
-        <select id="planner-feeling">
-         <option value="judgement">Worrying about being judged</option>
-         <option value="words">Not knowing what to say</option>
-         <option value="attention">Being the centre of attention</option>
-         <option value="body">Noticing physical anxiety</option>
-        </select>
+
+       <div class="embedded-chat-messages" id="planner-chat-messages" aria-live="polite">
+        <div class="p-msg bot">
+         Hi! Facing a tough social moment at uni? Pick a common concern below, or type how you're feeling right now.
+        </div>
        </div>
-       <div class="planner-step">
-        <label for="planner-step-choice">3. What might be one manageable step?</label>
-        <select id="planner-step-choice">
-         <option value="prepare">Prepare one simple opening sentence</option>
-         <option value="observe">Observe the situation first</option>
-         <option value="small">Try a smaller version of the situation</option>
-         <option value="support">Ask a trusted person for support</option>
-        </select>
+
+       <!-- 預設主要憂慮問題按鈕 -->
+       <div class="embedded-quick-chips" id="planner-quick-chips">
+        <button type="button" data-concern="tutorial">🙋‍♂️ Speaking in a tutorial</button>
+        <button type="button" data-concern="presentation">🎤 Giving a presentation</button>
+        <button type="button" data-concern="judgment">👀 Fear of being judged</button>
+        <button type="button" data-concern="groupwork">💬 Quiet in group work</button>
+        <button type="button" data-concern="physical">💓 Racing heart / panic</button>
        </div>
-       <button class="btn-primary" id="planner-generate" type="button" style="margin-top: 20px;" onclick="generatePlanner()">Explore my next step</button>
-       <div aria-live="polite" class="planner-result" hidden="" id="planner-result"></div>
-       <p class="planner-note" style="text-align: left;">This tool offers general reflection prompts, not treatment or a substitute for professional advice. Choose a step that feels safe and appropriate for you.</p>
+
+       <!-- 自由輸入框 -->
+       <form class="embedded-chat-form" id="planner-chat-form">
+        <input type="text" id="planner-chat-input" placeholder="Or type your own worry here..." autocomplete="off" />
+        <button type="submit">Send</button>
+       </form>
       </div>
+
+      <!-- 右邊：保留水彩手帳茶杯插畫 -->
       <div class="planner-visual">
        <img src="planner-art.jpg" alt="Cozy bullet journal and warm ceramic teacup" />
       </div>
      </div>
+
+     <p class="planner-note">This companion offers gentle reflection prompts, not clinical advice. Choose only a step that feels safe for you.</p>
+    </div>
     
    <div class="self-care-check">
      <div class="checkin-split-layout">
@@ -717,17 +722,102 @@
         });
       };
 
-      // 10. Comfort Planner
-      window.generatePlanner = () => {
-        const situation = document.getElementById("planner-situation").value;
-        const feeling = document.getElementById("planner-feeling").value;
-        const step = document.getElementById("planner-step-choice").value;
-        const situationText = { tutorial: "speaking in a tutorial", classmate: "starting a conversation with a classmate", group: "taking part in group work", presentation: "giving a presentation", event: "attending a university event" };
-        const stepText = { prepare: "Prepare one simple opening sentence or a few key points beforehand.", observe: "Give yourself permission to simply observe the situation before jumping in.", small: "Try a smaller, less intimidating version of the situation first.", support: "Reach out to a trusted friend or classmate to go with you." };
-        
-        const resultDiv = document.getElementById("planner-result");
-        resultDiv.innerHTML = `<h4>Your Next Step</h4><p>For <strong>${situationText[situation]}</strong>, where the main difficulty is <strong>${feeling}</strong>, you might try to:</p><p style="margin-top:10px; padding: 15px; background: #fff; border-left: 3px solid var(--terracotta); color: var(--deep-blue); font-weight: 600;">${stepText[step]}</p><p style="font-size:0.85rem; margin-top:15px; color: var(--text-muted);">Remember, taking any small step is a success. Be kind to yourself.</p>`;
-        resultDiv.hidden = false;
+      // 10. Interactive Comfort Companion (Chatbot Version)
+      const pMessages = document.getElementById("planner-chat-messages");
+      const pChips = document.getElementById("planner-quick-chips");
+      const pForm = document.getElementById("planner-chat-form");
+      const pInput = document.getElementById("planner-chat-input");
+
+      const concernDatabase = {
+        tutorial: {
+          label: "Speaking in a tutorial",
+          reply: `Tutorials can feel intense when the room goes quiet.<br/><br/><strong>Try this small step:</strong> Before class, jot down <em>one single sentence</em> or a simple question on your notes. You don't have to give a speech — just sharing one brief thought breaks the ice.`
+        },
+        presentation: {
+          label: "Giving a presentation",
+          reply: `Presentations trigger the "spotlight effect" — it feels like everyone is analysing every word.<br/><br/><strong>Try this small step:</strong> Focus on making eye contact with just <em>one</em> friendly classmate or looking slightly above the back row, and pause for a slow breath between slides.`
+        },
+        judgment: {
+          label: "Fear of being judged",
+          reply: `Worrying about "losing face" (面子) or sounding awkward is exhausting, and very common among HK students.<br/><br/><strong>Try this gentle reframe:</strong> Most classmates are busy worrying about their own performance. Ask yourself: <em>"Would I judge a friend if they paused or stumbled?"</em>`
+        },
+        groupwork: {
+          label: "Quiet in group work",
+          reply: `Jumping into a fast-moving group chat or discussion can feel overwhelming.<br/><br/><strong>Try this small step:</strong> Start with a low-pressure role — offer to take notes, organize the slides, or message one groupmate first with a simple <em>"Hey, what do you think about...?"</em>`
+        },
+        physical: {
+          label: "Racing heart / panic",
+          reply: `A pounding heart or sweaty palms is just your amygdala's false alarm — uncomfortable, but completely safe.<br/><br/><strong>Try this right now:</strong> Do a <strong>4-4-6 breath</strong> (inhale 4s, hold 4s, exhale slowly for 6s) and press your feet firmly into the floor to ground yourself.`
+        }
+      };
+
+      const appendPlannerMsg = (html, type) => {
+        if (!pMessages) return;
+        const msg = document.createElement("div");
+        msg.className = "p-msg " + type;
+        msg.innerHTML = html;
+        pMessages.appendChild(msg);
+        pMessages.scrollTop = pMessages.scrollHeight;
+      };
+
+      const respondToPlanner = (userText, presetKey = null) => {
+        appendPlannerMsg(userText.replace(/</g, "&lt;"), "user");
+
+        // 模擬思考氣泡
+        const typing = document.createElement("div");
+        typing.className = "p-msg bot typing-indicator";
+        typing.innerHTML = "<span></span><span></span><span></span>";
+        pMessages.appendChild(typing);
+        pMessages.scrollTop = pMessages.scrollHeight;
+
+        setTimeout(() => {
+          typing.remove();
+          if (presetKey && concernDatabase[presetKey]) {
+            appendPlannerMsg(concernDatabase[presetKey].reply, "bot");
+            return;
+          }
+
+          const t = userText.toLowerCase();
+          if (/(suicide|kill myself|hurt myself|end it|die|hopeless|self harm|自殺|唔想活)/.test(t)) {
+            appendPlannerMsg(`<strong>Your safety matters most.</strong><br/>If you are in immediate danger in Hong Kong, please call <strong>999</strong> or visit the nearest A&amp;E.<br/>Free 24/7 confidential support: <a href="https://www.openup.hk/" target="_blank">Open Up</a> &bull; <a href="https://www.sbhk.org.hk/" target="_blank">Samaritan Befrienders (2389 2222)</a>`, "bot");
+          } else if (/(tutorial|class|speak|ask|上堂)/.test(t)) {
+            appendPlannerMsg(concernDatabase.tutorial.reply, "bot");
+          } else if (/(present|slide|speech|匯報)/.test(t)) {
+            appendPlannerMsg(concernDatabase.presentation.reply, "bot");
+          } else if (/(judg|embarrass|awkward|stupid|face|面子|尷尬)/.test(t)) {
+            appendPlannerMsg(concernDatabase.judgment.reply, "bot");
+          } else if (/(group|friend|talk|chat|intro|小組)/.test(t)) {
+            appendPlannerMsg(concernDatabase.groupwork.reply, "bot");
+          } else if (/(heart|breath|panic|sweat|shak|nervous|緊張|心跳)/.test(t)) {
+            appendPlannerMsg(concernDatabase.physical.reply, "bot");
+          } else {
+            appendPlannerMsg(`Thank you for putting that into words. You don't have to fix everything today — just pick <strong>one tiny, low-pressure step</strong> that feels manageable.<br/><br/>If you'd like to talk to someone confidentially at HKBU, <a href="https://sa.hkbu.edu.hk/cdc" target="_blank">HKBU Counselling (CDC)</a> is always open.`, "bot");
+          }
+        }, 420);
+      };
+
+      if (pChips) {
+        pChips.addEventListener("click", (e) => {
+          const btn = e.target.closest("button");
+          if (!btn) return;
+          const key = btn.getAttribute("data-concern");
+          respondToPlanner(btn.innerText, key);
+        });
+      }
+
+      if (pForm) {
+        pForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const val = pInput.value.trim();
+          if (!val) return;
+          pInput.value = "";
+          respondToPlanner(val);
+        });
+      }
+
+      window.resetPlannerChat = () => {
+        if (!pMessages) return;
+        pMessages.innerHTML = `<div class="p-msg bot">Hi! Facing a tough social moment at uni? Pick a common concern below, or type how you're feeling right now.</div>`;
       };
 
       // 11. Daily Check-In
