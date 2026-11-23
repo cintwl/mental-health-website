@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
-  <link href="style.css?v=627" rel="stylesheet"/>
+  <link href="style.css?v=630" rel="stylesheet"/>
  </head>
  <body>
   <div class="dust-motes-bg" aria-hidden="true">
@@ -53,9 +53,9 @@
        <a class="btn-secondary" href="#story">Follow Mei's story</a>
       </div>
      </div>
-     <div class="hero-visual" style="background: transparent; border: none; box-shadow: none;">
-      <img src="hero-transparent.png" alt="Person holding their head with tangled thoughts and question bubbles above" class="hero-illustration" style="mix-blend-mode: multiply; background: transparent; border: none; border-radius: 0; box-shadow: none;"/>
-     </div>
+     <div class="hero-visual">
+   <img src="hero-art.jpg" alt="Person holding their head with tangled thoughts and question bubbles above" class="hero-illustration"/>
+  </div>
     </div>
     <aside class="hero-safety-note">
      <p><strong>A gentle note:</strong> This website is for awareness and education. It is not a diagnosis or a substitute for professional care. You can skip any section, take a break, or go directly to support information whenever you need.</p>
@@ -613,43 +613,74 @@
         chartObserver.observe(chartWrapper);
       }
 
-      // 7. Mini-SPIN
-      window.scoreSPIN = (e) => {
-        e.preventDefault();
-        const form = document.getElementById("spin-form");
-        const out = document.getElementById("spin-result");
-        let total = 0;
-        let answered = 0;
+      // 7. Mini-SPIN (with Score Ring + Spectrum Visualizer)
+   window.scoreSPIN = (e) => {
+     e.preventDefault();
+     const form = document.getElementById("spin-form");
+     const out = document.getElementById("spin-result");
+     let total = 0;
+     let answered = 0;
 
-        for (let i = 1; i <= 3; i++) {
-          const sel = form.querySelector(`input[name="q${i}"]:checked`);
-          if (sel) { total += parseInt(sel.value, 10); answered++; }
-        }
-        if (answered < 3) {
-          out.innerHTML = "<h3>One more step</h3><p>Please answer all three questions to see your result.</p>";
-          out.classList.add("show");
-          return;
-        }
-        let heading = `Your score: ${total} out of 12`;
-        let body;
-        if (total >= 6) {
-          body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis — only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
-        } else if (total >= 3) {
-          body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do — the societies you join, the questions you ask, the people you meet — consider speaking to a counsellor.</p>`;
-        } else {
-          body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
-        }
-        out.innerHTML = `<h3>${heading}</h3>${body}<p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>`;
-        out.classList.add("show");
-      };
+     for (let i = 1; i <= 3; i++) {
+       const sel = form.querySelector(`input[name="q${i}"]:checked`);
+       if (sel) { total += parseInt(sel.value, 10); answered++; }
+     }
+     if (answered < 3) {
+       out.innerHTML = `<span class="spin-badge">ALMOST THERE</span><h3>One more step</h3><p>Please answer all three questions (${answered}/3 completed) to see your result.</p>`;
+       out.classList.add("show");
+       return;
+     }
 
-      window.resetSPIN = (e) => {
-        e.preventDefault();
-        document.getElementById("spin-form").reset();
-        const out = document.getElementById("spin-result");
-        out.classList.remove("show");
-        out.innerHTML = "";
-      };
+     const percent = Math.round((total / 12) * 100);
+     let badge, heading, body, ringColor, zoneLabel;
+
+     if (total >= 6) {
+       badge = "ABOVE SCREENING THRESHOLD (6+)";
+       heading = "Elevated Social Anxiety Signals";
+       ringColor = "var(--terracotta)";
+       zoneLabel = "Threshold zone (6–12)";
+       body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis &mdash; only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
+     } else if (total >= 3) {
+       badge = "MILD / SITUATIONAL REFLECTION";
+       heading = "Moderate Social Discomfort";
+       ringColor = "var(--dusty-blue)";
+       zoneLabel = "Mild zone (3–5)";
+       body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do &mdash; the societies you join, the questions you ask, the people you meet &mdash; consider speaking to a counsellor.</p>`;
+     } else {
+       badge = "LOW SCREENING SIGNALS";
+       heading = "Minimal Social Anxiety Signals";
+       ringColor = "var(--muted-teal)";
+       zoneLabel = "Low zone (0–2)";
+       body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
+     }
+
+     out.innerHTML = `
+       <div class="spin-visual-header">
+         <div class="spin-score-ring" style="--score-deg: ${percent * 3.6}deg; --ring-color: ${ringColor};">
+           <div class="spin-score-inner">
+             <strong>${total}</strong>
+             <span>/ 12</span>
+           </div>
+         </div>
+         <div class="spin-visual-summary">
+           <span class="spin-badge">${badge}</span>
+           <h3>${heading}</h3>
+           <div class="spin-spectrum">
+             <div class="spin-spectrum-bar">
+               <span class="zone-low">0–2 Low</span>
+               <span class="zone-mid">3–5 Mild</span>
+               <span class="zone-high">6–12 Threshold</span>
+             </div>
+             <div class="spin-spectrum-marker" style="left: ${percent}%;"></div>
+           </div>
+           <small class="spin-zone-caption">Current range: <strong>${zoneLabel}</strong></small>
+         </div>
+       </div>
+       ${body}
+       <p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>
+     `;
+     out.classList.add("show");
+   };
 
       // 8. Human Story
       let currentScene = 1;

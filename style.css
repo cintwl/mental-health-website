@@ -828,3 +828,109 @@ main > section {
   padding-top: 55px !important;
   padding-bottom: 55px !important;
 }
+/* ========================================== */
+/* ALL-IN-ONE FIX: HERO, SCORE RING & BG      */
+/* ========================================== */
+
+/* 1. 首頁插畫：移除 multiply 避免衫同臉變灰，保持乾淨無框 */
+.hero-visual .hero-illustration {
+  mix-blend-mode: normal !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 16px !important;
+  max-width: 420px !important;
+}
+
+/* 2. Mini-SPIN 分數圓環＋刻度尺樣式 */
+.spin-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(145, 170, 166, 0.25);
+  color: var(--deep-blue);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.spin-visual-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(53, 75, 89, 0.12);
+}
+.spin-score-ring {
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: conic-gradient(var(--ring-color, var(--dusty-blue)) var(--score-deg, 0deg), #DCE4DF 0deg);
+  box-shadow: 0 8px 20px rgba(53, 75, 89, 0.1);
+}
+.spin-score-inner {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+.spin-score-inner strong {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  color: var(--deep-blue);
+}
+.spin-score-inner span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.spin-visual-summary {
+  flex: 1;
+  min-width: 0;
+}
+.spin-visual-summary h3 {
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+}
+.spin-spectrum {
+  position: relative;
+  margin: 10px 0 6px;
+}
+.spin-spectrum-bar {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 7fr;
+  border-radius: 999px;
+  overflow: hidden;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--deep-blue);
+}
+.spin-spectrum-bar span { padding: 4px 6px; }
+.zone-low  { background: rgba(145, 170, 166, 0.35); }
+.zone-mid  { background: rgba(120, 147, 165, 0.32); }
+.zone-high { background: rgba(197, 143, 120, 0.38); }
+.spin-spectrum-marker {
+  position: absolute;
+  top: -4px;
+  width: 4px;
+  height: 30px;
+  background: var(--deep-blue);
+  border-radius: 4px;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0 2px var(--white);
+}
+.spin-zone-caption {
+  display: block;
+  margin-top: 6px;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+}
