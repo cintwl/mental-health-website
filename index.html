@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
-  <link href="style.css?v=631" rel="stylesheet"/>
+  <link href="style.css?v=632" rel="stylesheet"/>
   <style>
     body {
       background-color: #FAF8F3 !important;
@@ -134,11 +134,11 @@
     <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
 
     <div class="tabs-container" role="tablist">
-     <button class="tab-button active" onclick="openTab(event, 'tab-1')">Biological</button>
-     <button class="tab-button" onclick="openTab(event, 'tab-2')">Psychological</button>
-     <button class="tab-button" onclick="openTab(event, 'tab-3')">Social &amp; Cultural</button>
-     <button class="tab-button" onclick="openTab(event, 'tab-4')">Research &amp; Ethics</button>
-     <button class="tab-button" onclick="openTab(event, 'tab-5')">Campus</button>
+     <button class="tab-button active" type="button" onclick="openTab(event, 'tab-1')">Biological</button>
+     <button class="tab-button" type="button" onclick="openTab(event, 'tab-2')">Psychological</button>
+     <button class="tab-button" type="button" onclick="openTab(event, 'tab-3')">Social &amp; Cultural</button>
+     <button class="tab-button" type="button" onclick="openTab(event, 'tab-4')">Research &amp; Ethics</button>
+     <button class="tab-button" type="button" onclick="openTab(event, 'tab-5')">Campus</button>
     </div>
 
     <div class="tab-content">
@@ -177,29 +177,29 @@
     <hr class="inner-divider"/>
 
     <!-- CHARTS WITH ANIMATION -->
-    <div class="combined-charts-wrapper">
+    <div class="combined-charts-wrapper is-visible">
      <div class="charts-row" style="display: flex; flex-direction: row; flex-wrap: nowrap;">
       <div class="chart-item" style="flex: 1; min-width: 0;">
        <h3>When Social Anxiety Usually Begins</h3>
        <div class="bar-chart">
         <div class="bar-row">
          <span class="bar-label">Before age 12</span>
-         <div class="bar-track"><div class="bar-fill" data-width="30%"></div></div>
+         <div class="bar-track"><div class="bar-fill" data-width="30%" style="width: 30%;"></div></div>
          <span class="bar-value">30%</span>
         </div>
         <div class="bar-row">
          <span class="bar-label">Age 12&ndash;17</span>
-         <div class="bar-track"><div class="bar-fill" data-width="45%"></div></div>
+         <div class="bar-track"><div class="bar-fill" data-width="45%" style="width: 45%;"></div></div>
          <span class="bar-value">45%</span>
         </div>
         <div class="bar-row">
          <span class="bar-label">Age 18&ndash;24</span>
-         <div class="bar-track"><div class="bar-fill" data-width="20%"></div></div>
+         <div class="bar-track"><div class="bar-fill" data-width="20%" style="width: 20%;"></div></div>
          <span class="bar-value">20%</span>
         </div>
         <div class="bar-row">
          <span class="bar-label">Age 25+</span>
-         <div class="bar-track"><div class="bar-fill" data-width="5%"></div></div>
+         <div class="bar-track"><div class="bar-fill" data-width="5%" style="width: 5%;"></div></div>
          <span class="bar-value">5%</span>
         </div>
        </div>
@@ -208,7 +208,7 @@
       <div class="chart-divider-line" style="width: 1px; background: var(--line); margin: 0 30px;"></div>
       <div class="chart-item" style="flex: 1; min-width: 0;">
        <h3>What Stops Students From Getting Help</h3>
-       <div aria-label="Barriers: fear of being judged 35%, not knowing where to go 25%, worry about privacy 20%, cost 20%." class="donut" role="img">
+       <div aria-label="Barriers: fear of being judged 35%, not knowing where to go 25%, worry about privacy 20%, cost 20%." class="donut" role="img" style="opacity: 1; transform: scale(1);">
         <span class="donut-hole">Barriers to<br/>help-seeking</span>
        </div>
        <div class="donut-legend" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
@@ -293,8 +293,8 @@
       </div>
      </form>
      <div class="check-actions">
-      <button class="btn-primary" onclick="scoreSPIN(event)">See my result</button>
-      <button class="btn-ghost" onclick="resetSPIN(event)">Clear answers</button>
+      <button class="btn-primary" type="button" onclick="scoreSPIN(event)">See my result</button>
+      <button class="btn-ghost" type="button" onclick="resetSPIN(event)">Clear answers</button>
      </div>
      <div aria-live="polite" class="spin-result" id="spin-result"></div>
     </div>
@@ -325,13 +325,13 @@
       <div class="scene active" id="scene-1">
        <h3>1. The Tutorial Door</h3>
        <p class="scene-description">Mei stands outside Room 402. The tutorial starts in two minutes. She can hear laughter inside. Her heart rate spikes. She reaches for the handle, then stops.</p>
-       <div class="theory-trigger" onclick="toggleTheory('theory-1')" style="cursor:pointer; color: var(--dusty-blue); font-weight: 600; margin-top: 15px;">💡 Reveal Psychological Theory</div>
+       <button type="button" class="theory-trigger" onclick="toggleTheory('theory-1')" style="background:none; border:none; padding:0; cursor:pointer; color: var(--dusty-blue); font-weight: 600; margin-top: 15px;">💡 Reveal Psychological Theory</button>
        <div class="theory-content" id="theory-1"><strong>Theory link:</strong> Amygdala activation triggers a physical 'fight or flight' response before any real threat exists.</div>
       </div>
       <div class="scene" id="scene-2">
        <h3>2. The Group Chat</h3>
        <p class="scene-description">Later, the project group chat pings: <em>"Who wants to present?"</em> Mei types: <em>"I can do the intro."</em> She looks at the words. Deletes them. Closes the app.</p>
-       <div class="theory-trigger" onclick="toggleTheory('theory-2')" style="cursor:pointer; color: var(--dusty-blue); font-weight: 600; margin-top: 15px;">💡 Reveal Psychological Theory</div>
+       <button type="button" class="theory-trigger" onclick="toggleTheory('theory-2')" style="background:none; border:none; padding:0; cursor:pointer; color: var(--dusty-blue); font-weight: 600; margin-top: 15px;">💡 Reveal Psychological Theory</button>
        <div class="theory-content" id="theory-2"><strong>Theory link:</strong> Deleting the message is a 'safety behaviour'. It brings immediate relief but reinforces the cycle of avoidance.</div>
       </div>
       <div class="scene" id="scene-3">
@@ -341,14 +341,14 @@
       <div class="choice-ui" id="choice-ui" style="display: none; margin-top: 20px; padding: 20px; background: #EAF0EF; border-radius: 12px; text-align: center;">
        <p style="font-weight: bold; margin-bottom: 15px;">What does Mei do?</p>
        <div style="display: flex; gap: 15px; justify-content: center;">
-        <button class="btn-primary" onclick="makeChoice('speak')">Speak up</button>
-        <button class="btn-ghost" onclick="makeChoice('quiet')">Stay quiet</button>
+        <button class="btn-primary" type="button" onclick="makeChoice('speak')">Speak up</button>
+        <button class="btn-ghost" type="button" onclick="makeChoice('quiet')">Stay quiet</button>
        </div>
       </div>
       <div class="scene" id="scene-4">
        <h3>4. The Aftermath</h3>
        <p class="scene-description" id="scene-4-text">She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it.</p>
-       <div class="theory-trigger" onclick="toggleTheory('theory-4')" style="cursor:pointer; color: var(--dusty-blue); font-weight: 600; margin-top: 15px;">💡 Reveal Psychological Theory</div>
+       <button type="button" class="theory-trigger" onclick="toggleTheory('theory-4')" style="background:none; border:none; padding:0; cursor:pointer; color: var(--dusty-blue); font-weight: 600; margin-top: 15px;">💡 Reveal Psychological Theory</button>
        <div class="theory-content" id="theory-4"><strong>Theory link:</strong> 'Post-event processing' is when people replay social events, focusing only on perceived flaws.</div>
       </div>
       <div class="scene" id="scene-5">
@@ -357,9 +357,9 @@
       </div>
      </div>
      <div class="story-controls">
-      <button class="btn-ghost" onclick="changeScene(-1)">&larr; Previous</button>
+      <button class="btn-ghost" type="button" onclick="changeScene(-1)">&larr; Previous</button>
       <span id="scene-indicator">SCENE 1 OF 5</span>
-      <button class="btn-primary" onclick="changeScene(1)">Next &rarr;</button>
+      <button class="btn-primary" type="button" onclick="changeScene(1)">Next &rarr;</button>
      </div>
     </div>
    </section>
@@ -524,7 +524,212 @@
 
   <!-- JAVASCRIPT -->
   <script>
+    // Define global functions early so inline onclick handlers always work
+    window.openTab = (evt, tabName) => {
+      document.querySelectorAll(".tab-pane").forEach(tab => tab.classList.remove("active"));
+      document.querySelectorAll(".tab-button").forEach(link => link.classList.remove("active"));
+      const targetPane = document.getElementById(tabName);
+      if (targetPane) targetPane.classList.add("active");
+      if (evt && evt.currentTarget) evt.currentTarget.classList.add("active");
+    };
+
+    window.toggleTheory = (id) => {
+      const content = document.getElementById(id);
+      if (!content) return;
+      const isVisible = window.getComputedStyle(content).display === "block";
+      document.querySelectorAll(".theory-content").forEach(el => {
+        el.style.display = "none";
+      });
+      content.style.display = isVisible ? "none" : "block";
+    };
+
+    window.resetSPIN = (e) => {
+      if (e) e.preventDefault();
+      const form = document.getElementById("spin-form");
+      const out = document.getElementById("spin-result");
+      if (form) form.reset();
+      if (out) {
+        out.innerHTML = "";
+        out.classList.remove("show");
+      }
+    };
+
+    window.scoreSPIN = (e) => {
+      if (e) e.preventDefault();
+      const form = document.getElementById("spin-form");
+      const out = document.getElementById("spin-result");
+      if (!form || !out) return;
+      let total = 0;
+      let answered = 0;
+
+      for (let i = 1; i <= 3; i++) {
+        const sel = form.querySelector(`input[name="q${i}"]:checked`);
+        if (sel) { total += parseInt(sel.value, 10); answered++; }
+      }
+      if (answered < 3) {
+        out.innerHTML = `<span class="spin-badge">ALMOST THERE</span><h3>One more step</h3><p>Please answer all three questions (${answered}/3 completed) to see your result.</p>`;
+        out.classList.add("show");
+        return;
+      }
+
+      const percent = Math.round((total / 12) * 100);
+      let badge, heading, body, ringColor, zoneLabel;
+
+      if (total >= 6) {
+        badge = "ABOVE SCREENING THRESHOLD (6+)";
+        heading = "Elevated Social Anxiety Signals";
+        ringColor = "var(--terracotta)";
+        zoneLabel = "Threshold zone (6–12)";
+        body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis &mdash; only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
+      } else if (total >= 3) {
+        badge = "MILD / SITUATIONAL REFLECTION";
+        heading = "Moderate Social Discomfort";
+        ringColor = "var(--dusty-blue)";
+        zoneLabel = "Mild zone (3–5)";
+        body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do &mdash; the societies you join, the questions you ask, the people you meet &mdash; consider speaking to a counsellor.</p>`;
+      } else {
+        badge = "LOW SCREENING SIGNALS";
+        heading = "Minimal Social Anxiety Signals";
+        ringColor = "var(--muted-teal)";
+        zoneLabel = "Low zone (0–2)";
+        body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
+      }
+
+      out.innerHTML = `
+        <div class="spin-visual-header">
+          <div class="spin-score-ring" style="--score-deg: ${percent * 3.6}deg; --ring-color: ${ringColor};">
+            <div class="spin-score-inner">
+              <strong>${total}</strong>
+              <span>/ 12</span>
+            </div>
+          </div>
+          <div class="spin-visual-summary">
+            <span class="spin-badge">${badge}</span>
+            <h3>${heading}</h3>
+            <div class="spin-spectrum">
+              <div class="spin-spectrum-bar">
+                <span class="zone-low">0–2 Low</span>
+                <span class="zone-mid">3–5 Mild</span>
+                <span class="zone-high">6–12 Threshold</span>
+              </div>
+              <div class="spin-spectrum-marker" style="left: ${percent}%;"></div>
+            </div>
+            <small class="spin-zone-caption">Current range: <strong>${zoneLabel}</strong></small>
+          </div>
+        </div>
+        ${body}
+        <p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>
+      `;
+      out.classList.add("show");
+    };
+
+    let currentScene = 1;
+    const totalScenes = 5;
+    let meiChoice = null;
+
+    window.changeScene = (direction) => {
+      if (currentScene === 3 && direction === 1 && !meiChoice) {
+        alert("Please choose an option for Mei first.");
+        return;
+      }
+      const currentEl = document.getElementById("scene-" + currentScene);
+      if (currentEl) currentEl.classList.remove("active");
+      currentScene += direction;
+      if (currentScene < 1) currentScene = 1;
+      if (currentScene > totalScenes) currentScene = totalScenes;
+      const newEl = document.getElementById("scene-" + currentScene);
+      if (newEl) newEl.classList.add("active");
+      const choiceUi = document.getElementById("choice-ui");
+      if (choiceUi) choiceUi.style.display = currentScene === 3 ? "block" : "none";
+      const indicator = document.getElementById("scene-indicator");
+      if (indicator) indicator.innerText = `SCENE ${currentScene} OF ${totalScenes}`;
+      const audioNum = document.getElementById("audio-scene-num");
+      if (audioNum) audioNum.innerText = currentScene;
+
+      try {
+        const audioPlayer = document.getElementById("story-audio");
+        if (audioPlayer) {
+          audioPlayer.src = (currentScene === 4 && meiChoice)
+            ? `scene4_${meiChoice}.mp3`
+            : "scene" + currentScene + ".mp3";
+          audioPlayer.load();
+        }
+      } catch (err) {
+        // Ignore missing optional audio file errors during demo
+      }
+
+      const sceneImg = document.getElementById("story-scene-img");
+      if (sceneImg) sceneImg.src = "scene" + currentScene + ".jpg";
+      document.querySelectorAll(".theory-content").forEach(el => { el.style.display = "none"; });
+    };
+
+    window.makeChoice = (choice) => {
+      meiChoice = choice;
+      const scene4Text = document.getElementById("scene-4-text");
+      if (scene4Text) {
+        scene4Text.innerHTML = choice === "speak"
+          ? "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it."
+          : "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
+      }
+      try {
+        const audioPlayer = document.getElementById("story-audio");
+        if (audioPlayer) {
+          audioPlayer.src = choice === "speak" ? "scene4_speak.mp3" : "scene4_quiet.mp3";
+          audioPlayer.load();
+        }
+      } catch (err) {}
+
+      const s3 = document.getElementById("scene-3");
+      const s4 = document.getElementById("scene-4");
+      if (s3) s3.classList.remove("active");
+      currentScene = 4;
+      if (s4) s4.classList.add("active");
+      const choiceUi = document.getElementById("choice-ui");
+      if (choiceUi) choiceUi.style.display = "none";
+      const indicator = document.getElementById("scene-indicator");
+      if (indicator) indicator.innerText = "SCENE 4 OF 5";
+      const audioNum = document.getElementById("audio-scene-num");
+      if (audioNum) audioNum.innerText = 4;
+      const sceneImg = document.getElementById("story-scene-img");
+      if (sceneImg) sceneImg.src = "scene4.jpg";
+    };
+
+    window.filterSupport = (category, btn) => {
+      document.querySelectorAll(".filter-button").forEach(b => {
+        b.classList.remove("is-active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      if (btn) {
+        btn.classList.add("is-active");
+        btn.setAttribute("aria-pressed", "true");
+      }
+      document.querySelectorAll(".support-finder-card").forEach(card => {
+        card.style.display = (category === "all" || card.getAttribute("data-support-category") === category)
+          ? "flex"
+          : "none";
+      });
+    };
+
     document.addEventListener("DOMContentLoaded", () => {
+      // Ensure charts are always visible and animated
+      const revealCharts = () => {
+        const chartWrapper = document.querySelector(".combined-charts-wrapper");
+        if (chartWrapper) {
+          chartWrapper.classList.add("is-visible");
+          chartWrapper.querySelectorAll(".bar-fill").forEach(bar => {
+            const targetW = bar.getAttribute("data-width");
+            if (targetW) bar.style.width = targetW;
+          });
+          const donut = chartWrapper.querySelector(".donut");
+          if (donut) {
+            donut.style.opacity = "1";
+            donut.style.transform = "scale(1)";
+          }
+        }
+      };
+      revealCharts();
+      window.addEventListener("scroll", revealCharts, { passive: true });
+
       // 1. Mobile Navigation
       const navToggle = document.getElementById("nav-toggle");
       const navLinks = document.getElementById("main-nav-links");
@@ -542,12 +747,12 @@
         window.addEventListener("scroll", () => {
           const scrollTop = window.scrollY;
           const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = (scrollTop / docHeight) * 100;
+          const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
           progressBar.style.width = progress + "%";
-        });
+        }, { passive: true });
       }
 
-      // 3. Scroll Spy (导航栏跟随滚动高亮胶囊)
+      // 3. Scroll Spy
       window.addEventListener("scroll", () => {
         let current = "";
         const sections = document.querySelectorAll("section");
@@ -567,7 +772,7 @@
             link.classList.add("active");
           }
         });
-      });
+      }, { passive: true });
 
       // 4. Interactive Cycle
       const cycleData = {
@@ -598,192 +803,7 @@
         });
       });
 
-      // 5. Evidence Tabs
-      window.openTab = (evt, tabName) => {
-        const tabcontent = document.querySelectorAll(".tab-pane");
-        const tablinks = document.querySelectorAll(".tab-button");
-        tabcontent.forEach(tab => tab.classList.remove("active"));
-        tablinks.forEach(link => link.classList.remove("active"));
-        document.getElementById(tabName).classList.add("active");
-        evt.currentTarget.classList.add("active");
-      };
-
-      // 6. Chart Animation (Intersection Observer)
-      const chartWrapper = document.querySelector('.combined-charts-wrapper');
-      if (chartWrapper) {
-        const chartObserver = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              const bars = entry.target.querySelectorAll('.bar-fill');
-              bars.forEach(bar => {
-                bar.style.width = bar.getAttribute('data-width');
-              });
-              chartObserver.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.3 });
-
-        chartObserver.observe(chartWrapper);
-      }
-
-      // 7. Mini-SPIN (with Score Ring + Spectrum Visualizer)
-      window.scoreSPIN = (e) => {
-        e.preventDefault();
-        const form = document.getElementById("spin-form");
-        const out = document.getElementById("spin-result");
-        let total = 0;
-        let answered = 0;
-
-        for (let i = 1; i <= 3; i++) {
-          const sel = form.querySelector(`input[name="q${i}"]:checked`);
-          if (sel) { total += parseInt(sel.value, 10); answered++; }
-        }
-        if (answered < 3) {
-          out.innerHTML = `<span class="spin-badge">ALMOST THERE</span><h3>One more step</h3><p>Please answer all three questions (${answered}/3 completed) to see your result.</p>`;
-          out.classList.add("show");
-          return;
-        }
-
-        const percent = Math.round((total / 12) * 100);
-        let badge, heading, body, ringColor, zoneLabel;
-
-        if (total >= 6) {
-          badge = "ABOVE SCREENING THRESHOLD (6+)";
-          heading = "Elevated Social Anxiety Signals";
-          ringColor = "var(--terracotta)";
-          zoneLabel = "Threshold zone (6–12)";
-          body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis &mdash; only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
-        } else if (total >= 3) {
-          badge = "MILD / SITUATIONAL REFLECTION";
-          heading = "Moderate Social Discomfort";
-          ringColor = "var(--dusty-blue)";
-          zoneLabel = "Mild zone (3–5)";
-          body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do &mdash; the societies you join, the questions you ask, the people you meet &mdash; consider speaking to a counsellor.</p>`;
-        } else {
-          badge = "LOW SCREENING SIGNALS";
-          heading = "Minimal Social Anxiety Signals";
-          ringColor = "var(--muted-teal)";
-          zoneLabel = "Low zone (0–2)";
-          body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
-        }
-
-        out.innerHTML = `
-          <div class="spin-visual-header">
-            <div class="spin-score-ring" style="--score-deg: ${percent * 3.6}deg; --ring-color: ${ringColor};">
-              <div class="spin-score-inner">
-                <strong>${total}</strong>
-                <span>/ 12</span>
-              </div>
-            </div>
-            <div class="spin-visual-summary">
-              <span class="spin-badge">${badge}</span>
-              <h3>${heading}</h3>
-              <div class="spin-spectrum">
-                <div class="spin-spectrum-bar">
-                  <span class="zone-low">0–2 Low</span>
-                  <span class="zone-mid">3–5 Mild</span>
-                  <span class="zone-high">6–12 Threshold</span>
-                </div>
-                <div class="spin-spectrum-marker" style="left: ${percent}%;"></div>
-              </div>
-              <small class="spin-zone-caption">Current range: <strong>${zoneLabel}</strong></small>
-            </div>
-          </div>
-          ${body}
-          <p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>
-        `;
-        out.classList.add("show");
-      };
-
-      // 8. Human Story
-      let currentScene = 1;
-      const totalScenes = 5;
-      let meiChoice = null;
-
-      window.changeScene = (direction) => {
-        if (currentScene === 3 && direction === 1 && !meiChoice) {
-          alert("Please choose an option for Mei first.");
-          return;
-        }
-        const currentEl = document.getElementById("scene-" + currentScene);
-        if (currentEl) currentEl.classList.remove("active");
-        currentScene += direction;
-        if (currentScene < 1) currentScene = 1;
-        if (currentScene > totalScenes) currentScene = totalScenes;
-        const newEl = document.getElementById("scene-" + currentScene);
-        if (newEl) newEl.classList.add("active");
-        const choiceUi = document.getElementById("choice-ui");
-        if (choiceUi) choiceUi.style.display = currentScene === 3 ? "block" : "none";
-        const indicator = document.getElementById("scene-indicator");
-        if (indicator) indicator.innerText = `SCENE ${currentScene} OF ${totalScenes}`;
-        const audioNum = document.getElementById("audio-scene-num");
-        if (audioNum) audioNum.innerText = currentScene;
-        const audioPlayer = document.getElementById("story-audio");
-        if (audioPlayer) {
-          if (currentScene === 4 && meiChoice) {
-            audioPlayer.src = `scene4_${meiChoice}.mp3`;
-          } else {
-            audioPlayer.src = "scene" + currentScene + ".mp3";
-          }
-          audioPlayer.load();
-        }
-        const sceneImg = document.getElementById("story-scene-img");
-        if (sceneImg) {
-          if (currentScene === 4 && meiChoice === "quiet") {
-            sceneImg.src = "scene4_quiet.jpg";
-          } else {
-            sceneImg.src = "scene" + currentScene + ".jpg";
-          }
-        }
-
-      window.makeChoice = (choice) => {
-        meiChoice = choice;
-        const scene4Text = document.getElementById("scene-4-text");
-        const audioPlayer = document.getElementById("story-audio");
-        if (choice === "speak") {
-          scene4Text.innerHTML = "She says something short, hears her own voice too loudly, and spends the next twenty minutes replaying it. But she spoke. Later, she notices the pattern: the fear arrived before the moment, not during it.";
-          if(audioPlayer) audioPlayer.src = "scene4_speak.mp3";
-        } else {
-          scene4Text.innerHTML = "She stays quiet. The tutor moves on. She feels relief, but also regret. Later, she notices the pattern: the fear arrived before the moment, not during it.";
-          if(audioPlayer) audioPlayer.src = "scene4_quiet.mp3";
-        }
-        document.getElementById("scene-3").classList.remove("active");
-        currentScene = 4;
-        document.getElementById("scene-4").classList.add("active");
-        document.getElementById("choice-ui").style.display = "none";
-        document.getElementById("scene-indicator").innerText = "SCENE 4 OF 5";
-        document.getElementById("audio-scene-num").innerText = 4;
-        if(audioPlayer) audioPlayer.load();
-        const sceneImg = document.getElementById("story-scene-img");
-        if (sceneImg) {
-          sceneImg.src = choice === "quiet" ? "scene4_quiet.jpg" : "scene4.jpg";
-        }
-
-      window.toggleTheory = (id) => {
-        const content = document.getElementById(id);
-        document.querySelectorAll(".theory-content").forEach(el => { if (el.id !== id) el.style.display = "none"; });
-        if (content.style.display === "block") { content.style.display = "none"; } else { content.style.display = "block"; }
-      };
-
-      // 9. Support Finder Filters
-      window.filterSupport = (category, btn) => {
-        const buttons = document.querySelectorAll(".filter-button");
-        buttons.forEach(b => { b.classList.remove("is-active"); b.setAttribute("aria-pressed", "false"); });
-        btn.classList.add("is-active");
-        btn.setAttribute("aria-pressed", "true");
-
-        const cards = document.querySelectorAll(".support-finder-card");
-        cards.forEach(card => {
-          if (category === "all" || card.getAttribute("data-support-category") === category) {
-            card.style.display = "flex";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      };
-
-      // 10. Interactive Comfort Companion (Daily Chat + CBT Support)
+      // 10. Interactive Comfort Companion
       const pMessages = document.getElementById("planner-chat-messages");
       const pChips = document.getElementById("planner-quick-chips");
       const pForm = document.getElementById("planner-chat-form");
@@ -896,8 +916,10 @@
         const typing = document.createElement("div");
         typing.className = "p-msg bot typing-indicator";
         typing.innerHTML = "<span></span><span></span><span></span>";
-        pMessages.appendChild(typing);
-        pMessages.scrollTop = pMessages.scrollHeight;
+        if (pMessages) {
+          pMessages.appendChild(typing);
+          pMessages.scrollTop = pMessages.scrollHeight;
+        }
 
         setTimeout(() => {
           typing.remove();
@@ -918,7 +940,7 @@
         });
       }
 
-      if (pForm) {
+      if (pForm && pInput) {
         pForm.addEventListener("submit", (e) => {
           e.preventDefault();
           const val = pInput.value.trim();
