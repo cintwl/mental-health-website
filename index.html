@@ -9,7 +9,7 @@
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
   <link href="style.css?v=630" rel="stylesheet"/>
- <style>
+  <style>
     body {
       background-color: #FAF8F3 !important;
       background-image:
@@ -24,6 +24,9 @@
       background: transparent !important;
     }
   </style>
+<<<<<<< HEAD
+ </head>
+=======
   <style>
     #page-bg {
       position: fixed;
@@ -49,6 +52,7 @@
     }
   </style>
 </head>
+>>>>>>> 3a54d15d06ab2fa28e5dc47d4194fe6843e81d24
  <body>
   <div id="page-bg"></div>
   <div class="dust-motes-bg" aria-hidden="true">
@@ -57,12 +61,12 @@
   </div>
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div aria-hidden="true" class="reading-progress"><span id="reading-progress-bar"></span></div>
-  
+
   <!-- TOP BANNER -->
   <div class="top-banner">
    <p>Not sure if it's more than shyness? <a href="#check">Take the 3-question check &rarr;</a></p>
   </div>
-  
+
   <!-- NAVIGATION (Pillow Style) -->
   <nav aria-label="Main navigation" id="main-nav">
    <div class="nav-inner">
@@ -79,7 +83,7 @@
     </div>
    </div>
   </nav>
-  
+
   <main id="main-content">
    <!-- 1. HOMEPAGE HERO -->
    <section class="hero-section" id="home">
@@ -94,15 +98,15 @@
       </div>
      </div>
      <div class="hero-visual">
-   <img src="hero-art.jpg" alt="Person holding their head with tangled thoughts and question bubbles above" class="hero-illustration"/>
-  </div>
+      <img src="hero-transparent.png" alt="Person holding their head with tangled thoughts and question bubbles above" class="hero-illustration"/>
+
     </div>
     <aside class="hero-safety-note">
      <p><strong>A gentle note:</strong> This website is for awareness and education. It is not a diagnosis or a substitute for professional care. You can skip any section, take a break, or go directly to support information whenever you need.</p>
      <a href="#help">Go to support information &darr;</a>
     </aside>
    </section>
-   
+
    <!-- 動態波浪 -->
    <div class="ocean-waves">
     <svg class="waves" preserveAspectRatio="none" shape-rendering="auto" viewBox="0 24 150 28" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -115,7 +119,7 @@
      </g>
     </svg>
    </div>
-   
+
    <!-- 2. UNDERSTANDING (精简版：只保留互动循环) -->
    <section id="understanding">
     <div class="section-heading">
@@ -150,14 +154,14 @@
      </div>
     </div>
    </section>
-   
+
    <hr class="section-divider"/>
-   
+
    <!-- 3. EVIDENCE (WHAT WE KNOW) -->
    <section id="evidence">
     <h2>What We Know</h2>
     <p><em>Explore how key disciplines interact within the study of social anxiety:</em></p>
-    
+
     <div class="tabs-container" role="tablist">
      <button class="tab-button active" onclick="openTab(event, 'tab-1')">Biological</button>
      <button class="tab-button" onclick="openTab(event, 'tab-2')">Psychological</button>
@@ -165,7 +169,7 @@
      <button class="tab-button" onclick="openTab(event, 'tab-4')">Research &amp; Ethics</button>
      <button class="tab-button" onclick="openTab(event, 'tab-5')">Campus</button>
     </div>
-    
+
     <div class="tab-content">
      <div class="tab-pane active" id="tab-1">
       <h3>1. Biological &amp; Neuroscientific Foundations</h3>
@@ -198,9 +202,9 @@
       <div class="key-takeaway">Key Takeaway: Universities offer support, but they do not replace professional clinical care.</div>
      </div>
     </div>
-    
+
     <hr class="inner-divider"/>
-    
+
     <!-- CHARTS WITH ANIMATION -->
     <div class="combined-charts-wrapper">
      <div class="charts-row" style="display: flex; flex-direction: row; flex-wrap: nowrap;">
@@ -244,12 +248,12 @@
        </div>
       </div>
      </div>
-     
+
      <div class="chart-insight">
       <p><strong>What this means:</strong> Social anxiety often begins early in life (before age 17), but many people wait years before seeking help. The biggest barrier isn't a lack of resources&mdash;it's the fear of being judged. Knowing this helps us understand why creating a non-judgmental, supportive environment is the most important step in encouraging people to reach out.</p>
      </div>
     </div>
-    
+
     <div class="gap-bridge-wrapper">
      <div class="gap-header">
       <h3>The Delay in Seeking Help</h3>
@@ -276,14 +280,14 @@
      </div>
     </div>
    </section>
-   
+
    <hr class="section-divider"/>
-   
+
    <!-- 4. SELF-CHECK -->
    <section id="check">
     <h2>Is it more than shyness?</h2>
     <p>This is a short, private check based on the <strong>Mini-SPIN</strong>, a 3-question screening tool used by clinicians to identify likely social anxiety disorder. It takes about one minute. Your answers stay in your browser &mdash; nothing is sent anywhere.</p>
-    
+
     <div class="check-card">
      <form id="spin-form">
       <div class="spin-question">
@@ -324,9 +328,9 @@
      <div aria-live="polite" class="spin-result" id="spin-result"></div>
     </div>
    </section>
-   
+
    <hr class="section-divider"/>
-   
+
    <!-- 5. HUMAN STORY -->
    <section id="story">
     <div class="story-title-container">
@@ -388,9 +392,9 @@
      </div>
     </div>
    </section>
-   
+
    <hr class="section-divider"/>
-   
+
    <!-- 6. HELP + ACCESS -->
    <section id="help">
     <div class="feature-block support-finder" id="support-finder">
@@ -399,14 +403,14 @@
       <h3>Find a Starting Point</h3>
       <p>Filter by the kind of support you feel comfortable with. Always check each provider's official page for current hours and eligibility.</p>
      </div>
-     
+
      <div aria-label="Filter support resources" class="support-filter" role="group" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
       <button aria-pressed="true" class="filter-button is-active" data-support-filter="all" type="button" onclick="filterSupport('all', this)">All resources</button>
       <button aria-pressed="false" class="filter-button" data-support-filter="student" type="button" onclick="filterSupport('student', this)">🎓 Student support</button>
       <button aria-pressed="false" class="filter-button" data-support-filter="information" type="button" onclick="filterSupport('information', this)">📖 Information</button>
       <button aria-pressed="false" class="filter-button" data-support-filter="talk" type="button" onclick="filterSupport('talk', this)">💬 Talk to someone</button>
      </div>
-     
+
      <div class="support-finder-grid">
       <article class="support-finder-card" data-support-category="student">
        <div class="support-card-top">
@@ -453,8 +457,8 @@
       </article>
      </div>
     </div>
-    
-   <div class="feature-block comfort-planner" id="comfort-planner">
+
+    <div class="feature-block comfort-planner" id="comfort-planner">
      <div class="feature-heading">
       <p class="section-kicker">INTERACTIVE REFLECTION BUDDY</p>
       <h3>Gentle Comfort Companion</h3>
@@ -495,8 +499,8 @@
 
      <p class="planner-note">This companion offers gentle reflection prompts, not clinical advice. Choose only a step that feels safe for you.</p>
     </div>
-    
-   <div class="self-care-check">
+
+    <div class="self-care-check">
      <div class="checkin-split-layout">
       <div class="checkin-content">
        <h3>A Gentle Daily Check-In</h3>
@@ -516,15 +520,15 @@
       </div>
      </div>
     </div>
-    
+
     <div class="safety-note">
      <h3>If you may be in immediate danger</h3>
      <p>If you or someone else is at immediate risk, contact local emergency services (<strong>999</strong> in Hong Kong) or go to the nearest emergency department. If you can, stay with a trusted person while getting help.</p>
     </div>
    </section>
-   
+
    <hr class="section-divider"/>
-   
+
    <!-- 7. METHOD + AI (极简版链接) -->
    <section class="method-section" id="method">
     <div class="section-heading">
@@ -537,14 +541,14 @@
     </div>
    </section>
   </main>
-  
+
   <footer>
    <div class="container">
     <p>&copy; HKBU Mental Health Studies Student Hub &mdash; Social Anxiety Project</p>
     <p class="footer-note">This site is an academic project and is not a clinical service.</p>
    </div>
   </footer>
-  
+
   <a aria-label="Back to top" class="back-to-top" href="#home" id="backToTop">&uarr;</a>
 
   <!-- JAVASCRIPT -->
@@ -640,7 +644,6 @@
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-visible');
-              // Trigger Bar Chart Growth
               const bars = entry.target.querySelectorAll('.bar-fill');
               bars.forEach(bar => {
                 bar.style.width = bar.getAttribute('data-width');
@@ -649,78 +652,78 @@
             }
           });
         }, { threshold: 0.3 });
-        
+
         chartObserver.observe(chartWrapper);
       }
 
       // 7. Mini-SPIN (with Score Ring + Spectrum Visualizer)
-   window.scoreSPIN = (e) => {
-     e.preventDefault();
-     const form = document.getElementById("spin-form");
-     const out = document.getElementById("spin-result");
-     let total = 0;
-     let answered = 0;
+      window.scoreSPIN = (e) => {
+        e.preventDefault();
+        const form = document.getElementById("spin-form");
+        const out = document.getElementById("spin-result");
+        let total = 0;
+        let answered = 0;
 
-     for (let i = 1; i <= 3; i++) {
-       const sel = form.querySelector(`input[name="q${i}"]:checked`);
-       if (sel) { total += parseInt(sel.value, 10); answered++; }
-     }
-     if (answered < 3) {
-       out.innerHTML = `<span class="spin-badge">ALMOST THERE</span><h3>One more step</h3><p>Please answer all three questions (${answered}/3 completed) to see your result.</p>`;
-       out.classList.add("show");
-       return;
-     }
+        for (let i = 1; i <= 3; i++) {
+          const sel = form.querySelector(`input[name="q${i}"]:checked`);
+          if (sel) { total += parseInt(sel.value, 10); answered++; }
+        }
+        if (answered < 3) {
+          out.innerHTML = `<span class="spin-badge">ALMOST THERE</span><h3>One more step</h3><p>Please answer all three questions (${answered}/3 completed) to see your result.</p>`;
+          out.classList.add("show");
+          return;
+        }
 
-     const percent = Math.round((total / 12) * 100);
-     let badge, heading, body, ringColor, zoneLabel;
+        const percent = Math.round((total / 12) * 100);
+        let badge, heading, body, ringColor, zoneLabel;
 
-     if (total >= 6) {
-       badge = "ABOVE SCREENING THRESHOLD (6+)";
-       heading = "Elevated Social Anxiety Signals";
-       ringColor = "var(--terracotta)";
-       zoneLabel = "Threshold zone (6–12)";
-       body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis &mdash; only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
-     } else if (total >= 3) {
-       badge = "MILD / SITUATIONAL REFLECTION";
-       heading = "Moderate Social Discomfort";
-       ringColor = "var(--dusty-blue)";
-       zoneLabel = "Mild zone (3–5)";
-       body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do &mdash; the societies you join, the questions you ask, the people you meet &mdash; consider speaking to a counsellor.</p>`;
-     } else {
-       badge = "LOW SCREENING SIGNALS";
-       heading = "Minimal Social Anxiety Signals";
-       ringColor = "var(--muted-teal)";
-       zoneLabel = "Low zone (0–2)";
-       body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
-     }
+        if (total >= 6) {
+          badge = "ABOVE SCREENING THRESHOLD (6+)";
+          heading = "Elevated Social Anxiety Signals";
+          ringColor = "var(--terracotta)";
+          zoneLabel = "Threshold zone (6–12)";
+          body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis &mdash; only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
+        } else if (total >= 3) {
+          badge = "MILD / SITUATIONAL REFLECTION";
+          heading = "Moderate Social Discomfort";
+          ringColor = "var(--dusty-blue)";
+          zoneLabel = "Mild zone (3–5)";
+          body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do &mdash; the societies you join, the questions you ask, the people you meet &mdash; consider speaking to a counsellor.</p>`;
+        } else {
+          badge = "LOW SCREENING SIGNALS";
+          heading = "Minimal Social Anxiety Signals";
+          ringColor = "var(--muted-teal)";
+          zoneLabel = "Low zone (0–2)";
+          body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
+        }
 
-     out.innerHTML = `
-       <div class="spin-visual-header">
-         <div class="spin-score-ring" style="--score-deg: ${percent * 3.6}deg; --ring-color: ${ringColor};">
-           <div class="spin-score-inner">
-             <strong>${total}</strong>
-             <span>/ 12</span>
-           </div>
-         </div>
-         <div class="spin-visual-summary">
-           <span class="spin-badge">${badge}</span>
-           <h3>${heading}</h3>
-           <div class="spin-spectrum">
-             <div class="spin-spectrum-bar">
-               <span class="zone-low">0–2 Low</span>
-               <span class="zone-mid">3–5 Mild</span>
-               <span class="zone-high">6–12 Threshold</span>
-             </div>
-             <div class="spin-spectrum-marker" style="left: ${percent}%;"></div>
-           </div>
-           <small class="spin-zone-caption">Current range: <strong>${zoneLabel}</strong></small>
-         </div>
-       </div>
-       ${body}
-       <p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>
-     `;
-     out.classList.add("show");
-   };
+        out.innerHTML = `
+          <div class="spin-visual-header">
+            <div class="spin-score-ring" style="--score-deg: ${percent * 3.6}deg; --ring-color: ${ringColor};">
+              <div class="spin-score-inner">
+                <strong>${total}</strong>
+                <span>/ 12</span>
+              </div>
+            </div>
+            <div class="spin-visual-summary">
+              <span class="spin-badge">${badge}</span>
+              <h3>${heading}</h3>
+              <div class="spin-spectrum">
+                <div class="spin-spectrum-bar">
+                  <span class="zone-low">0–2 Low</span>
+                  <span class="zone-mid">3–5 Mild</span>
+                  <span class="zone-high">6–12 Threshold</span>
+                </div>
+                <div class="spin-spectrum-marker" style="left: ${percent}%;"></div>
+              </div>
+              <small class="spin-zone-caption">Current range: <strong>${zoneLabel}</strong></small>
+            </div>
+          </div>
+          ${body}
+          <p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>
+        `;
+        out.classList.add("show");
+      };
 
       // 8. Human Story
       let currentScene = 1;
@@ -842,7 +845,6 @@
       const getSmartChatReply = (userText) => {
         const t = userText.toLowerCase().trim();
 
-        // 1. 第一級：高危危機字眼 (Immediate Crisis Safety Net)
         if (/(suicide|suicidal|kill myself|hurt myself|self[- ]?harm|end my life|end it all|want to die|wanna die|better off dead|no reason to live|give up on life|自殺|想死|界手|割脈|唔想活|了結)/.test(t)) {
           return `<div class="crisis-alert-box">
             <strong>⚠️ You don't have to carry this alone.</strong><br/>
@@ -854,7 +856,6 @@
           </div>`;
         }
 
-        // 2. 第二級：嚴重孤單 / 絕望 / 情緒低落 (Loneliness & Deep Distress + Support Links)
         if (/(loneliness|lonely|so alone|isolated|nobody cares|no one cares|hopeless|helpless|worthless|depressed|depression|overwhelmed|can't cope|cannot cope|breakdown|cry|sad|down|孤單|寂寞|無人理|絕望|頂唔順|崩潰|唔開心)/.test(t)) {
           return `I'm really sorry you're feeling this way right now. Experiencing loneliness or feeling overwhelmed at university can be deeply painful — please know you don't have to go through it by yourself. 💙<br/><br/>
           If you'd like to talk or text with someone who understands, here are safe, confidential support options in Hong Kong:<br/>
@@ -864,7 +865,6 @@
           Or if you prefer, we can just keep chatting right here at your own pace.`;
         }
 
-        // 3. 日常打招呼 (Greetings)
         if (/^(hi|hello|hey|yo|morning|afternoon|evening|哈囉|你好|嗨)\b/.test(t)) {
           return pickRandom([
             `Hey there! 👋 How is your day going so far? Feel free to just chat or share whatever is on your mind.`,
@@ -872,12 +872,10 @@
           ]);
         }
 
-        // 4. 問候機械人 (How are you / Who are you)
         if (/(how are you|how's it going|what's up|who are you|點樣|你好嗎)/.test(t)) {
           return `I'm doing well, thank you for asking! ☕ I'm here as a calm, judgment-free space whenever you want to chat or sort through your thoughts. How are <em>you</em> holding up today?`;
         }
 
-        // 5. 感到疲倦 / 冇電 (Tired / Exhausted)
         if (/(tired|exhausted|sleepy|burnout|drained|no energy|攰|好累|想訓)/.test(t)) {
           return pickRandom([
             `Uni life in Hong Kong can really drain your battery. 🔋 Have you been getting enough rest lately, or are deadlines piling up?`,
@@ -885,12 +883,10 @@
           ]);
         }
 
-        // 6. 學業 / 功課壓力 (Stress / Exam / Deadline / Assignment)
         if (/(stress|busy|deadline|exam|assignment|fyp|midterm|study|壓力|功課|考試)/.test(t)) {
           return `Deadlines and coursework can feel heavy, especially when social expectations are layered on top. 📚 Want to break things down into one tiny task, or just vent for a moment?`;
         }
 
-        // 7. 分享好消息 / 踏出一步 (Happy / Good / Did it / Proud)
         if (/(good|great|happy|better|proud|did it|managed|relief|開心|做到|好返)/.test(t)) {
           return pickRandom([
             `That's wonderful to hear! 🌟 Even small wins deserve to be celebrated. What went well for you today?`,
@@ -898,14 +894,12 @@
           ]);
         }
 
-        // 8. 社交焦慮五大核心場景關鍵字
         if (/(tutorial|class|speak|ask|上堂|發言)/.test(t)) return concernDatabase.tutorial.reply;
         if (/(present|slide|speech|匯報)/.test(t)) return concernDatabase.presentation.reply;
         if (/(judg|embarrass|awkward|stupid|face|面子|尷尬)/.test(t)) return concernDatabase.judgment.reply;
         if (/(group|friend|talk|chat|intro|小組|傾偈)/.test(t)) return concernDatabase.groupwork.reply;
         if (/(heart|breath|panic|sweat|shak|nervous|anxious|緊張|心跳|驚)/.test(t)) return concernDatabase.physical.reply;
 
-        // 9. 道謝 / 講拜拜 (Thanks / Bye)
         if (/(thank|thx|appreciate|多謝|唔該)/.test(t)) {
           return `You're very welcome! 🌿 Take things at your own pace today. I'm always here if you want to chat again.`;
         }
@@ -913,7 +907,6 @@
           return `Take good care of yourself! Remember to be gentle with yourself today. See you anytime. 👋`;
         }
 
-        // 10. 自然承接對話 (Natural Conversational Follow-up)
         return pickRandom([
           `I hear you. It makes complete sense to feel that way when you're juggling so much. Do you want to tell me a bit more about what happened, or explore a small calming step together?`,
           `Thank you for sharing that with me. Sometimes just putting thoughts into words takes a little weight off. How has this been affecting your day?`,
