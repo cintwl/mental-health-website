@@ -784,3 +784,15 @@ nav, main, footer, .top-banner, .back-to-top {
   background: var(--deep-blue);
   color: var(--white) !important;
 }
+/* Remove white box & blend white background into the page */
+.hero-visual .hero-illustration {
+  max-width: 440px !important;
+  width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  mix-blend-mode: multiply !important;
+  isolation: isolate;
+}
+
