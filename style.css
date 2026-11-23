@@ -315,3 +315,48 @@ footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
   #scene-indicator { font-size: 0.7rem; }
   .back-to-top { right: 15px; bottom: 15px; }
 }
+/* ========================================== */
+/* OVERRIDE: CRANES BACKGROUND & SPACING FIX  */
+/* ========================================== */
+
+/* 1. 全站換上 8 號紙鶴固定背景 */
+body {
+  background-color: #FAF8F3 !important;
+  background-image: 
+    linear-gradient(rgba(250, 248, 243, 0.35), rgba(250, 248, 243, 0.35)),
+    url('bg-cranes.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* 2. 關鍵！將組員寫死嘅實色區塊底變透明，等左右兩邊紙鶴透出嚟 */
+.hero-section,
+.ocean-waves,
+#understanding,
+#evidence,
+#check,
+#story,
+#help,
+.method-section {
+  background: transparent !important;
+}
+
+/* 3. 收窄每個區塊上下太多嘅留白 (原本係 105px 太闊) */
+main > section {
+  padding-top: 55px !important;
+  padding-bottom: 55px !important;
+}
+
+/* 4. 確保中間啲內容卡片保持乾淨白底（微透明磨砂感），文字永遠清晰 */
+.feature-block,
+.tab-pane,
+.combined-charts-wrapper,
+.check-card,
+.audio-story-wrapper,
+.self-care-check,
+.hero-safety-note {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(6px);
+}

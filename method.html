@@ -14,60 +14,6 @@
     /* 给这个独立页面添加一点专属的内边距，不破坏原风格 */
     .method-page-main { padding-top: 80px; min-height: 80vh; }
     .back-home-btn { margin-bottom: 30px; display: inline-block; }
-    /* ========================================== */
-      /* PART 1: CRANES BACKGROUND & SPACING FIX    */
-      /* ========================================== */
-
-      /* 1. 換上 8 號紙鶴固定背景，填補左右兩邊空洞感 */
-      body {
-        background-color: #FAF8F3;
-        background-image: 
-          linear-gradient(rgba(250, 248, 243, 0.35), rgba(250, 248, 243, 0.35)),
-          url('bg-cranes.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed; /* 鎖定背景，碌落去唔會拉長變形 */
-      }
-
-      /* 2. 收窄每個區塊上下太多嘅留白 (White Space) */
-      main section {
-        padding-top: 45px !important;
-        padding-bottom: 45px !important;
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
-      }
-
-      /* 3. 淡化原本生硬嘅分隔線 */
-      hr {
-        border: none;
-        height: 1px;
-        background: rgba(122, 132, 107, 0.15);
-        margin: 15px auto !important;
-        max-width: 85%;
-      }
-
-      /* 4. 幫重點區塊加「微透明灰綠底色塊」，打破單調感 */
-      #understanding,
-      #check {
-        background: rgba(238, 242, 238, 0.82); /* 淡灰綠半透明，透到少少紙鶴 */
-        backdrop-filter: blur(4px);            /* 微霧面玻璃質感 */
-        border-radius: 24px;
-        padding-left: 35px !important;
-        padding-right: 35px !important;
-        border: 1px solid rgba(164, 184, 173, 0.35);
-      }
-
-      /* 5. 確保所有主要內容卡片背景實淨，文字永遠清晰 */
-      #evidence,
-      #story,
-      #help {
-        background: rgba(255, 255, 255, 0.88);
-        backdrop-filter: blur(4px);
-        border-radius: 24px;
-        padding-left: 35px !important;
-        padding-right: 35px !important;
-      }
   </style>
  </head>
  <body>
