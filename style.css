@@ -905,3 +905,15 @@ nav, main, footer, .top-banner, .back-to-top {
   mix-blend-mode: multiply !important;
   max-width: 390px !important;
 }
+/* ========================================== */
+/* HERO ILLUSTRATION: FORCE TRANSPARENT BG    */
+/* ========================================== */
+.hero-illustration {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  max-width: 390px !important;
+  filter: brightness(1.04) contrast(1.06);
+  mix-blend-mode: multiply !important;
+}
