@@ -39,15 +39,18 @@
   <main id="main-content">
    <!-- 1. HOMEPAGE HERO -->
    <section class="hero-section" id="home">
-    <div class="hero-grid" style="grid-template-columns: 1fr;">
+    <div class="hero-grid">
      <div class="hero-copy">
       <p class="fiction-label">An interactive guide for university students in Hong Kong</p>
       <h1 style="white-space: nowrap;">Beyond <em>Shyness</em></h1>
-      <p class="hero-lede">Social anxiety is more than shyness. Explore the thoughts, experiences and social pressures that can shape it &mdash; and discover where support may begin, at your own pace.</p>
+      <p class="hero-lede">More than just shyness. Explore what drives social anxiety &mdash; and discover where support may begin, at your own pace.</p>
       <div class="hero-buttons">
        <a class="btn-primary" href="#check">Explore the self-check <span aria-hidden="true">&rarr;</span></a>
        <a class="btn-secondary" href="#story">Follow Mei's story</a>
       </div>
+     </div>
+     <div class="hero-visual">
+      <img src="hero-art.jpg" alt="Calm university student by a sunlit window with origami cranes" class="hero-illustration"/>
      </div>
     </div>
     <aside class="hero-safety-note">
@@ -295,6 +298,9 @@
         <source src="scene1.mp3" type="audio/mpeg"/>
        </audio>
       </div>
+     </div>
+     <div class="story-illustration-box">
+      <img src="scene1.jpg" alt="Mei's story illustration" id="story-scene-img" />
      </div>
      <div class="scene-text-area">
       <div class="scene active" id="scene-1">
@@ -647,6 +653,8 @@
           }
           audioPlayer.load();
         }
+        const sceneImg = document.getElementById("story-scene-img");
+        if (sceneImg) sceneImg.src = "scene" + currentScene + ".jpg";
         document.querySelectorAll(".theory-content").forEach(el => el.style.display = "none");
       };
 
@@ -668,6 +676,8 @@
         document.getElementById("scene-indicator").innerText = "SCENE 4 OF 5";
         document.getElementById("audio-scene-num").innerText = 4;
         if(audioPlayer) audioPlayer.load();
+        const sceneImg = document.getElementById("story-scene-img");
+        if (sceneImg) sceneImg.src = "scene4.jpg";
       };
 
       window.toggleTheory = (id) => {
