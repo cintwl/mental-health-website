@@ -530,21 +530,6 @@ nav, main, footer, .top-banner, .back-to-top {
 /* PART C: CYCLE, PLANNER & CHECK-IN VISUALS  */
 /* ========================================== */
 
-/* 1. Understanding 橫幅插畫 */
-.cycle-banner-box {
-  width: 100%;
-  margin-bottom: 30px;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-}
-.cycle-banner-box img {
-  width: 100%;
-  max-height: 210px;
-  object-fit: cover;
-  display: block;
-}
-
 /* 2. Comfort Planner 雙欄並排 */
 .planner-split-layout {
   display: grid;
@@ -576,9 +561,6 @@ nav, main, footer, .top-banner, .back-to-top {
   .planner-split-layout,
   .checkin-split-layout {
     grid-template-columns: 1fr;
-  }
-  .cycle-banner-box img {
-    max-height: 150px;
   }
 }
 /* ========================================== */
