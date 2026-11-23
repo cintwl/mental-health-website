@@ -360,3 +360,73 @@ main > section {
   background: rgba(255, 255, 255, 0.92) !important;
   backdrop-filter: blur(6px);
 }
+/* ========================================== */
+/* CARD UPGRADE: MAKE BOXES MORE DESIGNFUL    */
+/* ========================================== */
+
+/* 1. 幫主要大卡片加「頂部漸層裝飾條」同「暖紙漸層底色」 */
+.feature-block,
+.tab-pane,
+.combined-charts-wrapper,
+.check-card,
+.audio-story-wrapper,
+.self-care-check {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(251, 249, 244, 0.94) 100%) !important;
+  border: 1px solid rgba(120, 147, 165, 0.22) !important;
+  box-shadow: 0 14px 34px rgba(53, 75, 89, 0.08) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 卡片最頂嗰條柔和漸層色帶 */
+.feature-block::before,
+.check-card::before,
+.audio-story-wrapper::before,
+.self-care-check::before,
+.combined-charts-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, var(--dusty-blue), var(--muted-teal), var(--warm-sand));
+}
+
+/* 2. 幫 Support Finder 4 張卡片按分類加唔同顏色嘅頂部色條 */
+.support-finder-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 100%) !important;
+  border: 1px solid rgba(120, 147, 165, 0.2) !important;
+  border-top: 4px solid var(--dusty-blue) !important;
+}
+.support-finder-card[data-support-category="information"] {
+  border-top-color: var(--muted-teal) !important;
+}
+.support-finder-card[data-support-category="talk"] {
+  border-top-color: var(--terracotta) !important;
+}
+.support-finder-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 36px rgba(53, 75, 89, 0.12) !important;
+}
+
+/* 3. 幫 What We Know 嘅 Key Takeaway 同 Cycle 卡片變得更精緻 */
+.key-takeaway {
+  border-radius: 0 12px 12px 0;
+  border-left: 4px solid var(--muted-teal) !important;
+  background: linear-gradient(90deg, #EAF0EF 0%, rgba(234, 240, 239, 0.4) 100%) !important;
+}
+
+/* 4. 幫 Self-Check 每一題加微立體感，揀選時更有手感 */
+.spin-question {
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 3px solid var(--warm-sand) !important;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.spin-question:hover {
+  border-left-color: var(--dusty-blue) !important;
+  background: #FFFFFF;
+}
