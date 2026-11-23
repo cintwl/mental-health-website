@@ -254,8 +254,8 @@ select { width: 100%; min-height: 48px; padding: 10px 14px; border: 1px solid va
 footer { padding: 45px 24px; background: var(--deep-blue); color: rgba(255, 255, 255, 0.75); text-align: center; }
 footer p { margin-bottom: 8px; font-size: 0.85rem; }
 footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
-.back-to-top { position: fixed; z-index: 90; right: 25px; bottom: 25px; display: grid; width: 45px; height: 45px; place-items: center; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 50%; background: var(--deep-blue); color: var(--white); font-size: 1.3rem; box-shadow: var(--shadow-soft); transition: all 0.2s ease; }
-.back-to-top:hover { transform: translateY(-4px); background: var(--dusty-blue); color: var(--white); }
+.back-to-top { position: fixed !important; z-index: 999 !important; right: 25px; bottom: 25px; display: grid !important; width: 45px; height: 45px; place-items: center; border: 1px solid rgba(255, 255, 255, 0.35); border-radius: 50%; background: var(--deep-blue); color: var(--white) !important; font-size: 1.3rem; box-shadow: 0 10px 25px rgba(53, 75, 89, 0.25); transition: transform 0.2s ease, background 0.2s ease; }
+.back-to-top:hover { transform: translateY(-4px); background: var(--dusty-blue); color: var(--white) !important; }
 
 @keyframes fade-in { from { transform: translateY(7px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
@@ -351,7 +351,7 @@ main > section {
   overflow: hidden;
 }
 
-nav, main, footer, .top-banner, .back-to-top {
+nav, main, footer, .top-banner {
   position: relative;
   z-index: 1;
 }
