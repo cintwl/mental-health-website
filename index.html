@@ -615,7 +615,8 @@
       }
 
       // 7. Mini-SPIN
-      window.scoreSPIN = (e) => {
+      
+   window.scoreSPIN = (e) => {
         e.preventDefault();
         const form = document.getElementById("spin-form");
         const out = document.getElementById("spin-result");
@@ -627,29 +628,75 @@
           if (sel) { total += parseInt(sel.value, 10); answered++; }
         }
         if (answered < 3) {
-          out.innerHTML = "<h3>One more step</h3><p>Please answer all three questions to see your result.</p>";
+          out.innerHTML = `<span class="spin-badge">ALMOST THERE</span><h3>One more step</h3><p>Please answer all three questions (${answered}/3 completed) to view your reflection.</p>`;
           out.classList.add("show");
           return;
         }
-        let heading = `Your score: ${total} out of 12`;
-        let body;
-        if (total >= 6) {
-          body = `<p>Your answers are <strong>above the usual screening threshold</strong> (6 or more). This does not mean you have a diagnosis — only a qualified professional can decide that. It does mean it is worth talking to someone.</p><p>Social anxiety is one of the most treatable mental health conditions. You are not being dramatic, and you are not alone.</p><p><a href="#help" class="btn-primary" style="margin-top:15px;">See support options</a></p>`;
-        } else if (total >= 3) {
-          body = `<p>Your answers are <strong>below the usual screening threshold</strong>, but you are noticing some discomfort in social situations. That is common, and it is still worth paying attention to.</p><p>If it starts to limit what you want to do — the societies you join, the questions you ask, the people you meet — consider speaking to a counsellor.</p>`;
-        } else {
-          body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you. If that changes, or if you are worried about a friend, the support links below are always open.</p>`;
-        }
-        out.innerHTML = `<h3>${heading}</h3>${body}<p style="font-size:0.8rem; margin-top:20px;"><strong>Remember:</strong> This is a screening tool, not a diagnosis. It cannot replace an assessment by a qualified professional.</p>`;
-        out.classList.add("show");
-      };
 
-      window.resetSPIN = (e) => {
-        e.preventDefault();
-        document.getElementById("spin-form").reset();
-        const out = document.getElementById("spin-result");
-        out.classList.remove("show");
-        out.innerHTML = "";
+        const percent = Math.round((total / 12) * 100);
+        let badge, heading, body, ringColor, zoneLabel;
+
+        if (total >= 6) {
+          badge = "ABOVE SCREENING THRESHOLD (6+)";
+          heading = "Elevated Social Anxiety Signals";
+          ringColor = "var(--terracotta)";
+          zoneLabel = "Threshold zone (6–12)";
+          body = `<p>Your answers are <strong>above the usual Mini-SPIN screening threshold</strong> (6 or more). This is a screening prompt, not a medical diagnosis &mdash; only a qualified professional can assess clinical social anxiety.</p>
+          <p>Social anxiety is common and treatable. You do not have to carry heavy feelings alone, and reaching out can be a supportive first step.</p>
+          <div class="spin-next-links">
+            <a href="#help" class="btn-primary">Explore HK support options &rarr;</a>
+            <a href="#comfort-planner" class="btn-ghost">Try Comfort Companion</a>
+          </div>`;
+        } else if (total >= 3) {
+          badge = "MILD / SITUATIONAL REFLECTION";
+          heading = "Moderate Social Discomfort";
+          ringColor = "var(--dusty-blue)";
+          zoneLabel = "Mild zone (3–5)";
+          body = `<p>Your score is <strong>below the usual screening threshold</strong>, while showing some discomfort in social moments. Everyday self-consciousness is very common among university students.</p>
+          <p>If it starts holding you back from classes, friendships, or activities you care about, talking to a counsellor or trying a small step can help.</p>
+          <div class="spin-next-links">
+            <a href="#comfort-planner" class="btn-primary">Try a small step</a>
+            <a href="#story" class="btn-ghost">Read Mei's story</a>
+          </div>`;
+        } else {
+          badge = "LOW SCREENING SIGNALS";
+          heading = "Minimal Social Anxiety Signals";
+          ringColor = "var(--muted-teal)";
+          zoneLabel = "Low zone (0–2)";
+          body = `<p>Your answers suggest social anxiety is <strong>not currently a major concern</strong> for you right now.</p>
+          <p>If your feelings change later &mdash; or if you want to understand what a classmate or friend might be going through &mdash; explore Mei's story or our support resources anytime.</p>
+          <div class="spin-next-links">
+            <a href="#story" class="btn-primary">Follow Mei's story &rarr;</a>
+            <a href="#help" class="btn-ghost">View support resources</a>
+          </div>`;
+        }
+
+        out.innerHTML = `
+          <div class="spin-visual-header">
+            <div class="spin-score-ring" style="--score-deg: ${percent * 3.6}deg; --ring-color: ${ringColor};">
+              <div class="spin-score-inner">
+                <strong>${total}</strong>
+                <span>/ 12</span>
+              </div>
+            </div>
+            <div class="spin-visual-summary">
+              <span class="spin-badge">${badge}</span>
+              <h3>${heading}</h3>
+              <div class="spin-spectrum">
+                <div class="spin-spectrum-bar">
+                  <span class="zone-low">0–2 Low</span>
+                  <span class="zone-mid">3–5 Mild</span>
+                  <span class="zone-high">6–12 Threshold</span>
+                </div>
+                <div class="spin-spectrum-marker" style="left: ${percent}%;" title="Your score: ${total}/12"></div>
+              </div>
+              <small class="spin-zone-caption">Current range: <strong>${zoneLabel}</strong></small>
+            </div>
+          </div>
+          ${body}
+          <p class="spin-disclaimer"><strong>Remember:</strong> Mini-SPIN is a brief screening reflection, not a diagnosis or clinical advice.</p>
+        `;
+        out.classList.add("show");
       };
 
       // 8. Human Story
