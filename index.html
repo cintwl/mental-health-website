@@ -24,8 +24,33 @@
       background: transparent !important;
     }
   </style>
+  <style>
+    #page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background-color: #FAF8F3;
+      background-image: url('bg-cranes-light.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      filter: contrast(1.12) saturate(1.25);
+    }
+    body {
+      background: #FAF8F3 !important;
+    }
+    .hero-section, .ocean-waves, #understanding, #evidence, #check, #story, #help, .method-section {
+      background: transparent !important;
+    }
+    nav, main, footer, .top-banner, .back-to-top {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
  <body>
+  <div id="page-bg"></div>
   <div class="dust-motes-bg" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span>
     <span></span><span></span><span></span><span></span><span></span>
