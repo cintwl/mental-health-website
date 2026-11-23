@@ -478,6 +478,7 @@ nav, main, footer, .top-banner, .back-to-top {
   align-items: center;
   background: transparent !important;
   border: none !important;
+  outline: none !important;
   box-shadow: none !important;
 }
 .hero-visual .hero-illustration {
@@ -486,6 +487,7 @@ nav, main, footer, .top-banner, .back-to-top {
   border-radius: 0 !important;
   box-shadow: none !important;
   border: none !important;
+  outline: none !important;
   background: transparent !important;
   mix-blend-mode: normal !important;
 }
@@ -927,62 +929,6 @@ main > section {
 }
 
 /* ========================================== */
-/* RESPONSIVE HERO ILLUSTRATION (HALF / FULL) */
-/* ========================================== */
-.hero-grid {
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr) !important;
-  gap: clamp(24px, 3.5vw, 56px) !important;
-  align-items: center !important;
-}
-
-.hero-visual {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
-.hero-visual .hero-illustration {
-  width: 100%;
-  max-width: clamp(260px, 34vw, 460px) !important;
-  height: auto;
-  object-fit: contain;
-  background: transparent !important;
-  mix-blend-mode: normal !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-@media (max-width: 1150px) and (min-width: 761px) {
-  .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.85fr) !important;
-    gap: 24px !important;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(3rem, 5.2vw, 4.5rem) !important;
-  }
-
-  .hero-visual .hero-illustration {
-    max-width: clamp(220px, 30vw, 340px) !important;
-  }
-}
-
-@media (max-width: 760px) {
-  .hero-grid {
-    grid-template-columns: 1fr !important;
-    gap: 28px !important;
-  }
-
-  .hero-visual .hero-illustration {
-    max-width: min(82vw, 340px) !important;
-  }
-}
-/* ========================================== */
 /* HERO TRANSPARENT PNG: HALF & FULL SCREEN   */
 /* ========================================== */
 .hero-grid {
@@ -998,6 +944,7 @@ main > section {
   align-items: center;
   background: transparent !important;
   border: none !important;
+  outline: none !important;
   box-shadow: none !important;
 }
 
@@ -1009,11 +956,11 @@ main > section {
   background: transparent !important;
   mix-blend-mode: normal !important;
   border: none !important;
+  outline: none !important;
   border-radius: 0 !important;
   box-shadow: none !important;
 }
 
-/* Half-screen / split-window desktop widths */
 @media (max-width: 1150px) and (min-width: 761px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1fr) minmax(200px, 0.85fr) !important;
@@ -1029,7 +976,6 @@ main > section {
   }
 }
 
-/* Narrow / mobile widths */
 @media (max-width: 760px) {
   .hero-grid {
     grid-template-columns: 1fr !important;
