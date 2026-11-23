@@ -961,5 +961,44 @@
       }
     });
   </script>
+  <script>
+    // 自動將 hero-art.jpg 嘅白色/米白底色轉做真正全透明，只保留線條與淡青色泡泡
+    (function () {
+      const img = document.querySelector(".hero-illustration");
+      if (!img) return;
+
+      const makeTransparent = () => {
+        try {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          canvas.width = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          ctx.drawImage(img, 0, 0);
+
+          const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = imgData.data;
+
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i], g = data[i + 1], b = data[i + 2];
+            // 只要係接近白色/淺米白（R,G,B 都高於 232），就將透明度設為 0
+            if (r > 232 && g > 232 && b > 230) {
+              data[i + 3] = 0;
+            }
+          }
+          ctx.putImageData(imgData, 0, 0);
+          img.src = canvas.toDataURL("image/png");
+        } catch (e) {
+          // 若本機直接雙擊 file:// 開啟被瀏覽器安全限制，自動改用 blend mode 備案
+          img.style.mixBlendMode = "multiply";
+        }
+      };
+
+      if (img.complete && img.naturalWidth > 0) {
+        makeTransparent();
+      } else {
+        img.addEventListener("load", makeTransparent, { once: true });
+      }
+    })();
+  </script>
  </body>
 </html>
