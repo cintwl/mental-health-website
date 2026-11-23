@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet"/>
-  <link href="style.css?v=620" rel="stylesheet"/>
+  <link href="style.css?v=623" rel="stylesheet"/>
  </head>
  <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -356,43 +356,61 @@
      <div class="feature-heading">
       <p class="section-kicker">HONG KONG SUPPORT FINDER</p>
       <h3>Find a Starting Point</h3>
-      <p>Choose the kind of support you are looking for. These options are starting points; check each provider's official page for current eligibility, opening hours and service details.</p>
+      <p>Filter by the kind of support you feel comfortable with. Always check each provider's official page for current hours and eligibility.</p>
      </div>
      
-     <div aria-label="Filter support resources" class="support-filter" role="group" style="display: flex; justify-content: center; gap: 10px; margin-bottom: 25px;">
+     <div aria-label="Filter support resources" class="support-filter" role="group" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 28px;">
       <button aria-pressed="true" class="filter-button is-active" data-support-filter="all" type="button" onclick="filterSupport('all', this)">All resources</button>
-      <button aria-pressed="false" class="filter-button" data-support-filter="student" type="button" onclick="filterSupport('student', this)">Student support</button>
-      <button aria-pressed="false" class="filter-button" data-support-filter="information" type="button" onclick="filterSupport('information', this)">Information</button>
-      <button aria-pressed="false" class="filter-button" data-support-filter="talk" type="button" onclick="filterSupport('talk', this)">Talk to someone</button>
+      <button aria-pressed="false" class="filter-button" data-support-filter="student" type="button" onclick="filterSupport('student', this)">🎓 Student support</button>
+      <button aria-pressed="false" class="filter-button" data-support-filter="information" type="button" onclick="filterSupport('information', this)">📖 Information</button>
+      <button aria-pressed="false" class="filter-button" data-support-filter="talk" type="button" onclick="filterSupport('talk', this)">💬 Talk to someone</button>
      </div>
      
      <div class="support-finder-grid">
       <article class="support-finder-card" data-support-category="student">
+       <div class="support-card-top">
+        <span class="support-icon-badge">🎓</span>
+        <span class="support-tag">On-Campus &bull; Free</span>
+       </div>
        <p class="detail-label">STUDENT SUPPORT</p>
        <h4>HKBU Counselling (CDC)</h4>
-       <p>For students at Hong Kong Baptist University. Check the university's official page for service arrangements and eligibility.</p>
+       <p>Confidential individual counselling, workshops, and study adjustments for Hong Kong Baptist University students.</p>
        <a href="https://sa.hkbu.edu.hk/cdc" rel="noopener noreferrer" target="_blank">Visit HKBU Counselling &nearrow;</a>
       </article>
+
       <article class="support-finder-card" data-support-category="information">
+       <div class="support-card-top">
+        <span class="support-icon-badge">📖</span>
+        <span class="support-tag">Self-Help Guides</span>
+       </div>
        <p class="detail-label">PUBLIC INFORMATION</p>
        <h4>Shall We Talk</h4>
-       <p>Hong Kong mental health information and public resources.</p>
+       <p>Hong Kong mental health educational guides, practical coping tips, and community resource directories.</p>
        <a href="https://www.shallwetalk.hk/" rel="noopener noreferrer" target="_blank">Visit Shall We Talk &nearrow;</a>
       </article>
+
       <article class="support-finder-card" data-support-category="talk">
+       <div class="support-card-top">
+        <span class="support-icon-badge">💬</span>
+        <span class="support-tag">Text Chat &bull; No Voice Needed</span>
+       </div>
        <p class="detail-label">ONLINE TEXT SUPPORT</p>
        <h4>Open Up</h4>
-       <p>Online text-based emotional support for young people in Hong Kong. Check the official site for current service hours and eligibility.</p>
+       <p>Free, anonymous text-based emotional support for young people in Hong Kong — ideal if phone calls feel overwhelming.</p>
        <a href="https://www.openup.hk/" rel="noopener noreferrer" target="_blank">Visit Open Up &nearrow;</a>
       </article>
+
       <article class="support-finder-card" data-support-category="talk">
+       <div class="support-card-top">
+        <span class="support-icon-badge">📞</span>
+        <span class="support-tag">24/7 Hotline: 2389 2222</span>
+       </div>
        <p class="detail-label">EMOTIONAL SUPPORT</p>
        <h4>The Samaritan Befrienders Hong Kong</h4>
-       <p>Emotional support and suicide prevention services. Use the official site to confirm current contact details.</p>
+       <p>24-hour emotional support and crisis prevention services for anyone experiencing distress.</p>
        <a href="https://www.sbhk.org.hk/" rel="noopener noreferrer" target="_blank">Visit Samaritan Befrienders &nearrow;</a>
       </article>
      </div>
-     <p class="support-emergency-note"><strong>Immediate danger:</strong> If you or someone else is in immediate danger in Hong Kong, call 999 or go to the nearest emergency department.</p>
     </div>
     
    <div class="feature-block comfort-planner" id="comfort-planner">

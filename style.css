@@ -730,3 +730,51 @@ main > section {
     font-size: clamp(3.6rem, 14vw, 4.8rem) !important;
   }
 }
+/* ========================================== */
+/* SUPPORT FINDER: ICON BADGES & TAGS         */
+/* ========================================== */
+.support-card-top {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.support-icon-badge {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: #EAF0EF;
+  font-size: 1.25rem;
+}
+
+.support-tag {
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  color: var(--deep-blue);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.support-finder-card a {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #EAF0EF;
+  color: var(--deep-blue) !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.support-finder-card a:hover {
+  background: var(--deep-blue);
+  color: var(--white) !important;
+}
