@@ -795,3 +795,36 @@ nav, main, footer, .top-banner, .back-to-top {
   background: var(--deep-blue);
   color: var(--white) !important;
 }
+/* ========================================== */
+/* FINAL OVERRIDE: MINIMALIST CRANES BG       */
+/* ========================================== */
+.dust-motes-bg {
+  display: none !important;
+}
+
+body {
+  background-color: #FAF8F3 !important;
+  background-image:
+    linear-gradient(rgba(250, 248, 243, 0.25), rgba(250, 248, 243, 0.25)),
+    url('bg-cranes-light.jpg') !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+.hero-section,
+.ocean-waves,
+#understanding,
+#evidence,
+#check,
+#story,
+#help,
+.method-section {
+  background: transparent !important;
+}
+
+main > section {
+  padding-top: 55px !important;
+  padding-bottom: 55px !important;
+}
