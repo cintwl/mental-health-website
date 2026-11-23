@@ -480,6 +480,8 @@ nav, main, footer, .top-banner, .back-to-top {
   border: none !important;
   box-shadow: none !important;
 }
+
+/* 👇 核心图片去底代码 👇 */
 .hero-visual .hero-illustration {
   width: 100%;
   max-width: 440px !important;
@@ -487,7 +489,8 @@ nav, main, footer, .top-banner, .back-to-top {
   box-shadow: none !important;
   border: none !important;
   background: transparent !important;
-  mix-blend-mode: multiply !important;
+  /* 使用 multiply 让纯白背景变透明 */
+  mix-blend-mode: multiply !important; 
 }
 
 .story-illustration-box {
