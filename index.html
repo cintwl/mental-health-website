@@ -722,7 +722,7 @@
         });
       };
 
-      // 10. Interactive Comfort Companion (Chatbot Version)
+      // 10. Interactive Comfort Companion (Daily Chat + CBT Support)
       const pMessages = document.getElementById("planner-chat-messages");
       const pChips = document.getElementById("planner-quick-chips");
       const pForm = document.getElementById("planner-chat-form");
@@ -730,26 +730,23 @@
 
       const concernDatabase = {
         tutorial: {
-          label: "Speaking in a tutorial",
-          reply: `Tutorials can feel intense when the room goes quiet.<br/><br/><strong>Try this small step:</strong> Before class, jot down <em>one single sentence</em> or a simple question on your notes. You don't have to give a speech — just sharing one brief thought breaks the ice.`
+          reply: `Tutorials can feel intense when the room goes quiet.<br/><br/><strong>Try this small step:</strong> Before class, jot down <em>one single sentence</em> or a simple question on your notes. Sharing even one brief thought breaks the ice.`
         },
         presentation: {
-          label: "Giving a presentation",
           reply: `Presentations trigger the "spotlight effect" — it feels like everyone is analysing every word.<br/><br/><strong>Try this small step:</strong> Focus on making eye contact with just <em>one</em> friendly classmate or looking slightly above the back row, and pause for a slow breath between slides.`
         },
         judgment: {
-          label: "Fear of being judged",
           reply: `Worrying about "losing face" (面子) or sounding awkward is exhausting, and very common among HK students.<br/><br/><strong>Try this gentle reframe:</strong> Most classmates are busy worrying about their own performance. Ask yourself: <em>"Would I judge a friend if they paused or stumbled?"</em>`
         },
         groupwork: {
-          label: "Quiet in group work",
           reply: `Jumping into a fast-moving group chat or discussion can feel overwhelming.<br/><br/><strong>Try this small step:</strong> Start with a low-pressure role — offer to take notes, organize the slides, or message one groupmate first with a simple <em>"Hey, what do you think about...?"</em>`
         },
         physical: {
-          label: "Racing heart / panic",
           reply: `A pounding heart or sweaty palms is just your amygdala's false alarm — uncomfortable, but completely safe.<br/><br/><strong>Try this right now:</strong> Do a <strong>4-4-6 breath</strong> (inhale 4s, hold 4s, exhale slowly for 6s) and press your feet firmly into the floor to ground yourself.`
         }
       };
+
+      const pickRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
       const appendPlannerMsg = (html, type) => {
         if (!pMessages) return;
@@ -760,10 +757,79 @@
         pMessages.scrollTop = pMessages.scrollHeight;
       };
 
+      const getSmartChatReply = (userText) => {
+        const t = userText.toLowerCase().trim();
+
+        // 1. 危機安全偵測 (最高優先)
+        if (/(suicide|kill myself|hurt myself|end it|die|hopeless|self harm|自殺|唔想活|想死)/.test(t)) {
+          return `<strong>Your safety matters most.</strong><br/>If you are in immediate danger in Hong Kong, please call <strong>999</strong> or visit the nearest A&amp;E.<br/>Free 24/7 confidential support: <a href="https://www.openup.hk/" target="_blank">Open Up</a> &bull; <a href="https://www.sbhk.org.hk/" target="_blank">Samaritan Befrienders (2389 2222)</a>`;
+        }
+
+        // 2. 日常打招呼 (Greetings)
+        if (/^(hi|hello|hey|yo|morning|afternoon|evening|哈囉|你好|嗨)\b/.test(t)) {
+          return pickRandom([
+            `Hey there! 👋 How is your day going so far? Feel free to just chat or share whatever is on your mind.`,
+            `Hi! So glad you stopped by. How are you feeling today — busy with uni, or just taking a breather?`
+          ]);
+        }
+
+        // 3. 問候機械人 (How are you / Who are you)
+        if (/(how are you|how's it going|what's up|who are you|點樣|你好嗎)/.test(t)) {
+          return `I'm doing well, thank you for asking! ☕ I'm here as a calm, judgment-free space whenever you want to chat or sort through your thoughts. How are <em>you</em> holding up today?`;
+        }
+
+        // 4. 感到疲倦 / 冇電 (Tired / Exhausted)
+        if (/(tired|exhausted|sleepy|burnout|drained|no energy|攰|好累|想訓)/.test(t)) {
+          return pickRandom([
+            `Uni life in Hong Kong can really drain your battery. 🔋 Have you been getting enough rest lately, or are deadlines piling up?`,
+            `It sounds like you've been carrying a lot. Sometimes the most productive thing you can do is grab a warm drink and take 10 minutes off without guilt.`
+          ]);
+        }
+
+        // 5. 學業 / 功課壓力 (Stress / Exam / Deadline / Assignment)
+        if (/(stress|busy|deadline|exam|assignment|fyp|midterm|study|壓力|功課|考試)/.test(t)) {
+          return `Deadlines and coursework can feel heavy, especially when social expectations are layered on top. 📚 Want to break things down into one tiny task, or just vent for a moment?`;
+        }
+
+        // 6. 孤單 / 唔開心 (Sad / Lonely / Down)
+        if (/(sad|lonely|alone|down|depressed|cry|upset|unhappy|唔開心|孤單|寂寞)/.test(t)) {
+          return `I'm really sorry you're feeling that way today. Even on a crowded campus, it's surprisingly easy to feel alone. 💙 You don't have to pretend to be okay here — what's been weighing on you?`;
+        }
+
+        // 7. 分享好消息 / 踏出一步 (Happy / Good / Did it / Proud)
+        if (/(good|great|happy|better|proud|did it|managed|relief|開心|做到|好返)/.test(t)) {
+          return pickRandom([
+            `That's wonderful to hear! 🌟 Even small wins deserve to be celebrated. What went well for you today?`,
+            `I'm really happy for you! Notice how that feels — you showed up for yourself today.`
+          ]);
+        }
+
+        // 8. 社交焦慮五大核心場景關鍵字
+        if (/(tutorial|class|speak|ask|上堂|發言)/.test(t)) return concernDatabase.tutorial.reply;
+        if (/(present|slide|speech|匯報)/.test(t)) return concernDatabase.presentation.reply;
+        if (/(judg|embarrass|awkward|stupid|face|面子|尷尬)/.test(t)) return concernDatabase.judgment.reply;
+        if (/(group|friend|talk|chat|intro|小組|傾偈)/.test(t)) return concernDatabase.groupwork.reply;
+        if (/(heart|breath|panic|sweat|shak|nervous|anxious|緊張|心跳|驚)/.test(t)) return concernDatabase.physical.reply;
+
+        // 9. 道謝 / 講拜拜 (Thanks / Bye)
+        if (/(thank|thx|appreciate|多謝|唔該)/.test(t)) {
+          return `You're very welcome! 🌿 Take things at your own pace today. I'm always here if you want to chat again.`;
+        }
+        if (/^(bye|goodbye|see you|goodnight|拜拜|再見)/.test(t)) {
+          return `Take good care of yourself! Remember to be gentle with yourself today. See you anytime. 👋`;
+        }
+
+        // 10. 自然承接對話 (Natural Conversational Follow-up)
+        return pickRandom([
+          `I hear you. It makes complete sense to feel that way when you're juggling so much. Do you want to tell me a bit more about what happened, or explore a small calming step together?`,
+          `Thank you for sharing that with me. Sometimes just putting thoughts into words takes a little weight off. How has this been affecting your day?`,
+          `That sounds like a lot to sit with. Take your time — if you'd like, we can talk it through, or you can tap one of the topics below for practical ideas.`
+        ]);
+      };
+
       const respondToPlanner = (userText, presetKey = null) => {
         appendPlannerMsg(userText.replace(/</g, "&lt;"), "user");
 
-        // 模擬思考氣泡
         const typing = document.createElement("div");
         typing.className = "p-msg bot typing-indicator";
         typing.innerHTML = "<span></span><span></span><span></span>";
@@ -774,24 +840,8 @@
           typing.remove();
           if (presetKey && concernDatabase[presetKey]) {
             appendPlannerMsg(concernDatabase[presetKey].reply, "bot");
-            return;
-          }
-
-          const t = userText.toLowerCase();
-          if (/(suicide|kill myself|hurt myself|end it|die|hopeless|self harm|自殺|唔想活)/.test(t)) {
-            appendPlannerMsg(`<strong>Your safety matters most.</strong><br/>If you are in immediate danger in Hong Kong, please call <strong>999</strong> or visit the nearest A&amp;E.<br/>Free 24/7 confidential support: <a href="https://www.openup.hk/" target="_blank">Open Up</a> &bull; <a href="https://www.sbhk.org.hk/" target="_blank">Samaritan Befrienders (2389 2222)</a>`, "bot");
-          } else if (/(tutorial|class|speak|ask|上堂)/.test(t)) {
-            appendPlannerMsg(concernDatabase.tutorial.reply, "bot");
-          } else if (/(present|slide|speech|匯報)/.test(t)) {
-            appendPlannerMsg(concernDatabase.presentation.reply, "bot");
-          } else if (/(judg|embarrass|awkward|stupid|face|面子|尷尬)/.test(t)) {
-            appendPlannerMsg(concernDatabase.judgment.reply, "bot");
-          } else if (/(group|friend|talk|chat|intro|小組)/.test(t)) {
-            appendPlannerMsg(concernDatabase.groupwork.reply, "bot");
-          } else if (/(heart|breath|panic|sweat|shak|nervous|緊張|心跳)/.test(t)) {
-            appendPlannerMsg(concernDatabase.physical.reply, "bot");
           } else {
-            appendPlannerMsg(`Thank you for putting that into words. You don't have to fix everything today — just pick <strong>one tiny, low-pressure step</strong> that feels manageable.<br/><br/>If you'd like to talk to someone confidentially at HKBU, <a href="https://sa.hkbu.edu.hk/cdc" target="_blank">HKBU Counselling (CDC)</a> is always open.`, "bot");
+            appendPlannerMsg(getSmartChatReply(userText), "bot");
           }
         }, 420);
       };
@@ -817,7 +867,7 @@
 
       window.resetPlannerChat = () => {
         if (!pMessages) return;
-        pMessages.innerHTML = `<div class="p-msg bot">Hi! Facing a tough social moment at uni? Pick a common concern below, or type how you're feeling right now.</div>`;
+        pMessages.innerHTML = `<div class="p-msg bot">Hi! Facing a tough social moment at uni, or just want to chat about your day? Pick a topic below or say hello.</div>`;
       };
 
       // 11. Daily Check-In
