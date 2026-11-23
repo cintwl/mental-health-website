@@ -316,22 +316,20 @@ footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
   .back-to-top { right: 15px; bottom: 15px; }
 }
 /* ========================================== */
-/* OVERRIDE: CRANES BACKGROUND & SPACING FIX  */
+/* BACKGROUND #3: FLOATING DUST MOTES         */
 /* ========================================== */
 
-/* 1. 全站換上 8 號紙鶴固定背景 */
+/* 1. 柔和暖米白＋微光水彩底色 */
 body {
   background-color: #FAF8F3 !important;
   background-image: 
-    linear-gradient(rgba(250, 248, 243, 0.35), rgba(250, 248, 243, 0.35)),
-    url('bg-cranes.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
+    radial-gradient(circle at 18% 22%, rgba(196, 208, 193, 0.38) 0%, transparent 45%),
+    radial-gradient(circle at 82% 75%, rgba(120, 147, 165, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(222, 208, 187, 0.25) 0%, transparent 65%) !important;
   background-attachment: fixed !important;
 }
 
-/* 2. 關鍵！將組員寫死嘅實色區塊底變透明，等左右兩邊紙鶴透出嚟 */
+/* 2. 保持各個區塊背景透明，等微光粒子喺卡片後面飄過 */
 .hero-section,
 .ocean-waves,
 #understanding,
@@ -343,22 +341,66 @@ body {
   background: transparent !important;
 }
 
-/* 3. 收窄每個區塊上下太多嘅留白 (原本係 105px 太闊) */
+/* 3. 收窄區塊上下留白 */
 main > section {
   padding-top: 55px !important;
   padding-bottom: 55px !important;
 }
 
-/* 4. 確保中間啲內容卡片保持乾淨白底（微透明磨砂感），文字永遠清晰 */
-.feature-block,
-.tab-pane,
-.combined-charts-wrapper,
-.check-card,
-.audio-story-wrapper,
-.self-care-check,
-.hero-safety-note {
-  background: rgba(255, 255, 255, 0.92) !important;
-  backdrop-filter: blur(6px);
+/* 4. 固定全螢幕微光粒子容器（唔會阻擋滑鼠點擊） */
+.dust-motes-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* 確保主要內容疊喺微光粒子上面 */
+nav, main, footer, .top-banner, .back-to-top {
+  position: relative;
+  z-index: 1;
+}
+
+/* 5. 微光粒子外觀與慢速飄浮動畫 */
+.dust-motes-bg span {
+  position: absolute;
+  bottom: -40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(164, 189, 166, 0.75) 0%, rgba(164, 189, 166, 0) 70%);
+  animation: floatMote linear infinite;
+}
+
+/* 為 10 粒微光設定唔同位置、大細、顏色同飄浮速度 */
+.dust-motes-bg span:nth-child(1)  { left: 8%;  width: 18px; height: 18px; animation-duration: 18s; animation-delay: 0s; }
+.dust-motes-bg span:nth-child(2)  { left: 18%; width: 28px; height: 28px; animation-duration: 24s; animation-delay: -5s; background: radial-gradient(circle, rgba(222, 198, 156, 0.7) 0%, transparent 70%); }
+.dust-motes-bg span:nth-child(3)  { left: 29%; width: 14px; height: 14px; animation-duration: 16s; animation-delay: -9s; }
+.dust-motes-bg span:nth-child(4)  { left: 42%; width: 34px; height: 34px; animation-duration: 28s; animation-delay: -3s; background: radial-gradient(circle, rgba(145, 170, 166, 0.55) 0%, transparent 70%); }
+.dust-motes-bg span:nth-child(5)  { left: 55%; width: 16px; height: 16px; animation-duration: 19s; animation-delay: -12s; }
+.dust-motes-bg span:nth-child(6)  { left: 67%; width: 26px; height: 26px; animation-duration: 25s; animation-delay: -7s; background: radial-gradient(circle, rgba(222, 198, 156, 0.65) 0%, transparent 70%); }
+.dust-motes-bg span:nth-child(7)  { left: 76%; width: 15px; height: 15px; animation-duration: 17s; animation-delay: -2s; }
+.dust-motes-bg span:nth-child(8)  { left: 86%; width: 32px; height: 32px; animation-duration: 26s; animation-delay: -14s; }
+.dust-motes-bg span:nth-child(9)  { left: 93%; width: 20px; height: 20px; animation-duration: 21s; animation-delay: -8s; background: radial-gradient(circle, rgba(145, 170, 166, 0.6) 0%, transparent 70%); }
+.dust-motes-bg span:nth-child(10) { left: 48%; width: 22px; height: 22px; animation-duration: 23s; animation-delay: -16s; }
+
+@keyframes floatMote {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.8);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(18px) scale(1.05);
+  }
+  80% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-108vh) translateX(-12px) scale(0.9);
+    opacity: 0;
+  }
 }
 /* ========================================== */
 /* CARD UPGRADE: MAKE BOXES MORE DESIGNFUL    */
