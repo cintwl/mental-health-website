@@ -729,9 +729,13 @@
           audioPlayer.load();
         }
         const sceneImg = document.getElementById("story-scene-img");
-        if (sceneImg) sceneImg.src = "scene" + currentScene + ".jpg";
-        document.querySelectorAll(".theory-content").forEach(el => el.style.display = "none");
-      };
+        if (sceneImg) {
+          if (currentScene === 4 && meiChoice === "quiet") {
+            sceneImg.src = "scene4_quiet.jpg";
+          } else {
+            sceneImg.src = "scene" + currentScene + ".jpg";
+          }
+        }
 
       window.makeChoice = (choice) => {
         meiChoice = choice;
@@ -752,8 +756,9 @@
         document.getElementById("audio-scene-num").innerText = 4;
         if(audioPlayer) audioPlayer.load();
         const sceneImg = document.getElementById("story-scene-img");
-        if (sceneImg) sceneImg.src = "scene4.jpg";
-      };
+        if (sceneImg) {
+          sceneImg.src = choice === "quiet" ? "scene4_quiet.jpg" : "scene4.jpg";
+        }
 
       window.toggleTheory = (id) => {
         const content = document.getElementById(id);
