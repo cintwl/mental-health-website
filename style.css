@@ -56,7 +56,7 @@ em { color: var(--dusty-blue); }
 main { overflow: hidden; }
 main > section { position: relative; padding: 105px max(7vw, 24px); }
 main > section > * { max-width: var(--content-width); margin-right: auto; margin-left: auto; }
-.section-divider { width: min(86%, 1100px); height: 1px; margin: 0 auto; border: 0; background: var(--line); } /* 保留分割线 */
+.section-divider { width: min(86%, 1100px); height: 1px; margin: 0 auto; border: 0; background: var(--line); }
 .inner-divider { width: 100%; height: 1px; margin: 55px 0; border: 0; background: var(--line); }
 .container { width: min(100% - 48px, var(--content-width)); margin: 0 auto; }
 [hidden] { display: none !important; }
@@ -159,13 +159,13 @@ button:disabled { cursor: not-allowed; opacity: 0.45; }
 .bar-label, .bar-value { color: var(--text-muted); font-size: 0.75rem; }
 .bar-value { color: var(--deep-blue); font-weight: 700; text-align: right; }
 .bar-track { height: 12px; border-radius: 20px; background: #E9ECE7; overflow: hidden; }
-.bar-fill { height: 100%; border-radius: inherit; background: var(--dusty-blue); width: 0; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); } /* 动画宽度 */
+.bar-fill { height: 100%; border-radius: inherit; background: var(--dusty-blue); width: 0; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); }
 .bar-row:nth-child(2) .bar-fill { background: var(--muted-teal); }
 .bar-row:nth-child(3) .bar-fill { background: var(--warm-sand); }
 .bar-row:nth-child(4) .bar-fill { background: var(--terracotta); }
 .chart-label { margin-top: 22px; color: var(--text-muted); font-size: 0.8rem; }
 
-.donut { display: grid; width: 190px; height: 190px; margin: 25px auto; place-items: center; border-radius: 50%; background: conic-gradient(var(--dusty-blue) 0 35%, var(--muted-teal) 35% 60%, var(--warm-sand) 60% 80%, var(--terracotta) 80% 100%); transition: transform 1s ease, opacity 1s ease; transform: scale(0.8); opacity: 0; } /* 动画圆形 */
+.donut { display: grid; width: 190px; height: 190px; margin: 25px auto; place-items: center; border-radius: 50%; background: conic-gradient(var(--dusty-blue) 0 35%, var(--muted-teal) 35% 60%, var(--warm-sand) 60% 80%, var(--terracotta) 80% 100%); transition: transform 1s ease, opacity 1s ease; transform: scale(0.8); opacity: 0; }
 .combined-charts-wrapper.is-visible .donut { transform: scale(1); opacity: 1; }
 
 .donut-hole { display: grid; width: 115px; height: 115px; place-items: center; border-radius: 50%; background: var(--white); color: var(--deep-blue); font-family: var(--font-heading); font-size: 1.05rem; text-align: center; }
@@ -315,11 +315,10 @@ footer .footer-note { color: rgba(255, 255, 255, 0.55); font-size: 0.75rem; }
   #scene-indicator { font-size: 0.7rem; }
   .back-to-top { right: 15px; bottom: 15px; }
 }
+
 /* ========================================== */
 /* BACKGROUND #3: FLOATING DUST MOTES         */
 /* ========================================== */
-
-/* 1. 柔和暖米白＋微光水彩底色 */
 body {
   background-color: #FAF8F3 !important;
   background-image: 
@@ -329,7 +328,6 @@ body {
   background-attachment: fixed !important;
 }
 
-/* 2. 保持各個區塊背景透明，等微光粒子喺卡片後面飄過 */
 .hero-section,
 .ocean-waves,
 #understanding,
@@ -341,13 +339,11 @@ body {
   background: transparent !important;
 }
 
-/* 3. 收窄區塊上下留白 */
 main > section {
   padding-top: 55px !important;
   padding-bottom: 55px !important;
 }
 
-/* 4. 固定全螢幕微光粒子容器（唔會阻擋滑鼠點擊） */
 .dust-motes-bg {
   position: fixed;
   inset: 0;
@@ -356,13 +352,11 @@ main > section {
   overflow: hidden;
 }
 
-/* 確保主要內容疊喺微光粒子上面 */
 nav, main, footer, .top-banner, .back-to-top {
   position: relative;
   z-index: 1;
 }
 
-/* 5. 微光粒子外觀與慢速飄浮動畫 */
 .dust-motes-bg span {
   position: absolute;
   bottom: -40px;
@@ -371,7 +365,6 @@ nav, main, footer, .top-banner, .back-to-top {
   animation: floatMote linear infinite;
 }
 
-/* 為 10 粒微光設定唔同位置、大細、顏色同飄浮速度 */
 .dust-motes-bg span:nth-child(1)  { left: 8%;  width: 18px; height: 18px; animation-duration: 18s; animation-delay: 0s; }
 .dust-motes-bg span:nth-child(2)  { left: 18%; width: 28px; height: 28px; animation-duration: 24s; animation-delay: -5s; background: radial-gradient(circle, rgba(222, 198, 156, 0.7) 0%, transparent 70%); }
 .dust-motes-bg span:nth-child(3)  { left: 29%; width: 14px; height: 14px; animation-duration: 16s; animation-delay: -9s; }
@@ -402,11 +395,10 @@ nav, main, footer, .top-banner, .back-to-top {
     opacity: 0;
   }
 }
+
 /* ========================================== */
 /* CARD UPGRADE: MAKE BOXES MORE DESIGNFUL    */
 /* ========================================== */
-
-/* 1. 幫主要大卡片加「頂部漸層裝飾條」同「暖紙漸層底色」 */
 .feature-block,
 .tab-pane,
 .combined-charts-wrapper,
@@ -421,7 +413,6 @@ nav, main, footer, .top-banner, .back-to-top {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* 卡片最頂嗰條柔和漸層色帶 */
 .feature-block::before,
 .check-card::before,
 .audio-story-wrapper::before,
@@ -436,7 +427,6 @@ nav, main, footer, .top-banner, .back-to-top {
   background: linear-gradient(90deg, var(--dusty-blue), var(--muted-teal), var(--warm-sand));
 }
 
-/* 2. 幫 Support Finder 4 張卡片按分類加唔同顏色嘅頂部色條 */
 .support-finder-card {
   position: relative;
   overflow: hidden;
@@ -455,14 +445,12 @@ nav, main, footer, .top-banner, .back-to-top {
   box-shadow: 0 18px 36px rgba(53, 75, 89, 0.12) !important;
 }
 
-/* 3. 幫 What We Know 嘅 Key Takeaway 同 Cycle 卡片變得更精緻 */
 .key-takeaway {
   border-radius: 0 12px 12px 0;
   border-left: 4px solid var(--muted-teal) !important;
   background: linear-gradient(90deg, #EAF0EF 0%, rgba(234, 240, 239, 0.4) 100%) !important;
 }
 
-/* 4. 幫 Self-Check 每一題加微立體感，揀選時更有手感 */
 .spin-question {
   background: rgba(255, 255, 255, 0.75);
   border-left: 3px solid var(--warm-sand) !important;
@@ -472,11 +460,10 @@ nav, main, footer, .top-banner, .back-to-top {
   border-left-color: var(--dusty-blue) !important;
   background: #FFFFFF;
 }
+
 /* ========================================== */
 /* HERO & MEI STORY ILLUSTRATIONS             */
 /* ========================================== */
-
-/* 1. 首頁雙欄排版 + 主視覺插畫 */
 .hero-grid {
   grid-template-columns: 1.15fr 0.85fr !important;
   gap: 40px !important;
@@ -496,9 +483,9 @@ nav, main, footer, .top-banner, .back-to-top {
   border-radius: 24px;
   box-shadow: 0 18px 40px rgba(53, 75, 89, 0.12);
   border: 4px solid rgba(255, 255, 255, 0.9);
+  background: #FFFFFF;
 }
 
-/* 2. 阿 Mei 故事繪本橫幅插畫 */
 .story-illustration-box {
   width: 100%;
   margin-bottom: 24px;
@@ -526,22 +513,20 @@ nav, main, footer, .top-banner, .back-to-top {
     max-height: 220px;
   }
 }
-/* ========================================== */
-/* PART C: CYCLE, PLANNER & CHECK-IN VISUALS  */
-/* ========================================== */
 
-/* 2. Comfort Planner 雙欄並排 */
+/* ========================================== */
+/* PLANNER & CHECK-IN VISUALS                 */
+/* ========================================== */
 .planner-split-layout {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 35px;
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: stretch;
 }
 .planner-split-layout .planner-panel {
   max-width: 100%;
   margin: 0;
 }
-.planner-visual img,
 .checkin-visual img {
   width: 100%;
   border-radius: 18px;
@@ -549,7 +534,6 @@ nav, main, footer, .top-banner, .back-to-top {
   box-shadow: 0 12px 28px rgba(53, 75, 89, 0.08);
 }
 
-/* 3. Daily Check-In 雙欄並排 */
 .checkin-split-layout {
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
@@ -558,15 +542,14 @@ nav, main, footer, .top-banner, .back-to-top {
 }
 
 @media (max-width: 760px) {
-  .planner-split-layout,
   .checkin-split-layout {
     grid-template-columns: 1fr;
   }
 }
+
 /* ========================================== */
 /* EMBEDDED COMFORT COMPANION CHATBOT         */
 /* ========================================== */
-
 .embedded-chat-box {
   display: flex;
   flex-direction: column;
@@ -616,8 +599,8 @@ nav, main, footer, .top-banner, .back-to-top {
 }
 
 .embedded-chat-messages {
-  height: 230px;
-  padding: 15px;
+  height: 360px;
+  padding: 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -698,7 +681,6 @@ nav, main, footer, .top-banner, .back-to-top {
   font-weight: 700;
 }
 
-/* 打字中三點動畫 */
 .typing-indicator {
   display: inline-flex;
   gap: 4px;
@@ -717,7 +699,7 @@ nav, main, footer, .top-banner, .back-to-top {
   0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
   40% { transform: scale(1); opacity: 1; }
 }
-/* Crisis Alert Box inside Comfort Companion */
+
 .crisis-alert-box {
   padding: 10px 12px;
   border-left: 4px solid var(--terracotta);
@@ -725,6 +707,7 @@ nav, main, footer, .top-banner, .back-to-top {
   background: #F9EFEA;
   color: var(--charcoal);
 }
+
 /* ========================================== */
 /* HERO TITLE MAXIMUM IMPACT (2-LINE STACK)   */
 /* ========================================== */
@@ -735,7 +718,7 @@ nav, main, footer, .top-banner, .back-to-top {
 }
 
 .hero-copy h1 {
-  font-size: clamp(4.5rem, 8.2vw, 7.2rem) !important; /* 推到最大！與原本全幅標題同級 */
+  font-size: clamp(4.5rem, 8.2vw, 7.2rem) !important;
   line-height: 0.94 !important;
   letter-spacing: -0.05em !important;
   margin-bottom: 28px !important;
@@ -754,6 +737,7 @@ nav, main, footer, .top-banner, .back-to-top {
     font-size: clamp(3.6rem, 14vw, 4.8rem) !important;
   }
 }
+
 /* ========================================== */
 /* SUPPORT FINDER: ICON BADGES & TAGS         */
 /* ========================================== */
