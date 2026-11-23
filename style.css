@@ -897,3 +897,11 @@ nav, main, footer, .top-banner, .back-to-top {
     width: 100%;
   }
 }
+.hero-illustration {
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  mix-blend-mode: multiply !important;
+  max-width: 390px !important;
+}
