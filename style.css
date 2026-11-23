@@ -701,3 +701,30 @@ main > section {
   background: #F9EFEA;
   color: var(--charcoal);
 }
+/* ========================================== */
+/* HERO TITLE ENLARGEMENT (KEEPING LAYOUT)    */
+/* ========================================== */
+.hero-grid {
+  grid-template-columns: 1.25fr 0.75fr !important; /* 俾多啲橫向空間個大標題 */
+  gap: 32px !important;
+}
+
+.hero-copy h1 {
+  font-size: clamp(3.6rem, 6.4vw, 5.8rem) !important; /* 明顯放大，氣勢十足 */
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.hero-illustration {
+  max-width: 410px !important; /* 微微收細右邊插畫少少，確保兩邊比例平衡唔撞字 */
+}
+
+@media (max-width: 760px) {
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2.8rem, 11vw, 3.8rem) !important;
+    white-space: normal !important;
+  }
+}
