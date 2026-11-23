@@ -693,3 +693,11 @@ main > section {
   0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
   40% { transform: scale(1); opacity: 1; }
 }
+/* Crisis Alert Box inside Comfort Companion */
+.crisis-alert-box {
+  padding: 10px 12px;
+  border-left: 4px solid var(--terracotta);
+  border-radius: 8px;
+  background: #F9EFEA;
+  color: var(--charcoal);
+}

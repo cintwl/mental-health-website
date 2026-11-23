@@ -760,12 +760,29 @@
       const getSmartChatReply = (userText) => {
         const t = userText.toLowerCase().trim();
 
-        // 1. 危機安全偵測 (最高優先)
-        if (/(suicide|kill myself|hurt myself|end it|die|hopeless|self harm|自殺|唔想活|想死)/.test(t)) {
-          return `<strong>Your safety matters most.</strong><br/>If you are in immediate danger in Hong Kong, please call <strong>999</strong> or visit the nearest A&amp;E.<br/>Free 24/7 confidential support: <a href="https://www.openup.hk/" target="_blank">Open Up</a> &bull; <a href="https://www.sbhk.org.hk/" target="_blank">Samaritan Befrienders (2389 2222)</a>`;
+        // 1. 第一級：高危危機字眼 (Immediate Crisis Safety Net)
+        if (/(suicide|suicidal|kill myself|hurt myself|self[- ]?harm|end my life|end it all|want to die|wanna die|better off dead|no reason to live|give up on life|自殺|想死|界手|割脈|唔想活|了結)/.test(t)) {
+          return `<div class="crisis-alert-box">
+            <strong>⚠️ You don't have to carry this alone.</strong><br/>
+            If you are in immediate danger in Hong Kong, please call <strong>999</strong> or go to the nearest A&amp;E right away.<br/><br/>
+            <strong>Free, confidential 24/7 support in HK:</strong><br/>
+            &bull; <a href="https://www.openup.hk/" target="_blank" rel="noopener noreferrer">Open Up (24/7 Online Text Support) ↗</a><br/>
+            &bull; <a href="https://www.sbhk.org.hk/" target="_blank" rel="noopener noreferrer">Samaritan Befrienders HK (Tel: 2389 2222) ↗</a><br/>
+            &bull; <a href="https://sa.hkbu.edu.hk/cdc" target="_blank" rel="noopener noreferrer">HKBU Counselling (CDC) ↗</a>
+          </div>`;
         }
 
-        // 2. 日常打招呼 (Greetings)
+        // 2. 第二級：嚴重孤單 / 絕望 / 情緒低落 (Loneliness & Deep Distress + Support Links)
+        if (/(loneliness|lonely|so alone|isolated|nobody cares|no one cares|hopeless|helpless|worthless|depressed|depression|overwhelmed|can't cope|cannot cope|breakdown|cry|sad|down|孤單|寂寞|無人理|絕望|頂唔順|崩潰|唔開心)/.test(t)) {
+          return `I'm really sorry you're feeling this way right now. Experiencing loneliness or feeling overwhelmed at university can be deeply painful — please know you don't have to go through it by yourself. 💙<br/><br/>
+          If you'd like to talk or text with someone who understands, here are safe, confidential support options in Hong Kong:<br/>
+          &bull; <a href="https://sa.hkbu.edu.hk/cdc" target="_blank" rel="noopener noreferrer">HKBU Counselling &amp; Development Centre (CDC) ↗</a><br/>
+          &bull; <a href="https://www.openup.hk/" target="_blank" rel="noopener noreferrer">Open Up (Free Online Text Chat) ↗</a><br/>
+          &bull; <a href="https://www.shallwetalk.hk/" target="_blank" rel="noopener noreferrer">Shall We Talk (HK Mental Health Resources) ↗</a><br/><br/>
+          Or if you prefer, we can just keep chatting right here at your own pace.`;
+        }
+
+        // 3. 日常打招呼 (Greetings)
         if (/^(hi|hello|hey|yo|morning|afternoon|evening|哈囉|你好|嗨)\b/.test(t)) {
           return pickRandom([
             `Hey there! 👋 How is your day going so far? Feel free to just chat or share whatever is on your mind.`,
@@ -773,12 +790,12 @@
           ]);
         }
 
-        // 3. 問候機械人 (How are you / Who are you)
+        // 4. 問候機械人 (How are you / Who are you)
         if (/(how are you|how's it going|what's up|who are you|點樣|你好嗎)/.test(t)) {
           return `I'm doing well, thank you for asking! ☕ I'm here as a calm, judgment-free space whenever you want to chat or sort through your thoughts. How are <em>you</em> holding up today?`;
         }
 
-        // 4. 感到疲倦 / 冇電 (Tired / Exhausted)
+        // 5. 感到疲倦 / 冇電 (Tired / Exhausted)
         if (/(tired|exhausted|sleepy|burnout|drained|no energy|攰|好累|想訓)/.test(t)) {
           return pickRandom([
             `Uni life in Hong Kong can really drain your battery. 🔋 Have you been getting enough rest lately, or are deadlines piling up?`,
@@ -786,14 +803,9 @@
           ]);
         }
 
-        // 5. 學業 / 功課壓力 (Stress / Exam / Deadline / Assignment)
+        // 6. 學業 / 功課壓力 (Stress / Exam / Deadline / Assignment)
         if (/(stress|busy|deadline|exam|assignment|fyp|midterm|study|壓力|功課|考試)/.test(t)) {
           return `Deadlines and coursework can feel heavy, especially when social expectations are layered on top. 📚 Want to break things down into one tiny task, or just vent for a moment?`;
-        }
-
-        // 6. 孤單 / 唔開心 (Sad / Lonely / Down)
-        if (/(sad|lonely|alone|down|depressed|cry|upset|unhappy|唔開心|孤單|寂寞)/.test(t)) {
-          return `I'm really sorry you're feeling that way today. Even on a crowded campus, it's surprisingly easy to feel alone. 💙 You don't have to pretend to be okay here — what's been weighing on you?`;
         }
 
         // 7. 分享好消息 / 踏出一步 (Happy / Good / Did it / Proud)
