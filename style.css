@@ -481,7 +481,7 @@ nav, main, footer, .top-banner, .back-to-top {
   box-shadow: none !important;
 }
 
-/* 👇 核心图片去底代码 👇 */
+/* 去除了 mix-blend-mode，因为现在是真透明 PNG */
 .hero-visual .hero-illustration {
   width: 100%;
   max-width: 440px !important;
@@ -489,8 +489,6 @@ nav, main, footer, .top-banner, .back-to-top {
   box-shadow: none !important;
   border: none !important;
   background: transparent !important;
-  /* 使用 multiply 让纯白背景变透明 */
-  mix-blend-mode: multiply !important; 
 }
 
 .story-illustration-box {
